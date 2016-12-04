@@ -1,0 +1,53 @@
+/*******************SOCIALS******************/
+.socials
+	flex-container(row, wrap, center, center)
+	padding 0
+	list-style none
+
+	&__item
+		&:first-child
+			margin-right 3%
+		&:last-child
+			margin-left 3%
+
+	&__link
+		position relative
+		display block
+		width 1.7em
+		height 1.7em
+		//border $sidebar-elements-bd-width solid $sidebar-bd-color-light
+		border-style solid
+		border-width $sidebar-elements-bd-width
+		border-top-color $sidebar-bd-color-dark
+		border-left-color $sidebar-bd-color-dark
+		border-bottom-color $sidebar-bd-color-light
+		border-right-color $sidebar-bd-color-light
+		border-radius 50%
+		outline none
+		&:before
+			content ''
+			position absolute
+			top $sidebar-elements-bd-width
+			right $sidebar-elements-bd-width
+			bottom $sidebar-elements-bd-width
+			left $sidebar-elements-bd-width
+			//border $sidebar-elements-bd-width solid $sidebar-bd-color-dark
+			border-style solid
+			border-width $sidebar-elements-bd-width
+			border-top-color $sidebar-bd-color-light
+			border-left-color $sidebar-bd-color-light
+			border-bottom-color $sidebar-bd-color-dark
+			border-right-color $sidebar-bd-color-dark
+			border-radius 50%
+		&:hover
+		&:focus
+			.socials__bg
+				fill $base-decor-color
+
+	&__bg
+		position absolute
+		left 50%
+		top 50%
+		transform translate(-50%, -50%)
+		fill #979798
+		transition all .5s ease

@@ -1,0 +1,113 @@
+/***********************BTN***********************/
+.btn
+	display block
+	box-sizing border-box
+	text-decoration none
+	text-transform uppercase
+	border none
+	transition all .3s ease
+	outline none
+	background rgba(0,0,0,0)
+
+	&--know-more
+		width 16.214em
+		height 3.6em
+		padding 0 3em
+		font-size .875rem
+		font-weight bold
+		text-align center
+		line-height @height
+		letter-spacing .1em
+		color $base-decor-color
+		border $sidebar-elements-bd-width solid $base-decor-color
+		&:hover
+		&:active
+		&:focus
+			color #363636
+			background $base-decor-color
+
+
+	&--callback
+		position relative
+		width 16.1428em
+		padding 1.1em 1.4em 1em 2.4em
+		font-size .875rem
+		text-align right
+		letter-spacing .15em
+		color $base-text-color-light
+		//border $sidebar-elements-bd-width solid $sidebar-bd-color-dark
+		border-style solid
+		border-width $sidebar-elements-bd-width
+		border-top-color $sidebar-bd-color-dark
+		border-left-color $sidebar-bd-color-dark
+		border-bottom-color $sidebar-bd-color-light
+		border-right-color $sidebar-bd-color-light
+		border-radius 2.5em
+		&:before
+			content ''
+			position absolute
+			top $sidebar-elements-bd-width
+			left $sidebar-elements-bd-width
+			bottom $sidebar-elements-bd-width
+			right $sidebar-elements-bd-width
+			//border $sidebar-elements-bd-width solid $sidebar-bd-color-light
+			border-style solid
+			border-width $sidebar-elements-bd-width
+			border-top-color $sidebar-bd-color-light
+			border-left-color $sidebar-bd-color-light
+			border-bottom-color $sidebar-bd-color-dark
+			border-right-color $sidebar-bd-color-dark
+			border-radius 2.5em
+		.btn__icon
+			position absolute
+			top 1.4em
+			left 1.5em
+			width .8em
+			height .8em
+			fill $base-decor-color
+		&:hover
+		&:focus
+			color $base-decor-color
+		&:active
+			//border-color rgba(0,0,0,0)
+			//box-shadow inset 0 0 .2em .1em rgba(#000, .5)
+			border-width $sidebar-elements-bd-width
+			border-top-color $sidebar-bd-color-dark
+			border-left-color $sidebar-bd-color-dark
+			border-bottom-color $sidebar-bd-color-light
+			border-right-color $sidebar-bd-color-light
+			&:before
+				border-color rgba(0,0,0,0)
+
+	&--callback-isActive
+		border-width $sidebar-elements-bd-width
+		border-top-color $sidebar-bd-color-dark
+		border-left-color $sidebar-bd-color-dark
+		border-bottom-color $sidebar-bd-color-light
+		border-right-color $sidebar-bd-color-light
+		&:before
+			border-color rgba(0,0,0,0)
+
+	&--call
+		position relative
+		width 100%
+		height 3.4em
+		line-height @height
+		font-weight bold
+		color $base-decor-color
+		letter-spacing .1em
+		background-color #363636
+		border-radius 2.1875em
+		border-style solid
+		border-width $sidebar-elements-bd-width
+		border-top-color $sidebar-bd-color-light
+		border-left-color $sidebar-bd-color-light
+		border-bottom-color $sidebar-bd-color-dark
+		border-right-color $sidebar-bd-color-dark
+		transition all .3s ease
+		&:hover
+		&:focus
+			background-color lighten(#363636, 2%)
+		&:active
+			border-top-color $sidebar-bd-color-dark
+			border-left-color $sidebar-bd-color-dark

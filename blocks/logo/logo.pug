@@ -1,0 +1,7 @@
+mixin logo(item)
+	+b.A()&attributes({
+		"id": item.id,
+		"class": item.class,
+		"href": item.href
+	})
+		+e.IMG.img(src=item.src, alt=item.alt)

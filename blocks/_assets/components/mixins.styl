@@ -1,0 +1,29 @@
+// @font-face
+font-face(family, local1, local2, woff2-url, woff-url, weight, style)
+	@font-face 
+		font-family family
+		src local(local1), local(local1), 
+				url(woff2-url) format('woff2'), 
+				url(woff-url) format('woff')
+		font-weight weight
+		font-style style
+		font-display swap
+		
+// flex container
+flex-container(dir, wr, jc, ai)
+	display flex
+	flex-direction dir
+	flex-wrap wr
+	justify-content jc
+	align-items ai
+
+//px to rem&em converter
+$baseFontSize = 16
+$px = ( 1 / $baseFontSize ) rem
+
+px( val, base = 'none' )
+	if base == 'none'
+		( val / $baseFontSize ) rem
+	else
+		( val / base ) em
+		

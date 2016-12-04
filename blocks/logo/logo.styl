@@ -1,0 +1,27 @@
+/*!******************LOGO******************/
+.logo
+	display block
+	width 16.875em
+	height 3.8125em
+	margin 2.7em 0 0 3.1em
+	font-size 1rem
+	transition all .5s ease
+	@media screen and (max-width: 940px)
+		margin 0
+	@media screen and (max-width: $media-md) and (orientation: portrait)
+		width 40vw
+		height 9vw
+		//margin 8% 0 0 8%
+	@media screen and (max-width: $media-md) and (orientation: landscape)
+		width 30vw
+		height 6.777vw
+		//margin 8% 0 0 8%
+
+	&--isTransparent
+		transition all .5s ease
+		opacity 0
+
+	&__img
+		display block
+		max-width 100%
+		height auto

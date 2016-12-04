@@ -1,0 +1,16 @@
+mixin head(data)
+	title= data.title
+	meta(charset="utf-8")
+	
+	meta(content=data.author name="author")
+	meta(content=data.description name="description")
+	
+	meta(name="viewport" content="width=device-width, initial-scale=1.0")
+	meta(name="HandheldFriendly" content="true")
+	meta(content="IE=edge" http-equiv="X-UA-Compatible")
+	
+	link(rel="shortcut icon", href="img/favicon/favicon.png", type="image/x-icon")
+	link(rel="apple-touch-icon", href="img/favicon/apple-touch-icon.png")
+	// build:css css/main.css
+	link(rel="stylesheet", href="css/main.css")
+	// endbuild

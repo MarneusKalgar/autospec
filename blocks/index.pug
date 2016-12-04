@@ -1,0 +1,27 @@
+include _assets/bemto/bemto
+- set_bemto_settings({ modifier: "--" })
+
+include head/head
+include page/page
+
+doctype html
+html(lang="ru")
+	
+	head
+		+head({
+			"title": "autospecservice home page",
+			"author": "alex-labs",
+			"description": "autospecservice home page"
+		})
+
+	+b.BODY.page
+		+e.DIV.wrap
+			+page()
+		
+		// build:js js/vendor.js defer
+		script(defer, src="js/libs/jquery.min.js")
+		// endbuild
+
+		// build:js js/main.js defer
+		script(defer, src="js/main.js")
+		// endbuild

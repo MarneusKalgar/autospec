@@ -1,0 +1,23 @@
+include ../logo/logo
+include ../menu-btn/menu-btn
+
+mixin header
+	+b.HEADER.header
+		// block logo
+		+logo({
+			"id": "logo",
+			"class": "logo",
+			"href": "#",
+			"src": "img/logo/autospec-logo-light.png",
+			"alt": "логотип компании автоспецсервис"
+		})
+		// end block logo
+
+		// block menu-btn
+		+menu-btn({
+			"viewBox": "0 0 31.1 31.1",
+			"width": "16",
+			"height": "16",
+			"path": "M30.2 5.3H.9c-.5 0-.9-.4-.9-.9s.4-.9.9-.9h29.3c.5 0 .9.4.9.9s-.4.9-.9.9zM30.2 16.4H.9c-.5 0-.9-.4-.9-.9s.4-.9.9-.9h29.3c.5 0 .9.4.9.9s-.4.9-.9.9zM30.2 27.6H.9c-.5 0-.9-.4-.9-.9s.4-.9.9-.9h29.3c.5 0 .9.4.9.9s-.4.9-.9.9z"
+		})
+		// end block menu-btn

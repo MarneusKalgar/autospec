@@ -1,0 +1,70 @@
+/************MAIN-NAV**************/
+.main-nav
+	box-sizing border-box
+	width 100%
+	margin calc(100vh - 72.5vh) 0 0
+	padding 0
+	font-size $sidebar-font-size
+	color $base-text-color-light
+	@media screen and (max-height: 750px)
+		margin 10em 0 0
+
+	&__menu
+		margin 0
+		padding 0 $sidebar-elements-bd-width
+		list-style none
+		text-align center
+		text-transform uppercase
+
+	&__item:first-child
+		.main-nav__link
+			&:before
+				content ''
+				position absolute
+				top 0
+				left 0
+				width 100%
+				height $sidebar-elements-bd-width
+				background-color $sidebar-bd-color-dark
+	&__item:last-child
+		.main-nav__link
+			&:after
+				content ''
+				position absolute
+				top 102%
+				left 0
+				width 100%
+				height $sidebar-elements-bd-width
+				background-color $sidebar-bd-color-light
+
+	&__link
+		display block
+		position relative
+		width 100%
+		box-sizing border-box
+		padding 1.58em 0
+		text-decoration none
+		line-height 1
+		letter-spacing .1em
+		font-family $base-font-family
+		color $base-text-color-light
+		border-top $sidebar-elements-bd-width solid $sidebar-bd-color-light
+		border-bottom $sidebar-elements-bd-width solid $sidebar-bd-color-dark
+		transition all .5s ease
+		&:hover
+		&:active
+		&:focus
+			color $base-decor-color
+			outline none
+		//&:active
+		//	box-shadow inset 0 0 .2em .2em rgba(#000, .5)
+
+		&--active
+			color $base-decor-color
+			cursor default
+			border-top $sidebar-elements-bd-width solid $sidebar-bd-color-dark
+			border-bottom $sidebar-elements-bd-width solid $sidebar-bd-color-light
+			//&:before
+			//	background-color $sidebar-bd-color-dark
+			//&:after
+			//	background-color $sidebar-bd-color-light

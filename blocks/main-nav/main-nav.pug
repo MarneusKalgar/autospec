@@ -1,0 +1,10 @@
+mixin main-nav(menu)
+	+b.NAV.main-nav
+		+e.UL.menu
+			each item in menu
+				+e.LI.item
+					a()&attributes({
+						"class": item.class,
+						"id": item.id,
+						"href": item.link
+					})= item.title

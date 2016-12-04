@@ -1,0 +1,21 @@
+include ../header/header
+include ../main/main
+include ../sidebar/sidebar
+include ../footer/footer
+
+mixin page
+	// block header
+	+header()
+	// end block header
+
+	// block main
+	+main()
+	// end block main
+
+	// block sidebar
+	+sidebar()
+	// end block sidebar
+
+	//block footer
+	+footer()
+	//end block footer

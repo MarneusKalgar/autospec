@@ -1,0 +1,7 @@
+mixin socials(menu)
+	+b.UL.socials(class="sidebar__socials")
+		each item in menu
+			+e.LI.item
+				+e.A.link(href=item.link, target="_blank")
+					+e.SVG.bg(xmlns="http://www.w3.org/2000/svg", viewBox=item.viewBox, width="13", height="13")
+						path(d=item.path)
