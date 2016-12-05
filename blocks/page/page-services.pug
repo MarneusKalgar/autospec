@@ -1,0 +1,16 @@
+include ../header/header-services
+include ../sidebar/sidebar-services
+include ../services/services
+
+mixin page-services
+	// block header
+	+header-services()
+	// end block header
+
+	// block services
+	+services()
+	// end block services
+
+	// block sidebar
+	+sidebar-services()
+	// end block sidebar

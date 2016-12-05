@@ -9,16 +9,20 @@
 	color $base-text-color
 	-webkit-font-smoothing antialiased
 	-moz-osx-font-smoothing antialiased
-	overflow hidden
+		//overflow hidden
+	@media screen and (max-height: 640px) and (orientation: landscape)
+		height 100vh
 		
 		/***** elem wrap *****/
 	&__wrap
 		position relative
 		flex-container(row, nowrap, space-between, stretch)
 		box-sizing border-box
-		height 100vh
+		height 100%
 		margin 0
 		overflow hidden
+		@media screen and (max-height: 640px), (max-width: 640px), (orientation: landscape)
+			overflow-y auto
 			
 	/***** block to style headings *****/		
 .titles
@@ -27,3 +31,5 @@
 	letter-spacing $heading-letter-spacing
 	text-rendering optimizeLegibility
 	color $heading-color
+	@media screen and (max-width: 450px)
+		font-size $heading-font-size * .8

@@ -1,0 +1,157 @@
+/*******************TAB-PANEL******************/
+.tab-panel
+	//position relative
+	//z-index 20
+	margin-top 2.1em
+	border-radius .5em
+	&:before
+		content ''
+		position absolute
+		top 0
+		right 0
+		bottom 0
+		left 0
+		z-index 10
+		filter blur(20px)
+		border-radius .5em
+	@media screen and (min-width: 940px) and (max-width: 1120px), (max-width: 750px)
+		margin-top 5em
+
+
+	&__menu
+		position absolute
+		top 10em
+		right 3em
+		z-index 100
+		flex-container(row, nowrap, space-between, center)
+		width 18em
+		margin 0
+		padding 0
+		list-style none
+		font-size 1.1em
+		@media screen and (min-width: 940px) and (max-width: 1120px), (max-width: 750px)
+			top 13.5em
+			left 11%
+		@media screen and (max-width: 750px)
+			top 13.5em
+			left 7.5%
+		@media screen and (max-width: 450px)
+			top 13em
+			width 14em
+
+
+	&__tab
+		text-transform uppercase
+		cursor pointer
+
+		&--active
+			color $base-decor-color
+			border-bottom 0.1em solid $base-decor-color
+
+
+	&__item
+		display none
+		padding 4% 12% 7.5% 7%
+		background rgba(#f1f1f1, .7)
+		@media screen and (min-width: 940px) and (max-width: 1120px), (max-width: 750px)
+			padding: 0
+			background: none
+
+		&--active
+			display block
+
+		&--history
+			position relative
+			padding 0
+			background rgba(0,0,0,0)
+			border-radius none
+			@media screen and (max-width: 620px)
+				padding-bottom: 10em
+			.tab-panel__subtitle
+				position relative
+				z-index 10
+				margin-top -.3em
+				padding 0
+				&:before
+					content ''
+					position absolute
+					top 0
+					left -2em
+					z-index -1
+					width 3.2em
+					height 3.2em
+					background url('data:image/png;base64,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') 0 0 no-repeat
+					background-size cover
+					@media screen and (max-width: 750px)
+						left -1em
+					@media screen and (max-width: 450px)
+						left -.5em
+			.tab-panel__text
+				margin-top 1.5em
+				padding 0 20% 0 0
+				@media screen and (min-width: 940px) and (max-width: 1120px), (max-width: 750px)
+					padding-right 25%
+				@media screen and (max-width: 620px)
+					padding-right 0
+			//@media screen and (min-height: 650px), (max-width: 940px)
+			//	padding-right 30%
+
+	&__subtitle
+		line-height 1.2
+		font-size 1.5em
+		margin 0
+
+	&__text
+		margin 1em 0 0
+		&:last-child
+			margin-top 1.5em
+
+
+	&__person
+		margin 0
+		position fixed
+		right 30%
+		bottom 0
+		width 16rem
+		height 23rem
+		@media screen and (min-height: 801px)
+			position absolute
+			right -5em
+			top 5em
+		@media screen and (max-height: 650px), (max-width: 1250px)
+			position absolute
+			right -4em
+			top 1em
+			width 16rem * .7
+			height 23rem * .7
+		@media screen and (max-width: 1120px)
+			top 4em
+		@media screen and (max-width: 940px)
+			right -3em
+		@media screen and (max-width: 620px)
+			top 70%
+			right -10%
+			transform translateX(-50%)
+		@media screen and (max-width: 450px)
+			top 80%
+
+	&__img
+		width 100%
+		height 100%
+
+	&__caption
+		position absolute
+		left -9.5em
+		bottom 2.7em
+		@media screen and (min-height: 801px)
+			bottom 1em
+		@media screen and (max-height: 650px), (max-width: 1250px)
+			bottom -3em
+			left 2.5em
+
+	&__desc
+		margin 0
+		&:first-child
+			font-weight bold
+		&:last-child
+			font-style italic

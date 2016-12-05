@@ -1,0 +1,18 @@
+include ../logo/logo
+include ../menu-btn/menu-btn
+
+mixin header-services
+	+b.HEADER.header
+		// block logo
+		+logo({
+			"id": "logo",
+			"class": "logo",
+			"href": "#",
+			"src": "img/logo/autospec-logo-dark.png",
+			"alt": "логотип компании автоспецсервис"
+		})
+		// end block logo
+
+		// block menu-btn
+		+menu-btn()
+		// end block menu-btn

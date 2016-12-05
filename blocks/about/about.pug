@@ -1,0 +1,9 @@
+include ../tab-panel/tab-panel
+
+mixin about
+	+b.SECTION.about
+		+e.H2.title(class="titles") О компании
+
+		// block tab-panel
+		+tab-panel()
+		// end block tab-panel

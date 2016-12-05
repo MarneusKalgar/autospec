@@ -1,0 +1,16 @@
+include ../header/header-about
+include ../sidebar/sidebar-about
+include ../about/about
+
+mixin page-about
+	// block header
+	+header-about()
+	// end block header
+
+	// block about
+	+about()
+	// end block about
+
+	// block sidebar
+	+sidebar-about()
+	// end block sidebar

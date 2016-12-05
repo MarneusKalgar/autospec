@@ -6,8 +6,10 @@
 	padding 0
 	font-size $sidebar-font-size
 	color $base-text-color-light
-	@media screen and (max-height: 750px)
-		margin 10em 0 0
+	@media screen and (max-height: 700px)
+		margin 9.5em 0 0
+	@media screen and (max-height: 479px)
+		margin-top 10vmin
 
 	&__menu
 		margin 0
@@ -15,6 +17,8 @@
 		list-style none
 		text-align center
 		text-transform uppercase
+		@media screen and (max-height: 479px)
+			flex-container(row, wrap, space-between, flex-start)
 
 	&__item:first-child
 		.main-nav__link
@@ -37,10 +41,34 @@
 				height $sidebar-elements-bd-width
 				background-color $sidebar-bd-color-light
 
+	&__item
+		@media screen and (max-height: 479px)
+			width 50%
+			height 4em
+			&:not(:nth-child(5))
+				.main-nav__link
+					padding 0
+					line-height @height
+			&:nth-child(5)
+				.main-nav__link
+					line-height 1.2
+					&:after
+						content ''
+						position absolute
+						top 102%
+						left 0
+						width 100%
+						height $sidebar-elements-bd-width
+						background-color $sidebar-bd-color-light
+			&:nth-child(odd)
+				.main-nav__link
+					border-right $sidebar-elements-bd-width solid $sidebar-bd-color-light
+
 	&__link
 		display block
 		position relative
 		width 100%
+		height 100%
 		box-sizing border-box
 		padding 1.58em 0
 		text-decoration none
@@ -51,20 +79,25 @@
 		border-top $sidebar-elements-bd-width solid $sidebar-bd-color-light
 		border-bottom $sidebar-elements-bd-width solid $sidebar-bd-color-dark
 		transition all .5s ease
+		outline none
 		&:hover
-		&:active
 		&:focus
 			color $base-decor-color
-			outline none
-		//&:active
-		//	box-shadow inset 0 0 .2em .2em rgba(#000, .5)
+		&:active
+			color $base-decor-color
+			cursor default
+			border-top $sidebar-elements-bd-width solid $sidebar-bd-color-dark
+			border-bottom $sidebar-elements-bd-width solid $sidebar-bd-color-light
+		@media screen and (max-width: $media-md) and (orientation: landscape)
+			padding 1.3em 0
+		@media screen and (max-height: 700px)
+			padding 1.3em 0
+		@media screen and (max-height: 600px)
+			padding .9em 0
 
 		&--active
 			color $base-decor-color
 			cursor default
 			border-top $sidebar-elements-bd-width solid $sidebar-bd-color-dark
 			border-bottom $sidebar-elements-bd-width solid $sidebar-bd-color-light
-			//&:before
-			//	background-color $sidebar-bd-color-dark
-			//&:after
-			//	background-color $sidebar-bd-color-light
+			transition all .5s ease

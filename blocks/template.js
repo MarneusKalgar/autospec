@@ -5,6 +5,8 @@ $(function () {
 	menuBtn();
 
 	sidebar();
+
+	tabPanel();
 	
 });
 

@@ -35,7 +35,6 @@
 		text-align right
 		letter-spacing .15em
 		color $base-text-color-light
-		//border $sidebar-elements-bd-width solid $sidebar-bd-color-dark
 		border-style solid
 		border-width $sidebar-elements-bd-width
 		border-top-color $sidebar-bd-color-dark
@@ -50,7 +49,6 @@
 			left $sidebar-elements-bd-width
 			bottom $sidebar-elements-bd-width
 			right $sidebar-elements-bd-width
-			//border $sidebar-elements-bd-width solid $sidebar-bd-color-light
 			border-style solid
 			border-width $sidebar-elements-bd-width
 			border-top-color $sidebar-bd-color-light
@@ -69,8 +67,6 @@
 		&:focus
 			color $base-decor-color
 		&:active
-			//border-color rgba(0,0,0,0)
-			//box-shadow inset 0 0 .2em .1em rgba(#000, .5)
 			border-width $sidebar-elements-bd-width
 			border-top-color $sidebar-bd-color-dark
 			border-left-color $sidebar-bd-color-dark
@@ -78,6 +74,8 @@
 			border-right-color $sidebar-bd-color-light
 			&:before
 				border-color rgba(0,0,0,0)
+		@media screen and (max-height: 600px)
+			padding .9em 1.4em .9em 2.4em
 
 	&--callback-isActive
 		border-width $sidebar-elements-bd-width
@@ -111,3 +109,8 @@
 		&:active
 			border-top-color $sidebar-bd-color-dark
 			border-left-color $sidebar-bd-color-dark
+		@media screen and (max-height: 600px)
+			height 2.8em
+			line-height @height
+		@media screen and (max-height: 479px)
+			margin-top .5em

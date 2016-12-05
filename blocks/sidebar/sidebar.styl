@@ -16,19 +16,30 @@
 		background-size cover
 		transform-origin 50% 50% 0
 		animation rotateCircle 5s linear infinite running
+		@media screen and (max-width: $media-md)
+			left 11%
+			width 6.6rem
+			height 6.6rem
+		@media screen and (max-height: 479px)
+			display none
 	&:after
 		content: ''
 		position absolute
 		top 0
-		left -20.5%
+		left -21%
 		width 15.25rem
 		height 15rem
 		background url("../img/sidebar/sidebar-circle2.png") 0 0 no-repeat
 		background-size cover
 		transform-origin 50% 50% 0
 		animation rotateCircle 5s linear infinite reverse running
+		@media screen and (max-width: $media-md)
+			left -21.5%
+			width 12.2rem
+			height 12rem
+		@media screen and (max-height: 479px)
+			display none
 	@media screen and (max-width: 940px)
-		//display none
 		position absolute
 		top 0
 		right 0
@@ -38,6 +49,11 @@
 		&:before
 		&:after
 			animation-play-state paused
+	@media screen and (max-width: $media-md)
+		width $sidebar-width * .8 //276px
+	@media screen and (max-height: 479px)
+		width $sidebar-width-landscape
+
 
 	&--isMove
 		//display block
@@ -51,11 +67,15 @@
 		margin 13% auto 0
 		@media screen and (max-height: 750px)
 			margin 7% auto 0
+		@media screen and (max-height: 600px)
+			margin 3% auto 0
 
 	&__socials
 		margin 13% 0 0
 		@media screen and (max-height: 750px)
-			margin 7% auto 0
+			margin 7% auto 5%
+		@media screen and (max-height: 600px)
+			margin 2% auto 3%
 
 
 @keyframes rotateCircle
