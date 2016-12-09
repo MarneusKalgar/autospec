@@ -42,7 +42,10 @@
 		@media screen and (max-width: 1200px)
 			margin-left calc(100vw - 70vw)
 		@media screen and (max-width: $media-md) and (orientation: portrait)
-			margin 15% auto 0
+			//margin 30% auto 0
+			margin calc(50vmax - 60%) auto 0
 		@media screen and (max-width: 750px) and (orientation: landscape)
 			margin 5% auto 0
 			font-size 5vw
+		@media screen and (min-width: 750px) and (max-width: 1025px)  and (orientation: landscape)
+			margin 15% auto 0

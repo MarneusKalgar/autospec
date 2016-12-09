@@ -30,22 +30,21 @@
 		height $sidebar-elements-bd-width
 		background-color $sidebar-bd-color-light
 	@media screen and (max-height: 700px)
-		top 8.3em
+		//top 8.3em
+		top calc(100vh - 75vh)
 		height 19.640625em
 		padding 1.5em
 	@media screen and (max-height: 600px)
+		top 8.75em
+	@media screen and (max-height: 600px)
 		height 15.4453125em
 		padding .8em 1.5em
-	@media screen and (max-height: 479px)
+	@media screen and (max-height: 480px) and (orientation: landscape)
 		top 10vmin
 		height 10.5em
 		padding-top .3em
-	//@media screen and (max-width: $media-md)
-	//	padding 2em 1.5em
-	//@media screen and (max-width: $media-md)
-	//	height 19.640625em
-	//	top 6.5em
-
+	@media screen and (max-height: 480px) and (orientation: portrait)
+		top 25vmax
 
 	&--isActive
 		transform translateX(0)
@@ -53,7 +52,7 @@
 
 	&__label
 		display block
-		@media screen and (max-height: 479px)
+		@media screen and (max-height: 480px) and (orientation: landscape)
 			display inline-block
 			width 25%
 
@@ -81,7 +80,7 @@
 			background-color lighten(#363636, 2%)
 		@media screen and (max-height: 600px)
 			height 2.8em
-		@media screen and (max-height: 479px)
+		@media screen and (max-height: 480px) and (orientation: landscape)
 			display inline-block
 			width 75%
 

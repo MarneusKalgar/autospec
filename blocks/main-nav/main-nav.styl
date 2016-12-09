@@ -7,9 +7,13 @@
 	font-size $sidebar-font-size
 	color $base-text-color-light
 	@media screen and (max-height: 700px)
-		margin 9.5em 0 0
-	@media screen and (max-height: 479px)
+		margin calc(100vh - 75vh) 0 0
+	@media screen and (max-height: 600px)
+		margin-top 10em
+	@media screen and (max-height: 480px) and (orientation: landscape)
 		margin-top 10vmin
+	@media screen and (max-height: 480px) and (orientation: portrait)
+		margin-top 25vmax
 
 	&__menu
 		margin 0
@@ -17,7 +21,7 @@
 		list-style none
 		text-align center
 		text-transform uppercase
-		@media screen and (max-height: 479px)
+		@media screen and (max-height: 480px) and (orientation: landscape)
 			flex-container(row, wrap, space-between, flex-start)
 
 	&__item:first-child
@@ -42,7 +46,7 @@
 				background-color $sidebar-bd-color-light
 
 	&__item
-		@media screen and (max-height: 479px)
+		@media screen and (max-height: 480px) and (orientation: landscape)
 			width 50%
 			height 4em
 			&:not(:nth-child(5))

@@ -1,12 +1,14 @@
 $(function () {
 
-	//page();
+	page();
 
 	menuBtn();
 
 	sidebar();
 
 	tabPanel();
+
+	trust();
 	
 });
 

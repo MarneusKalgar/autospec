@@ -1,3 +1,398 @@
 /*******************SERVICES******************/
 .services
 	position relative
+	flex 1
+	padding 9.5em 7.5% 3%
+	font-size 1rem
+	background-color #ebebeb
+	overflow hidden
+	@media screen and (max-height: 720px)
+		padding-top 7em
+	@media screen and (max-width: 1250px)
+		padding-left 5%
+	@media screen and (max-width: 560px)
+		font-size .875rem
+	@media screen and (max-width: 480px)
+		padding-top 5em
+		font-size .75rem
+	@media screen and	(orientation: landscape)
+		overflow-y auto
+
+	&__title
+		margin 0
+		@media screen and (max-width: 480px)
+			font-size 2.2em
+
+		//container with image and items
+	&__scheme
+		position relative
+		width 42em
+		margin 8% auto 0
+		padding-right 5.5%
+		@media screen and (max-height: 751px)
+			margin-top 4%
+		@media screen and (min-width: 940px) and (max-width: 1050px), (max-width: 700px), (max-height: 680px)
+			margin-top 8%
+			width 42em * .8
+			//padding-right 0
+		@media screen and (max-width: 480px), (max-height: 600px)
+			width 42em * .5
+			margin 20vh auto
+		//@media screen and	(orientation: portrait)
+		//	margin-top 20vh
+
+
+	&__photo
+		display block
+		width 100%
+		height auto
+
+	&__list
+		position absolute
+		top 0
+		left 0
+		bottom 0
+		right 0
+		margin 0
+		padding 0
+		list-style none
+
+	&__item
+		position absolute
+		width 10.5em
+		padding-top 2em
+		font-weight bold
+		line-height 1.1
+		top 15em
+		left -8em
+		&:before
+			content ''
+			position absolute
+			top 0
+			left 0
+			width 2em
+			height 2em
+			background url("../img/services/services__sprite.png") 0 0 no-repeat
+		&:hover //styling effect progressive color filling
+			.services__line:before
+				width 0
+				transition width .4s ease-in 0.6s
+			.services__pointer:before
+				width 0
+				transition width .4s ease-in .2s
+			.services__dot:before
+				width 0
+				transition width .2s ease-in
+		@media screen and (max-width: 560px)
+			&:before
+				top .5em
+				width 1.5em
+				height 1.5em
+				background-size cover
+
+			//styling effect progressive color filling for 3, 4, 5 and 6 item
+		&:nth-child(3)
+		&:nth-child(4)
+		&:nth-child(5)
+		&:nth-child(6)
+			.services__line
+			.services__dot
+				background-color #2b3334
+				z-index: 100
+				&:before
+					width 0
+					background-color: $base-decor-color
+					z-index: 0
+			&:hover
+				.services__line:before
+				.services__dot:before
+					width 100%
+
+			//ITEM(1)
+		&:nth-child(1)
+			top 13%
+			left -2%
+			.services__line
+				width 5em
+			.services__pointer
+				right 2em
+				width 3.5em
+				transform rotateZ(45deg)
+			.services__dot
+				bottom -1.5em
+				right 2.8em
+			@media screen and (min-width: 940px) and (max-width: 1050px), (max-width: 700px), (max-height: 650px)
+				top 10%
+				left -4%
+				.services__pointer
+					right 3em
+					width 2.5em
+					transform rotateZ(40deg)
+				.services__dot
+					bottom -.6em
+					right 3.3em
+			@media screen and (max-width: 480px), (max-height: 600px)
+				left 0
+				top -12%
+				.services__pointer
+					transform rotateZ(105deg)
+					right 3.5em
+					width 2em
+				.services__dot
+					bottom -.7em
+					right 5.85em
+
+			//ITEM(2)
+		&:nth-child(2)
+			top -4.5%
+			left 14%
+			&:before
+				background-position 0 -2.6em;
+			.services__line
+				width 5em
+			.services__pointer
+				right 2.5em
+				width 3em
+				transform rotateZ(40deg)
+			.services__dot
+				bottom -1em
+				right 2.9em
+			@media screen and (min-width: 940px) and (max-width: 1050px), (max-width: 700px), (max-height: 650px)
+				top -6%
+				.services__pointer
+					transform rotateZ(25deg)
+					width 2em
+					right 3.5em
+				.services__dot
+					bottom .1em
+					right 3.4em
+			@media screen and (max-width: 560px)
+				&:before
+					background-position 0 -1.7em
+			@media screen and (max-width: 480px), (max-height: 600px)
+				top -38%
+				left 33%
+				width 6.5em
+				.services__line
+					bottom 1.25em
+				.services__pointer
+					left 0
+					transform rotateZ(90deg)
+				.services__dot
+					bottom -1em
+					left -.2em
+
+			//ITEM(3)
+		&:nth-child(3)
+			top -3.5%
+			left 45%
+			width 8em
+			&:before
+				background-position 0 -5.3em;
+			.services__line
+				width 4em
+			.services__pointer
+				left 0
+				bottom: 1.15em
+				width 3.7em
+				transform rotateZ(-225deg)
+			.services__dot
+				bottom -1.4em
+				left -2.7em
+			@media screen and (min-width: 940px) and (max-width: 1050px), (max-width: 700px), (max-height: 650px)
+				top -6.5%
+				.services__pointer
+					width 2.5em
+				.services__dot
+					bottom -.8em
+					left -2.0em
+			@media screen and (max-width: 560px)
+				&:before
+					background-position 0 -3.6em
+			@media screen and (max-width: 480px), (max-height: 600px)
+				top -18%
+				left 60%
+				.services__pointer
+					width 3.3em
+					bottom: 1.1em
+					transform rotateZ(-210deg)
+				.services__dot
+					bottom -.6em
+					left -3em
+
+			//ITEM(4)
+		&:nth-child(4)
+			top 11%
+			left 75%
+			width 8em
+			&:before
+				background-position 0 -7.9em;
+			.services__line
+				width 4.5em
+			.services__pointer
+				left 0
+				bottom: 1.15em
+				width 4.0em
+				transform rotateZ(-225deg)
+			.services__dot
+				bottom -1.6em
+				left -2.9em
+			@media screen and (min-width: 940px) and (max-width: 1050px), (max-width: 700px), (max-height: 650px)
+				.services__pointer
+					width 2.5em
+				.services__dot
+					bottom -.7em
+					left -2.0em
+			@media screen and (max-width: 560px)
+				&:before
+					background-position 0 -5.5em
+			@media screen and (max-width: 480px), (max-height: 600px)
+				top 1%
+				left 85%
+
+			//ITEM(5)
+		&:nth-child(5)
+			top 75%
+			left 72%
+			width 8em
+			&:before
+				width 2.1em
+				height 2.2em
+				background-position 0 -10.6em;
+			.services__line
+				width 5.5em
+			.services__pointer
+				left 0
+				bottom: 1.15em
+				width 4.3em
+				transform rotateZ(223deg)
+			.services__dot
+				top 1.4em
+				left -3.2em
+			@media screen and (max-width: 560px)
+				&:before
+					width 1.6em
+					height 1.6em
+					background-position 0 -7.9em
+
+			//ITEM(6)
+		&:nth-child(6)
+			top 79%
+			left 32%
+			width 8em
+			&:before
+				width 2.1em
+				background-position 0 -13.3em;
+			.services__line
+				width 4.55em
+			.services__pointer
+				left 0
+				bottom: 1.15em
+				width 4.3em
+				transform rotateZ(226deg)
+			.services__dot
+				top 0
+				left -3.2em
+			@media screen and (max-width: 560px)
+				&:before
+					width 1.6em
+					background-position 0 -9.9em
+			@media screen and (max-width: 480px), (max-height: 600px)
+				.services__pointer
+					transform rotateZ(240deg)
+				.services__dot
+					top -.5em
+					left -2.3em
+
+			//ITEM(7)
+		&:nth-child(7)
+			top 57%
+			left -2%
+			width 8em
+			&:before
+				background-position 0 -15.9em;
+			.services__line
+				width 5em
+			.services__pointer
+				right -.4em
+				bottom: 1.2em
+				width 3.5em
+				transform rotateZ(-45deg)
+			.services__dot
+				top 1.8em
+				right .4em
+			@media screen and (max-width: 560px)
+				&:before
+					background-position 0 -11em
+			@media screen and (max-width: 480px), (max-height: 600px)
+				left -5%
+				.services__pointer
+					right -.5em
+					transform rotateZ(-80deg)
+				.services__dot
+					top .8em
+					right 2.25em
+
+	&__price
+		display block
+		margin-top .5em
+		font-weight normal
+
+	&__line
+		display block
+		position absolute
+		left 0
+		bottom 1.2em
+		z-index 10
+		height .0625em
+		background-color $base-decor-color
+		&:before
+			display block
+			content ''
+			position absolute
+			left 0
+			top 0
+			z-index 100
+			width 100%
+			height 100%
+			background-color #2b3334
+			transition width .4s ease-in
+
+	&__pointer
+		display block
+		position absolute
+		bottom 1.2em
+		z-index 10
+		height .0625em
+		background-color $base-decor-color
+		transform-origin 0 0 0
+		&:before
+			position absolute
+			content ''
+			top 0
+			left 0
+			z-index 100
+			width 100%
+			height 100%
+			background-color #2b3334
+			transition width .4s ease-in .4s
+
+	&__dot
+		display block
+		position absolute
+		z-index 10
+		width .375em
+		height .375em
+		background-color $base-decor-color
+		border-radius 50%
+		&:before
+			position absolute
+			content ''
+			top 0
+			left 0
+			z-index 100
+			width 100%
+			height 100%
+			background-color #2b3334
+			border-radius 50%
+			transition width .2s ease-in 0.8s

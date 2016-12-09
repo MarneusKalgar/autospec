@@ -1,0 +1,325 @@
+/*******************TRUST******************/
+.trust
+	flex 1
+	height 100vh
+	padding 7em 7.5% 3%
+	box-sizing border-box
+	font-size 1rem
+	background #2f3d41 url("../img/trust/trust-bg.jpg") 0 0 no-repeat
+	background-size cover
+	overflow hidden
+	@media screen and (max-height: 640px)
+		overflow auto
+	@media screen and (min-width: 941px) and (max-width: 1180px), (max-width: 750px)
+		//padding-right 6%
+		overflow auto
+	@media screen and (max-width: 749px)
+		padding 6em 5% 3%
+	@media screen and (max-width: 390px)
+		padding 4em 13% 5% 5%
+
+	&__title
+		margin .9em 0 0
+		@media screen and (max-height: 750px)
+			margin-top .3em
+
+	&__desc
+		color $base-text-color-light
+		margin 2.5em 0 0 27%
+		@media screen and (max-height: 750px)
+			margin 1em 0 0 20%
+		@media screen and (min-width: 1281px)
+			width 33.75em
+			margin-left 12.5em
+		@media screen and (max-width: 1021px)
+			margin 1em 0 0 0
+
+	&__cars
+		position relative
+		margin 2em 0 0
+		max-width 46.5625em
+		min-height 44vh
+		max-height 22.5em
+		@media screen and (max-height: 750px)
+			margin-top 1em
+		@media screen and (min-height: 850px)
+			min-height 24em
+		@media screen and (min-width: 1021px) and (max-width: 1180px), (max-width: 750px)
+			//width 95%
+			min-height 35em
+		@media screen and (min-width: 941px) and (max-width: 1020px), (max-width: 580px)
+			width 85%
+			min-height 44em
+		@media screen and	(max-width: 580px)
+			width 100%
+		@media screen and (max-width: 390px)
+			min-height 38em
+
+
+	&__thumbs
+		flex-container(row, wrap, space-between, stretch)
+		align-content space-between
+		min-height 44vh
+		max-height 22.5em
+		margin 0
+		padding 0
+		list-style none
+		@media screen and (min-height: 850px)
+			min-height 24em
+		@media screen and (min-width: 1021px) and (max-width: 1180px), (max-width: 750px)
+			min-height 35em
+		@media screen and (min-width: 941px) and (max-width: 1020px), (max-width: 580px)
+			min-height 44em
+		@media screen and (max-width: 390px)
+			min-height 38em
+
+	&__thumbs-item
+		position relative
+		width 9.375em
+		height 9.375em
+		background-color #9aa2a3
+		border-radius .5em
+		cursor pointer
+		transition all .3s ease
+		&:nth-child(n + 5)
+			margin-top 1em
+			@media screen and (min-width: 1021px) and (max-width: 1180px), (max-width: 750px)
+				margin-top 0
+		&:hover
+			background-color lighten(@background-color, 30%)
+		@media screen and (min-width: 1021px) and (max-width: 1180px), (max-width: 750px)
+			margin 0 1em 0 0
+		@media screen and (max-width: 390px)
+			width 7.5em
+			height 7.5em
+			margin 0
+
+	&__thumbs-img
+		display block
+		position absolute
+		top 50%
+		left 50%
+		transform translate(-50%, -50%)
+		@media screen and (max-width: 390px)
+			transform translate(-50%, -50%) scale(0.7)
+
+	&__modals
+		position absolute
+		top -.1em
+		right -.1em
+		bottom -.1em
+		left -.1em
+		margin 0
+		border-radius .5em
+		list-style none
+		overflow hidden
+		visibility hidden
+		opacity 0
+		transform translateX(-150%) scale(0.1)
+		transition opacity .5s ease .2s, visibility .5s ease .2s, transform .2s ease-in
+		@media screen and (max-width: 390px)
+			top 0
+			right 0
+			bottom 0
+			left 0
+		
+		&--isActive
+			visibility visible
+			opacity 1
+			background-color #9aa2a3
+			transform translateX(0) scale(1)
+
+		&--isMove
+			visibility hidden
+			opacity 0
+			transform translateX(-150%) scale(0.1)
+			transition opacity .5s ease, visibility .5s ease, transform .2s ease-in .6s
+
+
+	&__slide
+		box-sizing border-box
+		height 100%
+		padding 2.5em 1.5em 1em 12.6em//27%
+		visibility hidden
+		opacity 0
+		&:nth-child(odd)
+			background-color lighten(#9aa2a3, 20%)
+		&:nth-child(1)
+			.trust__logo
+				left 2.5em
+		&:nth-child(3)
+		&:nth-child(5)
+		&:nth-child(8)
+			.trust__logo
+				left 4.7em
+				@media screen  and (min-width: 941px) and (max-width: 1020px), (max-width: 580px)
+					transform translateX(-55%) scale(.8)
+		&:nth-child(4)
+		&:nth-child(6)
+			.trust__logo
+				left 3em
+		&:nth-child(2)
+			.trust__logo
+				top 4em
+				left 3.5em
+		&:nth-child(7)
+			.trust__logo
+				left 3.5em
+		@media screen and (min-width: 1021px) and (max-width: 1180px), (max-width: 750px)
+			padding-top 3.5em
+		@media screen and (min-width: 941px) and (max-width: 1020px), (max-width: 580px)
+			padding-left 8.5em
+		@media screen and (max-width: 390px)
+			padding-top 8.5em
+			padding-left 1.6em
+			font-size .875em
+
+		&--isActive
+			position absolute
+			top 0
+			right 0
+			bottom 0
+			left 0
+			visibility visible
+			opacity 1
+
+	&__subtitle
+		font-size 1.5em
+		margin 0
+
+	&__logo
+		display block
+		position absolute
+		top 3em
+		@media screen  and (min-width: 941px) and (max-width: 1020px), (max-width: 580px)
+			transform translateX(-20%) scale(.8)
+
+	&__lead
+		margin 1.3em 0 0
+		font-weight bold
+
+	&__info
+		margin .5em 0 3.7em
+
+	&__link
+		display block
+		position absolute
+		top 17.7em
+		z-index 900
+		font-family inherit
+		color $base-decor-color
+		text-decoration none
+		transition all .3s ease
+		&:before
+			content ''
+			position absolute
+			bottom .1em
+			left 0
+			width 100%
+			height .0625em
+			background-color rgba($base-decor-color, .5)
+		&:hover
+		&:active
+		&:focus
+			color lighten($base-decor-color, 10%)
+			&:before
+				background-color rgba(lighten($base-decor-color, 10%), .5)
+		@media screen and (min-width: 1021px) and (max-width: 1180px), (max-width: 750px)
+			top 30em
+		@media screen and (min-width: 941px) and (max-width: 1020px), (max-width: 580px)
+			left 8.5em
+			top 38em
+		@media screen and (max-width: 390px)
+			left 1.6em
+			top 37em
+
+	&__date
+		position absolute
+		display block
+		right 2.9em
+		top 17.7em
+		color #616161
+		&:before
+			content ''
+			position absolute
+			left -1.1em
+			bottom 30%
+			width .8em
+			height .8em
+			background-image url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkNhcGFfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCA2MCA2MCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNjAgNjA7IiB4bWw6c3BhY2U9InByZXNlcnZlIj48c3R5bGUgdHlwZT0idGV4dC9jc3MiPi5zdDB7ZmlsbDojNjE2MTYxO308L3N0eWxlPjxnPjxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik01Nyw0aC03VjFjMC0wLjYtMC40LTEtMS0xaC03Yy0wLjYsMC0xLDAuNC0xLDF2M0gxOVYxYzAtMC42LTAuNC0xLTEtMWgtN2MtMC42LDAtMSwwLjQtMSwxdjNIM0MyLjQsNCwyLDQuNCwyLDV2MTF2NDNjMCwwLjYsMC40LDEsMSwxaDU0YzAuNiwwLDEtMC40LDEtMVYxNlY1QzU4LDQuNCw1Ny42LDQsNTcsNHogTTQsNThWMTdoNTJ2NDFINHogTTIzLjUsMzYuMkgxMi43VjI1LjRoMTAuOEMyMy41LDI1LjQsMjMuNSwzNi4yLDIzLjUsMzYuMnoiLz48L2c+PHJlY3QgeD0iNCIgeT0iMTciIGNsYXNzPSJzdDAiIHdpZHRoPSIyIiBoZWlnaHQ9IjQxIi8+PHJlY3QgeD0iNTQiIHk9IjE3IiBjbGFzcz0ic3QwIiB3aWR0aD0iMiIgaGVpZ2h0PSI0MSIvPjxyZWN0IHg9IjYiIHk9IjU2LjMiIGNsYXNzPSJzdDAiIHdpZHRoPSI0OCIgaGVpZ2h0PSIxLjgiLz48L3N2Zz4=")
+		@media screen and (min-width: 1021px) and (max-width: 1180px), (max-width: 750px)
+			top 30em
+		@media screen and (min-width: 941px) and (max-width: 1020px), (max-width: 580px)
+			left 9.6em
+			top 40em
+		@media screen and (max-width: 390px)
+			left 2.7em
+			top 39em
+
+	&__controls
+		position absolute
+		top 0
+		left 0
+		z-index 800
+		width 100%
+		height 15em
+		padding 0
+		visibility hidden
+		opacity 0
+		transition opacity .2s, visibility .2s
+
+		&--isActive
+			visibility visible
+			opacity 1
+
+	&__toggle
+		display inline-block
+		position absolute
+		bottom 16%
+		width 3em
+		height 3em
+		cursor pointer
+		&:hover
+			.trust__icon
+				fill $base-decor-color
+		@media screen  and (min-width: 941px) and (max-width: 1020px), (max-width: 580px)
+			width 2em
+			height 2em
+		@media screen and (max-width: 390px)
+			width 1.8em
+			height 1.8em
+			bottom 55%
+
+		&--prev
+			left 2.5em
+			@media screen  and (min-width: 941px) and (max-width: 1020px), (max-width: 580px)
+				left 2em
+			@media screen and (max-width: 390px)
+				//left 10em
+				left 70%
+
+		&--next
+			left 7em
+			@media screen  and (min-width: 941px) and (max-width: 1020px), (max-width: 580px)
+				left 5em
+			@media screen and (max-width: 390px)
+				//left 12em
+				left 82%
+
+	&__btn
+		position absolute
+		top 1.65em
+		right 1.65em
+		width 2em
+		height 2em
+		outline none
+		background rgba(0,0,0,0)
+		border none
+		&:hover
+		&:focus
+			.trust__icon
+				fill $base-decor-color
+
+	&__icon
+		fill $base-text-color
+		transition all .3s ease
