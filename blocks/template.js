@@ -4,6 +4,8 @@ $(function () {
 
 	menuBtn();
 
+	mainNav();
+
 	sidebar();
 
 	tabPanel();

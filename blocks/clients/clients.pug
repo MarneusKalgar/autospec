@@ -1,0 +1,27 @@
+mixin clients
+	+b.SECTION.clients
+		+e.H2.title(class="titles") Корпоративным клентам
+		+e.P.lead Выгодное предложение автопаркам
+		+e.UL.list
+			+e.item
+				+e.SPAN.srtong Ремонт машины
+				|  неизменно оборачивается кошмаром. Раз за разом вам приходится объезжать неизменно кошмаром. Таз разом вам и новые автосервисы в поисках приемлемых цен, чтобы в итоге доверить ремонт автомобиля мастерам.
+			+e.item
+				+e.SPAN.srtong Ремонт машины
+				|  неизменно оборачивается кошмаром. Раз за разом вам приходится объезжать неизменно кошмаром. Таз разом вам и новые автосервисы в поисках приемлемых цен, чтобы в итоге доверить ремонт автомобиля мастерам.
+			+e.item
+				+e.SPAN.srtong Ремонт машины
+				|  неизменно оборачивается кошмаром. Раз за разом вам приходится объезжать неизменно кошмаром. Таз разом вам и новые автосервисы в поисках приемлемых цен, чтобы в итоге доверить ремонт автомобиля мастерам.
+
+		+e.FORM.form(method="POST", action="#", name="price")
+			+e.FIELDSET.set
+				+e.LABEL.label(for="price-name")
+				+e.INPUT.input(type="text", id="price-name", name="price-name", required, aria-required="true", placeholder="Введите ваше имя")
+			+e.FIELDSET.set
+				+e.LABEL.label(for="price-mail")
+				+e.INPUT.input(type="email", id="price-mail", name="price-mail", required, aria-required="true", placeholder="Введите вашу почту")
+			+e.FIELDSET.set
+				+e.LABEL.label(for="price-mail")
+				+e.TEXTAREA.write(id="price-message", name="price-message", required, aria-required="true", placeholder="Напишите нам")
+			+e.FIELDSET.set
+				+e.INPUT.btn(type="submit", id="price-submit" class="btn --price --bordered", value="получить прайс")

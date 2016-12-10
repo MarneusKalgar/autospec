@@ -8,8 +8,6 @@ function menuBtn() {
 
 		$sidebar.toggleClass("sidebar--isMove");
 
-		//$logo.toggleClass("logo--isTransparent");
-
 		if ( !$logo.hasClass("logo--isTransparent") ) {
 			$logo.addClass("logo--isTransparent");
 		}

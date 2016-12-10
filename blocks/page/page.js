@@ -1,11 +1,14 @@
 function page() {
 	$logo = $(".logo");
 	$btn = $(".menu-btn");
+	$sidebar = $(".sidebar");
 
 	$about = $(".about");
 	$services = $(".services");
 	$trust = $(".trust");
-	$sidebar = $(".sidebar");
+	$clients = $(".clients");
+	$contacts = $(".contacts");
+
 
 	if ( $about.length ) {
 		toggleScroll( $about);
@@ -17,6 +20,14 @@ function page() {
 
 	if ( $trust.length ) {
 		toggleScroll($trust);
+	}
+
+	if ( $clients.length ) {
+		toggleScroll($clients);
+	}
+
+	if ( $contacts.length ) {
+		toggleScroll($contacts);
 	}
 
 

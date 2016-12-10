@@ -9,7 +9,9 @@
 	outline none
 	background rgba(0,0,0,0)
 
-	&--know-more
+	&--bordered
+		position relative
+		z-index 100
 		width 16.214em
 		height 3.6em
 		padding 0 3em
@@ -20,12 +22,36 @@
 		letter-spacing .1em
 		color $base-decor-color
 		border $sidebar-elements-bd-width solid $base-decor-color
+		transition color .4s cubic-bezier(0.2, 1, 0.3, 1)
+		&:before
+			content ''
+			position absolute
+			top 0
+			left 0
+			width 100%
+			height 100%
+			z-index -1
+			background $base-decor-color
+			opacity 0
+			transform scale3d(0.7, 1, 1)
+			transition transform .4s, opacity .4s
+			transition-timing-function cubic-bezier(0.2, 1, 0.3, 1)
 		&:hover
-		&:active
+		&:focus
+			color #363636
+		&:hover:before
+		&:focus:before
+			opacity 1
+			transform translate3d(0,0,0)
+
+	&--price
+		width 100%
+		padding 0 5%
+		transition all .3s ease
+		&:hover
 		&:focus
 			color #363636
 			background $base-decor-color
-
 
 	&--callback
 		position relative

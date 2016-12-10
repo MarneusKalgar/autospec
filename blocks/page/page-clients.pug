@@ -1,0 +1,16 @@
+include ../header/header-clients
+include ../sidebar/sidebar-clients
+include ../clients/clients
+
+mixin page-clients
+	// block header
+	+header-clients()
+	// end block header
+
+	// block trust
+	+clients()
+	// end block trust
+
+	// block sidebar
+	+sidebar-clients()
+	// end block sidebar

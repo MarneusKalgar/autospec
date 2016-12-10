@@ -1,0 +1,21 @@
+mixin contacts
+	+b.SECTION.contacts
+		+e.H2.title(class="titles") Контакты
+
+		+e.ADDRESS.address
+			+e.DIV.row
+				+e.P.caption Телефоны:
+				+e.link(href="tel:+380975555555")
+					| +38 (097) 555 - 55 - 55
+				+e.link(href="tel:+380635552299")
+					| +38 (063) 555 - 22 - 99
+				+e.link(href="tel:+380442224433")
+					| +38 (044) 222 - 44 - 33
+			+e.DIV.row
+				+e.P.caption Адрес:
+				+e.P.info 150-35, Украина, Киев, просп. Освободителей, 5
+			+e.DIV.row
+				+e.P.caption Email:
+				+e.link(class="--mail", href="mailto:avtoservice@ukr.net") avtoservice@ukr.net
+
+		+e.DIV.map#map
