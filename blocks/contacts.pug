@@ -15,15 +15,42 @@ html(lang="ru")
 		})
 
 	+b.BODY.page
-		+e.DIV.wrap
+		+e.DIV.wrap(class="animsition")
 			+page-contacts()
 
-		// build:js js/vendor.js defer
-		script(defer, src="js/libs/jquery.min.js")
+		// build:js js/vendor.js
+		script( src="js/libs/jquery.min.js")
+		script( src="js/libs/animsition.min.js")
 		// endbuild
 
-		// build:js js/main.js defer
-		script(defer, src="js/main.js")
+		// build:js js/main.js
+		script( src="js/main.js")
 		// endbuild
 
-		script(defer, src="https://maps.googleapis.com/maps/api/js?key=AIzaSyApNXjcWxKpQwh7KkYpTvegrO9NAb_NhEI&callback=contacts")
+		script( src="https://maps.googleapis.com/maps/api/js?key=AIzaSyApNXjcWxKpQwh7KkYpTvegrO9NAb_NhEI&callback=contacts")
+
+		script.
+			$('.animsition').animsition({
+				inClass: 'fade-in',
+				outClass: 'fade-out',
+				inDuration: 500,
+				outDuration: 500,
+				linkElement: '.animsition-link',
+				// e.g. linkElement: 'a:not([target="_blank"]):not([href^="#"])'
+				loading: true,
+				loadingParentElement: 'body', //animsition wrapper element
+				loadingClass: 'animsition-loading',
+				loadingInner: '', // e.g '<img src="loading.svg" />'
+				timeout: false,
+				timeoutCountdown: 1000,
+				onLoadEvent: true,
+				browser: ['animation-duration', '-webkit-animation-duration'],
+				// "browser" option allows you to disable the "animsition" in case the css property in the array is not supported by your browser.
+				// The default setting is to disable the "animsition" in a browser that does not support "animation-duration".
+				overlay: false,
+				overlayClass: 'animsition-overlay-slide',
+				overlayParentElement: 'body',
+				transition: function (url) {
+					window.location.href = url;
+				}
+			});

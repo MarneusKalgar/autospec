@@ -77,6 +77,9 @@
 			&:before
 				content '03'
 
+	&__strong
+		font-weight bold
+
 	&__form
 		width 32%
 		min-width 12.5em
@@ -91,21 +94,18 @@
 		border none
 		&:nth-child(1)
 			.clients__label
-				top .5em
+				top .6em
 				left .7em
-				background url("data:image/svg+xml;base64,PHN2ZyBpZD0i0KHQu9C+0LlfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgMTI5IDEyOSI+PHN0eWxlPi5zdDB7ZmlsbDojRUU2ODAwO308L3N0eWxlPjxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik02NC4zIDcxLjZjMTggMCAzMi42LTE0LjYgMzIuNi0zMi42UzgyLjMgNi41IDY0LjMgNi41IDMxLjcgMjEuMSAzMS43IDM5czE0LjYgMzIuNiAzMi42IDMyLjZ6TTcuOSAxMjIuNWgxMTMuMmMyLjQgMCA0LjMtMS45IDQuMy00LjMgMC0yMi41LTE4LjMtNDAuOS00MC45LTQwLjloLTQwQzIyIDc3LjMgMy42IDk1LjYgMy42IDExOC4yYzAgMi40IDEuOSA0LjMgNC4zIDQuM3oiLz48L3N2Zz4=") 0 0 no-repeat
 		&:nth-child(2)
 			margin-top 1em
 			.clients__label
 				top .65em
 				left .7em
-				background url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48ZyBmaWxsPSIjZWU2ODAwIj48cGF0aCBkPSJNMi4wNyAxMjcuOEMuNzQgMTMyLjczIDAgMTM3LjkyIDAgMTQzLjMgMCAzODUtLjA2IDM2OS40Ni4yIDM3My4xTDE1Ny4xIDIyOS4yOCAyLjA3IDEyNy44ek0yNTUuOSAyODEuMTNjLTIzLjk2IDAtMzUuMjItMTAuMjYtNjYuNi0zMC44TDE1Ljk3IDQwOS4yNGMxMC45IDExLjcgMjYuNDIgMTkuMDYgNDMuNjQgMTkuMDZoMzkyLjZjMTcuMjMgMCAzMi43NS03LjM2IDQzLjY0LTE5LjA4TDMyMi41IDI1MC4zNWMtMzEuMzcgMjAuNTMtNDIuNjMgMzAuOC02Ni42IDMwLjh6TTI3MS40IDIzOS4yMkw0ODkuMjMgOTYuNjZjLTEwLjE4LTguMS0yMy4wNC0xMi45NS0zNy4wMi0xMi45NUg1OS42Yy0xMy45OCAwLTI2Ljg1IDQuODYtMzcuMDIgMTIuOTZMMjQwLjQgMjM5LjIyYzkuNDIgNi4xNiAyMS42IDYuMTcgMzEgMHpNNTA5LjczIDEyNy44TDM1NC42OCAyMjkuMjYgNTExLjYgMzczLjFjLjEtMS4yNCAxLjU3LTIzMi41OC0xLjg3LTI0NS4zeiIvPjwvZz48L3N2Zz4=") 0 0 no-repeat
 		&:nth-child(3)
 			margin-top 3.6em
 			.clients__label
-				top 1.4em
+				top 1.3em
 				left .7em
-				background url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNjggMjY4Ij48c3R5bGU+LnN0MHtmaWxsOiNFRTY4MDA7fTwvc3R5bGU+PHBhdGggY2xhc3M9InN0MCIgZD0iTTI1NyAyOS42bC0xOS4xLTE5LjFjLTEyLjItMTMuOS0zNC44LTEzLjktNDguNyAwbC0yMi42IDIyLjZjMCAuOC0uNCAxLjYtLjggMi41TDEzLjQgMTg3LjljMCAxLjctMS43IDMuNS0xLjcgNS4yTDEuMiAyNTkuM2MtMS43IDEuNyAwIDUuMiAxLjcgNyAxLjcgMCA1LjIgMS43IDcgMS43bDY2LjEtOC43YzEuNyAwIDMuNSAwIDUuMi0xLjdsMTUzLjEtMTUzLjFjMC0xLjMuOC0yLjggMS4zLTQuOEwyNTcgNzguM2MxMy45LTEyLjIgMTMuOS0zNC44IDAtNDguN3oiLz48L3N2Zz4=")
 		&:nth-child(4)
 			margin-top 3.2em
 
@@ -150,6 +150,9 @@
 		width .8em
 		height .8em
 		background-size cover
+		&:before
+			width 100%
+			height 100%
 
 	&__btn
 		width 100%

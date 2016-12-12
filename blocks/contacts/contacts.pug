@@ -4,7 +4,7 @@ mixin contacts
 
 		+e.ADDRESS.address
 			+e.DIV.row
-				+e.P.caption Телефоны:
+				+e.P.caption(class="svgicon --phone") Телефоны:
 				+e.link(href="tel:+380975555555")
 					| +38 (097) 555 - 55 - 55
 				+e.link(href="tel:+380635552299")
@@ -12,10 +12,10 @@ mixin contacts
 				+e.link(href="tel:+380442224433")
 					| +38 (044) 222 - 44 - 33
 			+e.DIV.row
-				+e.P.caption Адрес:
+				+e.P.caption(class="svgicon --location") Адрес:
 				+e.P.info 150-35, Украина, Киев, просп. Освободителей, 5
 			+e.DIV.row
-				+e.P.caption Email:
+				+e.P.caption(class="svgicon --envelope") Email:
 				+e.link(class="--mail", href="mailto:avtoservice@ukr.net") avtoservice@ukr.net
 
 		+e.DIV.map#map

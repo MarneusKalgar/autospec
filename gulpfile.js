@@ -23,7 +23,13 @@ var paths = {
 			blocks: 'blocks/',
 			assets: 'blocks/_assets/',
 			vendors: {
-				jquery: 'blocks/_assets/libs/jquery/dist/jquery.min.js'
+				js: {
+					jquery: 'blocks/_assets/libs/jquery/dist/jquery.min.js',
+					anim: 'blocks/_assets/libs/animsition/dist/js/animsition.min.js'
+				},
+				css: {
+					anim: 'blocks/_assets/libs/animsition/dist/css/animsition.min.css'
+				}
 			},
 			devDir: 'app/',
 			outputDir: 'acc/'
@@ -92,12 +98,21 @@ gulp.task('browser-sync', function() {
  Copy assets to developer directory
  *********************************/
 
-//copy vendors from blocks folders to devDir
-gulp.task('vendors', function() {
+//copy vendors js from blocks folders to devDir
+gulp.task('vendorjs', function() {
 	return gulp.src([
-		paths.vendors.jquery
+		paths.vendors.js.jquery,
+		paths.vendors.js.anim
 	])
 		.pipe(gulp.dest(paths.devDir + 'js/libs/'));
+});
+
+//copy vendors css from blocks folders to devDir
+gulp.task('vendorcss', function() {
+	return gulp.src([
+		paths.vendors.css.anim
+	])
+		.pipe(gulp.dest(paths.devDir + 'css/libs/'));
 });
 
 //copy images from blocks folders to devDir
@@ -172,7 +187,7 @@ gulp.task('send', ['production'], function() {
 
 //run 'copy' task before 'develop' to include images and fonts to developing directory
 //copy
-gulp.task('copy', ['vendors', 'images', 'fonts']);
+gulp.task('copy', ['vendorjs', 'vendorcss', 'images', 'fonts']);
 
 //develop
 gulp.task('develop', ['browser-sync', 'watch', 'pug', 'stylus', 'scripts']);

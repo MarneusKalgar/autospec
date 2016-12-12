@@ -12,10 +12,14 @@
     <link rel="apple-touch-icon" href="img/favicon/apple-touch-icon.png"/>
     <link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-touch-icon-72x72.png"/>
     <link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-touch-icon-114x114.png"/>
+    <link rel="apple-touch-icon" sizes="144x144" href="img/favicon/apple-touch-icon-144x144.png"/>
+    <link rel="apple-touch-icon" sizes="152x152" href="img/favicon/apple-touch-icon-152x152.png"/>
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon-180x180.png"/>
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/vendor.css">
   </head>
   <body class="page">
-    <div class="page__wrap">
+    <div class="page__wrap animsition">
       <!-- block header-->
       <header class="header">
         <!-- block logo--><a class="logo" id="logo" href="#"><img class="logo__img" src="img/logo/autospec-logo-light.png" alt="логотип компании автоспецсервис" title=""/></a>
@@ -30,24 +34,36 @@
       <section class="main">
         <h1 class="main__title"><span class="main__thin">Профессиональный</span> ремонт<br/><span class="main__bold"> и обслуживание автомобилей</span>
         </h1><a class="btn btn--bordered main__btn" href="about.html">узнать больше</a>
+        <div class="main__bg">
+          <div class="main__panel main__panel--one">
+          </div>
+          <div class="main__panel main__panel--two">
+          </div>
+          <div class="main__panel main__panel--three">
+          </div>
+          <div class="main__panel main__panel--four">
+          </div>
+          <div class="main__panel main__panel--five">
+          </div>
+        </div>
       </section>
       <!-- end block main-->
       <!-- block sidebar-->
-      <div class="sidebar">
+      <div class="sidebar sidebar--isAnimate">
         <!--block main-nav-->
         <nav class="main-nav">
           <ul class="main-nav__menu">
-            <li class="main-nav__item"><a class="main-nav__link main-nav__link--active" id="" href="index.html">главная</a>
+            <li class="main-nav__item"><a class="main-nav__link main-nav__link--active animsition-link" id="" href="index.html">главная</a>
             </li>
-            <li class="main-nav__item"><a class="main-nav__link" id="" href="about.html">о нас</a>
+            <li class="main-nav__item"><a class="main-nav__link animsition-link" id="" href="about.html">о нас</a>
             </li>
-            <li class="main-nav__item"><a class="main-nav__link" id="" href="services.html">сервис и цены</a>
+            <li class="main-nav__item"><a class="main-nav__link animsition-link" id="" href="services.html">сервис и цены</a>
             </li>
-            <li class="main-nav__item"><a class="main-nav__link" id="" href="trust.html">нам доверяют</a>
+            <li class="main-nav__item"><a class="main-nav__link animsition-link" id="" href="trust.html">нам доверяют</a>
             </li>
-            <li class="main-nav__item"><a class="main-nav__link" id="" href="clients.html">корпоративным клиентам</a>
+            <li class="main-nav__item"><a class="main-nav__link animsition-link" id="" href="clients.html">корпоративным клиентам</a>
             </li>
-            <li class="main-nav__item"><a class="main-nav__link" id="" href="contacts.html">контакты</a>
+            <li class="main-nav__item"><a class="main-nav__link animsition-link" id="" href="contacts.html">контакты</a>
             </li>
           </ul>
         </nav>
@@ -84,7 +100,33 @@
       </div>
       <!-- end block sidebar-->
     </div>
-    <script src="js/vendor.js" defer></script>
-    <script src="js/main.js" defer></script>
+    <script src="js/vendor.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+      $('.animsition').animsition({
+      	inClass: 'fade-in',
+      	outClass: 'fade-out',
+      	inDuration: 500,
+      	outDuration: 500,
+      	linkElement: '.animsition-link',
+      	// e.g. linkElement: 'a:not([target="_blank"]):not([href^="#"])'
+      	loading: true,
+      	loadingParentElement: 'body', //animsition wrapper element
+      	loadingClass: 'animsition-loading',
+      	loadingInner: '', // e.g '<img src="loading.svg" />'
+      	timeout: false,
+      	timeoutCountdown: 1000,
+      	onLoadEvent: true,
+      	browser: ['animation-duration', '-webkit-animation-duration'],
+      	// "browser" option allows you to disable the "animsition" in case the css property in the array is not supported by your browser.
+      	// The default setting is to disable the "animsition" in a browser that does not support "animation-duration".
+      	overlay: false,
+      	overlayClass: 'animsition-overlay-slide',
+      	overlayParentElement: 'body',
+      	transition: function (url) {
+      		window.location.href = url;
+      	}
+      });
+    </script>
   </body>
 </html>

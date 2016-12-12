@@ -1,5 +1,5 @@
 $(function () {
-
+	
 	page();
 
 	menuBtn();
@@ -212,7 +212,7 @@ function contacts() {
 		]
 	});
 
-	var icon = 'img/contacts/marker.png';
+	var icon = 'img/contacts/marker.svg';
 
 	var marker = new google.maps.Marker({
 		position: place,
@@ -292,7 +292,7 @@ function page() {
 			}
 		});
 	}
-
+	
 }
 function sidebar() {
 	$btn = $(".sidebar__btn");
@@ -308,11 +308,19 @@ function tabPanel () {
 	var $item = $(".tab-panel__item");
 
 	$menu.on('click', 'li:not(.tab-panel__tab--active)', function() {
-		$(this)
-			.addClass('tab-panel__tab--active')
-			.siblings().removeClass('tab-panel__tab--active')
-			.closest($tabs).find($item).removeClass('tab-panel__item--active')
-			.eq($(this).index()).addClass('tab-panel__item--active');
+		var self = this;
+		//setTimeout(function() {
+			$(self)
+				.addClass('tab-panel__tab--active')
+				.siblings().removeClass('tab-panel__tab--active')
+				.closest($tabs).find($item).removeClass('tab-panel__item--active')
+				.eq($(self).index()).addClass('tab-panel__item--active');
+		//}, 100);
+		setTimeout(function() {
+			$(self)
+				.closest($tabs).find($item).removeClass('tab-panel__item--animate')
+				.eq($(self).index()).addClass('tab-panel__item--animate');
+		}, 100);
 	});
 }
 function trust() {
@@ -333,6 +341,7 @@ function trust() {
 		$modals.addClass("trust__modals--isActive");
 		setTimeout(function() {
 			$controls.addClass("trust__controls--isActive");
+			$btn.addClass("trust__btn--isActive");
 		},200);
 		$modals.find($slide.eq($(this).index())).addClass("trust__slide--isActive")
 	});
@@ -341,6 +350,7 @@ function trust() {
 	$btn.on("click", function() {
 		$modals.addClass("trust__modals--isMove");
 		$controls.removeClass("trust__controls--isActive");
+		$btn.removeClass("trust__btn--isActive");
 		setTimeout(function() {
 			$modals.removeClass("trust__modals--isMove");
 			$modals.removeClass("trust__modals--isActive");

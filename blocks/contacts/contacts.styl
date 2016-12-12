@@ -12,6 +12,7 @@
 		overflow-y auto
 	@media screen and (max-width: 750px)
 		padding-top 5em
+		padding-left 2.5em
 		overflow-y auto
 
 	&__title
@@ -30,6 +31,11 @@
 	&__caption
 		float left
 		margin 0
+		&:before
+			left -1.5em
+			top .25em
+			width 1em
+			height 1em
 
 	&__link
 		display block
@@ -37,6 +43,7 @@
 		color currentColor
 		text-decoration none
 		font-weight bold
+		transition all .3s ease
 		&:nth-of-type(2)
 		&:nth-of-type(3)
 			margin-top .7em
@@ -44,6 +51,9 @@
 		&--mail
 			margin-left 3em
 			color $base-decor-color
+			&:hover
+			&:focus
+				color lighten($base-decor-color, 10%)
 
 	&__info
 		margin 0 0 0 3.5em
@@ -60,9 +70,10 @@
 			width 40%
 		@media screen and (max-width: 750px)
 			top 30em
-			left 7.5%
-			width 86.5%
+			left 2.5em
+			width 80%
 			height 70vh
 			min-height 20em
+			margin-bottom 2em
 		@media screen and (max-width: 450px)
 			top 28em

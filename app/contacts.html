@@ -12,12 +12,18 @@
     <link rel="apple-touch-icon" href="img/favicon/apple-touch-icon.png"/>
     <link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-touch-icon-72x72.png"/>
     <link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-touch-icon-114x114.png"/>
+    <link rel="apple-touch-icon" sizes="144x144" href="img/favicon/apple-touch-icon-144x144.png"/>
+    <link rel="apple-touch-icon" sizes="152x152" href="img/favicon/apple-touch-icon-152x152.png"/>
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon-180x180.png"/>
     <!-- build:css css/main.css-->
     <link rel="stylesheet" href="css/main.css"/>
     <!-- endbuild-->
+    <!-- build:css css/vendor.css-->
+    <link rel="stylesheet" href="css/libs/animsition.min.css"/>
+    <!-- endbuild-->
   </head>
   <body class="page">
-    <div class="page__wrap">
+    <div class="page__wrap animsition">
       <!-- block header-->
       <header class="header">
         <!-- block logo--><a class="logo" id="logo" href="#"><img class="logo__img" src="img/logo/autospec-logo-light.png" alt="логотип компании автоспецсервис" title=""/></a>
@@ -34,17 +40,17 @@
         </h2>
         <address class="contacts__address">
           <div class="contacts__row">
-            <p class="contacts__caption">Телефоны:
+            <p class="contacts__caption svgicon svgicon--phone">Телефоны:
             </p><a class="contacts__link" href="tel:+380975555555">+38 (097) 555 - 55 - 55</a><a class="contacts__link" href="tel:+380635552299">+38 (063) 555 - 22 - 99</a><a class="contacts__link" href="tel:+380442224433">+38 (044) 222 - 44 - 33</a>
           </div>
           <div class="contacts__row">
-            <p class="contacts__caption">Адрес:
+            <p class="contacts__caption svgicon svgicon--location">Адрес:
             </p>
             <p class="contacts__info">150-35, Украина, Киев, просп. Освободителей, 5
             </p>
           </div>
           <div class="contacts__row">
-            <p class="contacts__caption">Email:
+            <p class="contacts__caption svgicon svgicon--envelope">Email:
             </p><a class="contacts__link contacts__link--mail" href="mailto:avtoservice@ukr.net">avtoservice@ukr.net</a>
           </div>
         </address>
@@ -57,17 +63,17 @@
         <!--block main-nav-->
         <nav class="main-nav">
           <ul class="main-nav__menu">
-            <li class="main-nav__item"><a class="main-nav__link" id="" href="index.html">главная</a>
+            <li class="main-nav__item"><a class="main-nav__link animsition-link" id="" href="index.html">главная</a>
             </li>
-            <li class="main-nav__item"><a class="main-nav__link" id="" href="about.html">о нас</a>
+            <li class="main-nav__item"><a class="main-nav__link animsition-link" id="" href="about.html">о нас</a>
             </li>
-            <li class="main-nav__item"><a class="main-nav__link" id="" href="services.html">сервис и цены</a>
+            <li class="main-nav__item"><a class="main-nav__link animsition-link" id="" href="services.html">сервис и цены</a>
             </li>
-            <li class="main-nav__item"><a class="main-nav__link" id="" href="trust.html">нам доверяют</a>
+            <li class="main-nav__item"><a class="main-nav__link animsition-link" id="" href="trust.html">нам доверяют</a>
             </li>
-            <li class="main-nav__item"><a class="main-nav__link" id="" href="clients.html">корпоративным клиентам</a>
+            <li class="main-nav__item"><a class="main-nav__link animsition-link" id="" href="clients.html">корпоративным клиентам</a>
             </li>
-            <li class="main-nav__item"><a class="main-nav__link main-nav__link--active" id="" href="contacts.html">контакты</a>
+            <li class="main-nav__item"><a class="main-nav__link main-nav__link--active animsition-link" id="" href="contacts.html">контакты</a>
             </li>
           </ul>
         </nav>
@@ -104,12 +110,39 @@
       </div>
       <!-- end block sidebar-->
     </div>
-    <!-- build:js js/vendor.js defer-->
-    <script defer src="js/libs/jquery.min.js"></script>
+    <!-- build:js js/vendor.js-->
+    <script src="js/libs/jquery.min.js"></script>
+    <script src="js/libs/animsition.min.js"></script>
     <!-- endbuild-->
-    <!-- build:js js/main.js defer-->
-    <script defer src="js/main.js"></script>
+    <!-- build:js js/main.js-->
+    <script src="js/main.js"></script>
     <!-- endbuild-->
-    <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyApNXjcWxKpQwh7KkYpTvegrO9NAb_NhEI&amp;callback=contacts"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyApNXjcWxKpQwh7KkYpTvegrO9NAb_NhEI&amp;callback=contacts"></script>
+    <script>
+      $('.animsition').animsition({
+      	inClass: 'fade-in',
+      	outClass: 'fade-out',
+      	inDuration: 500,
+      	outDuration: 500,
+      	linkElement: '.animsition-link',
+      	// e.g. linkElement: 'a:not([target="_blank"]):not([href^="#"])'
+      	loading: true,
+      	loadingParentElement: 'body', //animsition wrapper element
+      	loadingClass: 'animsition-loading',
+      	loadingInner: '', // e.g '<img src="loading.svg" />'
+      	timeout: false,
+      	timeoutCountdown: 1000,
+      	onLoadEvent: true,
+      	browser: ['animation-duration', '-webkit-animation-duration'],
+      	// "browser" option allows you to disable the "animsition" in case the css property in the array is not supported by your browser.
+      	// The default setting is to disable the "animsition" in a browser that does not support "animation-duration".
+      	overlay: false,
+      	overlayClass: 'animsition-overlay-slide',
+      	overlayParentElement: 'body',
+      	transition: function (url) {
+      		window.location.href = url;
+      	}
+      });
+    </script>
   </body>
 </html>

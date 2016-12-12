@@ -16,6 +16,7 @@ function trust() {
 		$modals.addClass("trust__modals--isActive");
 		setTimeout(function() {
 			$controls.addClass("trust__controls--isActive");
+			$btn.addClass("trust__btn--isActive");
 		},200);
 		$modals.find($slide.eq($(this).index())).addClass("trust__slide--isActive")
 	});
@@ -24,6 +25,7 @@ function trust() {
 	$btn.on("click", function() {
 		$modals.addClass("trust__modals--isMove");
 		$controls.removeClass("trust__controls--isActive");
+		$btn.removeClass("trust__btn--isActive");
 		setTimeout(function() {
 			$modals.removeClass("trust__modals--isMove");
 			$modals.removeClass("trust__modals--isActive");

@@ -194,7 +194,7 @@ function contacts() {
 		]
 	});
 
-	var icon = 'img/contacts/marker.png';
+	var icon = 'img/contacts/marker.svg';
 
 	var marker = new google.maps.Marker({
 		position: place,
