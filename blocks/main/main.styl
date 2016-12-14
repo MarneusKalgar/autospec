@@ -4,18 +4,18 @@
 	flex 1
 	z-index 100
 	padding-bottom 8%
-	//background #1f282a url("../img/main/main-bg.jpg") 0 0 no-repeat
-	//background-size cover
 	color $base-text-color-light
 
 	&__title
+		position relative
+		z-index 200
 		box-sizing border-box
 		margin calc(100vh - 55vh) 5% 0 13.5%
 		font-size 3rem
 		line-height 1.3
 		font-weight normal
 		opacity 0
-		animation fadeInTitle 1.5s ease 2s forwards
+		animation fadeInTitle 1.5s ease 3s forwards
 		@media screen and (max-height: 700px)
 			margin calc(100vh - 65vh) 0 0 8%
 		@media screen and (max-width: 1050px) and (min-width: 601px)
@@ -41,11 +41,12 @@
 
 	&__btn
 		position relative
-		z-index -1
+		//z-index -1
 		margin 7% 10% 0 calc(100vw - 52.5vw)
-		transform-origin left
-		//transform translateX(-200px)
-		animation slideBtn 1.5s ease-in .1s forwards
+		transform-origin 50% 0 0
+		//transform scaleY(0)
+		opacity 0
+		animation slideBtn 2s ease-in 2s forwards
 		@media screen and (max-width: 1200px)
 			margin-left calc(100vw - 70vw)
 		@media screen and (max-width: $media-md) and (orientation: portrait)
@@ -57,24 +58,35 @@
 		@media screen and (min-width: 750px) and (max-width: 1025px)  and (orientation: landscape)
 			margin 15% auto 0
 
+	&__image
+		position absolute
+		top 0
+		left 0
+		z-index 10
+		width 100%
+		height 100%
+		background url("../img/main/main-bg.jpg") 0 0 no-repeat
+		background-size cover
+		opacity 0
+		animation fadeInBg 1s ease 2s forwards
+
 	&__bg
 		position absolute
 		top 0
 		left 0
-		z-index -2
+		z-index -1
 		width 100%
 		height 100%
 		overflow hidden
 
 	&__panel
 		float left
+		position relative
 		width 20%
 		height 100%
 		background-color #1f282a
-		//background-image url("../img/main/main-bg.jpg")
-		background-repeat no-repeat
-		background-size cover
 		transform-origin left
+		opacity 0
 
 		&--one
 			background-position 0 0
@@ -101,57 +113,73 @@
 			animation-delay .4s
 
 
-			//panels
-		@keyframes slidePanel1
-			0%,
-			7%
-				transform scaleX(0)
-			37%,
-			100%
-				transform scaleX(100%)
+	//background image
+@keyframes fadeInBg
+	0%
+		opacity 0
+	100%
+		opacity 1
 
-		@keyframes slidePanel2
-			0%,
-			14%
-				transform scaleX(0)
-			44%,
-			100%
-				transform scaleX(100%)
+	//panels
+@keyframes slidePanel1
+	0%,
+	7%
+		transform scaleX(0)
+		opacity 0
+	37%,
+	100%
+		opacity 1
+		transform scaleX(100%)
 
-		@keyframes slidePanel3
-			0%,
-			19%
-				transform scaleX(0)
-			51%,
-			100%
-				transform scaleX(100%)
+@keyframes slidePanel2
+	0%,
+	14%
+		transform scaleX(0)
+	44%,
+	100%
+		opacity 1
+		transform scaleX(100%)
 
-		@keyframes slidePanel4
-			0%,
-			26%
-				transform scaleX(0)
-			58%,
-			100%
-				transform scaleX(100%)
+@keyframes slidePanel3
+	0%,
+	19%
+		transform scaleX(0)
+	51%,
+	100%
+		opacity 1
+		transform scaleX(100%)
 
-		@keyframes slidePanel5
-			0%,
-			33%
-				transform scaleX(0)
-			65%,
-			100%
-				transform scaleX(100%)
+@keyframes slidePanel4
+	0%,
+	26%
+		transform scaleX(0)
+	58%,
+	100%
+		opacity 1
+		transform scaleX(100%)
 
-			//title
-		@keyframes fadeInTitle
-			0%
-				opacity 0
-			100%
-				opacity 1
+@keyframes slidePanel5
+	0%,
+	33%
+		transform scaleX(0)
+	65%,
+	100%
+		opacity 1
+		transform scaleX(100%)
 
-			//btn
-		@keyframes slideBtn
-			0%
-				transform: scaleX(0)
-			100%
-				transform: scaleX(100%)
+	//title
+@keyframes fadeInTitle
+	0%
+		opacity 0
+	100%
+		opacity 1
+
+	//btn
+@keyframes slideBtn
+	0%,
+	50%
+		transform: scaleY(0)
+		opacity: 0
+	100%
+		transform: scaleY(100%)
+		opacity: 1

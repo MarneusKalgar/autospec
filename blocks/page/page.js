@@ -1,13 +1,13 @@
 function page() {
-	$logo = $(".logo");
-	$btn = $(".menu-btn");
-	$sidebar = $(".sidebar");
-
-	$about = $(".about");
-	$services = $(".services");
-	$trust = $(".trust");
-	$clients = $(".clients");
-	$contacts = $(".contacts");
+	var $logo = $(".logo");
+	var $btn = $(".menu-btn");
+	var $sidebar = $(".sidebar");
+	
+	var $about = $(".about");
+	var $services = $(".services");
+	var $trust = $(".trust");
+	var $clients = $(".clients");
+	var $contacts = $(".contacts");
 
 
 	if ( $about.length ) {

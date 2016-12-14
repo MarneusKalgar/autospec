@@ -221,8 +221,7 @@ function contacts() {
 	});
 }
 function mainNav() {
-	$link = $(".main-nav__link--active");
-	console.log($link);
+	var $link = $(".main-nav__link--active");
 
 	$link.on("click", function(e) {
 		e.preventDefault();
@@ -246,15 +245,15 @@ function menuBtn() {
 
 }
 function page() {
-	$logo = $(".logo");
-	$btn = $(".menu-btn");
-	$sidebar = $(".sidebar");
-
-	$about = $(".about");
-	$services = $(".services");
-	$trust = $(".trust");
-	$clients = $(".clients");
-	$contacts = $(".contacts");
+	var $logo = $(".logo");
+	var $btn = $(".menu-btn");
+	var $sidebar = $(".sidebar");
+	
+	var $about = $(".about");
+	var $services = $(".services");
+	var $trust = $(".trust");
+	var $clients = $(".clients");
+	var $contacts = $(".contacts");
 
 
 	if ( $about.length ) {
@@ -295,8 +294,8 @@ function page() {
 	
 }
 function sidebar() {
-	$btn = $(".sidebar__btn");
-	$form = $(".callback-form");
+	var $btn = $(".sidebar__btn");
+	var $form = $(".callback-form");
 
 	$btn.on("click", function () {
 		$form.toggleClass("callback-form--isActive");

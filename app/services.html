@@ -26,7 +26,10 @@
     <div class="page__wrap animsition">
       <!-- block header-->
       <header class="header">
-        <!-- block logo--><a class="logo" id="logo" href="#"><img class="logo__img" src="img/logo/autospec-logo-dark.png" alt="логотип компании автоспецсервис" title=""/></a>
+        <!-- block logo--><a class="logo" id="logo" href="#">
+        <picture>
+          <source media="(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)" srcset="img/logo/autospec-logo-dark@2.png"/><img class="logo__img" src="img/logo/autospec-logo-dark.png" alt="логотип компании автоспецсервис" title=""/>
+        </picture></a>
         <!-- end block logo-->
         <!-- block menu-btn-->
         <button class="menu-btn header__btn" type="button">
@@ -36,8 +39,6 @@
       <!-- end block header-->
       <!-- block services-->
       <section class="services">
-        <h2 class="services__title titles">Сервис и цены
-        </h2>
         <div class="services__scheme"><img class="services__photo" src="img/services/servces__photo.png" alt="сервис и цены" title=""/>
           <ul class="services__list">
             <li class="services__item">Техническое обслуживание<span class="services__price">от 1000 грн</span><span class="services__line"></span><span class="services__pointer"></span><span class="services__dot"></span>

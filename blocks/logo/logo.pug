@@ -4,4 +4,6 @@ mixin logo(item)
 		"class": item.class,
 		"href": item.href
 	})
-		+e.IMG.img(src=item.src, alt=item.alt)
+		picture
+			source(media="(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)", srcset=item.set)
+			+e.IMG.img(src=item.src, alt=item.alt)

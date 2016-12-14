@@ -1,14 +1,18 @@
 mixin thumbs(items)
 	each item in items
 		+e.LI.thumbs-item
-			+e.IMG.thumbs-img(src=item.src, alt=item.alt)
+			picture
+				source(media="(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)", srcset=item.set)
+				+e.IMG.thumbs-img(src=item.src, alt=item.alt)
 
 mixin modals(items)
 	+e.UL.modals
 		each item in items
 			+e.slide
 				+e.H3.subtitle= item.subtitle
-				+e.IMG.logo(src=item.src, alt=item.alt)
+				picture
+					source(media="(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)", srcset=item.set)
+					+e.IMG.logo(src=item.src, alt=item.alt)
 				+e.P.lead= item.lead
 				+e.P.info= item.info
 				+e.A.link(href=item.href, target="_blank")= item.link
@@ -21,19 +25,51 @@ mixin trust
 		+e.DIV.cars
 			+e.UL.thumbs
 				+thumbs([
-					{"src": "img/trust/mercedes-logo.png", "alt": "Mercedes-Benz Logo"},
-					{"src": "img/trust/audi-logo.png", "alt": "Audi Logo"},
-					{"src": "img/trust/volkswagen-logo.png", "alt": "Volkswagen Logo"},
-					{"src": "img/trust/peugeot-logo.png", "alt": "Peugeot Logo"},
-					{"src": "img/trust/mazda-logo.png", "alt": "Mazda Logo"},
-					{"src": "img/trust/subaru-logo.png", "alt": "Subaru Logo"},
-					{"src": "img/trust/honda-logo.png", "alt": "Honda Logo"},
-					{"src": "img/trust/bmw-logo.png", "alt": "BMW Logo"}
+					{
+						"set": "img/trust/mercedes-logo@2.png",
+						"src": "img/trust/mercedes-logo.png",
+						"alt": "Mercedes-Benz Logo"
+					},
+					{
+						"set": "img/trust/audi-logo@2.png",
+						"src": "img/trust/audi-logo.png",
+						"alt": "Audi Logo"
+					},
+					{
+						"set": "img/trust/volkswagen-logo@2.png",
+						"src": "img/trust/volkswagen-logo.png",
+						"alt": "Volkswagen Logo"
+					},
+					{
+						"set": "img/trust/peugeot-logo@2.png",
+						"src": "img/trust/peugeot-logo.png",
+						"alt": "Peugeot Logo"
+					},
+					{
+						"set": "img/trust/mazda-logo@2.png",
+						"src": "img/trust/mazda-logo.png",
+						"alt": "Mazda Logo"
+					},
+					{
+						"set": "img/trust/subaru-logo@2.png",
+						"src": "img/trust/subaru-logo.png",
+						"alt": "Subaru Logo"},
+					{
+						"set": "img/trust/honda-logo@2.png",
+						"src": "img/trust/honda-logo.png",
+						"alt": "Honda Logo"
+					},
+					{
+						"set": "img/trust/bmw-logo@2.png",
+						"src": "img/trust/bmw-logo.png",
+						"alt": "BMW Logo"
+					}
 				])
 
 			+modals([
 				{
 					"subtitle": "Плодотворное сотрудничество",
+					"set": "img/trust/mercedes-logo@2.png",
 					"src": "img/trust/mercedes-logo.png", "alt": "Mercedes-Benz Logo",
 					"lead": "Наша основная задача — максимально упростить процесс.",
 					"info": "Ремонта вашего автомобиля, сделав его быстрым, удобным. Нами ремонт вашего и чудесного автомобиля перестанет быть задачей. Теперь вы можете, не выходя из дома отправить заявку и выбрать надежный и проверенный автосервис, подходящий именно вам.",
@@ -43,6 +79,7 @@ mixin trust
 				},
 				{
 					"subtitle": "Плодотворное сотрудничество",
+					"set": "img/trust/audi-logo@2.png",
 					"src": "img/trust/audi-logo.png", "alt": "Audi Logo",
 					"lead": "Наша основная задача — максимально упростить процесс.",
 					"info": "Ремонта вашего автомобиля, сделав его быстрым, удобным. Нами ремонт вашего и чудесного автомобиля перестанет быть задачей. Теперь вы можете, не выходя из дома отправить заявку и выбрать надежный и проверенный автосервис, подходящий именно вам.",
@@ -52,6 +89,7 @@ mixin trust
 				},
 				{
 					"subtitle": "Плодотворное сотрудничество",
+					"set": "img/trust/volkswagen-logo@2.png",
 					"src": "img/trust/volkswagen-logo.png", "alt": "Volkswagen Logo",
 					"lead": "Наша основная задача — максимально упростить процесс.",
 					"info": "Ремонта вашего автомобиля, сделав его быстрым, удобным. Нами ремонт вашего и чудесного автомобиля перестанет быть задачей. Теперь вы можете, не выходя из дома отправить заявку и выбрать надежный и проверенный автосервис, подходящий именно вам.",
@@ -61,6 +99,7 @@ mixin trust
 				},
 				{
 					"subtitle": "Плодотворное сотрудничество",
+					"set": "img/trust/peugeot-logo@2.png",
 					"src": "img/trust/peugeot-logo.png", "alt": "Volkswagen Logo",
 					"lead": "Наша основная задача — максимально упростить процесс.",
 					"info": "Ремонта вашего автомобиля, сделав его быстрым, удобным. Нами ремонт вашего и чудесного автомобиля перестанет быть задачей. Теперь вы можете, не выходя из дома отправить заявку и выбрать надежный и проверенный автосервис, подходящий именно вам.",
@@ -70,7 +109,8 @@ mixin trust
 				},
 				{
 					"subtitle": "Плодотворное сотрудничество",
-					"src": "img/trust/mazda-logo.png", "alt": "Volkswagen Logo",
+					"set": "img/trust/mazda-logo@2.png",
+					"src": "img/trust/mazda-logo.png", "alt": "Mazda Logo",
 					"lead": "Наша основная задача — максимально упростить процесс.",
 					"info": "Ремонта вашего автомобиля, сделав его быстрым, удобным. Нами ремонт вашего и чудесного автомобиля перестанет быть задачей. Теперь вы можете, не выходя из дома отправить заявку и выбрать надежный и проверенный автосервис, подходящий именно вам.",
 					"href": "http://mazda.ua/",
@@ -79,7 +119,8 @@ mixin trust
 				},
 				{
 					"subtitle": "Плодотворное сотрудничество",
-					"src": "img/trust/subaru-logo.png", "alt": "Volkswagen Logo",
+					"set": "img/trust/subaru-logo@2.png",
+					"src": "img/trust/subaru-logo.png", "alt": "Subaru Logo",
 					"lead": "Наша основная задача — максимально упростить процесс.",
 					"info": "Ремонта вашего автомобиля, сделав его быстрым, удобным. Нами ремонт вашего и чудесного автомобиля перестанет быть задачей. Теперь вы можете, не выходя из дома отправить заявку и выбрать надежный и проверенный автосервис, подходящий именно вам.",
 					"href": "http://subaru.ua/",
@@ -88,7 +129,8 @@ mixin trust
 				},
 				{
 					"subtitle": "Плодотворное сотрудничество",
-					"src": "img/trust/honda-logo.png", "alt": "Volkswagen Logo",
+					"set": "img/trust/honda-logo.png",
+					"src": "img/trust/honda-logo@2.png", "alt": "Honda Logo",
 					"lead": "Наша основная задача — максимально упростить процесс.",
 					"info": "Ремонта вашего автомобиля, сделав его быстрым, удобным. Нами ремонт вашего и чудесного автомобиля перестанет быть задачей. Теперь вы можете, не выходя из дома отправить заявку и выбрать надежный и проверенный автосервис, подходящий именно вам.",
 					"href": "http://honda.ua/",
@@ -97,7 +139,8 @@ mixin trust
 				},
 				{
 					"subtitle": "Плодотворное сотрудничество",
-					"src": "img/trust/bmw-logo.png", "alt": "Volkswagen Logo",
+					"set": "img/trust/bmw-logo@2.png",
+					"src": "img/trust/bmw-logo.png", "alt": "BMW Logo",
 					"lead": "Наша основная задача — максимально упростить процесс.",
 					"info": "Ремонта вашего автомобиля, сделав его быстрым, удобным. Нами ремонт вашего и чудесного автомобиля перестанет быть задачей. Теперь вы можете, не выходя из дома отправить заявку и выбрать надежный и проверенный автосервис, подходящий именно вам.",
 					"href": "http://www.bmw.ua/",
