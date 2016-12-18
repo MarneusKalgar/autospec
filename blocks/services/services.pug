@@ -1,23 +1,23 @@
 mixin info(items)
 	each item in items
-		+e.LI.item= item.title
-			+e.SPAN.price= item.text
-			+e.SPAN.line
-			+e.SPAN.pointer
-			+e.SPAN.dot
+		+e.LI.item
+			+e.A.link(href=item.link, target="_blank")= item.title
+				+e.SPAN.price= item.text
+				+e.SPAN.line
+				+e.SPAN.pointer
+				+e.SPAN.dot
 
 mixin services
-	+b.SECTION.services
-		//-+e.H2.title(class="titles") Сервис и цены
+	+b.MAIN.services
 		+e.DIV.scheme
 			+e.IMG.photo(src="img/services/servces__photo.png", alt="сервис и цены")
 			+e.UL.list
 				+info([
-					{ "title": "Техническое обслуживание", "text": "от 1000 грн" },
-					{ "title": "Исправление вмятин и царапин", "text": "от 1000 грн" },
-					{ "title": "Диагностика ходовой", "text": "от 1000 грн" },
-					{ "title": "Покраска", "text": "от 1000 грн" },
-					{ "title": "Компьютерная диагностика", "text": "от 1000 грн" },
-					{ "title": "Электрик", "text": "от 1000 грн" },
-					{ "title": "Кузовной ремонт", "text": "от 1000 грн" }
+					{ "link":"#", "title": "Техническое обслуживание", "text": "от 1000 грн" },
+					{ "link":"#", "title": "Исправление вмятин и царапин", "text": "от 1000 грн" },
+					{ "link":"#", "title": "Диагностика ходовой", "text": "от 1000 грн" },
+					{ "link":"#", "title": "Покраска", "text": "от 1000 грн" },
+					{ "link":"#", "title": "Компьютерная диагностика", "text": "от 1000 грн" },
+					{ "link":"#", "title": "Электрик", "text": "от 1000 грн" },
+					{ "link":"#", "title": "Кузовной ремонт", "text": "от 1000 грн" }
 				])

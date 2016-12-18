@@ -1,4 +1,4 @@
-#bemtemplate
+#autospecservice
 The modular "BEM like" approach to the project scaffolding (inspired by [Gulp Front Bilerplate](https://github.com/zoxon/gulp-front))
 
 ##Quick start
@@ -12,7 +12,7 @@ The modular "BEM like" approach to the project scaffolding (inspired by [Gulp Fr
 
 ##Directory Layout
 
-	bemtemplate                 # Project root
+	autospecservice             # Project root
 	├── /blocks/                # Source files
 	├── /app/                   # Compiled files for developing
 	├── /acc/                   # Minified files for production

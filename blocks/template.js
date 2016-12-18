@@ -8,9 +8,13 @@ $(function () {
 
 	sidebar();
 
+	callbackForm();
+
 	tabPanel();
 
 	trust();
+
+	clients();
 	
 });
 

@@ -1,12 +1,13 @@
 mixin main
-	+b.SECTION.main
-		+e.H1.title
-			+e.SPAN.thin Профессиональный
-			|  ремонт
-			br
-			+e.SPAN.bold  и обслуживание автомобилей
+	+b.MAIN.main
+		+e.DIV.centered
+			+e.H1.title
+				+e.SPAN.thin Профессиональный
+				|  ремонт
+				br
+				+e.SPAN.bold  и обслуживание автомобилей
 
-		+b.A.btn(class="--bordered main__btn", href="about.html") узнать больше
+			+b.A.btn(class="--bordered --positioned main__btn", href="about.html") узнать больше
 
 		+e.DIV.bg
 			+e.DIV.panel(class="--one")

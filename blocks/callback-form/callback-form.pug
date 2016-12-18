@@ -1,7 +1,7 @@
 mixin callback-form
 	+b.FORM.callback-form(method="POST", action="#", name="callback")
 		+e.LABEL.label(for="callback-tel") Ваш номер
-		+e.INPUT.input(type="tel", id="callback-tel", name="callback-tel", required, aria-required="true", placeholder="+380 (__) ___ - __ - __")
+		+e.INPUT.input(type="tel", id="callback-tel", name="callback-tel", required, aria-required="true", placeholder="Введите ваш телефон")
 		+e.LABEL.label(for="callback-name") Ваше имя
 		+e.INPUT.input(type="text", id="callback-name", name="callback-name", required, aria-required="true", placeholder="Как Вас зовут?")
 		+b.INPUT.btn(type="submit", class="--call callback-form__btn", value="перезвоните мне")

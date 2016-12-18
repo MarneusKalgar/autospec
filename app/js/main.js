@@ -8,14 +8,52 @@ $(function () {
 
 	sidebar();
 
+	callbackForm();
+
 	tabPanel();
 
 	trust();
+
+	clients();
 	
 });
 
 
 
+function callbackForm() {
+	//var $input = $("#callback-tel");
+
+	$("#callback-tel").mask("+380 (99) 999 - 99 - 99");
+}
+function clients() {
+	var $form = $("#clientsForm");
+	console.log("form!");
+
+	$form.validate({
+		rules: {
+			username: {
+				required: true,
+				minlength: 4
+			},
+			usermail: {
+				required: true,
+				email: true
+			},
+			usermessage: "required"
+		},
+		messages: {
+			username: {
+				required: "Пожалуйста, введите свое имя",
+				minlength: "Длина вашего имени должна быть не менее 4 символов"
+			},
+			usermail: {
+				required: "Пожалуйста, введите свой адрес",
+				email: "Адрес должен быть в формате example@email.com"
+			},
+			usermessage: "Пожалуйста, введите сообщение"
+		}
+	});
+}
 function contacts() {
 	var place = { lat: 50.457992, lng: 30.605138 }
 
@@ -231,16 +269,19 @@ function menuBtn() {
 	var $btn = $(".menu-btn");
 	var $logo = $(".logo");
 	var $sidebar = $(".sidebar");
+	var $main = $(".main");
 
-	$btn.on("click", function () {
+	$btn.on("click", function() {
 		$btn.toggleClass("menu-btn--isActive");
 
 		$sidebar.toggleClass("sidebar--isMove");
 
-		if ( !$logo.hasClass("logo--isTransparent") ) {
-			$logo.addClass("logo--isTransparent");
+		if ($main.length ) {
+			if ( $logo.hasClass("logo--isAnimated") ) {
+				$logo.removeClass("logo--isAnimated");
+			}
+			$logo.toggleClass("logo--isTransparent");
 		}
-
 	});
 
 }

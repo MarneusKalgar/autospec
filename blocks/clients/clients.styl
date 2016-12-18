@@ -37,7 +37,7 @@
 		margin .7em 0 0
 		font-size 1.5em
 		font-weight bold
-		@media screen and (min-width: 941px) and (max-width: 1090px), (max-width: 700px)
+		@media screen and (min-width: 941px) and (max-width: 1120px), (max-width: 700px)
 			font-size 1.2em
 
 	&__list
@@ -96,6 +96,8 @@
 			.clients__label
 				top .6em
 				left .7em
+			label.error
+				top -2.2em
 		&:nth-child(2)
 			margin-top 1em
 			.clients__label
@@ -104,10 +106,11 @@
 		&:nth-child(3)
 			margin-top 3.6em
 			.clients__label
-				top 1.3em
+				top 1.35em
 				left .7em
 		&:nth-child(4)
 			margin-top 3.2em
+
 
 	&__input
 		display block
@@ -154,6 +157,38 @@
 			width 100%
 			height 100%
 
+		&--wrap
+			position relative
+			width 100%
+			height 100%
+			&:before
+				content ''
+				position absolute
+				top 0
+				left 0
+				width 100%
+				height 100%
+				z-index -1
+				background $base-decor-color
+				transform-origin top
+				transform scaleY(0)
+				transition transform .5s cubic-bezier(0.2, 1, 0.3, 1)
+			&:hover
+			&:focus
+				color #363636
+			&:hover:before
+			&:focus:before
+				transform scaleY(1)
+
 	&__btn
 		width 100%
 
+		//error messages
+	label.error
+		display block
+		position absolute
+		left 0
+		width 100%
+		height 1.5em
+		font-size .875em
+		color lighten(#6f1400, 30%)

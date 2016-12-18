@@ -22,7 +22,7 @@
 		letter-spacing .1em
 		color $base-decor-color
 		border $sidebar-elements-bd-width solid $base-decor-color
-		transition color .4s cubic-bezier(0.2, 1, 0.3, 1)
+		transition color .5s cubic-bezier(0.2, 1, 0.3, 1)
 		&:before
 			content ''
 			position absolute
@@ -32,17 +32,19 @@
 			height 100%
 			z-index -1
 			background $base-decor-color
-			opacity 0
-			transform scale3d(0.7, 1, 1)
-			transition transform .4s, opacity .4s
-			transition-timing-function cubic-bezier(0.2, 1, 0.3, 1)
+			transform-origin top
+			transform scaleY(0)
+			transition transform .5s cubic-bezier(0.2, 1, 0.3, 1)
 		&:hover
 		&:focus
 			color #363636
 		&:hover:before
 		&:focus:before
-			opacity 1
-			transform translate3d(0,0,0)
+			transform scaleY(1)
+
+	&--positioned
+		position absolute
+
 
 	&--price
 		width 100%

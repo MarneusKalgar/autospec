@@ -1,56 +1,57 @@
-include _assets/bemto/bemto
-- set_bemto_settings({ modifier: "--" })
+extends _assets/components/template
 
-include head/head
-include page/page-contacts
+block logo
+	// block logo
+	+logo({
+		"id": "logo",
+		"class": "logo",
+		"href": "#",
+		"set": "img/logo/autospec-logo-light@2.png",
+		"src": "img/logo/autospec-logo-light.png",
+		"alt": "логотип компании автоспецсервис"
+	})
+	// end block logo
 
-doctype html
-html(lang="ru")
+block content
+	+contacts()
 
-	head
-		+head({
-			"title": "autospecservice home page",
-			"author": "alex-labs",
-			"description": "autospecservice home page"
-		})
+block main-nav
+	//block main-nav
+	+main-nav([
+		{"class": "main-nav__link animsition-link", "id": "", "link": "index.html", "title": "главная"},
+		{"class": "main-nav__link animsition-link", "id": "", "link": "about.html", "title": "о нас"},
+		{"class": "main-nav__link animsition-link", "id": "", "link": "services.html", "title": "сервис и цены"},
+		{"class": "main-nav__link animsition-link", "id": "", "link": "trust.html", "title": "нам доверяют"},
+		{"class": "main-nav__link animsition-link", "id": "", "link": "clients.html", "title": "корпоративным клиентам"},
+		{"class": "main-nav__link main-nav__link--active", "id": "", "link": "contacts.html", "title": "контакты"}
+	])
+	//end block main-nav
 
-	+b.BODY.page
-		+e.DIV.wrap(class="animsition")
-			+page-contacts()
+block scripts
+	script( src="https://maps.googleapis.com/maps/api/js?key=AIzaSyApNXjcWxKpQwh7KkYpTvegrO9NAb_NhEI&callback=contacts")
 
-		// build:js js/vendor.js
-		script( src="js/libs/jquery.min.js")
-		script( src="js/libs/animsition.min.js")
-		// endbuild
-
-		// build:js js/main.js
-		script( src="js/main.js")
-		// endbuild
-
-		script( src="https://maps.googleapis.com/maps/api/js?key=AIzaSyApNXjcWxKpQwh7KkYpTvegrO9NAb_NhEI&callback=contacts")
-
-		script.
-			$('.animsition').animsition({
-				inClass: 'fade-in',
-				outClass: 'fade-out',
-				inDuration: 500,
-				outDuration: 500,
-				linkElement: '.animsition-link',
-				// e.g. linkElement: 'a:not([target="_blank"]):not([href^="#"])'
-				loading: true,
-				loadingParentElement: 'body', //animsition wrapper element
-				loadingClass: 'animsition-loading',
-				loadingInner: '', // e.g '<img src="loading.svg" />'
-				timeout: false,
-				timeoutCountdown: 1000,
-				onLoadEvent: true,
-				browser: ['animation-duration', '-webkit-animation-duration'],
-				// "browser" option allows you to disable the "animsition" in case the css property in the array is not supported by your browser.
-				// The default setting is to disable the "animsition" in a browser that does not support "animation-duration".
-				overlay: false,
-				overlayClass: 'animsition-overlay-slide',
-				overlayParentElement: 'body',
-				transition: function (url) {
-					window.location.href = url;
-				}
-			});
+	script.
+		$('.animsition').animsition({
+			inClass: 'fade-in',
+			outClass: 'fade-out',
+			inDuration: 500,
+			outDuration: 500,
+			linkElement: '.animsition-link',
+			// e.g. linkElement: 'a:not([target="_blank"]):not([href^="#"])'
+			loading: true,
+			loadingParentElement: 'body', //animsition wrapper element
+			loadingClass: 'animsition-loading',
+			loadingInner: '', // e.g '<img src="loading.svg" />'
+			timeout: false,
+			timeoutCountdown: 1000,
+			onLoadEvent: true,
+			browser: ['animation-duration', '-webkit-animation-duration'],
+			// "browser" option allows you to disable the "animsition" in case the css property in the array is not supported by your browser.
+			// The default setting is to disable the "animsition" in a browser that does not support "animation-duration".
+			overlay: false,
+			overlayClass: 'animsition-overlay-slide',
+			overlayParentElement: 'body',
+			transition: function (url) {
+				window.location.href = url;
+			}
+		});

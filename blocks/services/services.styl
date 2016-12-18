@@ -29,7 +29,7 @@
 		margin 4% auto 0
 		//padding-right 5.5%
 		@media screen and (max-height: 740px)
-				margin-top 1.5em
+			margin-top 1.5em
 		@media screen and (min-width: 1051px) and (max-width: 1180px), (min-width: 701px) and (max-width: 830px)
 			width 42em
 			margin 8% auto 0
@@ -63,6 +63,10 @@
 			width 90%
 			margin 0 auto
 
+	&__link
+		text-decoration none
+		color inherit
+
 	&__item
 		position absolute
 		width 10.5em
@@ -71,6 +75,10 @@
 		line-height 1.1
 		top 15em
 		left -8em
+		transition all .5s ease
+		transform translate(0, 0) scale(1)
+		text-decoration none
+		color inherit
 		&:before
 			content ''
 			position absolute
@@ -89,6 +97,9 @@
 			.services__dot:before
 				width 0
 				transition width .2s ease-in
+		//@media screen and (max-width: 1180px)
+		//	&:hover
+		//		transform translate(0, 0) scale(1)
 		@media screen and (max-width: 560px)
 			&:before
 				top .5em
@@ -142,6 +153,13 @@
 			.services__dot
 				bottom -1.9em
 				right 2.3em
+			@media screen and (min-width: 1181px)
+				&:hover
+					transform translate(-5%, -5%) scale(1.1)
+					.services__pointer
+						transform rotateZ(40deg)
+					.services__dot
+						transform translate(50%,-60%)
 			@media screen and (min-width: 1051px) and (max-width: 1180px), (min-width: 701px) and (max-width: 830px)
 				top 13%
 				left -4%
@@ -183,6 +201,13 @@
 			.services__dot
 				bottom -2em
 				right 1.7em
+			@media screen and (min-width: 1181px)
+				&:hover
+					transform translate(-3%, -3%) scale(1.05)
+					.services__pointer
+						transform rotateZ(37deg)
+					.services__dot
+						transform translate(30%,-40%)
 			@media screen and (min-width: 1051px) and (max-width: 1180px), (min-width: 701px) and (max-width: 830px)
 				left 15%
 				.services__pointer
@@ -223,12 +248,19 @@
 				width 4em
 			.services__pointer
 				left 0
-				bottom 1.15em
+				bottom 1.2em
 				width 5.3em
 				transform rotateZ(-225deg)
 			.services__dot
 				bottom -2.6em
-				left -3.9em
+				left -3.85em
+			@media screen and (min-width: 1181px)
+				&:hover
+					transform translate(4%, -4%) scale(1.05)
+					.services__pointer
+						transform rotateZ(-227deg)
+					.services__dot
+						transform translate(50%,25%)
 			@media screen and (min-width: 1051px) and (max-width: 1180px), (min-width: 701px) and (max-width: 830px)
 				top -5%
 				left 48%
@@ -269,12 +301,19 @@
 				width 4.5em
 			.services__pointer
 				left 0
-				bottom: 1.15em
+				bottom 1.25em
 				width 7em
 				transform rotateZ(-230deg)
 			.services__dot
 				bottom -4.3em
-				left -4.7em
+				left -4.75em
+			@media screen and (min-width: 1181px)
+				&:hover
+					transform translate(5%, -5%) scale(1.05)
+					.services__pointer
+						transform rotateZ(-229deg)
+					.services__dot
+						transform translate(-50%,0)
 			@media screen and (min-width: 1051px) and (max-width: 1180px), (min-width: 701px) and (max-width: 830px)
 				top 7.5%
 				left 78%
@@ -323,6 +362,13 @@
 			.services__dot
 				top 0
 				left -4.7em
+			@media screen and (min-width: 1181px)
+				&:hover
+					transform translate(3%, 3%) scale(1.08)
+					.services__pointer
+						transform rotateZ(226deg)
+					.services__dot
+						transform translate(110%,10%)
 			@media screen and (min-width: 1051px) and (max-width: 1180px), (min-width: 701px) and (max-width: 830px)
 				top 80%
 				left 77%
@@ -377,6 +423,13 @@
 			.services__dot
 				top -1em
 				left -3.1em
+			@media screen and (min-width: 1181px)
+				&:hover
+					transform translate(3%, 3%) scale(1.1)
+					.services__pointer
+						transform rotateZ(238deg)
+					.services__dot
+						transform translate(90%,40%)
 			@media screen and (min-width: 1051px) and (max-width: 1180px), (min-width: 701px) and (max-width: 830px)
 				top 83%
 				left 32%
@@ -426,6 +479,13 @@
 			.services__dot
 				top -.4em
 				right -2.6em
+			@media screen and (min-width: 1181px)
+				&:hover
+					transform translate(-5%, 5%) scale(1.1)
+					.services__pointer
+						transform rotateZ(-42deg)
+					.services__dot
+						transform translate(-50%,0)
 			@media screen and (min-width: 1051px) and (max-width: 1180px), (min-width: 701px) and (max-width: 830px)
 				top 58%
 				left -4%
@@ -493,6 +553,7 @@
 		height 1px
 		background-color $base-decor-color
 		transform-origin 0 0 0
+		transition all .5s ease
 		&:before
 			position absolute
 			content ''
@@ -514,6 +575,7 @@
 		height 6px
 		background-color $base-decor-color
 		border-radius 50%
+		transition all .5s ease
 		&:before
 			position absolute
 			content ''

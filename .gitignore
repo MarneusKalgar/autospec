@@ -1,4 +1,4 @@
 ## Build Systems
 node_modules/
-blocks/_assets/libs/
+app/js/libs/
 .idea/
