@@ -15,12 +15,11 @@
     <link rel="apple-touch-icon" sizes="144x144" href="img/favicon/apple-touch-icon-144x144.png"/>
     <link rel="apple-touch-icon" sizes="152x152" href="img/favicon/apple-touch-icon-152x152.png"/>
     <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon-180x180.png"/>
-    <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/vendor.css">
+    <link rel="stylesheet" href="css/main.css">
   </head>
   <body class="page">
     <div class="page__wrap animsition">
-      <!-- block header-->
       <header class="header">
         <!-- block logo--><a class="logo" id="logo" href="#">
         <picture>
@@ -32,11 +31,9 @@
         </button>
         <!-- end block menu-btn-->
       </header>
-      <!-- end block header-->
-      <!-- block contacts-->
-      <section class="contacts">
-        <h2 class="contacts__title titles">Контакты
-        </h2>
+      <main class="contacts" role="main">
+        <h1 class="contacts__title titles">Контакты
+        </h1>
         <address class="contacts__address">
           <div class="contacts__row">
             <p class="contacts__caption svgicon svgicon--phone">Телефоны:
@@ -55,24 +52,22 @@
         </address>
         <div class="contacts__map" id="map">
         </div>
-      </section>
-      <!-- end block contacts-->
-      <!-- block sidebar-->
+      </main>
       <div class="sidebar">
         <!--block main-nav-->
         <nav class="main-nav">
           <ul class="main-nav__menu">
-            <li class="main-nav__item"><a class="main-nav__link animsition-link" id="" href="index.html">главная</a>
+            <li class="main-nav__item"><a class="main-nav__link animsition-link" href="index.html">главная</a>
             </li>
-            <li class="main-nav__item"><a class="main-nav__link animsition-link" id="" href="about.html">о нас</a>
+            <li class="main-nav__item"><a class="main-nav__link animsition-link" href="about.html">о нас</a>
             </li>
-            <li class="main-nav__item"><a class="main-nav__link animsition-link" id="" href="services.html">сервис и цены</a>
+            <li class="main-nav__item"><a class="main-nav__link animsition-link" href="services.html">сервис и цены</a>
             </li>
-            <li class="main-nav__item"><a class="main-nav__link animsition-link" id="" href="trust.html">нам доверяют</a>
+            <li class="main-nav__item"><a class="main-nav__link animsition-link" href="trust.html">нам доверяют</a>
             </li>
-            <li class="main-nav__item"><a class="main-nav__link animsition-link" id="" href="clients.html">корпоративным клиентам</a>
+            <li class="main-nav__item"><a class="main-nav__link animsition-link" href="clients.html">корпоративным клиентам</a>
             </li>
-            <li class="main-nav__item"><a class="main-nav__link main-nav__link--active animsition-link" id="" href="contacts.html">контакты</a>
+            <li class="main-nav__item"><a class="main-nav__link main-nav__link--active" href="contacts.html">контакты</a>
             </li>
           </ul>
         </nav>
@@ -101,13 +96,12 @@
         <!--block callback-form-->
         <form class="callback-form" method="POST" action="#" name="callback">
           <label class="callback-form__label" for="callback-tel">Ваш номер
-          </label><input class="callback-form__input" type="tel" id="callback-tel" name="callback-tel" required="required" aria-required="true" placeholder="+380 (__) ___ - __ - __"/>
+          </label><input class="callback-form__input" type="tel" id="callback-tel" name="callback-tel" required="required" aria-required="true" placeholder="Введите ваш телефон"/>
           <label class="callback-form__label" for="callback-name">Ваше имя
           </label><input class="callback-form__input" type="text" id="callback-name" name="callback-name" required="required" aria-required="true" placeholder="Как Вас зовут?"/><input class="btn btn--call callback-form__btn" type="submit" value="перезвоните мне"/>
         </form>
         <!--end block callback-form-->
       </div>
-      <!-- end block sidebar-->
     </div>
     <script src="js/vendor.js"></script>
     <script src="js/main.js"></script>
