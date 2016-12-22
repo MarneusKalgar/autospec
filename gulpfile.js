@@ -51,7 +51,7 @@ gulp.task('pug', function() {
 
 //stylus compile
 gulp.task('stylus', function() {
-	return gulp.src(paths.blocks + 'template.styl')
+	return gulp.src(paths.blocks + '*.styl')
 		.pipe(plumber())
 		.pipe(stylus({
 			use: rupture()
@@ -60,7 +60,6 @@ gulp.task('stylus', function() {
 			browsers: ['last 15 versions'],
 			cascade: true
 		}))
-		.pipe(rename('main.css'))
 		.pipe(gulp.dest(paths.devDir + 'css/'))
 		.pipe(browserSync.stream());
 });

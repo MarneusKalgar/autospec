@@ -1,0 +1,9 @@
+mixin materials(items)
+	+b.SECTION.materials
+		+e.H2.title(class="titles") Работаем с лучшими материалами
+		+e.UL.list
+			each item in items
+				+e.item
+					picture
+						source(media="(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)", srcset=item.set)
+						+e.IMG.img(src=item.src, alt=item.alt)

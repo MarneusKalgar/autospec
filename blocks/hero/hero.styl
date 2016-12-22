@@ -1,0 +1,93 @@
+/***********************HERO***********************/
+.hero
+	position relative
+	box-sizing border-box
+	height 43.75em
+	padding-top 6.5625em
+	color $base-text-color-light
+	text-align center
+	background $base-decor-color-dark url("../img/hero/hero-bg-lg.jpg") center no-repeat
+
+	&__title
+		position relative
+		margin 4.5em 0 0
+		&::before
+			content ''
+			position absolute
+			top -1.7em
+			left 48%
+			width 1.5625em
+			height 1.5em
+			background url("../img/hero/hero__title-icon.png") 0 0 no-repeat
+			background-size cover
+
+	&__lead
+		width 23.95em
+		margin .5em auto 0
+		font-size 1.5em
+
+	&__link
+		display block
+		width 1.2em
+		height 1em
+		margin 3.5em auto 0
+		transform-origin 50% 50% 0
+
+	&__icon
+		width 100%
+		height 100%
+		fill $base-text-color-light
+		stroke $base-text-color-light
+		stroke-width 1em
+		transition all .3s ease
+		&:hover
+		&:active
+		&:focus
+			fill $base-decor-color
+			stroke $base-decor-color
+
+	&__circle
+		position absolute
+		top 0
+		height 100%
+		width 12.8em
+		&::before
+			content: ''
+			position absolute
+			top 33.5%
+			width 14.3em
+			height 14.3em
+			background url("../img/sidebar/sidebar-circle1.png") center no-repeat
+			background-size cover
+			transform-origin 50% 50% 0
+			animation rotateCircle 20s linear infinite reverse running
+		&::after
+			content: ''
+			position absolute
+			top 21%
+			width 25.6em
+			height 25.6em
+			background url("../img/sidebar/sidebar-circle2.png") center no-repeat
+			background-size cover
+			transform-origin 50% 50% 0
+			animation rotateCircle 30s linear infinite running
+
+		&--left
+			left 0
+			&::before
+				left -57%
+			&::after
+				left -100%
+
+		&--right
+			right 0
+			&::before
+				right -57%
+			&::after
+				right -100%
+
+@keyframes rotateCircle
+	0%
+		transform rotateZ(0deg)
+	100%
+		transform rotateZ(360deg)

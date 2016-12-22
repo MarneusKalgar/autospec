@@ -9,9 +9,12 @@ html(lang="ru")
 	head
 		+head({
 			"title": "autospecservice home page",
-			"author": "alex-labs",
+			"author": "Interact Agency",
 			"description": "autospecservice home page"
 		})
+		// build:css css/main.css
+		link(rel="stylesheet", href="css/main.css")
+		// endbuild
 
 	+b.BODY.page
 		+e.DIV.wrap(class="animsition")

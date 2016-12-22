@@ -1,7 +1,7 @@
 mixin info(items)
 	each item in items
 		+e.LI.item
-			+e.A.link(href=item.link, target="_blank")= item.title
+			+e.A.link(href=item.link)= item.title
 				+e.SPAN.price= item.text
 				+e.SPAN.line
 				+e.SPAN.pointer
@@ -16,7 +16,7 @@ mixin services
 					{ "link":"#", "title": "Техническое обслуживание", "text": "от 1000 грн" },
 					{ "link":"#", "title": "Исправление вмятин и царапин", "text": "от 1000 грн" },
 					{ "link":"#", "title": "Диагностика ходовой", "text": "от 1000 грн" },
-					{ "link":"#", "title": "Покраска", "text": "от 1000 грн" },
+					{ "link":"painting.html", "title": "Покраска", "text": "от 1000 грн" },
 					{ "link":"#", "title": "Компьютерная диагностика", "text": "от 1000 грн" },
 					{ "link":"#", "title": "Электрик", "text": "от 1000 грн" },
 					{ "link":"#", "title": "Кузовной ремонт", "text": "от 1000 грн" }
