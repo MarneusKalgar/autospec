@@ -1,0 +1,63 @@
+mixin title(titles)
+	+e.UL.menu
+		each title in titles
+			+e.tab(class=title.class)= title.text
+
+mixin info(items)
+	+e.UL.list
+		each item in items
+			+e.LI.service
+				+e.SPAN.caption= item.title
+				+e.SPAN.price= item.text
+				+e.SPAN.line
+				+e.SPAN.pointer
+				+e.SPAN.dot
+
+mixin tabs
+	+b.DIV.tabs
+		+title([
+			{"class": "--active", "text": "бюджет"},
+			{"class": "", "text": "стандарт"},
+			{"class": "", "text": "премиум"}
+		])
+
+		+e.DIV.item(class="--active --animate")
+			+e.H3.subtitle(class="titles") Пакет ”Бюджет“
+			+e.P.info Ремонт машины неизменно оборачивается кошмаром. Раз за разом вам приходится объезжать все новые и новые автосервисы в поисках приемлемых цен.
+			+e.FIGURE.figure
+				+e.IMG.img(src="img/tabs/budget-car.png", alt="Автомобиль")
+				+info([
+					{"title": "Кузовной ремонт", "text": "1000 грн"},
+					{"title": "Кузовной ремонт", "text": "1000 грн"},
+					{"title": "Кузовной ремонт", "text": "1000 грн"},
+					{"title": "Кузовной ремонт", "text": "1000 грн"},
+					{"title": "Кузовной ремонт", "text": "1000 грн"},
+					{"title": "Кузовной ремонт", "text": "1000 грн"}
+				])
+		+e.DIV.item
+			+e.H3.subtitle(class="titles") Пакет ”Стандарт“
+			+e.P.info Ремонт машины неизменно оборачивается кошмаром. Раз за разом вам приходится объезжать все новые и новые автосервисы в поисках приемлемых цен.
+			+e.FIGURE.figure
+				+e.IMG.img(src="img/tabs/standard-car.png", alt="Автомобиль")
+				+info([
+					{"title": "Кузовной ремонт", "text": "1000 грн"},
+					{"title": "Кузовной ремонт", "text": "1000 грн"},
+					{"title": "Кузовной ремонт", "text": "1000 грн"},
+					{"title": "Кузовной ремонт", "text": "1000 грн"},
+					{"title": "Кузовной ремонт", "text": "1000 грн"},
+					{"title": "Кузовной ремонт", "text": "1000 грн"}
+				])
+		+e.DIV.item
+			+e.H3.subtitle(class="titles") Пакет ”Премиум“
+			+e.P.info Ремонт машины неизменно оборачивается кошмаром. Раз за разом вам приходится объезжать все новые и новые автосервисы в поисках приемлемых цен.
+			+e.FIGURE.figure
+				+e.IMG.img(src="img/tabs/premium-car.png", alt="Автомобиль")
+				+info([
+					{"title": "Кузовной ремонт", "text": "1000 грн"},
+					{"title": "Кузовной ремонт", "text": "1000 грн"},
+					{"title": "Кузовной ремонт", "text": "1000 грн"},
+					{"title": "Кузовной ремонт", "text": "1000 грн"},
+					{"title": "Кузовной ремонт", "text": "1000 грн"},
+					{"title": "Кузовной ремонт", "text": "1000 грн"}
+				])
+

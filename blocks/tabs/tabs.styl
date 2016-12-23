@@ -1,0 +1,233 @@
+/***********************TABS***********************/
+.tabs
+	position relative
+	width 65.21739%
+	height 40em
+	margin 0
+
+		//tab-menu
+	&__menu
+		position absolute
+		top 1.5em
+		right 4.5em
+		z-index 100
+		margin 0
+		padding 0
+		list-style none
+		font-size 1em
+		letter-spacing .05em
+		line-height 2.4
+
+	&__tab
+		position relative
+		box-sizing border-box
+		text-transform uppercase
+		cursor pointer
+		transition all .4s ease-in .1s
+		&::before
+			content ''
+			position absolute
+			width 100%
+			height 2px
+			bottom .2em
+			background-color rgba(0,0,0,0)
+			transition all .4s ease-in .1s
+
+		&--active
+			color $base-decor-color
+			&::before
+				background-color $base-decor-color
+
+		//tabs-item
+	&__item
+		position absolute
+		top 0
+		left 0
+		opacity 0
+		visibility hidden
+		transition all .5s ease
+
+		&--active
+			opacity 1
+			visibility visible
+			transition all .5s ease
+
+	&__subtitle
+		margin 0
+
+	&__info
+		width 25.625em
+		margin 0
+
+	&__figure
+		position relative
+		width 36.25em
+		height 21.25em
+		margin 6.5em 0 0 4.5em
+
+	&__img
+		display block
+		width 100%
+		height auto
+
+	&__list
+		margin 0
+		padding 0
+		list-style none
+
+	&__service
+		position absolute
+		width 6em
+		cursor pointer
+		transition all .2s ease
+
+		&--isSelected
+			.tabs__caption
+				color $base-decor-color
+			.tabs__dot
+				&::before
+					background url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHZlcnNpb249IjEuMSIgaWQ9ItCh0LvQvtC5XzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgMjk1LjQgMjU3LjciIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDI5NS40IDI1Ny43OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PHN0eWxlIHR5cGU9InRleHQvY3NzIj4uc3Qwe2ZpbGw6I0VFNjgwMDt9PC9zdHlsZT48Zz48Zz48cGF0aCBjbGFzcz0ic3QwIiBkPSJNMjcuOCwxNTQuOWMtNi40LTYuNC0xNi43LTYuNC0yMywwcy02LjQsMTYuNywwLDIzbDc1LDc1YzMuMiwzLjIsNy4xLDQuOCwxMS41LDQuOGMwLjQsMCwwLjQsMCwwLjgsMGM0LjQtMC40LDguNy0yLjQsMTEuOS02bDE4Ny43LTIyNWM1LjYtNi43LDQuOC0xNy4xLTItMjNjLTYuNy01LjYtMTcuMS00LjgtMjMsMkw5MC4xLDIxNy4yTDI3LjgsMTU0LjlMMjcuOCwxNTQuOXoiLz48L2c+PC9nPjwvc3ZnPg==") center no-repeat
+					background-size 40%
+				&::after
+					width 1.7em
+					height 1.7em
+					transform translate(-50.5%,-50%)
+
+		&:nth-child(1)
+			top -17%
+			left 32%
+			.tabs__line
+				width 11em
+			.tabs__pointer
+				width 2em
+				bottom .7em
+				left 10.6em
+				transform rotateZ(45deg)
+			.tabs__dot
+				left 190%
+				bottom -35%
+
+		&:nth-child(2)
+			top 4%
+			left 4.5%
+			.tabs__line
+				width 5.5em
+			.tabs__pointer
+				width 3em
+				bottom .3em
+				left 5.1em
+				transform rotateZ(45deg)
+			.tabs__dot
+				left 115%
+				bottom -60%
+
+		&:nth-child(3)
+			top 35%
+			left -12.5%
+			.tabs__line
+				width 5em
+			.tabs__pointer
+				width 3em
+				bottom .4em
+				left 4.6em
+				transform rotateZ(40deg)
+			.tabs__dot
+				left 115%
+				bottom -60%
+
+		&:nth-child(4)
+			top 93%
+			left -12.5%
+			.tabs__line
+				width 5.5em
+			.tabs__pointer
+				width 6.5em
+				bottom 4em
+				left 4.1em
+				transform rotateZ(-55deg)
+			.tabs__dot
+				left 135%
+				bottom 155%
+
+		&:nth-child(5)
+			top 93%
+			left 70%
+			.tabs__line
+				left -1em
+				width 6em
+			.tabs__pointer
+				width 6.5em
+				bottom 3.7em
+				left -6.5em
+				transform rotateZ(45deg)
+			.tabs__dot
+				left -100%
+				bottom 115%
+
+		&:nth-child(6)
+			top 70%
+			left 100%
+			.tabs__line
+				left -2em
+				width 7em
+			.tabs__pointer
+				width 6em
+				bottom 3.5em
+				left -7.1em
+				transform rotateZ(45deg)
+			.tabs__dot
+				left -110%
+				bottom 115%
+
+
+	&__caption
+		display block
+		font-weight bold
+		line-height 1.2
+		transition all .2s ease
+		
+	&__line
+		position absolute
+		bottom 1.4em
+		display block
+		height 1px
+		background-color $base-decor-color
+
+	&__pointer
+		display block
+		position absolute
+		height 1px
+		background-color $base-decor-color
+
+	&__dot
+		display block
+		position absolute
+		z-index 200
+		width 2em
+		height 2em
+		border-radius 50%
+		background-color $base-decor-color
+		&::before
+			content ''
+			position absolute
+			z-index 500
+			top 0
+			left 0
+			right 0
+			bottom 0
+			border-radius 50%
+			background url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MiA0MiIgZmlsbD0iI2VlNjgwMCIgc3Ryb2tlPSIjZWU2ODAwIiBzdHJva2Utd2lkdGg9IjUiIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIj48cGF0aCBkPSJNNDIgMjBIMjJWMGgtMnYyMEgwdjJoMjB2MjBoMlYyMmgyMCIvPjwvc3ZnPg==") center no-repeat
+			background-size 25%
+			transition all .2s ease
+		&::after
+			content ''
+			position absolute
+			z-index 300
+			top 50%
+			left 50%
+			width 1em
+			height 1em
+			transform translate(-50%,-50%)
+			border-radius 50%
+			background-color #fff
+			transition all .2s ease

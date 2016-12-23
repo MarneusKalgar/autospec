@@ -1,0 +1,47 @@
+include ../tabs/tabs
+include ../order-form/order-form
+
+mixin bundles
+	+b.SECTION.bundles
+		+e.DIV.wrap
+			+tabs()
+			+order-form()
+
+			+e.TABLE.table
+				+e.THEAD.heading
+					+e.TR.row
+						+e.TH.head-cell Условия / Вариант исполнения
+						+e.TH.head-cell бюджет
+						+e.TH.head-cell стандарт
+						+e.TH.head-cell премиум
+				+e.TBODY.content
+					+e.TR.row
+						+e.TD.content-cell Использование качественных лакокрасочных метериалов
+						+e.TD.content-cell(class="--checked")
+						+e.TD.content-cell(class="--checked")
+						+e.TD.content-cell(class="--checked")
+					+e.TR.row
+						+e.TD.content-cell Использование высокачественых высокачеств
+						+e.TD.content-cell(class="--checked")
+						+e.TD.content-cell(class="--checked")
+						+e.TD.content-cell(class="--checked")
+					+e.TR.row
+						+e.TD.content-cell Гарантия на работы
+						+e.TD.content-cell 3 месяца
+						+e.TD.content-cell 12 месяцев
+						+e.TD.content-cell 24 месяца
+					+e.TR.row
+						+e.TD.content-cell Прием без записи
+						+e.TD.content-cell(class="--checked")
+						+e.TD.content-cell(class="--checked")
+						+e.TD.content-cell(class="--checked")
+					+e.TR.row
+						+e.TD.content-cell Гарантия пунктуальности
+						+e.TD.content-cell(class="--checked")
+						+e.TD.content-cell(class="--checked")
+						+e.TD.content-cell(class="--checked")
+					+e.TR.row
+						+e.TD.content-cell Бесплатная полировка смежных деталей
+						+e.TD.content-cell(class="--checked")
+						+e.TD.content-cell(class="--checked")
+						+e.TD.content-cell(class="--checked")

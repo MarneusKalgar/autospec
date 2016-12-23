@@ -15,6 +15,8 @@ $(function () {
 	trust();
 
 	clients();
+
+	tabs();
 	
 });
 

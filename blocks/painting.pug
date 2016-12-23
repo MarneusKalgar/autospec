@@ -6,6 +6,7 @@ include logo/logo
 include hero/hero
 include statistics/statistics
 include materials/materials
+include bundles/bundles
 
 doctype html
 html(lang="ru")
@@ -66,12 +67,20 @@ html(lang="ru")
 			])
 				// end block materials
 
+				//block bundles
+			+bundles()
+				//end block bundles
+
 
 		// build:js js/vendor.js
 		script( src="js/libs/jquery/dist/jquery.min.js")
 		script( src="js/libs/animsition/dist/js/animsition.min.js")
 		script( src="js/libs/jquery.maskedinput/dist/jquery.maskedinput.min.js")
 		script( src="js/libs/jquery-validation/dist/jquery.validate.min.js")
+		// endbuild
+
+		// build:js js/main.js
+		script( src="js/main.js")
 		// endbuild
 
 		script.

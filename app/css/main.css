@@ -282,7 +282,7 @@ th {
 .page__wrap--singleService {
   display: block;
   font-size: 1rem;
-  overflow-y: hidden;
+  overflow: hidden;
 }
 .titles {
   width: 100%;
@@ -353,7 +353,7 @@ th {
       -ms-flex-align: end;
           align-items: flex-end;
   height: 6.5625em;
-  padding: 0 20%;
+  padding: 0 20.3%;
 }
 @media screen and (max-width: 1500px) {
   .header--singleService {
@@ -1672,7 +1672,7 @@ th {
 }
 .tab-panel__tab--active {
   color: #ee6800;
-  border-bottom: 0.1em solid #ee6800;
+  border-bottom: 2px solid #ee6800;
 }
 .tab-panel__item {
   display: none;
