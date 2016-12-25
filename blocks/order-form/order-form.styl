@@ -43,21 +43,42 @@
 
 
 		&--submit
-			width 18em
-			height 3.5em
-			margin-top 5em
+			width 100%
+			height 100%
 			letter-spacing .1em
-			background $base-decor-color
+			border-radius 2em
+			background rgba(0,0,0,0)
+			transition all .3s ease
 
-	&__select
-		display block
+	&__select-wrap
+		position relative
+		z-index 100
 		width 100%
 		height 100%
+		&::after
+			content ''
+			position absolute
+			z-index 0
+			right 0
+			top 1em
+			width .8em
+			height .8em
+			background url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjkgMTI5IiB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIGZpbGw9IiNhNWE1YTUiPjxwYXRoIGQ9Ik0xMjEuMyAzNC42Yy0xLjYtMS42LTQuMi0xLjYtNS44IDBsLTUxIDUxLjEtNTEuMS01MS4xYy0xLjYtMS42LTQuMi0xLjYtNS44IDAtMS42IDEuNi0xLjYgNC4yIDAgNS44bDUzLjkgNTMuOWMuOC44IDEuOCAxLjIgMi45IDEuMiAxIDAgMi4xLS40IDIuOS0xLjJsNTMuOS01My45YzEuNy0xLjYgMS43LTQuMi4xLTUuOHoiLz48L3N2Zz4=") center no-repeat
+
+	&__select
+		position relative
+		z-index 10
+		display block
+		box-sizing border-box
+		width 100%
+		height 100%
+		padding-right 1em
 		border none
 		color #a5a5a5
 		background rgba(0,0,0,0)
 		outline none
-		-webkit-appearance none
+		-ms-appearance none
+		appearance none
 
 	&__option
 		padding 0
@@ -90,6 +111,19 @@
 				.order-form__icon--file
 					fill $base-text-color
 					stroke $base-text-color
+
+		&--wrap
+			position relative
+			left 0
+			z-index 0
+			width 18em
+			height 3.5em
+			margin-top 6em
+			letter-spacing .1em
+			&:hover
+			&:focus
+				.order-form__input--submit
+					color $base-text-color
 
 	&__icon
 		display block

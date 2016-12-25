@@ -1,0 +1,19 @@
+mixin info(items)
+	each item in items
+		+e.LI.item
+			+e.A.link(href=item.link)= item.title
+
+mixin services-simple
+	+b.SECTION.services
+		+e.DIV.wrap
+			+e.H2.title(class="titles") Услуги
+			+e.UL.list
+				+info([
+					{"link": "#", "title": "Техническое обслуживание"},
+					{"link": "painting.html", "title": "Покраска"},
+					{"link": "#", "title": "Электрик"},
+					{"link": "#", "title": "Исправление вмятин и царапин"},
+					{"link": "#", "title": "Компьютерная диагностика"},
+					{"link": "#", "title": "Кузовной ремонт"},
+					{"link": "#", "title": "Диагностика ходовой"}
+				])

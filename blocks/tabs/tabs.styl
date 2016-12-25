@@ -80,6 +80,8 @@
 		width 6em
 		cursor pointer
 		transition all .2s ease
+		transform translate(0, 0) scale(1)
+
 
 		&--isSelected
 			.tabs__caption
@@ -185,6 +187,7 @@
 		font-weight bold
 		line-height 1.2
 		transition all .2s ease
+		transform translate(0, 0) scale(1)
 		
 	&__line
 		position absolute
@@ -192,12 +195,14 @@
 		display block
 		height 1px
 		background-color $base-decor-color
+		transform translate(0, 0) scale(1)
 
 	&__pointer
 		display block
 		position absolute
 		height 1px
 		background-color $base-decor-color
+		transform translate(0, 0) scale(1)
 
 	&__dot
 		display block

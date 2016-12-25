@@ -15,12 +15,22 @@
 		padding-left 2.5em
 		overflow-y auto
 
+	&--isContacts_extended
+		padding 1em 0 4em 0
+
+	&__wrap
+		width $base-wrap-element-width
+		margin 0 auto
+
 	&__title
 		margin .85em 0 0
 
 	&__address
 		width 17.5em
 		font-style normal
+
+		&--isContacts_extended
+			margin-left 1.5em
 
 	&__row
 		margin-top 1.5em
@@ -77,3 +87,13 @@
 			margin-bottom 2em
 		@media screen and (max-width: 450px)
 			top 28em
+
+		&--overlay
+			z-index 100
+			&::before
+				content ''
+				position absolute
+				z-index 1000
+				width 100%
+				height 100%
+				//background-color rgba(#2c3a3c, .85)

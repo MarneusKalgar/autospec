@@ -669,7 +669,7 @@ th {
   left: 12%;
   width: 8.25rem;
   height: 8.25rem;
-  background: url("../img/sidebar/sidebar-circle1.png") 0 0 no-repeat;
+  background: url("../img/sidebar/sidebar-circle-inner.png") 0 0 no-repeat;
   background-size: cover;
   -webkit-transform-origin: 50% 50% 0;
       -ms-transform-origin: 50% 50% 0;
@@ -696,7 +696,7 @@ th {
   left: -19.5%;
   width: 15rem;
   height: 15rem;
-  background: url("../img/sidebar/sidebar-circle2.png") 0 0 no-repeat;
+  background: url("../img/sidebar/sidebar-circle-outer.png") 0 0 no-repeat;
   background-size: cover;
   -webkit-transform-origin: 50% 50% 0;
       -ms-transform-origin: 50% 50% 0;
@@ -3526,12 +3526,22 @@ th {
     overflow-y: auto;
   }
 }
+.contacts--isContacts_extended {
+  padding: 1em 0 4em 0;
+}
+.contacts__wrap {
+  width: 71.25em;
+  margin: 0 auto;
+}
 .contacts__title {
   margin: 0.85em 0 0;
 }
 .contacts__address {
   width: 17.5em;
   font-style: normal;
+}
+.contacts__address--isContacts_extended {
+  margin-left: 1.5em;
 }
 .contacts__row {
   margin-top: 1.5em;
@@ -3602,6 +3612,16 @@ th {
   .contacts__map {
     top: 28em;
   }
+}
+.contacts__map--overlay {
+  z-index: 100;
+}
+.contacts__map--overlay::before {
+  content: '';
+  position: absolute;
+  z-index: 1000;
+  width: 100%;
+  height: 100%;
 }
 .btn {
   display: block;

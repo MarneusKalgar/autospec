@@ -17,6 +17,8 @@ $(function () {
 	clients();
 
 	tabs();
+
+	whySlider();
 	
 });
 
@@ -365,6 +367,34 @@ function tabPanel () {
 		}, 100);
 	});
 }
+function tabs () {
+	var $tabs = $(".tabs");
+	var $menu = $(".tabs__menu");
+	var $item = $(".tabs__item");
+
+	$menu.on('click', 'li:not(.tabs__tab--active)', function() {
+		var self = this;
+		setTimeout(function() {
+			$(self)
+				.addClass('tabs__tab--active')
+				.siblings().removeClass('tabs__tab--active')
+				.closest($tabs).find($item).removeClass('tabs__item--active')
+				.eq($(self).index()).addClass('tabs__item--active');
+			//}, 100);
+			//setTimeout(function() {
+				//$(self)
+				//	.closest($tabs).find($item).removeClass('tabs__item--animate')
+				//	.eq($(self).index()).addClass('tabs__item--animate');
+		}, 300);
+	});
+
+	var $service = $(".tabs__service");
+
+	$service.on("click", function () {
+		$(this).toggleClass("tabs__service--isSelected");
+	});
+
+}
 function trust() {
 	var $container = $(".thumbs__cars");
 	var $thumbs = $(".trust__thumbs");
@@ -437,31 +467,26 @@ function trust() {
 }
 
 
-function tabs () {
-	var $tabs = $(".tabs");
-	var $menu = $(".tabs__menu");
-	var $item = $(".tabs__item");
+function whySlider() {
 
-	$menu.on('click', 'li:not(.tabs__tab--active)', function() {
-		var self = this;
-		setTimeout(function() {
-			$(self)
-				.addClass('tabs__tab--active')
-				.siblings().removeClass('tabs__tab--active')
-				.closest($tabs).find($item).removeClass('tabs__item--active')
-				.eq($(self).index()).addClass('tabs__item--active');
-			//}, 100);
-			//setTimeout(function() {
-				//$(self)
-				//	.closest($tabs).find($item).removeClass('tabs__item--animate')
-				//	.eq($(self).index()).addClass('tabs__item--animate');
-		}, 300);
+	var $slider = $(".why__slider");
+	var $wrapper = $(".why__slider-wrap");
+	var $list = $(".why__list")
+	var $next = $(".why__control--next");
+	var $prev = $(".why__control--prev");
+
+	$next.on("click", function() {
+		$slider.find($wrapper).animate({'left': '-' + 22 + 'em' }, 500, function() {
+			$slider.find($list).find(".why__slide").eq(0).clone().appendTo($slider.find($wrapper).find($list));
+			$slider.find($list).find(".why__slide").eq(0).remove();
+			$slider.find($wrapper).css({'left': 0});
+		});
 	});
 
-	var $service = $(".tabs__service");
-
-	$service.on("click", function () {
-		$(this).toggleClass("tabs__service--isSelected");
+	$prev.on("click", function() {
+		$slider.find($list).find(".why__slide").eq(-1).clone().prependTo($slider.find($wrapper).find($list));
+		$slider.find($wrapper).css({'left': '-' + 22 + 'em' });
+		$slider.find($list).find(".why__slide").eq(-1).remove();
+		$slider.find($wrapper).animate({ 'left': 0 }, 500);
 	});
-
 }

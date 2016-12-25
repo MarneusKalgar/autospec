@@ -57,20 +57,24 @@
 			top 33.5%
 			width 14.3em
 			height 14.3em
-			background url("../img/sidebar/sidebar-circle1.png") center no-repeat
+			background url("../img/sidebar/sidebar-circle-inner.png") center no-repeat
 			background-size cover
 			transform-origin 50% 50% 0
 			animation rotateCircle 20s linear infinite reverse running
+			+retina()
+				background-image url("../img/sidebar/sidebar-circle-inner-lg.png")
 		&::after
 			content: ''
 			position absolute
 			top 21%
 			width 25.6em
 			height 25.6em
-			background url("../img/sidebar/sidebar-circle2.png") center no-repeat
+			background url("../img/sidebar/sidebar-circle-outer.png") center no-repeat
 			background-size cover
 			transform-origin 50% 50% 0
 			animation rotateCircle 30s linear infinite running
+			+retina()
+				background-image url("../img/sidebar/sidebar-circle-outer-lg.png")
 
 		&--left
 			left 0
