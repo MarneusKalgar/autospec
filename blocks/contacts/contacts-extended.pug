@@ -1,7 +1,7 @@
-include ../callback-form/callback-form
+include ../callback-form/callback-form-embeded
 
 mixin contacts-extended
-	+b.SECTION.contacts(class="--isContacts_extended")
+	+b.SECTION.contacts(class="--isContacts_extended wow slideInUp")
 		+e.DIV.wrap
 			+e.H2.title(class="titles") Контакты
 
@@ -22,6 +22,6 @@ mixin contacts-extended
 					+e.link(class="--mail", href="mailto:avtoservice@ukr.net") avtoservice@ukr.net
 
 			+e.H2.title(class="titles") Обратная связь
-			+callback-form()
+			+callback-form-embeded()
 
 		+e.DIV.map(class="--overlay")#map

@@ -2,7 +2,8 @@
 .services
 	position relative
 	flex 1
-	padding 9.5em 7.5% 1%
+	flex-container(row,nowrap, center, center)
+	padding 9.5em 5% 1%
 	font-size 1rem
 	background-color #ebebeb
 	overflow hidden
@@ -10,11 +11,10 @@
 		padding-top 6.5em
 	@media screen and (max-height: 650px), (max-width: 480px)
 		overflow-y auto
-	@media screen and (max-width: 1250px)
-		padding-left 5%
 	@media screen and (max-width: 560px)
 		font-size .875rem
 	@media screen and (max-width: 480px)
+		display block
 		padding-top 5em
 		font-size 1.1rem
 	@media screen and	(orientation: landscape)
@@ -24,28 +24,37 @@
 		//container with image and items
 	&__scheme
 		position relative
-		//width 42em
 		width 42em * 1.1
-		margin 4% auto 0
-		//padding-right 5.5%
+		height 27.25em * 1.1
+		margin 0
 		@media screen and (max-height: 740px)
 			margin-top 1.5em
 		@media screen and (min-width: 1051px) and (max-width: 1180px), (min-width: 701px) and (max-width: 830px)
 			width 42em
-			margin 8% auto 0
-			padding-right 0
+			height 27.25em
+			margin-left 8%
 		@media screen and (min-width: 940px) and (max-width: 1050px), (max-width: 700px)//, (max-height: 650px)
-			margin 8% auto 0
 			width 42em * .8
+			height 27.25em * .8
+		@media screen and (max-width: 800px)
+			margin-top 10em
+			margin-left 8%
 		@media screen and (max-width: 480px)
-			margin-top 0
 			width 100%
+			margin 0
 
 
 	&__photo
 		display block
-		width 100%
-		height auto
+		width 42em * 1.1
+		height 27.25em * 1.1
+		margin 0
+		@media screen and (min-width: 1051px) and (max-width: 1180px), (min-width: 701px) and (max-width: 830px)
+			width 42em
+			height 27.25em
+		@media screen and (min-width: 940px) and (max-width: 1050px), (max-width: 700px)
+			width 42em * .8
+			height 27.25em * .8
 		@media screen and (max-width: 480px)
 			display: none
 
@@ -86,7 +95,8 @@
 			left 0
 			width 2em
 			height 2em
-			background url("../img/services/services__sprite.png") 0 0 no-repeat
+			background url("../img/services/services__sprite-lg.png") 0 0 no-repeat
+			background-size 100%
 		&:hover //styling effect progressive color filling
 			.services__line:before
 				width 0
@@ -97,9 +107,6 @@
 			.services__dot:before
 				width 0
 				transition width .2s ease-in
-		//@media screen and (max-width: 1180px)
-		//	&:hover
-		//		transform translate(0, 0) scale(1)
 		@media screen and (max-width: 560px)
 			&:before
 				top .5em
@@ -109,7 +116,6 @@
 		@media screen and (max-width: 480px)
 			position relative
 			width 100%
-			//-margin 0 auto
 			padding 2.5em 0 1.3em 0
 			text-align center
 			border-bottom 1px solid lighten($base-text-color, 50%)
@@ -155,11 +161,11 @@
 				right 2.3em
 			@media screen and (min-width: 1181px)
 				&:hover
-					transform translate(-5%, -5%) scale(1.1)
+					transform translate(-5%, -5%) scale(1.2)
 					.services__pointer
-						transform rotateZ(40deg)
+						transform rotateZ(40deg) scale(1)
 					.services__dot
-						transform translate(50%,-60%)
+						transform translate(-10%,-135%) scale(0.9)
 			@media screen and (min-width: 1051px) and (max-width: 1180px), (min-width: 701px) and (max-width: 830px)
 				top 13%
 				left -4%
@@ -191,7 +197,7 @@
 			top -4.5%
 			left 14%
 			&:before
-				background-position 0 -2.6em;
+				background-position 0 -8.1em;
 			.services__line
 				width 5em
 			.services__pointer
@@ -203,11 +209,11 @@
 				right 1.7em
 			@media screen and (min-width: 1181px)
 				&:hover
-					transform translate(-3%, -3%) scale(1.05)
+					transform translate(-3%, -3%) scale(1.15)
 					.services__pointer
-						transform rotateZ(37deg)
+						transform rotateZ(37deg) scale(.9)
 					.services__dot
-						transform translate(30%,-40%)
+						transform translate(-50%,-120%) scale(0.9)
 			@media screen and (min-width: 1051px) and (max-width: 1180px), (min-width: 701px) and (max-width: 830px)
 				left 15%
 				.services__pointer
@@ -228,13 +234,13 @@
 					right 3em
 			@media screen and (max-width: 560px)
 				&:before
-					background-position 0 -1.7em
+					background-position 0 -6em
 			@media screen and (max-width: 480px)
 				left 0
 				width: 100%
 				&:before
 					top 6%
-					background-position 0 -2.2em
+					background-position 0 -8.1em
 
 
 			//ITEM(3)
@@ -243,12 +249,12 @@
 			left 50%
 			width 8em
 			&:before
-				background-position 0 -5.3em;
+				background-position 0 -16em;
 			.services__line
 				width 4em
 			.services__pointer
 				left 0
-				bottom 1.2em
+				bottom 1.14em
 				width 5.3em
 				transform rotateZ(-225deg)
 			.services__dot
@@ -256,19 +262,19 @@
 				left -3.85em
 			@media screen and (min-width: 1181px)
 				&:hover
-					transform translate(4%, -4%) scale(1.05)
+					transform translate(4%, -4%) scale(1.15)
 					.services__pointer
-						transform rotateZ(-227deg)
+						transform rotateZ(-227deg) scale(0.8)
 					.services__dot
-						transform translate(50%,25%)
+						transform translate(190%,-125%) scale(0.9)
 			@media screen and (min-width: 1051px) and (max-width: 1180px), (min-width: 701px) and (max-width: 830px)
 				top -5%
 				left 48%
 				.services__pointer
 					left 0
-					bottom 1.15em
+					bottom 1.1em
 					width 3.7em
-					transform rotateZ(-225deg)
+					transform rotateZ(-223deg)
 				.services__dot
 					bottom -1.4em
 					left -2.7em
@@ -281,13 +287,13 @@
 					left -2.75em
 			@media screen and (max-width: 560px)
 				&:before
-					background-position 0 -3.6em
+					background-position 0 -11.9em
 			@media screen and (max-width: 480px)
 				left 0
 				width 100%
 				&:before
 					top 5%
-					background-position 0 -4.7em
+					background-position 0 -16em
 
 
 			//ITEM(4)
@@ -296,12 +302,12 @@
 			left 80%
 			width 8em
 			&:before
-				background-position 0 -7.9em;
+				background-position 0 -2.6em;
 			.services__line
 				width 4.5em
 			.services__pointer
 				left 0
-				bottom 1.25em
+				bottom 1.18em
 				width 7em
 				transform rotateZ(-230deg)
 			.services__dot
@@ -309,11 +315,11 @@
 				left -4.75em
 			@media screen and (min-width: 1181px)
 				&:hover
-					transform translate(5%, -5%) scale(1.05)
+					transform translate(10%, -5%) scale(1.15)
 					.services__pointer
-						transform rotateZ(-229deg)
+						transform rotateZ(-229deg) scale(0.9)
 					.services__dot
-						transform translate(-50%,0)
+						transform translate(115%,-160%) scale(0.9)
 			@media screen and (min-width: 1051px) and (max-width: 1180px), (min-width: 701px) and (max-width: 830px)
 				top 7.5%
 				left 78%
@@ -334,13 +340,13 @@
 					left -3.5em
 			@media screen and (max-width: 560px)
 				&:before
-					background-position 0 -5.5em
+					background-position 0 -1.9em
 			@media screen and (max-width: 480px)
 				left 0
 				width 100%
 				&:before
 					top 4%
-					background-position 0 -7.2em
+					background-position 0 -2.6em
 
 
 			//ITEM(5)
@@ -350,13 +356,13 @@
 			width 8em
 			&:before
 				width 2.1em
-				height 2.2em
-				background-position 0 -10.6em;
+				height 2.1em
+				background-position 0 -11.4em;
 			.services__line
 				width 5.5em
 			.services__pointer
 				left 0
-				bottom: 1.15em
+				bottom: 1.13em
 				width 6em
 				transform rotateZ(223deg)
 			.services__dot
@@ -364,17 +370,17 @@
 				left -4.7em
 			@media screen and (min-width: 1181px)
 				&:hover
-					transform translate(3%, 3%) scale(1.08)
+					transform translate(3%, 6%) scale(1.2)
 					.services__pointer
-						transform rotateZ(226deg)
+						transform rotateZ(231deg) scale(0.9)
 					.services__dot
-						transform translate(110%,10%)
+						transform translate(315%,40%) scale(0.9)
 			@media screen and (min-width: 1051px) and (max-width: 1180px), (min-width: 701px) and (max-width: 830px)
 				top 80%
 				left 77%
 				.services__pointer
 					left 0
-					bottom: 1.15em
+					bottom: 1.18em
 					width 4.3em
 					transform rotateZ(223deg)
 				.services__dot
@@ -394,7 +400,7 @@
 				&:before
 					width 1.6em
 					height 1.6em
-					background-position 0 -7.9em
+					background-position 0 -8.65em
 			@media screen and (max-width: 480px)
 				left 0
 				width 100%
@@ -402,7 +408,7 @@
 					top 4%
 					width 2em
 					height 2em
-					background-position 0 -9.7em
+					background-position 0 -10.8em
 
 
 			//ITEM(6)
@@ -411,8 +417,8 @@
 			left 32%
 			width 8em
 			&:before
-				width 2.1em
-				background-position 0 -13.3em;
+				width 1.9em
+				background-position 0 -5.1em;
 			.services__line
 				width 4.55em
 			.services__pointer
@@ -425,16 +431,16 @@
 				left -3.1em
 			@media screen and (min-width: 1181px)
 				&:hover
-					transform translate(3%, 3%) scale(1.1)
+					transform translate(-3%, 3%) scale(1.2)
 					.services__pointer
-						transform rotateZ(238deg)
+						transform rotateZ(248deg) scale(0.8)
 					.services__dot
-						transform translate(90%,40%)
+						transform translate(370%,100%) scale(0.9)
 			@media screen and (min-width: 1051px) and (max-width: 1180px), (min-width: 701px) and (max-width: 830px)
 				top 83%
 				left 32%
 				.services__pointer
-					bottom: 1.15em
+					bottom 1.18em
 					width 4.3em
 					transform rotateZ(226deg)
 				.services__dot
@@ -451,15 +457,15 @@
 					left -2.7em
 			@media screen and (max-width: 560px)
 				&:before
-					width 1.6em
-					background-position 0 -9.9em
+					width 1.5em
+					background-position 0 -4em
 			@media screen and (max-width: 480px)
 				left 0
 				width 100%
 				&:before
 					top 7%
 					width 2em
-					background-position 0 -12.5em
+					background-position 0 -5.4em
 
 
 			//ITEM(7)
@@ -468,7 +474,7 @@
 			left -3%
 			width 8em
 			&:before
-				background-position 0 -15.9em;
+				background-position 0 -13.4em;
 			.services__line
 				width 5em
 			.services__pointer
@@ -481,11 +487,11 @@
 				right -2.6em
 			@media screen and (min-width: 1181px)
 				&:hover
-					transform translate(-5%, 5%) scale(1.1)
+					transform translate(5%, 5%) scale(1.2)
 					.services__pointer
-						transform rotateZ(-42deg)
+						transform rotateZ(-48deg) scale(0.85)
 					.services__dot
-						transform translate(-50%,0)
+						transform translate(-365%,70%) scale(0.9)
 			@media screen and (min-width: 1051px) and (max-width: 1180px), (min-width: 701px) and (max-width: 830px)
 				top 58%
 				left -4%
@@ -509,13 +515,13 @@
 					right .3em
 			@media screen and (max-width: 560px)
 				&:before
-					background-position 0 -11em
+					background-position 0 -10em
 			@media screen and (max-width: 480px)
 				left 0
 				width 100%
 				&:before
 					top 3%
-					background-position 0 -14.5em
+					background-position 0 -13.4em
 
 
 	&__price

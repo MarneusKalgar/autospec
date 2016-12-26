@@ -726,6 +726,10 @@ th {
 .materials {
   margin: 0;
   padding: 3.5em 0;
+  -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
 }
 .materials__wrap {
   width: 71.25em;
@@ -832,6 +836,10 @@ th {
   width: 100%;
   margin-top: 6em;
   text-align: left;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
 }
 .bundles__row:nth-child(4) .bundles__content-cell--checked::before,
 .bundles__row:nth-child(5) .bundles__content-cell--checked::before {
@@ -876,6 +884,9 @@ th {
   position: relative;
   width: 65.21739%;
   height: 40em;
+  margin: 0;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
 }
 .tabs__menu {
   position: absolute;
@@ -970,11 +981,9 @@ th {
   background-size: 40%;
 }
 .tabs__service--isSelected .tabs__dot::after {
-  width: 1.7em;
-  height: 1.7em;
-  -webkit-transform: translate(-50.5%, -50%);
-      -ms-transform: translate(-50.5%, -50%);
-          transform: translate(-50.5%, -50%);
+  -webkit-transform: translate(-50%, -50%) scale(1.6);
+      -ms-transform: translate(-50%, -50%) scale(1.6);
+          transform: translate(-50%, -50%) scale(1.6);
 }
 .tabs__service:nth-child(1) {
   top: -17%;
@@ -986,7 +995,7 @@ th {
 .tabs__service:nth-child(1) .tabs__pointer {
   width: 2em;
   bottom: 0.7em;
-  left: 10.6em;
+  left: 10.7em;
   -webkit-transform: rotateZ(45deg);
       -ms-transform: rotate(45deg);
           transform: rotateZ(45deg);
@@ -1004,8 +1013,8 @@ th {
 }
 .tabs__service:nth-child(2) .tabs__pointer {
   width: 3em;
-  bottom: 0.3em;
-  left: 5.1em;
+  bottom: 0.32em;
+  left: 5em;
   -webkit-transform: rotateZ(45deg);
       -ms-transform: rotate(45deg);
           transform: rotateZ(45deg);
@@ -1023,7 +1032,7 @@ th {
 }
 .tabs__service:nth-child(3) .tabs__pointer {
   width: 3em;
-  bottom: 0.4em;
+  bottom: 0.41em;
   left: 4.6em;
   -webkit-transform: rotateZ(40deg);
       -ms-transform: rotate(40deg);
@@ -1062,7 +1071,7 @@ th {
 }
 .tabs__service:nth-child(5) .tabs__pointer {
   width: 6.5em;
-  bottom: 3.7em;
+  bottom: 3.65em;
   left: -6.5em;
   -webkit-transform: rotateZ(45deg);
       -ms-transform: rotate(45deg);
@@ -1130,6 +1139,8 @@ th {
   -webkit-border-radius: 50%;
           border-radius: 50%;
   background-color: #ee6800;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
 }
 .tabs__dot::before {
   content: '';
@@ -1143,8 +1154,6 @@ th {
           border-radius: 50%;
   background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MiA0MiIgZmlsbD0iI2VlNjgwMCIgc3Ryb2tlPSIjZWU2ODAwIiBzdHJva2Utd2lkdGg9IjUiIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIj48cGF0aCBkPSJNNDIgMjBIMjJWMGgtMnYyMEgwdjJoMjB2MjBoMlYyMmgyMCIvPjwvc3ZnPg==") center no-repeat;
   background-size: 25%;
-  -webkit-transition: all 0.2s ease;
-  transition: all 0.2s ease;
 }
 .tabs__dot::after {
   content: '';
@@ -1154,14 +1163,17 @@ th {
   left: 50%;
   width: 1em;
   height: 1em;
+  -webkit-transform-origin: 50% 50% 0;
+      -ms-transform-origin: 50% 50% 0;
+          transform-origin: 50% 50% 0;
   -webkit-transform: translate(-50%, -50%);
       -ms-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   -webkit-border-radius: 50%;
           border-radius: 50%;
   background-color: #fff;
-  -webkit-transition: all 0.2s ease;
-  transition: all 0.2s ease;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 .order-form {
   -webkit-box-flex: 1;
@@ -1172,6 +1184,10 @@ th {
   margin: 0;
   padding: 1em 0 0 2em;
   border-left: 1px solid #d1d1d1;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
 }
 .order-form__caption {
   font-size: 1.5em;
@@ -1259,8 +1275,8 @@ th {
   display: block;
   position: absolute;
   top: 0;
-  left: 0.7em;
-  width: 0.8em;
+  left: 0.55em;
+  width: 0.85em;
   height: 100%;
 }
 .order-form__label--desc {
@@ -1318,6 +1334,10 @@ th {
 .why {
   padding: 3.2em 0 1.2em;
   color: #000;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
 }
 .why__wrap {
   width: 71.25em;
@@ -1407,6 +1427,10 @@ th {
   padding: 3.125em 0 4.5em;
   background: #ebebeb url("../img/services/services-simple-bg.jpg") 0 0 no-repeat;
   background-size: cover;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
 }
 .services__wrap {
   width: 71.25em;
@@ -1511,6 +1535,10 @@ th {
 }
 .contacts--isContacts_extended {
   padding: 1em 0 4em 0;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
 }
 .contacts__wrap {
   width: 71.25em;
@@ -1599,22 +1627,38 @@ th {
 .contacts__map--overlay {
   z-index: 100;
 }
-.contacts__map--overlay::before {
-  content: '';
-  position: absolute;
-  z-index: 1000;
-  width: 100%;
-  height: 100%;
-}
 .callback-form {
   position: relative;
   width: 13em;
 }
+.callback-form__row {
+  position: relative;
+  width: 100%;
+}
 .callback-form__label {
   display: block;
   position: absolute;
-  visibility: hidden;
-  opacity: 0;
+  top: 0.65em;
+  left: 0.6em;
+  width: 0.8em;
+  height: 0.8em;
+}
+.callback-form__label::before {
+  width: 100%;
+  height: 100%;
+}
+.callback-form__label--wrap {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3.5em;
+  margin-top: 3em;
+  padding: 0 0.5em;
+}
+.callback-form__label--wrap:hover .callback-form__btn,
+.callback-form__label--wrap:focus .callback-form__btn {
+  color: #fff;
 }
 .callback-form__input {
   display: block;
@@ -1625,13 +1669,14 @@ th {
   background: rgba(0,0,0,0);
   border-bottom: 1px solid #707070;
   outline: none;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 .callback-form__btn {
   position: relative;
   left: 0;
   width: 100%;
-  height: 3.5em;
-  margin-top: 3em;
+  height: 100%;
   padding: 0 1em;
   color: #ee6800;
   letter-spacing: 0.1em;

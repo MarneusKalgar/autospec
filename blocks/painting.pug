@@ -20,6 +20,10 @@ html(lang="ru")
 			"author": "Interact Agency",
 			"description": "autospecservice painting"
 		})
+		// build:css css/vendor-singleService.css
+		link(rel="stylesheet", href="js/libs/animsition/dist/css/animsition.min.css")
+		link(rel="stylesheet", href="js/libs/animate.css/dist/css/animate.min.css")
+		// endbuild
 		// build:css css/singleService.css
 		link(rel="stylesheet", href="css/singleService.css")
 		// endbuild
@@ -127,13 +131,14 @@ html(lang="ru")
 		script( src="js/libs/animsition/dist/js/animsition.min.js")
 		script( src="js/libs/jquery.maskedinput/dist/jquery.maskedinput.min.js")
 		script( src="js/libs/jquery-validation/dist/jquery.validate.min.js")
+		script( src="js/libs/wow/dist/wow.min.js")
 		// endbuild
 
 		// build:js js/main.js
 		script( src="js/main.js")
 		// endbuild
 
-		script(async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyApNXjcWxKpQwh7KkYpTvegrO9NAb_NhEI&callback=contacts")
+		script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyApNXjcWxKpQwh7KkYpTvegrO9NAb_NhEI&callback=contacts")
 
 		script.
 			$('.animsition').animsition({
@@ -161,3 +166,58 @@ html(lang="ru")
 				}
 			});
 
+		script.
+			new WOW().init();
+
+	//-
+		script.
+			$(function() {
+				var $hero = $(".hero");
+				var $stats = $(".statistics");
+
+				var $materials = $(".materials");
+				var $bundles = $(".bundles");
+				var $tabs = $(".tabs");
+				var $form = $(".order-form");
+				var $table = $(".bundles__table");
+
+				var $why = $(".why");
+				var $services = $(".services");
+
+				var $contacts = $(".contacts");
+
+				var scrollDelay = 250;
+
+
+				$(window).on("scroll", function() {
+					var scroll = $(window).scrollTop();
+					console.log(scroll +' scroll');
+
+					if ( scroll >= scrollDelay) {
+						$materials.addClass("zoomIn");
+					}
+
+					if (scroll >= scrollDelay + $materials.height()) {
+						$tabs.addClass("bounceInLeft");
+						$form.addClass("bounceInRight");
+					}
+
+					if (scroll >= 2*scrollDelay + $materials.height() + $tabs.height() ) {
+						$table.addClass("slideInLeft");
+					}
+
+					if (scroll >= 2*scrollDelay + $bundles.height()) {
+						$why.addClass("bounceInRight");
+					}
+
+					if (scroll >= scrollDelay + $bundles.height() + $why.height()) {
+						$services.addClass("zoomIn");
+					}
+
+					if (scroll >= scrollDelay + $bundles.height() + $why.height() + $services.height() + 600) {
+						$contacts.addClass("bounceInUp");
+					}
+
+				});
+
+			});

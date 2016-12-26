@@ -15,8 +15,9 @@
     <link rel="apple-touch-icon" sizes="144x144" href="img/favicon/apple-touch-icon-144x144.png"/>
     <link rel="apple-touch-icon" sizes="152x152" href="img/favicon/apple-touch-icon-152x152.png"/>
     <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon-180x180.png"/>
-    <!-- build:css css/vendor.css-->
-    <link rel="stylesheet" href="js/libs/animsition/dist/css/animsition.min.css"/>
+    <!-- build:css css/vendor-singleService.css-->
+    <link rel="stylesheet" href="js/libs/animsition/dist/css/animsition.min.css">
+    <link rel="stylesheet" href="js/libs/animate.css/dist/css/animate.min.css">
     <!-- endbuild-->
     <!-- build:css css/singleService.css-->
     <link rel="stylesheet" href="css/singleService.css">
@@ -51,7 +52,7 @@
         <div class="hero__circle hero__circle--right">
         </div>
       </section>
-      <section class="statistics">
+      <section class="statistics wow fadeIn" id="statistics" data-wow-offset="100">
         <ul class="statistics__list">
           <li class="statistics__item">
             <p class="statistics__caption">10
@@ -73,7 +74,7 @@
           </li>
         </ul>
       </section>
-      <section class="materials">
+      <section class="materials wow flipInX" data-wow-offset="150">
         <div class="materials__wrap">
           <h2 class="materials__title titles">Работаем с лучшими материалами
           </h2>
@@ -128,7 +129,7 @@
       </section>
       <section class="bundles">
         <div class="bundles__wrap">
-          <div class="tabs">
+          <div class="tabs wow slideInLeft">
             <ul class="tabs__menu">
               <li class="tabs__tab tabs__tab--active">бюджет
               </li>
@@ -204,7 +205,7 @@
               </figure>
             </div>
           </div>
-          <form class="order-form" name="order-form" action="#" method="POST">
+          <form class="order-form wow slideInRight" name="order-form" action="#" method="POST">
             <legend class="order-form__caption">Оформление заявки
             </legend>
             <fieldset class="order-form__set">
@@ -311,7 +312,7 @@
               </label>
             </fieldset>
           </form>
-          <table class="bundles__table">
+          <table class="bundles__table wow fadeIn" data-wow-duration="1s">
             <thead class="bundles__heading">
               <tr class="bundles__row">
                 <th class="bundles__head-cell">Условия / Вариант исполнения
@@ -389,7 +390,7 @@
           </table>
         </div>
       </section>
-      <section class="why">
+      <section class="why wow slideInRight">
         <div class="why__wrap">
           <h2 class="why__title titles">Почему мы
           </h2>
@@ -467,7 +468,7 @@
           </div>
         </div>
       </section>
-      <section class="services">
+      <section class="services wow zoomIn">
         <div class="services__wrap">
           <h2 class="services__title titles">Услуги
           </h2>
@@ -489,7 +490,7 @@
           </ul>
         </div>
       </section>
-      <section class="contacts contacts--isContacts_extended">
+      <section class="contacts contacts--isContacts_extended wow slideInUp">
         <div class="contacts__wrap">
           <h2 class="contacts__title titles">Контакты
           </h2>
@@ -512,10 +513,18 @@
           <h2 class="contacts__title titles">Обратная связь
           </h2>
           <form class="callback-form" method="POST" action="#" name="callback">
-            <label class="callback-form__label" for="callback-tel">Ваш номер
-            </label><input class="callback-form__input" type="tel" id="callback-tel" name="callback-tel" required="required" aria-required="true" placeholder="Введите ваш телефон"/>
-            <label class="callback-form__label" for="callback-name">Ваше имя
-            </label><input class="callback-form__input" type="text" id="callback-name" name="callback-name" required="required" aria-required="true" placeholder="Как Вас зовут?"/><input class="btn btn--call callback-form__btn" type="submit" value="перезвоните мне"/>
+            <div class="callback-form__row">
+              <label class="callback-form__label svgicon svgicon--person" for="callback-tel">
+              </label><input class="callback-form__input" type="tel" id="callback-tel" name="callback-tel" required="required" aria-required="true" placeholder="Введите ваш телефон"/>
+            </div>
+            <div class="callback-form__row">
+              <label class="callback-form__label svgicon svgicon--phone" for="callback-name">
+              </label><input class="callback-form__input" type="text" id="callback-name" name="callback-name" required="required" aria-required="true" placeholder="Как Вас зовут?"/>
+            </div>
+            <div class="callback-form__row">
+              <label class="callback-form__label callback-form__label--wrap btn btn--bordered"><input class="btn callback-form__btn" type="submit" value="перезвоните мне"/>
+              </label>
+            </div>
           </form>
         </div>
         <div class="contacts__map contacts__map--overlay" id="map">
@@ -527,11 +536,12 @@
     <script src="js/libs/animsition/dist/js/animsition.min.js"></script>
     <script src="js/libs/jquery.maskedinput/dist/jquery.maskedinput.min.js"></script>
     <script src="js/libs/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="js/libs/wow/dist/wow.min.js"></script>
     <!-- endbuild-->
     <!-- build:js js/main.js-->
     <script src="js/main.js"></script>
     <!-- endbuild-->
-    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyApNXjcWxKpQwh7KkYpTvegrO9NAb_NhEI&amp;callback=contacts"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyApNXjcWxKpQwh7KkYpTvegrO9NAb_NhEI&amp;callback=contacts"></script>
     <script>
       $('.animsition').animsition({
       	inClass: 'fade-in',
@@ -557,6 +567,11 @@
       		window.location.href = url;
       	}
       });
+      
+    </script>
+    <script>
+      new WOW().init();
+      
     </script>
   </body>
 </html>

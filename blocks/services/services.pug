@@ -1,4 +1,4 @@
-mixin info(items)
+mixin inform(items)
 	each item in items
 		+e.LI.item
 			+e.A.link(href=item.link)= item.title
@@ -10,9 +10,9 @@ mixin info(items)
 mixin services
 	+b.MAIN.services
 		+e.DIV.scheme
-			+e.IMG.photo(src="img/services/servces__photo.png", alt="сервис и цены")
+			+e.IMG.photo(src="img/services/services__photo.png", alt="сервис и цены")
 			+e.UL.list
-				+info([
+				+inform([
 					{ "link":"#", "title": "Техническое обслуживание", "text": "от 1000 грн" },
 					{ "link":"#", "title": "Исправление вмятин и царапин", "text": "от 1000 грн" },
 					{ "link":"#", "title": "Диагностика ходовой", "text": "от 1000 грн" },

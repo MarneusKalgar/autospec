@@ -4,6 +4,8 @@
 	width 65.21739%
 	height 40em
 	margin 0
+	animation-duration 2s
+	animation-delay 0s
 
 		//tab-menu
 	&__menu
@@ -91,9 +93,9 @@
 					background url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHZlcnNpb249IjEuMSIgaWQ9ItCh0LvQvtC5XzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgMjk1LjQgMjU3LjciIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDI5NS40IDI1Ny43OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PHN0eWxlIHR5cGU9InRleHQvY3NzIj4uc3Qwe2ZpbGw6I0VFNjgwMDt9PC9zdHlsZT48Zz48Zz48cGF0aCBjbGFzcz0ic3QwIiBkPSJNMjcuOCwxNTQuOWMtNi40LTYuNC0xNi43LTYuNC0yMywwcy02LjQsMTYuNywwLDIzbDc1LDc1YzMuMiwzLjIsNy4xLDQuOCwxMS41LDQuOGMwLjQsMCwwLjQsMCwwLjgsMGM0LjQtMC40LDguNy0yLjQsMTEuOS02bDE4Ny43LTIyNWM1LjYtNi43LDQuOC0xNy4xLTItMjNjLTYuNy01LjYtMTcuMS00LjgtMjMsMkw5MC4xLDIxNy4yTDI3LjgsMTU0LjlMMjcuOCwxNTQuOXoiLz48L2c+PC9nPjwvc3ZnPg==") center no-repeat
 					background-size 40%
 				&::after
-					width 1.7em
-					height 1.7em
-					transform translate(-50.5%,-50%)
+					//width 1.7em
+					//height 1.7em
+					transform translate(-50%,-50%) scale(1.6)
 
 		&:nth-child(1)
 			top -17%
@@ -103,7 +105,7 @@
 			.tabs__pointer
 				width 2em
 				bottom .7em
-				left 10.6em
+				left 10.7em
 				transform rotateZ(45deg)
 			.tabs__dot
 				left 190%
@@ -116,8 +118,8 @@
 				width 5.5em
 			.tabs__pointer
 				width 3em
-				bottom .3em
-				left 5.1em
+				bottom .32em
+				left 5em
 				transform rotateZ(45deg)
 			.tabs__dot
 				left 115%
@@ -130,7 +132,7 @@
 				width 5em
 			.tabs__pointer
 				width 3em
-				bottom .4em
+				bottom .41em
 				left 4.6em
 				transform rotateZ(40deg)
 			.tabs__dot
@@ -159,7 +161,7 @@
 				width 6em
 			.tabs__pointer
 				width 6.5em
-				bottom 3.7em
+				bottom 3.65em
 				left -6.5em
 				transform rotateZ(45deg)
 			.tabs__dot
@@ -212,6 +214,7 @@
 		height 2em
 		border-radius 50%
 		background-color $base-decor-color
+		transition all .2s ease
 		&::before
 			content ''
 			position absolute
@@ -223,7 +226,7 @@
 			border-radius 50%
 			background url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MiA0MiIgZmlsbD0iI2VlNjgwMCIgc3Ryb2tlPSIjZWU2ODAwIiBzdHJva2Utd2lkdGg9IjUiIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIj48cGF0aCBkPSJNNDIgMjBIMjJWMGgtMnYyMEgwdjJoMjB2MjBoMlYyMmgyMCIvPjwvc3ZnPg==") center no-repeat
 			background-size 25%
-			transition all .2s ease
+			//transition all .4s ease
 		&::after
 			content ''
 			position absolute
@@ -232,7 +235,8 @@
 			left 50%
 			width 1em
 			height 1em
+			transform-origin 50% 50% 0
 			transform translate(-50%,-50%)
 			border-radius 50%
 			background-color #fff
-			transition all .2s ease
+			transition all .3s ease

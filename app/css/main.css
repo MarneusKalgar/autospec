@@ -1668,7 +1668,7 @@ th {
   cursor: pointer;
   -webkit-transition: all 0.4s ease-in 0.1s;
   transition: all 0.4s ease-in 0.1s;
-  border-bottom: 0.1em solid rgba(0,0,0,0);
+  border-bottom: 2px solid rgba(0,0,0,0);
 }
 .tab-panel__tab--active {
   color: #ee6800;
@@ -1810,7 +1810,7 @@ th {
     bottom: -8%;
   }
 }
-@media screen and (min-width: 799px) and (min-height: 3000px) {
+@media screen and (min-width: 799px) and (min-height: 1280px) {
   .tab-panel__person {
     position: absolute;
     bottom: -10%;
@@ -1859,7 +1859,27 @@ th {
   -webkit-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  padding: 9.5em 7.5% 1%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 9.5em 5% 1%;
   font-size: 1rem;
   background-color: #ebebeb;
   overflow: hidden;
@@ -1874,11 +1894,6 @@ th {
     overflow-y: auto;
   }
 }
-@media screen and (max-width: 1250px) {
-  .services {
-    padding-left: 5%;
-  }
-}
 @media screen and (max-width: 560px) {
   .services {
     font-size: 0.875rem;
@@ -1886,6 +1901,7 @@ th {
 }
 @media screen and (max-width: 480px) {
   .services {
+    display: block;
     padding-top: 5em;
     font-size: 1.1rem;
   }
@@ -1898,7 +1914,8 @@ th {
 .services__scheme {
   position: relative;
   width: 46.2em;
-  margin: 4% auto 0;
+  height: 29.975em;
+  margin: 0;
 }
 @media screen and (max-height: 740px) {
   .services__scheme {
@@ -1908,26 +1925,45 @@ th {
 @media screen and (min-width: 1051px) and (max-width: 1180px), (min-width: 701px) and (max-width: 830px) {
   .services__scheme {
     width: 42em;
-    margin: 8% auto 0;
-    padding-right: 0;
+    height: 27.25em;
+    margin-left: 8%;
   }
 }
 @media screen and (min-width: 940px) and (max-width: 1050px), (max-width: 700px) {
   .services__scheme {
-    margin: 8% auto 0;
     width: 33.6em;
+    height: 21.8em;
+  }
+}
+@media screen and (max-width: 800px) {
+  .services__scheme {
+    margin-top: 10em;
+    margin-left: 8%;
   }
 }
 @media screen and (max-width: 480px) {
   .services__scheme {
-    margin-top: 0;
     width: 100%;
+    margin: 0;
   }
 }
 .services__photo {
   display: block;
-  width: 100%;
-  height: auto;
+  width: 46.2em;
+  height: 29.975em;
+  margin: 0;
+}
+@media screen and (min-width: 1051px) and (max-width: 1180px), (min-width: 701px) and (max-width: 830px) {
+  .services__photo {
+    width: 42em;
+    height: 27.25em;
+  }
+}
+@media screen and (min-width: 940px) and (max-width: 1050px), (max-width: 700px) {
+  .services__photo {
+    width: 33.6em;
+    height: 21.8em;
+  }
 }
 @media screen and (max-width: 480px) {
   .services__photo {
@@ -1978,7 +2014,8 @@ th {
   left: 0;
   width: 2em;
   height: 2em;
-  background: url("../img/services/services__sprite.png") 0 0 no-repeat;
+  background: url("../img/services/services__sprite-lg.png") 0 0 no-repeat;
+  background-size: 100%;
 }
 .services__item:hover .services__line:before {
   width: 0;
@@ -2075,19 +2112,19 @@ th {
 }
 @media screen and (min-width: 1181px) {
   .services__item:nth-child(1):hover {
-    -webkit-transform: translate(-5%, -5%) scale(1.1);
-        -ms-transform: translate(-5%, -5%) scale(1.1);
-            transform: translate(-5%, -5%) scale(1.1);
+    -webkit-transform: translate(-5%, -5%) scale(1.2);
+        -ms-transform: translate(-5%, -5%) scale(1.2);
+            transform: translate(-5%, -5%) scale(1.2);
   }
   .services__item:nth-child(1):hover .services__pointer {
-    -webkit-transform: rotateZ(40deg);
-        -ms-transform: rotate(40deg);
-            transform: rotateZ(40deg);
+    -webkit-transform: rotateZ(40deg) scale(1);
+        -ms-transform: rotate(40deg) scale(1);
+            transform: rotateZ(40deg) scale(1);
   }
   .services__item:nth-child(1):hover .services__dot {
-    -webkit-transform: translate(50%, -60%);
-        -ms-transform: translate(50%, -60%);
-            transform: translate(50%, -60%);
+    -webkit-transform: translate(-10%, -135%) scale(0.9);
+        -ms-transform: translate(-10%, -135%) scale(0.9);
+            transform: translate(-10%, -135%) scale(0.9);
   }
 }
 @media screen and (min-width: 1051px) and (max-width: 1180px), (min-width: 701px) and (max-width: 830px) {
@@ -2137,7 +2174,7 @@ th {
   left: 14%;
 }
 .services__item:nth-child(2):before {
-  background-position: 0 -2.6em;
+  background-position: 0 -8.1em;
 }
 .services__item:nth-child(2) .services__line {
   width: 5em;
@@ -2155,19 +2192,19 @@ th {
 }
 @media screen and (min-width: 1181px) {
   .services__item:nth-child(2):hover {
-    -webkit-transform: translate(-3%, -3%) scale(1.05);
-        -ms-transform: translate(-3%, -3%) scale(1.05);
-            transform: translate(-3%, -3%) scale(1.05);
+    -webkit-transform: translate(-3%, -3%) scale(1.15);
+        -ms-transform: translate(-3%, -3%) scale(1.15);
+            transform: translate(-3%, -3%) scale(1.15);
   }
   .services__item:nth-child(2):hover .services__pointer {
-    -webkit-transform: rotateZ(37deg);
-        -ms-transform: rotate(37deg);
-            transform: rotateZ(37deg);
+    -webkit-transform: rotateZ(37deg) scale(0.9);
+        -ms-transform: rotate(37deg) scale(0.9);
+            transform: rotateZ(37deg) scale(0.9);
   }
   .services__item:nth-child(2):hover .services__dot {
-    -webkit-transform: translate(30%, -40%);
-        -ms-transform: translate(30%, -40%);
-            transform: translate(30%, -40%);
+    -webkit-transform: translate(-50%, -120%) scale(0.9);
+        -ms-transform: translate(-50%, -120%) scale(0.9);
+            transform: translate(-50%, -120%) scale(0.9);
   }
 }
 @media screen and (min-width: 1051px) and (max-width: 1180px), (min-width: 701px) and (max-width: 830px) {
@@ -2204,7 +2241,7 @@ th {
 }
 @media screen and (max-width: 560px) {
   .services__item:nth-child(2):before {
-    background-position: 0 -1.7em;
+    background-position: 0 -6em;
   }
 }
 @media screen and (max-width: 480px) {
@@ -2214,7 +2251,7 @@ th {
   }
   .services__item:nth-child(2):before {
     top: 6%;
-    background-position: 0 -2.2em;
+    background-position: 0 -8.1em;
   }
 }
 .services__item:nth-child(3) {
@@ -2223,14 +2260,14 @@ th {
   width: 8em;
 }
 .services__item:nth-child(3):before {
-  background-position: 0 -5.3em;
+  background-position: 0 -16em;
 }
 .services__item:nth-child(3) .services__line {
   width: 4em;
 }
 .services__item:nth-child(3) .services__pointer {
   left: 0;
-  bottom: 1.2em;
+  bottom: 1.14em;
   width: 5.3em;
   -webkit-transform: rotateZ(-225deg);
       -ms-transform: rotate(-225deg);
@@ -2242,19 +2279,19 @@ th {
 }
 @media screen and (min-width: 1181px) {
   .services__item:nth-child(3):hover {
-    -webkit-transform: translate(4%, -4%) scale(1.05);
-        -ms-transform: translate(4%, -4%) scale(1.05);
-            transform: translate(4%, -4%) scale(1.05);
+    -webkit-transform: translate(4%, -4%) scale(1.15);
+        -ms-transform: translate(4%, -4%) scale(1.15);
+            transform: translate(4%, -4%) scale(1.15);
   }
   .services__item:nth-child(3):hover .services__pointer {
-    -webkit-transform: rotateZ(-227deg);
-        -ms-transform: rotate(-227deg);
-            transform: rotateZ(-227deg);
+    -webkit-transform: rotateZ(-227deg) scale(0.8);
+        -ms-transform: rotate(-227deg) scale(0.8);
+            transform: rotateZ(-227deg) scale(0.8);
   }
   .services__item:nth-child(3):hover .services__dot {
-    -webkit-transform: translate(50%, 25%);
-        -ms-transform: translate(50%, 25%);
-            transform: translate(50%, 25%);
+    -webkit-transform: translate(190%, -125%) scale(0.9);
+        -ms-transform: translate(190%, -125%) scale(0.9);
+            transform: translate(190%, -125%) scale(0.9);
   }
 }
 @media screen and (min-width: 1051px) and (max-width: 1180px), (min-width: 701px) and (max-width: 830px) {
@@ -2264,11 +2301,11 @@ th {
   }
   .services__item:nth-child(3) .services__pointer {
     left: 0;
-    bottom: 1.15em;
+    bottom: 1.1em;
     width: 3.7em;
-    -webkit-transform: rotateZ(-225deg);
-        -ms-transform: rotate(-225deg);
-            transform: rotateZ(-225deg);
+    -webkit-transform: rotateZ(-223deg);
+        -ms-transform: rotate(-223deg);
+            transform: rotateZ(-223deg);
   }
   .services__item:nth-child(3) .services__dot {
     bottom: -1.4em;
@@ -2289,7 +2326,7 @@ th {
 }
 @media screen and (max-width: 560px) {
   .services__item:nth-child(3):before {
-    background-position: 0 -3.6em;
+    background-position: 0 -11.9em;
   }
 }
 @media screen and (max-width: 480px) {
@@ -2299,7 +2336,7 @@ th {
   }
   .services__item:nth-child(3):before {
     top: 5%;
-    background-position: 0 -4.7em;
+    background-position: 0 -16em;
   }
 }
 .services__item:nth-child(4) {
@@ -2308,14 +2345,14 @@ th {
   width: 8em;
 }
 .services__item:nth-child(4):before {
-  background-position: 0 -7.9em;
+  background-position: 0 -2.6em;
 }
 .services__item:nth-child(4) .services__line {
   width: 4.5em;
 }
 .services__item:nth-child(4) .services__pointer {
   left: 0;
-  bottom: 1.25em;
+  bottom: 1.18em;
   width: 7em;
   -webkit-transform: rotateZ(-230deg);
       -ms-transform: rotate(-230deg);
@@ -2327,19 +2364,19 @@ th {
 }
 @media screen and (min-width: 1181px) {
   .services__item:nth-child(4):hover {
-    -webkit-transform: translate(5%, -5%) scale(1.05);
-        -ms-transform: translate(5%, -5%) scale(1.05);
-            transform: translate(5%, -5%) scale(1.05);
+    -webkit-transform: translate(10%, -5%) scale(1.15);
+        -ms-transform: translate(10%, -5%) scale(1.15);
+            transform: translate(10%, -5%) scale(1.15);
   }
   .services__item:nth-child(4):hover .services__pointer {
-    -webkit-transform: rotateZ(-229deg);
-        -ms-transform: rotate(-229deg);
-            transform: rotateZ(-229deg);
+    -webkit-transform: rotateZ(-229deg) scale(0.9);
+        -ms-transform: rotate(-229deg) scale(0.9);
+            transform: rotateZ(-229deg) scale(0.9);
   }
   .services__item:nth-child(4):hover .services__dot {
-    -webkit-transform: translate(-50%, 0);
-        -ms-transform: translate(-50%, 0);
-            transform: translate(-50%, 0);
+    -webkit-transform: translate(115%, -160%) scale(0.9);
+        -ms-transform: translate(115%, -160%) scale(0.9);
+            transform: translate(115%, -160%) scale(0.9);
   }
 }
 @media screen and (min-width: 1051px) and (max-width: 1180px), (min-width: 701px) and (max-width: 830px) {
@@ -2374,7 +2411,7 @@ th {
 }
 @media screen and (max-width: 560px) {
   .services__item:nth-child(4):before {
-    background-position: 0 -5.5em;
+    background-position: 0 -1.9em;
   }
 }
 @media screen and (max-width: 480px) {
@@ -2384,7 +2421,7 @@ th {
   }
   .services__item:nth-child(4):before {
     top: 4%;
-    background-position: 0 -7.2em;
+    background-position: 0 -2.6em;
   }
 }
 .services__item:nth-child(5) {
@@ -2394,15 +2431,15 @@ th {
 }
 .services__item:nth-child(5):before {
   width: 2.1em;
-  height: 2.2em;
-  background-position: 0 -10.6em;
+  height: 2.1em;
+  background-position: 0 -11.4em;
 }
 .services__item:nth-child(5) .services__line {
   width: 5.5em;
 }
 .services__item:nth-child(5) .services__pointer {
   left: 0;
-  bottom: 1.15em;
+  bottom: 1.13em;
   width: 6em;
   -webkit-transform: rotateZ(223deg);
       -ms-transform: rotate(223deg);
@@ -2414,19 +2451,19 @@ th {
 }
 @media screen and (min-width: 1181px) {
   .services__item:nth-child(5):hover {
-    -webkit-transform: translate(3%, 3%) scale(1.08);
-        -ms-transform: translate(3%, 3%) scale(1.08);
-            transform: translate(3%, 3%) scale(1.08);
+    -webkit-transform: translate(3%, 6%) scale(1.2);
+        -ms-transform: translate(3%, 6%) scale(1.2);
+            transform: translate(3%, 6%) scale(1.2);
   }
   .services__item:nth-child(5):hover .services__pointer {
-    -webkit-transform: rotateZ(226deg);
-        -ms-transform: rotate(226deg);
-            transform: rotateZ(226deg);
+    -webkit-transform: rotateZ(231deg) scale(0.9);
+        -ms-transform: rotate(231deg) scale(0.9);
+            transform: rotateZ(231deg) scale(0.9);
   }
   .services__item:nth-child(5):hover .services__dot {
-    -webkit-transform: translate(110%, 10%);
-        -ms-transform: translate(110%, 10%);
-            transform: translate(110%, 10%);
+    -webkit-transform: translate(315%, 40%) scale(0.9);
+        -ms-transform: translate(315%, 40%) scale(0.9);
+            transform: translate(315%, 40%) scale(0.9);
   }
 }
 @media screen and (min-width: 1051px) and (max-width: 1180px), (min-width: 701px) and (max-width: 830px) {
@@ -2436,7 +2473,7 @@ th {
   }
   .services__item:nth-child(5) .services__pointer {
     left: 0;
-    bottom: 1.15em;
+    bottom: 1.18em;
     width: 4.3em;
     -webkit-transform: rotateZ(223deg);
         -ms-transform: rotate(223deg);
@@ -2468,7 +2505,7 @@ th {
   .services__item:nth-child(5):before {
     width: 1.6em;
     height: 1.6em;
-    background-position: 0 -7.9em;
+    background-position: 0 -8.65em;
   }
 }
 @media screen and (max-width: 480px) {
@@ -2480,7 +2517,7 @@ th {
     top: 4%;
     width: 2em;
     height: 2em;
-    background-position: 0 -9.7em;
+    background-position: 0 -10.8em;
   }
 }
 .services__item:nth-child(6) {
@@ -2489,8 +2526,8 @@ th {
   width: 8em;
 }
 .services__item:nth-child(6):before {
-  width: 2.1em;
-  background-position: 0 -13.3em;
+  width: 1.9em;
+  background-position: 0 -5.1em;
 }
 .services__item:nth-child(6) .services__line {
   width: 4.55em;
@@ -2509,19 +2546,19 @@ th {
 }
 @media screen and (min-width: 1181px) {
   .services__item:nth-child(6):hover {
-    -webkit-transform: translate(3%, 3%) scale(1.1);
-        -ms-transform: translate(3%, 3%) scale(1.1);
-            transform: translate(3%, 3%) scale(1.1);
+    -webkit-transform: translate(-3%, 3%) scale(1.2);
+        -ms-transform: translate(-3%, 3%) scale(1.2);
+            transform: translate(-3%, 3%) scale(1.2);
   }
   .services__item:nth-child(6):hover .services__pointer {
-    -webkit-transform: rotateZ(238deg);
-        -ms-transform: rotate(238deg);
-            transform: rotateZ(238deg);
+    -webkit-transform: rotateZ(248deg) scale(0.8);
+        -ms-transform: rotate(248deg) scale(0.8);
+            transform: rotateZ(248deg) scale(0.8);
   }
   .services__item:nth-child(6):hover .services__dot {
-    -webkit-transform: translate(90%, 40%);
-        -ms-transform: translate(90%, 40%);
-            transform: translate(90%, 40%);
+    -webkit-transform: translate(370%, 100%) scale(0.9);
+        -ms-transform: translate(370%, 100%) scale(0.9);
+            transform: translate(370%, 100%) scale(0.9);
   }
 }
 @media screen and (min-width: 1051px) and (max-width: 1180px), (min-width: 701px) and (max-width: 830px) {
@@ -2530,7 +2567,7 @@ th {
     left: 32%;
   }
   .services__item:nth-child(6) .services__pointer {
-    bottom: 1.15em;
+    bottom: 1.18em;
     width: 4.3em;
     -webkit-transform: rotateZ(226deg);
         -ms-transform: rotate(226deg);
@@ -2559,8 +2596,8 @@ th {
 }
 @media screen and (max-width: 560px) {
   .services__item:nth-child(6):before {
-    width: 1.6em;
-    background-position: 0 -9.9em;
+    width: 1.5em;
+    background-position: 0 -4em;
   }
 }
 @media screen and (max-width: 480px) {
@@ -2571,7 +2608,7 @@ th {
   .services__item:nth-child(6):before {
     top: 7%;
     width: 2em;
-    background-position: 0 -12.5em;
+    background-position: 0 -5.4em;
   }
 }
 .services__item:nth-child(7) {
@@ -2580,7 +2617,7 @@ th {
   width: 8em;
 }
 .services__item:nth-child(7):before {
-  background-position: 0 -15.9em;
+  background-position: 0 -13.4em;
 }
 .services__item:nth-child(7) .services__line {
   width: 5em;
@@ -2599,19 +2636,19 @@ th {
 }
 @media screen and (min-width: 1181px) {
   .services__item:nth-child(7):hover {
-    -webkit-transform: translate(-5%, 5%) scale(1.1);
-        -ms-transform: translate(-5%, 5%) scale(1.1);
-            transform: translate(-5%, 5%) scale(1.1);
+    -webkit-transform: translate(5%, 5%) scale(1.2);
+        -ms-transform: translate(5%, 5%) scale(1.2);
+            transform: translate(5%, 5%) scale(1.2);
   }
   .services__item:nth-child(7):hover .services__pointer {
-    -webkit-transform: rotateZ(-42deg);
-        -ms-transform: rotate(-42deg);
-            transform: rotateZ(-42deg);
+    -webkit-transform: rotateZ(-48deg) scale(0.85);
+        -ms-transform: rotate(-48deg) scale(0.85);
+            transform: rotateZ(-48deg) scale(0.85);
   }
   .services__item:nth-child(7):hover .services__dot {
-    -webkit-transform: translate(-50%, 0);
-        -ms-transform: translate(-50%, 0);
-            transform: translate(-50%, 0);
+    -webkit-transform: translate(-365%, 70%) scale(0.9);
+        -ms-transform: translate(-365%, 70%) scale(0.9);
+            transform: translate(-365%, 70%) scale(0.9);
   }
 }
 @media screen and (min-width: 1051px) and (max-width: 1180px), (min-width: 701px) and (max-width: 830px) {
@@ -2651,7 +2688,7 @@ th {
 }
 @media screen and (max-width: 560px) {
   .services__item:nth-child(7):before {
-    background-position: 0 -11em;
+    background-position: 0 -10em;
   }
 }
 @media screen and (max-width: 480px) {
@@ -2661,7 +2698,7 @@ th {
   }
   .services__item:nth-child(7):before {
     top: 3%;
-    background-position: 0 -14.5em;
+    background-position: 0 -13.4em;
   }
 }
 .services__price {
@@ -3528,6 +3565,10 @@ th {
 }
 .contacts--isContacts_extended {
   padding: 1em 0 4em 0;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
 }
 .contacts__wrap {
   width: 71.25em;
@@ -3615,13 +3656,6 @@ th {
 }
 .contacts__map--overlay {
   z-index: 100;
-}
-.contacts__map--overlay::before {
-  content: '';
-  position: absolute;
-  z-index: 1000;
-  width: 100%;
-  height: 100%;
 }
 .btn {
   display: block;
