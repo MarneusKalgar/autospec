@@ -7,41 +7,67 @@
 		flex-container(row, wrap, center, flex-start)
 		width $base-wrap-element-width
 		margin 0 auto
+		@media screen and (max-width: 1199px)
+			flex-direction column
+			box-sizing border-box
+			width 100%
+			padding 0 1.25em
+
+	&__table-wrap
+		width 100%
+		@media screen and (max-width: 599px)
+			overflow-x auto
 
 	&__table
 		width 100%
+		min-width 27em
 		margin-top 6em
 		text-align left
 		animation-duration 2s
 		animation-delay 0s
 
-	&__row:nth-child(4)
-	&__row:nth-child(5)
-		.bundles__content-cell--checked::before
-			top 1em
+	&__row
+		width 100%
+		&:nth-child(4)
+		&:nth-child(5)
+			.bundles__content-cell--checked::before
+				top 1em
 
 	&__head-cell
+		position relative
 		width 25%
 		padding .5em 0
 		border-bottom 1px solid #adadad
 
 		&:nth-child(1)
-			width 17.8125em
+			box-sizing border-box
+			min-width 16em
+			padding-right .5em
+			@media screen and (max-width: 599px)
+				min-width 10em
+				padding-right 1em
 
 		&:not(:first-child)
 			text-transform uppercase
 			font-weight bold
 			color $base-decor-color
 
+
 	&__content-cell
+		position relative
 		width 25%
 		padding .8em 0
 		vertical-align bottom
 		border-bottom 1px solid #d1d1d1
 
 		&:nth-child(1)
-			width 17.8125em
+			box-sizing border-box
+			min-width 16em
+			padding-right .5em
 			font-weight bold
+			@media screen and (max-width: 599px)
+				min-width 10em
+				padding-right 1em
 
 		&--checked
 			position relative
@@ -53,3 +79,11 @@
 				width 1em
 				height 1em
 				background url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHZlcnNpb249IjEuMSIgaWQ9ItCh0LvQvtC5XzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgMjk1LjQgMjU3LjciIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDI5NS40IDI1Ny43OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PHN0eWxlIHR5cGU9InRleHQvY3NzIj4uc3Qwe2ZpbGw6I0VFNjgwMDt9PC9zdHlsZT48Zz48Zz48cGF0aCBjbGFzcz0ic3QwIiBkPSJNMjcuOCwxNTQuOWMtNi40LTYuNC0xNi43LTYuNC0yMywwcy02LjQsMTYuNywwLDIzbDc1LDc1YzMuMiwzLjIsNy4xLDQuOCwxMS41LDQuOGMwLjQsMCwwLjQsMCwwLjgsMGM0LjQtMC40LDguNy0yLjQsMTEuOS02bDE4Ny43LTIyNWM1LjYtNi43LDQuOC0xNy4xLTItMjNjLTYuNy01LjYtMTcuMS00LjgtMjMsMkw5MC4xLDIxNy4yTDI3LjgsMTU0LjlMMjcuOCwxNTQuOXoiLz48L2c+PC9nPjwvc3ZnPg==") center no-repeat
+
+.fixed-column
+	position absolute
+	display inline-block
+	width auto
+	border-right 1px solid #ddd
+	@media screen and (min-width: 600px)
+		display none

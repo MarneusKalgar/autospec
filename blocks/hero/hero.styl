@@ -10,21 +10,36 @@
 
 	&__title
 		position relative
-		margin 4.5em 0 0
+		width 6em
+		margin 4.5em auto 0
+		@media screen and (max-width: 450px)
+			margin-top 5.5em
 		&::before
 			content ''
 			position absolute
 			top -1.7em
-			left 48%
+			left 36%
 			width 1.5625em
 			height 1.5em
 			background url("../img/hero/hero__title-icon.png") 0 0 no-repeat
 			background-size cover
+			@media screen and (max-width: 450px)
+				width @width * .8
+				height @height * .8
+				top -1.3em
+				left 40%
 
 	&__lead
 		width 23.95em
 		margin .5em auto 0
 		font-size 1.5em
+		@media screen and (max-width: 840px)
+			margin-top 1em
+			font-size 1.2em
+		@media screen and (max-width: 599px)
+			box-sizing border-box
+			width 100%
+			padding 0 3%
 
 	&__link
 		display block
@@ -32,6 +47,12 @@
 		height 1em
 		margin 3.5em auto 0
 		transform-origin 50% 50% 0
+		@media screen and (max-width: 450px)
+			position absolute
+			bottom 2em
+			left 50%
+			margin 0
+			transform translateX(-50%)
 
 	&__icon
 		width 100%
@@ -51,6 +72,8 @@
 		top 0
 		height 100%
 		width 12.8em
+		@media screen and (max-width: 599px)
+			display none
 		&::before
 			content: ''
 			position absolute
@@ -63,6 +86,13 @@
 			animation rotateCircle 20s linear infinite reverse running
 			+retina()
 				background-image url("../img/sidebar/sidebar-circle-inner-lg.png")
+			@media screen and (max-width: 1199px)
+				top 37%
+				width @width * .7
+				height @height * .7
+			@media screen and (max-width: 599px)
+				display none
+				background none
 		&::after
 			content: ''
 			position absolute
@@ -75,20 +105,35 @@
 			animation rotateCircle 30s linear infinite running
 			+retina()
 				background-image url("../img/sidebar/sidebar-circle-outer-lg.png")
+			@media screen and (max-width: 1199px)
+				top 27.8%
+				width @width * .7
+				height @height * .7
+			@media screen and (max-width: 599px)
+				display none
+				background none
 
 		&--left
 			left 0
 			&::before
 				left -57%
+				@media screen and (max-width: 1199px)
+					left -40%
 			&::after
 				left -100%
+				@media screen and (max-width: 1199px)
+					left -70%
 
 		&--right
 			right 0
 			&::before
 				right -57%
+				@media screen and (max-width: 1199px)
+					right -40%
 			&::after
 				right -100%
+				@media screen and (max-width: 1199px)
+					right -70%
 
 @keyframes rotateCircle
 	0%

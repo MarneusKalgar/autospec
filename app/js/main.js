@@ -15,8 +15,12 @@ $(function () {
 	trust();
 
 	clients();
+
+	header();
 	
 	hero();
+
+	//bundles();
 
 	tabs();
 
@@ -58,6 +62,16 @@ function clients() {
 			},
 			usermessage: "Пожалуйста, введите сообщение"
 		}
+	});
+}
+function bundles() {
+	var $table = $(".bundles__table");
+	var $fixedColumn = $table.clone().insertBefore($table).addClass("fixed-column");
+
+	$fixedColumn.find("th:not(:first-child),td:not(:first-child)").remove();
+
+	$fixedColumn.find("tr").each(function(i, elem) {
+		$(this).height($table.find("tr:eq(" + i + ")").height());
 	});
 }
 function contacts() {
@@ -263,6 +277,19 @@ function contacts() {
 		map: map,
 		icon: icon
 	});
+}
+function header() {
+
+	if ($(".header--singleService").length) {
+		var $btn = $("#to_bundles");
+
+		$btn.on("click", function() {
+			var id = $(this).attr("href");
+			var offset = $(id).offset().top;
+			$("html, body").animate({"scrollTop": offset}, 500);
+		});
+	}
+
 }
 function hero() {
 	$link = $(".hero__link");
@@ -485,9 +512,20 @@ function whySlider() {
 	var $list = $(".why__list")
 	var $next = $(".why__control--next");
 	var $prev = $(".why__control--prev");
+	var $slide = $(".why__slide");
+
+	var slideWidth;
+
+	if ($(window).width() >= 500) {
+		slideWidth = 22;
+	} else {
+		slideWidth = 18.5;
+	}
+
+	console.log(slideWidth);
 
 	$next.on("click", function() {
-		$slider.find($wrapper).animate({'left': '-' + 22 + 'em' }, 500, function() {
+		$slider.find($wrapper).animate({'left': '-' + slideWidth + 'em' }, 500, function() {
 			$slider.find($list).find(".why__slide").eq(0).clone().appendTo($slider.find($wrapper).find($list));
 			$slider.find($list).find(".why__slide").eq(0).remove();
 			$slider.find($wrapper).css({'left': 0});
@@ -496,7 +534,7 @@ function whySlider() {
 
 	$prev.on("click", function() {
 		$slider.find($list).find(".why__slide").eq(-1).clone().prependTo($slider.find($wrapper).find($list));
-		$slider.find($wrapper).css({'left': '-' + 22 + 'em' });
+		$slider.find($wrapper).css({'left': '-' + slideWidth + 'em' });
 		$slider.find($list).find(".why__slide").eq(-1).remove();
 		$slider.find($wrapper).animate({ 'left': 0 }, 500);
 	});

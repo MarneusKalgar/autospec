@@ -7,6 +7,13 @@
 	border-left 1px solid #d1d1d1
 	animation-duration 2s
 	animation-delay 0s
+	@media screen and (max-width: 1199px)
+		width 50%
+		margin 0 auto
+		padding-left 0
+		border none
+	@media screen and (max-width:649px)
+		width 100%
 
 	&__caption
 		font-size 1.5em
@@ -23,7 +30,7 @@
 		outline none
 
 		&--container
-			height 18.75em
+			height 20em
 			padding 0
 			border none
 
@@ -52,20 +59,6 @@
 			background rgba(0,0,0,0)
 			transition all .3s ease
 
-	&__select-wrap
-		position relative
-		z-index 100
-		width 100%
-		height 100%
-		&::after
-			content ''
-			position absolute
-			z-index 0
-			right 0
-			top 1em
-			width .8em
-			height .8em
-			background url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjkgMTI5IiB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIGZpbGw9IiNhNWE1YTUiPjxwYXRoIGQ9Ik0xMjEuMyAzNC42Yy0xLjYtMS42LTQuMi0xLjYtNS44IDBsLTUxIDUxLjEtNTEuMS01MS4xYy0xLjYtMS42LTQuMi0xLjYtNS44IDAtMS42IDEuNi0xLjYgNC4yIDAgNS44bDUzLjkgNTMuOWMuOC44IDEuOCAxLjIgMi45IDEuMiAxIDAgMi4xLS40IDIuOS0xLjJsNTMuOS01My45YzEuNy0xLjYgMS43LTQuMi4xLTUuOHoiLz48L3N2Zz4=") center no-repeat
 
 	&__select
 		position relative
@@ -98,6 +91,8 @@
 			width 90%
 			height 4em
 			margin-top 2em
+			@media screen and (max-width:649px)
+				width 100%
 
 		&--file
 			position relative
@@ -113,6 +108,8 @@
 				.order-form__icon--file
 					fill $base-text-color
 					stroke $base-text-color
+			@media screen and (max-width:649px)
+				margin 3.5em auto 0
 
 		&--wrap
 			position relative
@@ -126,6 +123,8 @@
 			&:focus
 				.order-form__input--submit
 					color $base-text-color
+			@media screen and (max-width:649px)
+				margin 6em auto 0
 
 	&__icon
 		display block

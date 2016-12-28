@@ -15,8 +15,12 @@ $(function () {
 	trust();
 
 	clients();
+
+	header();
 	
 	hero();
+
+	//bundles();
 
 	tabs();
 

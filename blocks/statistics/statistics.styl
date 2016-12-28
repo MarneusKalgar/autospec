@@ -1,7 +1,11 @@
 /***********************STATISTICS***********************/
 .statistics
 	padding 2em 0
-	background $base-decor-color-light-grey  url("../img/statistics/statistics-bg.jpg")
+	background $base-decor-color-light-grey url("../img/statistics/statistics-bg.jpg") 0 0 no-repeat
+	background-size cover
+	@media screen and (max-width: 799px)
+		padding 1em 0
+		background url("../img/statistics/statistics-bg-sm.jpg")
 
 	&__list
 		flex-container(row, wrap, center, center)
@@ -13,6 +17,10 @@
 	&__item
 		width 14em
 		margin 2em 5em
+		@media screen and (max-width: 1179px)
+			margin 2em 2%
+		@media screen and (max-width: 520px)
+			margin 1em 2%
 
 	&__caption
 		margin 0
