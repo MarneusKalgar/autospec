@@ -1,12 +1,10 @@
 #autospecservice
-The modular "BEM like" approach to the project scaffolding (inspired by [Gulp Front Bilerplate](https://github.com/zoxon/gulp-front))
+Markup and coding for AutoSpecService
 
 ##Quick start
 
 * Install dev-dependencies `npm i`
 * Install dependencies `bower i`
-* In `gulpfile.js` create relevant path in the `path` object for vendors
-* Launch `gulp copy` to copy assets to developer directory
 * Launch `gulp` to run watchers, server and compilers
 * Launch `gulp production` to minify files for production
 

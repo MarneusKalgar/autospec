@@ -30,6 +30,16 @@ $(function () {
 
 
 
+function bundles() {
+	var $table = $(".bundles__table");
+	var $fixedColumn = $table.clone().insertBefore($table).addClass("fixed-column");
+
+	$fixedColumn.find("th:not(:first-child),td:not(:first-child)").remove();
+
+	$fixedColumn.find("tr").each(function(i, elem) {
+		$(this).height($table.find("tr:eq(" + i + ")").height());
+	});
+}
 function callbackForm() {
 	//var $input = $("#callback-tel");
 
@@ -62,16 +72,6 @@ function clients() {
 			},
 			usermessage: "Пожалуйста, введите сообщение"
 		}
-	});
-}
-function bundles() {
-	var $table = $(".bundles__table");
-	var $fixedColumn = $table.clone().insertBefore($table).addClass("fixed-column");
-
-	$fixedColumn.find("th:not(:first-child),td:not(:first-child)").remove();
-
-	$fixedColumn.find("tr").each(function(i, elem) {
-		$(this).height($table.find("tr:eq(" + i + ")").height());
 	});
 }
 function contacts() {

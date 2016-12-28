@@ -93,44 +93,6 @@ gulp.task('browser-sync', function() {
 	});
 });
 
-/*********************************
- Copy assets to developer directory
- *********************************/
-
-//copy vendors js from blocks folders to devDir
-gulp.task('vendorjs', function() {
-	return gulp.src([
-		paths.vendors.js.jquery,
-		paths.vendors.js.anim
-	])
-		.pipe(gulp.dest(paths.devDir + 'js/libs/'));
-});
-
-//copy vendors css from blocks folders to devDir
-gulp.task('vendorcss', function() {
-	return gulp.src([
-		paths.vendors.css.anim
-	])
-		.pipe(gulp.dest(paths.devDir + 'css/libs/'));
-});
-
-//copy images from blocks folders to devDir
-gulp.task('images', function() {
-	return gulp.src([
-		paths.blocks + '**/*.jpg',
-		paths.blocks + '**/*.png',
-		'!' + paths.assets + 'img/*.*'
-	])
-		.pipe(imagemin({progressive: true}))
-		.pipe(gulp.dest(paths.devDir + 'img/'));
-});
-
-//copy fonts from blocks folders to devDir
-gulp.task('fonts', function() {
-	return gulp.src(paths.assets + 'fonts/*')
-		.pipe(gulp.dest(paths.devDir + 'fonts/'));
-});
-
 
 /*********************************
 		Production tasks
@@ -184,9 +146,6 @@ gulp.task('send', ['production'], function() {
 
 });
 
-//run 'copy' task before 'develop' to include images and fonts to developing directory
-//copy
-gulp.task('copy', ['vendorjs', 'vendorcss', 'images', 'fonts']);
 
 //develop
 gulp.task('develop', ['browser-sync', 'watch', 'pug', 'stylus', 'scripts']);
