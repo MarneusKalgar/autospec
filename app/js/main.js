@@ -23,8 +23,12 @@ $(function () {
 	//bundles();
 
 	tabs();
+	
+	orderForm();
 
 	whySlider();
+
+	scrollToTop();
 	
 });
 
@@ -47,7 +51,6 @@ function callbackForm() {
 }
 function clients() {
 	var $form = $("#clientsForm");
-	console.log("form!");
 
 	$form.validate({
 		rules: {
@@ -327,6 +330,45 @@ function menuBtn() {
 	});
 
 }
+function orderForm() {
+	var $form = $("#orderForm");
+
+	$form.validate({
+
+		rules: {
+			username: {
+				required: true
+			},
+			usermail: {
+				required: true,
+				email: true
+			},
+			usertel: {
+				required: true
+			},
+			carbrand: "required",
+			carmodel: "required",
+			caryear: "required"
+		},
+
+		messages: {
+			username: {
+				required: "Пожалуйста, введите свое имя"
+			},
+			usermail: {
+				required: "Пожалуйста, введите свой адрес",
+				email: "Формат адреса example@email.com"
+			},
+			usertel: "Пожалуйста, введите свой номер телефона",
+			carbrand: "Пожалуйста, введите марку автомобиля",
+			carmodel: "Пожалуйста, введите модель автомобиля",
+			caryear: "Пожалуйста, введите год выпуска"
+		}
+
+	});
+
+	$("#usertel").mask("+380 (99) 999 - 99 - 99");
+}
 function page() {
 	var $logo = $(".logo");
 	var $btn = $(".menu-btn");
@@ -376,6 +418,22 @@ function page() {
 	}
 	
 }
+/*******************************************/
+/* 							scroll to top
+/********************************************/
+function scrollToTop() {
+
+	var $scrollBtn = $('.scroll-to-top');
+
+	$scrollBtn.on("click", function(e) {
+		e.preventDefault();
+		var id = $(this).attr('href');
+		var offset = $(id).offset().top;
+		$('html, body').animate({'scrollTop': offset}, 500)
+	});
+
+}
+	
 function sidebar() {
 	var $btn = $(".sidebar__btn");
 	var $form = $(".callback-form");
@@ -410,6 +468,7 @@ function tabs () {
 	var $menu = $(".tabs__menu");
 	var $item = $(".tabs__item");
 
+	//tabs
 	$menu.on('click', 'li:not(.tabs__tab--active)', function() {
 		var self = this;
 		setTimeout(function() {
@@ -431,6 +490,35 @@ function tabs () {
 	$service.on("click", function () {
 		$(this).toggleClass("tabs__service--isSelected");
 	});
+
+	//lazy load images
+	/*
+	if ($(window).width() > 479) {
+		$(window).on('DOMContentLoaded load resize scroll', function () {
+			var images = $(".tabs img[data-src]");
+			// load images that have entered the viewport
+			$(images).each(function (index) {
+				if (isElementInViewport(this)) {
+					$(this).attr("src", $(this).attr("data-src"));
+					$(this).removeAttr("data-src");
+				}
+			});
+			// if all the images are loaded, stop calling the handler
+			if (images.length == 0) {
+				$(window).off('DOMContentLoaded load resize scroll')
+			}
+		});
+	}
+
+	function isElementInViewport (el) {
+		var rect = el.getBoundingClientRect();
+		return (
+			rect.top >= -1000 &&
+			rect.left >= 0 &&
+			rect.bottom <= $(window).height() + 1000 &&
+			rect.right <= $(window).width()
+		);
+	}*/
 
 }
 function trust() {

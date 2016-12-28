@@ -1,6 +1,5 @@
 function clients() {
 	var $form = $("#clientsForm");
-	console.log("form!");
 
 	$form.validate({
 		rules: {

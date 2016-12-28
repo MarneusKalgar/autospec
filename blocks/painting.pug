@@ -10,6 +10,7 @@ include bundles/bundles
 include why/why
 include services/services-simple
 include contacts/contacts-extended
+include scroll-to-top/scroll-to-top
 
 doctype html
 html(lang="ru")
@@ -30,7 +31,7 @@ html(lang="ru")
 
 	+b.BODY.page(class="--singleService")
 		+e.DIV.wrap(class="--singleService animsition")
-			+b.HEADER.header(class="--singleService")
+			+b.HEADER.header#header(class="--singleService")
 				+e.DIV.wrap
 					// block logo
 					+logo({
@@ -126,6 +127,11 @@ html(lang="ru")
 				// block services
 			+contacts-extended()
 				// end services
+
+			+scroll-to-top({
+				"class": "page__scrollTop wow bounceIn",
+				"link": "#header"
+			})
 
 		// build:js js/vendor.js
 		script( src="js/libs/jquery/dist/jquery.min.js")

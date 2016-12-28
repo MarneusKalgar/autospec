@@ -23,8 +23,12 @@ $(function () {
 	//bundles();
 
 	tabs();
+	
+	orderForm();
 
 	whySlider();
+
+	scrollToTop();
 	
 });
 

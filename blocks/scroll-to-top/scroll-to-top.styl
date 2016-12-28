@@ -1,0 +1,54 @@
+/*!********************************************
+		Block .scroll-to top
+**********************************************/
+.scroll-to-top
+	display block
+	box-sizing border-box
+	width 3em
+	height 3em
+	background-color rgba(0,0,0,0)
+	border 1px solid $base-decor-color
+	border-radius 50%
+	transform scale(1)
+	transition all .2s ease
+	&:hover
+	&:active
+	&:focus
+		transform scale(1.3)
+		background-color $base-decor-color
+		.scroll-to-top__elem
+			fill $base-text-color-light
+			stroke $base-text-color-light
+	
+	/*!*** modifier scroll-to-top animation *****/
+	&--fadeIn
+		animation fadeIn .5s ease 1 forwards
+	&--fadeOut
+		animation fadeOut .5s ease 1 forwards
+	
+	/*!*** elem elem *****/
+	&__elem
+		position absolute
+		left 50%
+		top 50%
+		z-index 1100
+		width 2em
+		height 2em
+		fill $base-decor-color
+		stroke $base-decor-color
+		stroke-width 1px
+		transform translate(-47%, -50%)
+		transition all .2s ease
+			
+//animation function
+@keyframes fadeIn
+	0%  
+		opacity 0
+	100%
+		opacity .8
+		
+@keyframes fadeOut
+	0%  
+		opacity .8
+	100%
+		opacity 0

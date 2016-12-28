@@ -18,6 +18,7 @@
 
 	&--singleService
 		height auto
+		overflow-x hidden
 		
 		/***** elem wrap *****/
 	&__wrap
@@ -34,6 +35,12 @@
 			display block
 			font-size 1rem
 			overflow hidden
+
+	&__scrollTop
+		position: absolute
+		bottom 2em
+		right 2em
+		z-index: 1000
 			
 	/***** block to style headings *****/		
 .titles

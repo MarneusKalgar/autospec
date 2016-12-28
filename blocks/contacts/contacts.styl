@@ -19,10 +19,16 @@
 		padding 1em 0 4em 0
 		animation-duration 2s
 		animation-delay 0s
+		@media screen and (max-width: 850px)
+			padding-bottom 7em
 
 	&__wrap
 		width $base-wrap-element-width
 		margin 0 auto
+		@media screen and (max-width: 1199px)
+			box-sizing border-box
+			width 100%
+			padding 0 1.25em
 
 	&__title
 		margin .85em 0 0
@@ -33,6 +39,7 @@
 
 		&--isContacts_extended
 			margin-left 1.5em
+
 
 	&__row
 		margin-top 1.5em
@@ -92,3 +99,16 @@
 
 		&--overlay
 			z-index 100
+			min-height 40.5em
+			@media screen and (min-width: 941px) and (max-width: 1100px)
+				width 50%
+			@media screen and (max-width: 850px)
+				position relative
+				width 100%
+				min-height 30em
+				height 30em
+				margin-top 2em
+			@media screen and (max-width: 750px)
+				top 0
+				left 0
+				margin-bottom 0

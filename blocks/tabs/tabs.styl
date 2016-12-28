@@ -9,6 +9,12 @@
 	@media screen and (max-width: 1199px)
 		width 46.875em
 		margin 0 auto
+	@media screen and (max-width: 779px)
+		width 100%
+		height 35em
+	@media screen and (max-width: 584px)
+		margin-top 2em
+
 
 		//tab-menu
 	&__menu
@@ -22,6 +28,12 @@
 		font-size 1em
 		letter-spacing .05em
 		line-height 2.4
+		@media screen and (max-width: 779px)
+			right 1em
+		@media screen and (max-width: 584px)
+			right 0
+			top -4em
+			width 100%
 
 	&__tab
 		position relative
@@ -37,6 +49,9 @@
 			bottom .2em
 			background-color rgba(0,0,0,0)
 			transition all .4s ease-in .1s
+		@media screen and (max-width: 584px)
+			display inline-block
+			margin-right 2%
 
 		&--active
 			color $base-decor-color
@@ -51,6 +66,8 @@
 		opacity 0
 		visibility hidden
 		transition all .5s ease
+		@media screen and (max-width: 479px)
+			width 100%
 
 		&--active
 			opacity 1
@@ -59,26 +76,41 @@
 
 	&__subtitle
 		margin 0
+		@media screen and (max-width: 459px)
+			font-size 2em
 
 	&__info
 		width 25.625em
 		margin 0
+		@media screen and (max-width: 584px)
+			width 100%
 
 	&__figure
 		position relative
 		width 36.25em
 		height 21.25em
 		margin 6.5em 0 0 4.5em
+		@media screen and (max-width: 779px)
+			width @width * .7
+			height @height * .7
+			margin-left 1.5em
+		@media screen and (max-width: 479px)
+			width 100%
+			margin 2em 0 0
+
 
 	&__img
 		display block
 		width 100%
 		height auto
+		@media screen and (max-width: 479px)
+			display none
 
 	&__list
 		margin 0
 		padding 0
 		list-style none
+
 
 	&__service
 		position absolute
@@ -86,7 +118,11 @@
 		cursor pointer
 		transition all .2s ease
 		transform translate(0, 0) scale(1)
-
+		@media screen and (max-width: 479px)
+			position relative
+			box-sizing border-box
+			width 100%
+			margin 1em 0 0 3em
 
 		&--isSelected
 			.tabs__caption
@@ -96,8 +132,6 @@
 					background url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHZlcnNpb249IjEuMSIgaWQ9ItCh0LvQvtC5XzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgMjk1LjQgMjU3LjciIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDI5NS40IDI1Ny43OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PHN0eWxlIHR5cGU9InRleHQvY3NzIj4uc3Qwe2ZpbGw6I0VFNjgwMDt9PC9zdHlsZT48Zz48Zz48cGF0aCBjbGFzcz0ic3QwIiBkPSJNMjcuOCwxNTQuOWMtNi40LTYuNC0xNi43LTYuNC0yMywwcy02LjQsMTYuNywwLDIzbDc1LDc1YzMuMiwzLjIsNy4xLDQuOCwxMS41LDQuOGMwLjQsMCwwLjQsMCwwLjgsMGM0LjQtMC40LDguNy0yLjQsMTEuOS02bDE4Ny43LTIyNWM1LjYtNi43LDQuOC0xNy4xLTItMjNjLTYuNy01LjYtMTcuMS00LjgtMjMsMkw5MC4xLDIxNy4yTDI3LjgsMTU0LjlMMjcuOCwxNTQuOXoiLz48L2c+PC9nPjwvc3ZnPg==") center no-repeat
 					background-size 40%
 				&::after
-					//width 1.7em
-					//height 1.7em
 					transform translate(-50%,-50%) scale(1.6)
 
 		&:nth-child(1)
@@ -113,6 +147,26 @@
 			.tabs__dot
 				left 190%
 				bottom -35%
+			@media screen and (max-width: 779px)
+				top -35%
+				left 25%
+				.tabs__line
+					width 6em
+				.tabs__pointer
+					left 5.3em
+					bottom -.1em
+					width 4em
+					transform rotateZ(48deg)
+				.tabs__dot
+					left 8em
+					bottom -3em
+			@media screen and (max-width: 479px)
+				top 0
+				left 0
+				width 100%
+				.tabs__dot
+					left -3em
+					bottom .3em
 
 		&:nth-child(2)
 			top 4%
@@ -127,6 +181,24 @@
 			.tabs__dot
 				left 115%
 				bottom -60%
+			@media screen and (max-width: 779px)
+				top -18%
+				left 0
+				.tabs__pointer
+					width 5em
+					bottom -1em
+					left 3.8em
+					transform rotateZ(72deg)
+				.tabs__dot
+					left 6em
+					bottom -4.5em
+			@media screen and (max-width: 479px)
+				top 0
+				left 0
+				width 100%
+				.tabs__dot
+					left -3em
+					bottom .3em
 
 		&:nth-child(3)
 			top 35%
@@ -134,13 +206,31 @@
 			.tabs__line
 				width 5em
 			.tabs__pointer
-				width 3em
-				bottom .41em
+				width 3.3em
+				bottom .3em
 				left 4.6em
 				transform rotateZ(40deg)
 			.tabs__dot
 				left 115%
 				bottom -60%
+			@media screen and (max-width: 779px)
+				top 13%
+				left -7%
+				.tabs__pointer
+					width 4.5em
+					bottom -.75em
+					left 3.4em
+					transform rotateZ(75deg)
+				.tabs__dot
+					left 5em
+					bottom -4em
+			@media screen and (max-width: 479px)
+				top 0
+				left 0
+				width 100%
+				.tabs__dot
+					left -3em
+					bottom .3em
 
 		&:nth-child(4)
 			top 93%
@@ -149,12 +239,30 @@
 				width 5.5em
 			.tabs__pointer
 				width 6.5em
-				bottom 4em
-				left 4.1em
-				transform rotateZ(-55deg)
+				bottom 4.1em
+				left 3.9em
+				transform rotateZ(-58deg)
 			.tabs__dot
 				left 135%
 				bottom 155%
+			@media screen and (max-width: 779px)
+				top 105%
+				left -7%
+				.tabs__pointer
+					width 5em
+					bottom 3.9em
+					left 3.3em
+					transform rotateZ(-83deg)
+				.tabs__dot
+					left 5.2em
+					bottom 6em
+			@media screen and (max-width: 479px)
+				top 0
+				left 0
+				width 100%
+				.tabs__dot
+					left -3em
+					bottom .3em
 
 		&:nth-child(5)
 			top 93%
@@ -170,6 +278,24 @@
 			.tabs__dot
 				left -100%
 				bottom 115%
+			@media screen and (max-width: 779px)
+				top 105%
+				left 65%
+				.tabs__pointer
+					width 6em
+					bottom 4em
+					left -5.5em
+					transform rotateZ(60deg)
+				.tabs__dot
+					left -5em
+					bottom 6em
+			@media screen and (max-width: 479px)
+				top 0
+				left 0
+				width 100%
+				.tabs__dot
+					left -3em
+					bottom .3em
 
 		&:nth-child(6)
 			top 70%
@@ -185,7 +311,26 @@
 			.tabs__dot
 				left -110%
 				bottom 115%
-
+			@media screen and (max-width: 779px)
+				top 80%
+				left 88%
+				.tabs__line
+					width 6em
+				.tabs__pointer
+					width 5.5em
+					bottom 4em
+					left -5.7em
+					transform rotateZ(70deg)
+				.tabs__dot
+					left -4.5em
+					bottom 5em
+			@media screen and (max-width: 479px)
+				top 0
+				left 0
+				width 100%
+				.tabs__dot
+					left -3em
+					bottom .3em
 
 	&__caption
 		display block
@@ -193,6 +338,12 @@
 		line-height 1.2
 		transition all .2s ease
 		transform translate(0, 0) scale(1)
+		@media screen and (max-width: 779px) and (min-width: 480px)
+			font-size .875em
+
+	&__price
+		@media screen and (max-width: 779px) and (min-width: 480px)
+			font-size .875em
 		
 	&__line
 		position absolute
@@ -201,6 +352,8 @@
 		height 1px
 		background-color $base-decor-color
 		transform translate(0, 0) scale(1)
+		@media screen and (max-width: 479px)
+			display none
 
 	&__pointer
 		display block
@@ -208,6 +361,8 @@
 		height 1px
 		background-color $base-decor-color
 		transform translate(0, 0) scale(1)
+		@media screen and (max-width: 479px)
+			display none
 
 	&__dot
 		display block
