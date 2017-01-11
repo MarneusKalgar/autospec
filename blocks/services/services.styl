@@ -9,8 +9,9 @@
 	overflow hidden
 	@media screen and (max-height: 740px)
 		padding-top 6.5em
-	@media screen and (max-height: 650px), (max-width: 480px)
+	@media screen and (max-height: 600px), (max-width: 480px)
 		overflow-y auto
+		align-items flex-start
 	@media screen and (max-width: 560px)
 		font-size .875rem
 	@media screen and (max-width: 480px)
@@ -19,6 +20,17 @@
 		font-size 1.1rem
 	@media screen and	(orientation: landscape)
 		overflow-y auto
+
+	&--isOverlay
+		&::before
+			content ""
+			position absolute
+			top 0
+			left 0
+			z-index 200
+			width 100%
+			height 100%
+			background rgba(#000, .4)
 
 
 		//container with image and items
@@ -37,7 +49,6 @@
 			width 42em * .8
 			height 27.25em * .8
 		@media screen and (max-width: 800px)
-			margin-top 10em
 			margin-left 8%
 		@media screen and (max-width: 480px)
 			width 100%

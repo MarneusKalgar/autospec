@@ -1,0 +1,6 @@
+mixin interior-gallery(items)
+	+b.DIV.interior-gallery(class="wow pulse")
+		+e.UL.list
+			each item in items
+				+e.item
+					+e.IMG.img(src=item.src, alt=item.alt)

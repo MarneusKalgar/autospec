@@ -10,13 +10,24 @@
 	@media screen and (max-width: 600px)
 		padding-top 15%
 
+	&--isOverlay
+		&::before
+			content ""
+			position absolute
+			top 0
+			left 0
+			z-index 200
+			width 100%
+			height 100%
+			background rgba(#000, .4)
+
 	&__centered
 		position relative
 		z-index 100
 		height 14em
 		padding 3%
 		margin calc(100vh - 82vh) 0 0 0
-		&:before
+		&::before
 			content ''
 			position absolute
 			top -30%
@@ -27,7 +38,7 @@
 			opacity 0
 			transform-origin bottom
 			animation fadeInFragments 1.5s ease 2.5s forwards
-		&:after
+		&::after
 			content ''
 			position absolute
 			top -30%
@@ -49,8 +60,8 @@
 		@media screen and (max-width: 600px) and (orientation: landscape)
 			margin-top 0
 			height 25vw
-			&:before
-			&:after
+			&::before
+			&::after
 				top -10%
 
 	&__title
@@ -85,15 +96,18 @@
 		bottom 5%
 		transform-origin top
 		opacity 0
+		transform scaleY(0)
 		animation slideBtn 2s ease 3s forwards
 		@media screen and (max-width: 600px) and (orientation: portrait)
 			bottom -5em
 			right 50%
-			transform translateX(50%)
+			transform scaleY(0) translateX(50%)
+			animation slideBtnMobile 1.5s ease 3s forwards
 		@media screen and (max-width: 600px) and (orientation: landscape)
 			bottom -5vw
 			right 30vw
-			transform translateX(50%)
+			transform scaleY(0) translateX(50%)
+			animation slideBtnMobile 1.5s ease 3s forwards
 		@media screen and (max-width: 481px) and (orientation: landscape)
 			bottom -10vw
 
@@ -109,8 +123,9 @@
 		background-size cover
 		opacity 0
 		animation fadeInBg 1s ease 2s forwards
-		@media screen and (min-width: 1600px), (min-height: 1200px)
-			background url("../img/main/main-bg-lg.jpg") 60% 40% no-repeat
+		@media screen and (min-width: 1400px), (min-height: 1200px)
+			background url("../img/main/main-bg-lg.jpg") 0 0 no-repeat
+			background-size cover
 
 	&__bg
 		position absolute
@@ -233,4 +248,12 @@
 		transform scaleY(0)
 	100%
 		opacity 1
-		transform scaleY(100%)
+		transform scaleY(1)
+
+@keyframes slideBtnMobile
+	0%
+		opacity 0
+		transform scaleY(0) translateX(50%)
+	100%
+		opacity 1
+		transform scaleY(1)	translateX(50%)

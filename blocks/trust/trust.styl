@@ -13,6 +13,17 @@
 	@media screen and (max-width: 390px)
 		padding 4em 5% 5% 5%
 
+	&--isOverlay
+		&::before
+			content ""
+			position absolute
+			top 0
+			left 0
+			z-index 200
+			width 100%
+			height 100%
+			background rgba(#000, .4)
+
 	&__title
 		margin .9em 0 0
 		@media screen and (max-height: 750px), (max-width: 750px)
@@ -183,8 +194,6 @@
 		max-height 15em
 		overflow-y auto
 		margin .5em 0 1em
-		@media screen and (max-height: 750px)
-			max-height 7.2em
 		@media screen and (max-width: 450px)
 			max-height 12em
 

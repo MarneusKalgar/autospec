@@ -36,15 +36,18 @@
 		padding 1.5em
 	@media screen and (max-height: 600px)
 		top 8.75em
-	@media screen and (max-height: 600px)
 		height 15.4453125em
 		padding .8em 1.5em
-	@media screen and (max-height: 480px) and (orientation: landscape)
+	@media screen and (max-height: 490px) and (orientation: landscape)
 		top 10vmin
+		//height 10.5em
+		height 15.5em
+		padding-top 1em
+	@media screen and (max-height: 490px) and (orientation: portrait)
+		top 25vmax
+	@media screen and (max-height: 400px)
 		height 10.5em
 		padding-top .3em
-	@media screen and (max-height: 480px) and (orientation: portrait)
-		top 25vmax
 
 	&--isActive
 		transform translateX(0)
@@ -52,7 +55,7 @@
 
 	&__label
 		display block
-		@media screen and (max-height: 480px) and (orientation: landscape)
+		@media screen and (max-height: 400px) and (orientation: landscape)
 			display inline-block
 			width 25%
 
@@ -79,7 +82,7 @@
 			background-color lighten(#363636, 2%)
 		@media screen and (max-height: 600px)
 			height 2.8em
-		@media screen and (max-height: 480px) and (orientation: landscape)
+		@media screen and (max-height: 400px) and (orientation: landscape)
 			display inline-block
 			width 75%
 

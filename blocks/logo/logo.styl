@@ -1,5 +1,7 @@
 /*!******************LOGO******************/
 .logo
+	position relative
+	z-index 200
 	display block
 	width 16.875em
 	height 3.8125em
@@ -16,13 +18,13 @@
 		width 30vw
 		height 6.777vw
 
-	&--isTransparent
-		transition all .4s ease
-		opacity 0
 
 	&--isAnimated
 		opacity 0
 		animation fadeInLogo 2s ease 3s forwards
+
+	&--isFaded
+		opacity 0
 
 	&--singleService
 		margin 0
@@ -40,6 +42,9 @@
 		display block
 		max-width 100%
 		height auto
+
+		&--isTransparent
+			opacity .5
 
 
 @keyframes fadeInLogo

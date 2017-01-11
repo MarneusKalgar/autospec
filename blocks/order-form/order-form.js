@@ -35,5 +35,5 @@ function orderForm() {
 
 	});
 
-	$("#usertel").mask("+380 (99) 999 - 99 - 99");
+	$("#usertel").mask("+999 (99) 999 - 99 - 99");
 }

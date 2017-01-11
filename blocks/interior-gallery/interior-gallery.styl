@@ -1,0 +1,65 @@
+/***********************INTERIOR-GALLERY***********************/
+.interior-gallery
+	position relative
+	margin-top 3em
+	padding-bottom 6em
+
+	&__list
+		flex-container(row, wrap, center, center)
+		width 100%
+		margin 0
+		padding 0
+		list-style none
+		&:hover
+			.interior-gallery__item:not(:hover)
+				&::before
+					background rgba(#000, .5)
+					transition all .3s ease-in
+
+	&__item
+		position relative
+		z-index 100
+		width 20%
+		//min-width 14.25em
+		height auto
+		//min-height 10.55555em
+		transform scale(1)
+		&:nth-child(1)
+			transform-origin left
+		&:nth-child(5)
+			transform-origin right
+		@media screen and (max-width: 1030px)
+			width 33%
+			&:nth-child(3)
+				transform-origin right
+			&:nth-child(5)
+				transform-origin center
+		@media screen and (max-width: 630px)
+			width 50%
+			&:nth-child(odd)
+				transform-origin left
+			&:nth-child(even)
+				transform-origin right
+			&:nth-child(5)
+				transform-origin center
+
+		&::before
+			content ''
+			position absolute
+			top 0
+			right 0
+			bottom 0
+			left 0
+			background rgba(0,0,0,0)
+
+		&:hover
+			z-index 500
+			transform scale(1.5)
+			transition all .3s ease-in
+			@media screen and (max-width: 420px)
+				transform scale(1.6)
+
+	&__img
+		display block
+		width 100%
+		height 100%

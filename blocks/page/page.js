@@ -1,6 +1,5 @@
 function page() {
 	var $logo = $(".logo");
-	var $btn = $(".menu-btn");
 	var $sidebar = $(".sidebar");
 	
 	var $about = $(".about");
@@ -36,11 +35,11 @@ function page() {
 			console.log(item.scrollTop());
 			if( item.scrollTop() > 0 ) {
 				if (!$sidebar.hasClass("sidebar--isMove")) {
-					$logo.addClass("logo--isTransparent");
+					$logo.addClass("logo--isFaded");
 				}
 			} else {
 				if (!$sidebar.hasClass("sidebar--isMove")) {
-					$logo.removeClass("logo--isTransparent");
+					$logo.removeClass("logo--isFaded");
 				}
 			}
 		});

@@ -49,9 +49,13 @@
 			bottom .2em
 			background-color rgba(0,0,0,0)
 			transition all .4s ease-in .1s
+		@media screen and (max-width: 779px)
+			margin-top .5em
 		@media screen and (max-width: 584px)
 			display inline-block
-			margin-right 2%
+			margin-right 4%
+			&:last-child
+				margin-right 0
 
 		&--active
 			color $base-decor-color

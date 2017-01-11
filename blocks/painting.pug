@@ -8,6 +8,7 @@ include statistics/statistics
 include materials/materials
 include bundles/bundles
 include why/why
+include interior-gallery/interior-gallery
 include services/services-simple
 include contacts/contacts-extended
 include scroll-to-top/scroll-to-top
@@ -119,6 +120,16 @@ html(lang="ru")
 				}
 			])
 				//end block why
+
+				// block interior-gallery
+			+interior-gallery([
+				{"src": "img/interior-gallery/interior-view1.jpg", "alt": "Интерьер Автоспецсервис"},
+				{"src": "img/interior-gallery/interior-view2.jpg", "alt": "Интерьер Автоспецсервис"},
+				{"src": "img/interior-gallery/interior-view3.jpg", "alt": "Интерьер Автоспецсервис"},
+				{"src": "img/interior-gallery/interior-view4.jpg", "alt": "Интерьер Автоспецсервис"},
+				{"src": "img/interior-gallery/interior-view5.jpg", "alt": "Интерьер Автоспецсервис"}
+			])
+				// end block interior-gallery
 
 				// block services
 			+services-simple()

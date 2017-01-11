@@ -1,7 +1,7 @@
 /*!******************MENU-BTN******************/
 .menu-btn
 	position relative
-	z-index 1100
+	z-index 2000
 	width 1.8rem
 	height 1.8rem
 	padding 0
@@ -12,7 +12,9 @@
 	border-radius none
 	cursor pointer
 	transform translateX(0)
+	opacity 0
 	transition transform .3s, opacity .4s ease
+	animation fadeInBtn 2s ease 3s forwards
 	&:focus
 		outline none
 	@media screen and (min-width: 940px)
@@ -27,16 +29,16 @@
 		background url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkNhcGFfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCAyMi45IDIyLjkiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDIyLjkgMjIuOTsiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+LnN0MHtmaWxsOiNFRTY4MDA7fTwvc3R5bGU+PHBhdGggY2xhc3M9InN0MCIgZD0iTTAuMywxLjljLTAuNC0wLjQtMC40LTEuMSwwLTEuNmMwLjQtMC40LDEuMS0wLjQsMS42LDBsOS41LDkuNUwyMSwwLjNjMC40LTAuNCwxLjEtMC40LDEuNiwwYzAuNCwwLjQsMC40LDEuMiwwLDEuNkwxMywxMS40bDkuNSw5LjVjMC40LDAuNCwwLjQsMS4xLDAsMS42Yy0wLjQsMC40LTEuMSwwLjQtMS42LDBMMTEuNCwxM2wtOS41LDkuNWMtMC40LDAuNC0xLjEsMC40LTEuNiwwYy0wLjQtMC40LTAuNC0xLjIsMC0xLjZsOS41LTkuNUwwLjMsMS45eiIvPjwvc3ZnPg==') 0 0 no-repeat;
 		background-size cover
 		@media screen and (max-width: $media-md)
-			transform translateX(-17rem) //relative to sidebar width
-		@media screen and (max-height: 479px)
-			transform translateX(-26.3rem) //relative to sidebar width
+			transform translateX(-16.5rem) //relative to sidebar width
+		@media screen and (max-height: 400px)
+			transform translateX(-25.8rem) //relative to sidebar width
 
 	&--isTransparent
 		transition opacity .4s ease
 		opacity 0
 
-	//-.svg-icon
-	//-	display block
-	//-	width 95%
-	//-	height 95%
-	//-	fill $base-decor-color
+@keyframes fadeInBtn
+	0%
+		opacity 0
+	100%
+		opacity 1
