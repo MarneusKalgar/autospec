@@ -7,6 +7,7 @@
     <meta content="autospecservice home page" name="description"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="HandheldFriendly" content="true"/>
+    <meta name="format-detection" content="telephone=no"/>
     <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
     <link rel="shortcut icon" href="img/favicon/favicon.png" type="image/x-icon"/>
     <link rel="apple-touch-icon" href="img/favicon/apple-touch-icon.png"/>
@@ -36,26 +37,40 @@
         </h1>
         <p class="clients__lead">Выгодное предложение автопаркам
         </p>
-        <ul class="clients__list">
+        <ol class="clients__list">
           <li class="clients__item"><span class="clients__strong">Ремонт машины</span> неизменно оборачивается кошмаром. Раз за разом вам приходится объезжать неизменно кошмаром. Таз разом вам и новые автосервисы в поисках приемлемых цен, чтобы в итоге доверить ремонт автомобиля мастерам.
           </li>
           <li class="clients__item"><span class="clients__strong">Ремонт машины</span> неизменно оборачивается кошмаром. Раз за разом вам приходится объезжать неизменно кошмаром. Таз разом вам и новые автосервисы в поисках приемлемых цен, чтобы в итоге доверить ремонт автомобиля мастерам.
           </li>
           <li class="clients__item"><span class="clients__strong">Ремонт машины</span> неизменно оборачивается кошмаром. Раз за разом вам приходится объезжать неизменно кошмаром. Таз разом вам и новые автосервисы в поисках приемлемых цен, чтобы в итоге доверить ремонт автомобиля мастерам.
           </li>
-        </ul>
+          <li class="clients__item"><span class="clients__strong">Ремонт машины</span> неизменно оборачивается кошмаром. Раз за разом вам приходится объезжать неизменно кошмаром. Таз разом вам и новые автосервисы в поисках приемлемых цен, чтобы в итоге доверить ремонт автомобиля мастерам.
+          </li>
+          <li class="clients__item"><span class="clients__strong">Ремонт машины</span> неизменно оборачивается кошмаром. Раз за разом вам приходится объезжать неизменно кошмаром. Таз разом вам и новые автосервисы в поисках приемлемых цен, чтобы в итоге доверить ремонт автомобиля мастерам.
+          </li>
+          <li class="clients__item"><span class="clients__strong">Ремонт машины</span> неизменно оборачивается кошмаром. Раз за разом вам приходится объезжать неизменно кошмаром. Таз разом вам и новые автосервисы в поисках приемлемых цен, чтобы в итоге доверить ремонт автомобиля мастерам.
+          </li>
+        </ol>
         <form class="clients__form" id="clientsForm" method="POST" action="#" name="price">
           <fieldset class="clients__set">
-            <label class="clients__label svgicon svgicon--person" for="username">
-            </label><input class="clients__input" type="text" id="username" name="username" aria-required="true" placeholder="Введите ваше имя"/>
+            <label class="clients__label clients__label--company svgicon svgicon--company" for="usercompany">
+            </label><input class="clients__input" type="text" id="usercompany" name="usercompany" aria-required="true" placeholder="Ваша компания"/>
           </fieldset>
           <fieldset class="clients__set">
-            <label class="clients__label svgicon svgicon--envelope" for="usermail">
-            </label><input class="clients__input" type="email" id="usermail" name="usermail" aria-required="true" placeholder="Введите вашу почту"/>
+            <label class="clients__label clients__label--car svgicon svgicon--car" for="usermessage">
+            </label><textarea class="clients__write" id="usermessage" name="usermessage" aria-required="true" placeholder="Количество и марка авто"></textarea>
           </fieldset>
           <fieldset class="clients__set">
-            <label class="clients__label svgicon svgicon--pencil" for="usermessage">
-            </label><textarea class="clients__write" id="usermessage" name="usermessage" aria-required="true" placeholder="Напишите нам"></textarea>
+            <label class="clients__label clients__label--person svgicon svgicon--person" for="username">
+            </label><input class="clients__input" type="text" id="username" name="username" aria-required="true" placeholder="ФИО контактного лица"/>
+          </fieldset>
+          <fieldset class="clients__set">
+            <label class="clients__label clients__label--phone svgicon svgicon--phone" for="userphone">
+            </label><input class="clients__input" type="tel" id="userphone" name="userphone" aria-required="true" placeholder="Номер контактного лица"/>
+          </fieldset>
+          <fieldset class="clients__set">
+            <label class="clients__label clients__label--envelope svgicon svgicon--envelope" for="usermail">
+            </label><input class="clients__input" type="email" id="usermail" name="usermail" aria-required="true" placeholder="Почта контактного лица"/>
           </fieldset>
           <fieldset class="clients__set">
             <label class="clients__label clients__label--wrap"><input class="clients__btn btn btn--price btn--bordered" type="submit" id="price-submit" value="получить прайс"/>
@@ -139,6 +154,14 @@
       	transition: function (url) {
       		window.location.href = url;
       	}
+      });
+      
+    </script>
+    <script>
+      $(window).on("load", function() {
+      	$(".clients__list").mCustomScrollbar({
+      		theme:"my-theme"
+      	});
       });
     </script>
   </body>

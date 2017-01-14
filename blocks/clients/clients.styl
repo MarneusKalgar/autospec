@@ -3,24 +3,20 @@
 	flex 1
 	flex-container(row, wrap, space-between, flex-start)
 	align-content flex-start
-	//height 100vh
-	padding 7em 6% 3% 7.5%
+	padding 7em 3% 0 7.5%
 	box-sizing border-box
 	font-size 1rem
 	overflow hidden
 	background #fff url("../img/clients/clients-bg-lg.jpg") 0 0 no-repeat
 	background-size cover
-	@media screen and (max-height: 640px)
+	@media screen and (max-height: 620px), (max-width: 1090px)
 		overflow auto
 	@media screen and (min-width: 941px) and (max-width: 1090px)
-		padding-right 3%
-		overflow auto
-	@media screen and (max-width: 940px)
-		overflow auto
+		padding 7em 3% 0 5%
 	@media screen and (max-width: 800px)
-		padding-left 3.75em
+		padding-left 2.75em
 	@media screen and (max-width: 600px)
-		padding 6em 1.25em 3.75em 2.8em
+		padding 6em 1.25em 0 1.25em
 
 	&--isOverlay
 		&::before
@@ -44,100 +40,87 @@
 			font-size 1.8em
 
 	&__lead
-		width 100%
-		margin .7em 0 0
+		width 20em
+		margin .5em 0 0
 		font-size 1.5em
 		font-weight bold
-		@media screen and (min-width: 941px) and (max-width: 1120px), (max-width: 700px)
+		@media screen and (min-width: 941px) and (max-width: 1130px), (min-width: 601px) and (max-width: 750px)
+			width 15em
+			margin-right 4em
 			font-size 1.2em
 
 	&__list
 		width 60%
-		margin 1.3em .8em 0 0
+		height 21em
+		overflow hidden
+		margin 1.3em 0 0 0
 		padding 0
 		list-style none
-		@media screen and (min-width: 941px) and (max-width: 1090px), (max-width: 700px)
+		counter-reset myCounter
+		@media screen and (min-width: 941px) and (max-width: 1090px), (max-width: 750px)
 			width 55%
-			font-size .9em
 		@media screen and (max-width: 600px)
 			width 100%
+			height 25em
 			margin-right 0
 
 	&__item
 		position relative
-		margin-top 1.5em
-		&:before
-			content ''
+		margin 1.5em 0 0 3.2em
+		&::before
+			counter-increment: myCounter
+			content: "0" counter(myCounter)
 			position absolute
 			top -.7em
-			left -1.1em
+			left -1.05em
+			color rgba($base-decor-color, .2)
 			font-size 3em
 			font-weight bold
-			color rgba($base-decor-color, .2)
 			@media screen and (max-width: 600px)
 				font-size 2.5em
 				top -.6em
-		&:nth-child(1)
-			margin-top 0
-			&:before
-				content '01'
-		&:nth-child(2)
-			&:before
-				content '02'
-		&:nth-child(3)
-			&:before
-				content '03'
 
 	&__strong
 		font-weight bold
 
+		//form
 	&__form
-		width 32%
-		min-width 12.5em
+		position relative
+		top -3.5em
+		width 35%
+		min-width 13.75em
+		@media screen and (min-width: 941px) and (max-width: 1090px), (max-width: 750px)
+			width 40%
 		@media screen and (max-width: 600px)
+			top 0
 			width 100%
 			margin-top 2em
 
 	&__set
 		position relative
-		margin 0
+		margin 1em 0 0
 		padding 0
 		border none
-		&:nth-child(1)
-			.clients__label
-				top .6em
-				left .7em
-			label.error
-				top -2.2em
-		&:nth-child(2)
-			margin-top 1em
-			.clients__label
-				top .65em
-				left .7em
-		&:nth-child(3)
-			margin-top 3.6em
-			.clients__label
-				top 1.35em
-				left .7em
-		&:nth-child(4)
-			margin-top 3.2em
-
+		&:last-child
+			margin-top 1.5em
+			padding-bottom 3%
+			@media screen and (max-width: 600px)
+				padding-bottom 3.75em
 
 	&__input
 		display block
 		box-sizing border-box
 		width 100%
-		padding .4em .5em .4em 2em
+		padding .4em .5em .4em 1.8em
 		border none
 		border-bottom: .0625em solid #2e2e2e
 		background rgba(0,0,0,0)
 		outline none
+		-webkit-appearance none
+		border-radius 0
 		transition all .3s
 		&:nth-of-type(2)
 			margin-top 1.5em
-		&:hover
-		&:focus
-			background rgba(darken(#fff, 2%), .5)
 
 	&__write
 		display block
@@ -159,17 +142,40 @@
 		display block
 		position absolute
 		z-index 100
-		top 0
-		left 0
+		top .6em
+		left .4em
 		width .8em
 		height .8em
 		background-size cover
-		&:before
+		&::before
 			width 100%
 			height 100%
 
+		& ~ label.error
+			display block
+			position absolute
+			left .6em
+			top -1em
+			width 100%
+			height 1.5em
+			font-size .875em
+			color lighten(#6f1400, 30%)
+
+		&--company
+			top .4em
+			left .4em
+			width 1em
+			height 1em
+
+		&--car
+			top 1.3em
+			& ~ label.error
+				top -.2em
+
 		&--wrap
 			position relative
+			top 0
+			left 0
 			width 100%
 			height 100%
 			&:before
@@ -193,13 +199,3 @@
 
 	&__btn
 		width 100%
-
-		//error messages
-	label.error
-		display block
-		position absolute
-		left 0
-		width 100%
-		height 1.5em
-		font-size .875em
-		color lighten(#6f1400, 30%)

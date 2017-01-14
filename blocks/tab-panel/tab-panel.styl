@@ -110,28 +110,39 @@
 
 	&__person
 		margin 0
-		position fixed
-		right 30%
-		bottom -.5em
+		position absolute
+		bottom -100%
+		right -5%
 		width 16rem
 		height 23rem
-		@media screen and (min-height: 1000px)
+		transform scale(1)
+		@media screen and (min-height: 740px) and (max-height: 1000px) and (min-width: 1201px)
+			position fixed
+			right 30%
+			bottom -.5em
+		@media screen and (max-height: 739px) and (min-width: 1201px)
 			position absolute
-			bottom -18em
-			right -7%
-		@media screen and (max-height: 680px)
+			bottom -45%
+			right -15%
+			transform scale(0.8)
+		@media screen and (min-height: 1001px) and (min-width: 1201px)
 			position absolute
-			bottom -6em
-			right 0
-			width 16rem * .7
-			height 23rem * .7
-		@media screen and (max-width: 1320px)
-			position relative
-			top 5em
-			left 0
-			margin 1em auto 0
-			width 16rem * .7
-			height 23rem * .7
+			bottom -130%
+			right -5%
+		@media screen and (max-width: 1200px)
+			position absolute
+			bottom -60%
+			right -10%
+			transform scale(0.8)
+		@media screen and (max-height: 739px) and (max-width: 1200px)
+			position absolute
+			bottom -110%
+			transform scale(0.8) translateX(-50%)
+		@media screen and (max-width: 739px)
+			right 10%
+			bottom -110%
+		@media screen and (max-width: 600px)
+			display none
 
 	&__img
 		width 100%
@@ -148,8 +159,8 @@
 			left -8em
 			bottom: 1em
 		@media screen and (max-width: 480px)
-			left 2.5em
-			bottom: -3em
+			left 4em
+			bottom: -3.5em
 
 	&__desc
 		margin 0

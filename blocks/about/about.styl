@@ -4,12 +4,13 @@
 	flex 1
 	box-sizing border-box
 	height 100%
-	padding 9.5em 7.5% 0
+	padding 9.5em 7.5% 1em
 	font-size 1rem
 	background: #fff url("../img/about/about-bg.jpg") 0 0 no-repeat
 	background-size cover
 	overflow-x hidden
-	overflow-y auto
+	@media screen and (max-height: 660px)
+		overflow-y auto
 	@media screen and (max-width: 630px)
 		padding-top 7em
 	@media screen and (max-width: 450px)

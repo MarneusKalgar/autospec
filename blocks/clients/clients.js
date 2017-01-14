@@ -3,26 +3,42 @@ function clients() {
 
 	$form.validate({
 		rules: {
+			usercompany: {
+				required: true
+			},
+			usermessage: {
+				required: true
+			},
 			username: {
-				required: true,
-				minlength: 4
+				required: true
 			},
 			usermail: {
 				required: true,
 				email: true
 			},
-			usermessage: "required"
+			userphone: {
+				required: true
+			}
 		},
 		messages: {
+			usercompany: {
+				required: "Пожалуйста, введите компанию"
+			},
 			username: {
-				required: "Пожалуйста, введите свое имя",
-				minlength: "Длина вашего имени должна быть не менее 4 символов"
+				required: "Пожалуйста, введите ФИО"
 			},
 			usermail: {
-				required: "Пожалуйста, введите свой адрес",
+				required: "Пожалуйста, введите адрес",
 				email: "Адрес должен быть в формате example@email.com"
 			},
-			usermessage: "Пожалуйста, введите сообщение"
+			usermessage: {
+				required: "Пожалуйста, введите данные"
+			},
+			userphone: {
+				required: "Пожалуйста, введите номер"
+			}
 		}
 	});
+
+	$("#userphone").mask("+999 (99) 999 - 99 - 99");
 }

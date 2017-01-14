@@ -2,7 +2,16 @@ mixin clients
 	+b.MAIN.clients
 		+e.H1.title(class="titles") Корпоративным клентам
 		+e.P.lead Выгодное предложение автопаркам
-		+e.UL.list
+		+e.OL.list
+			+e.item
+				+e.SPAN.strong Ремонт машины
+				|  неизменно оборачивается кошмаром. Раз за разом вам приходится объезжать неизменно кошмаром. Таз разом вам и новые автосервисы в поисках приемлемых цен, чтобы в итоге доверить ремонт автомобиля мастерам.
+			+e.item
+				+e.SPAN.strong Ремонт машины
+				|  неизменно оборачивается кошмаром. Раз за разом вам приходится объезжать неизменно кошмаром. Таз разом вам и новые автосервисы в поисках приемлемых цен, чтобы в итоге доверить ремонт автомобиля мастерам.
+			+e.item
+				+e.SPAN.strong Ремонт машины
+				|  неизменно оборачивается кошмаром. Раз за разом вам приходится объезжать неизменно кошмаром. Таз разом вам и новые автосервисы в поисках приемлемых цен, чтобы в итоге доверить ремонт автомобиля мастерам.
 			+e.item
 				+e.SPAN.strong Ремонт машины
 				|  неизменно оборачивается кошмаром. Раз за разом вам приходится объезжать неизменно кошмаром. Таз разом вам и новые автосервисы в поисках приемлемых цен, чтобы в итоге доверить ремонт автомобиля мастерам.
@@ -15,14 +24,20 @@ mixin clients
 
 		+e.FORM.form#clientsForm(method="POST", action="#", name="price")
 			+e.FIELDSET.set
-				+e.LABEL.label(for="username" class="svgicon --person")
-				+e.INPUT.input(type="text", id="username", name="username", aria-required="true", placeholder="Введите ваше имя")
+				+e.LABEL.label(for="usercompany" class="--company svgicon --company")
+				+e.INPUT.input(type="text", id="usercompany", name="usercompany", aria-required="true", placeholder="Ваша компания")
 			+e.FIELDSET.set
-				+e.LABEL.label(for="usermail" class="svgicon --envelope")
-				+e.INPUT.input(type="email", id="usermail", name="usermail", aria-required="true", placeholder="Введите вашу почту")
+				+e.LABEL.label(for="usermessage" class="--car svgicon --car")
+				+e.TEXTAREA.write(id="usermessage", name="usermessage", aria-required="true", placeholder="Количество и марка авто")
 			+e.FIELDSET.set
-				+e.LABEL.label(for="usermessage" class="svgicon --pencil")
-				+e.TEXTAREA.write(id="usermessage", name="usermessage", aria-required="true", placeholder="Напишите нам")
+				+e.LABEL.label(for="username" class="--person svgicon --person")
+				+e.INPUT.input(type="text", id="username", name="username", aria-required="true", placeholder="ФИО контактного лица")
+			+e.FIELDSET.set
+				+e.LABEL.label(for="userphone" class="--phone svgicon --phone")
+				+e.INPUT.input(type="tel", id="userphone", name="userphone", aria-required="true", placeholder="Номер контактного лица")
+			+e.FIELDSET.set
+				+e.LABEL.label(for="usermail" class="--envelope svgicon --envelope")
+				+e.INPUT.input(type="email", id="usermail", name="usermail", aria-required="true", placeholder="Почта контактного лица")
 			+e.FIELDSET.set
 				+e.LABEL.label(class="--wrap")
 					+e.INPUT.btn(type="submit", id="price-submit" class="btn --price --bordered", value="получить прайс")

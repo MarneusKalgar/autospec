@@ -44,38 +44,49 @@ function bundles() {
 		$(this).height($table.find("tr:eq(" + i + ")").height());
 	});
 }
-function callbackForm() {
-	//var $input = $("#callback-tel");
-
-	$("#callback-tel").mask("+999 (99) 999 - 99 - 99");
-}
 function clients() {
 	var $form = $("#clientsForm");
 
 	$form.validate({
 		rules: {
+			usercompany: {
+				required: true
+			},
+			usermessage: {
+				required: true
+			},
 			username: {
-				required: true,
-				minlength: 4
+				required: true
 			},
 			usermail: {
 				required: true,
 				email: true
 			},
-			usermessage: "required"
+			userphone: {
+				required: true
+			}
 		},
 		messages: {
+			usercompany: {
+				required: "Пожалуйста, введите компанию"
+			},
 			username: {
-				required: "Пожалуйста, введите свое имя",
-				minlength: "Длина вашего имени должна быть не менее 4 символов"
+				required: "Пожалуйста, введите ФИО"
 			},
 			usermail: {
-				required: "Пожалуйста, введите свой адрес",
+				required: "Пожалуйста, введите адрес",
 				email: "Адрес должен быть в формате example@email.com"
 			},
-			usermessage: "Пожалуйста, введите сообщение"
+			usermessage: {
+				required: "Пожалуйста, введите данные"
+			},
+			userphone: {
+				required: "Пожалуйста, введите номер"
+			}
 		}
 	});
+
+	$("#userphone").mask("+999 (99) 999 - 99 - 99");
 }
 function contacts() {
 	var place = { lat: 50.457992, lng: 30.605138 }
@@ -281,6 +292,24 @@ function contacts() {
 		icon: icon
 	});
 }
+function callbackForm() {
+	//var $input = $("#callback-tel");
+
+	$("#callback-tel").mask("+999 (99) 999 - 99 - 99");
+}
+function header() {
+
+	if ($(".header--singleService").length) {
+		var $btn = $("#to_bundles");
+
+		$btn.on("click", function() {
+			var id = $(this).attr("href");
+			var offset = $(id).offset().top;
+			$("html, body").animate({"scrollTop": offset}, 500);
+		});
+	}
+
+}
 function hero() {
 	$link = $(".hero__link");
 
@@ -297,56 +326,43 @@ function mainNav() {
 		e.preventDefault();
 	});
 }
-function orderForm() {
-	var $form = $("#orderForm");
+function menuBtn() {
+	var $btn = $(".menu-btn");
+	var $logo = $(".logo__img");
+	var $sidebar = $(".sidebar");
 
-	$form.validate({
+	var $main = $(".main");
+	var $about = $(".about");
+	var $services = $(".services");
+	var $trust = $(".trust");
+	var $clients = $(".clients");
+	var $contacts = $(".contacts");
 
-		rules: {
-			username: {
-				required: true
-			},
-			usermail: {
-				required: true,
-				email: true
-			},
-			usertel: {
-				required: true
-			},
-			carbrand: "required",
-			carmodel: "required",
-			caryear: "required"
-		},
+	$btn.on("click", function() {
+		$btn.toggleClass("menu-btn--isActive");
 
-		messages: {
-			username: {
-				required: "Пожалуйста, введите свое имя"
-			},
-			usermail: {
-				required: "Пожалуйста, введите свой адрес",
-				email: "Формат адреса example@email.com"
-			},
-			usertel: "Пожалуйста, введите свой номер телефона",
-			carbrand: "Пожалуйста, введите марку автомобиля",
-			carmodel: "Пожалуйста, введите модель автомобиля",
-			caryear: "Пожалуйста, введите год выпуска"
+		$sidebar.toggleClass("sidebar--isMove");
+		$logo.toggleClass("logo__img--isTransparent");
+
+		if ($main.length ) {
+			$main.toggleClass("main--isOverlay");
 		}
-
+		if ($about.length ) {
+			$about.toggleClass("about--isOverlay");
+		}
+		if ($services.length ) {
+			$services.toggleClass("services--isOverlay");
+		}
+		if ($trust.length ) {
+			$trust.toggleClass("trust--isOverlay");
+		}
+		if ($clients.length ) {
+			$clients.toggleClass("clients--isOverlay");
+		}
+		if ($contacts.length ) {
+			$contacts.toggleClass("contacts--isOverlay");
+		}
 	});
-
-	$("#usertel").mask("+999 (99) 999 - 99 - 99");
-}
-function header() {
-
-	if ($(".header--singleService").length) {
-		var $btn = $("#to_bundles");
-
-		$btn.on("click", function() {
-			var id = $(this).attr("href");
-			var offset = $(id).offset().top;
-			$("html, body").animate({"scrollTop": offset}, 500);
-		});
-	}
 
 }
 function page() {
@@ -397,44 +413,44 @@ function page() {
 	}
 	
 }
-function menuBtn() {
-	var $btn = $(".menu-btn");
-	var $logo = $(".logo__img");
-	var $sidebar = $(".sidebar");
+function orderForm() {
+	var $form = $("#orderForm");
 
-	var $main = $(".main");
-	var $about = $(".about");
-	var $services = $(".services");
-	var $trust = $(".trust");
-	var $clients = $(".clients");
-	var $contacts = $(".contacts");
+	$form.validate({
 
-	$btn.on("click", function() {
-		$btn.toggleClass("menu-btn--isActive");
+		rules: {
+			username: {
+				required: true
+			},
+			usermail: {
+				required: true,
+				email: true
+			},
+			usertel: {
+				required: true
+			},
+			carbrand: "required",
+			carmodel: "required",
+			caryear: "required"
+		},
 
-		$sidebar.toggleClass("sidebar--isMove");
-		$logo.toggleClass("logo__img--isTransparent");
+		messages: {
+			username: {
+				required: "Пожалуйста, введитеимя"
+			},
+			usermail: {
+				required: "Пожалуйста, введите адрес",
+				email: "Формат адреса example@email.com"
+			},
+			usertel: "Пожалуйста, введите номер телефона",
+			carbrand: "Пожалуйста, введите марку автомобиля",
+			carmodel: "Пожалуйста, введите модель автомобиля",
+			caryear: "Пожалуйста, введите год выпуска"
+		}
 
-		if ($main.length ) {
-			$main.toggleClass("main--isOverlay");
-		}
-		if ($about.length ) {
-			$about.toggleClass("about--isOverlay");
-		}
-		if ($services.length ) {
-			$services.toggleClass("services--isOverlay");
-		}
-		if ($trust.length ) {
-			$trust.toggleClass("trust--isOverlay");
-		}
-		if ($clients.length ) {
-			$clients.toggleClass("clients--isOverlay");
-		}
-		if ($contacts.length ) {
-			$contacts.toggleClass("contacts--isOverlay");
-		}
 	});
 
+	$("#usertel").mask("+999 (99) 999 - 99 - 99");
 }
 /*******************************************/
 /* 							scroll to top
@@ -458,6 +474,27 @@ function sidebar() {
 
 	$btn.on("click", function () {
 		$form.toggleClass("callback-form--isActive");
+	});
+}
+function tabPanel () {
+	var $tabs = $(".tab-panel");
+	var $menu = $(".tab-panel__menu");
+	var $item = $(".tab-panel__item");
+
+	$menu.on('click', 'li:not(.tab-panel__tab--active)', function() {
+		var self = this;
+		//setTimeout(function() {
+			$(self)
+				.addClass('tab-panel__tab--active')
+				.siblings().removeClass('tab-panel__tab--active')
+				.closest($tabs).find($item).removeClass('tab-panel__item--active')
+				.eq($(self).index()).addClass('tab-panel__item--active');
+		//}, 100);
+		setTimeout(function() {
+			$(self)
+				.closest($tabs).find($item).removeClass('tab-panel__item--animate')
+				.eq($(self).index()).addClass('tab-panel__item--animate');
+		}, 100);
 	});
 }
 function tabs () {
@@ -517,27 +554,6 @@ function tabs () {
 		);
 	}*/
 
-}
-function tabPanel () {
-	var $tabs = $(".tab-panel");
-	var $menu = $(".tab-panel__menu");
-	var $item = $(".tab-panel__item");
-
-	$menu.on('click', 'li:not(.tab-panel__tab--active)', function() {
-		var self = this;
-		//setTimeout(function() {
-			$(self)
-				.addClass('tab-panel__tab--active')
-				.siblings().removeClass('tab-panel__tab--active')
-				.closest($tabs).find($item).removeClass('tab-panel__item--active')
-				.eq($(self).index()).addClass('tab-panel__item--active');
-		//}, 100);
-		setTimeout(function() {
-			$(self)
-				.closest($tabs).find($item).removeClass('tab-panel__item--animate')
-				.eq($(self).index()).addClass('tab-panel__item--animate');
-		}, 100);
-	});
 }
 function trust() {
 	var $container = $(".thumbs__cars");

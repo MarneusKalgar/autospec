@@ -6,17 +6,18 @@
 	background $sidebar-bg-color url("../img/sidebar/sidebar-bg.jpg") repeat 0 0
 	overflow hidden
 	transform-origin right
+	will-change transform
 	&:before
-		content: ''
+		content ''
 		position absolute
-		top 0
 		left 12%
 		width 8.25rem
 		height 8.25rem
 		background url("../img/sidebar/sidebar-circle-inner.png") 0 0 no-repeat
 		background-size cover
 		transform-origin 50% 50% 0
-		animation rotateCircle 10s linear infinite running
+		will-change transform
+		animation rotateCircle 10s linear infinite
 		@media screen and (max-width: $media-md)
 			left 11%
 			width 6.6rem
@@ -24,7 +25,7 @@
 		@media screen and (max-height: 490px) and (orientation: landscape)
 			display none
 	&:after
-		content: ''
+		content ''
 		position absolute
 		top 0
 		left -19.5%
@@ -33,7 +34,8 @@
 		background url("../img/sidebar/sidebar-circle-outer.png") 0 0 no-repeat
 		background-size cover
 		transform-origin 50% 50% 0
-		animation rotateCircle 10s linear infinite reverse running
+		will-change transform
+		animation rotateCircle 10s linear infinite reverse
 		@media screen and (max-width: $media-md)
 			left -20.5%
 			width 12rem

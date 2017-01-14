@@ -6,18 +6,20 @@ include includes
 doctype html
 html(lang="ru")
 
-	head
-		+head({
-			"title": "autospecservice home page",
-			"author": "Interact Agency",
-			"description": "autospecservice home page"
-		})
-		// build:css css/vendor.css
-		link(rel="stylesheet", href="js/libs/animsition/dist/css/animsition.min.css")
-		// endbuild
-		// build:css css/main.css
-		link(rel="stylesheet", href="css/main.css")
-		// endbuild
+	block head
+		head
+			+head({
+				"title": "autospecservice home page",
+				"author": "Interact Agency",
+				"description": "autospecservice home page"
+			})
+			// build:css css/vendor.css
+			link(rel="stylesheet", href="js/libs/animsition/dist/css/animsition.min.css")
+			link(rel="stylesheet", href="js/libs/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.custom.css")
+			// endbuild
+			// build:css css/main.css
+			link(rel="stylesheet", href="css/main.css")
+			// endbuild
 
 	+b.BODY.page
 		+e.DIV.wrap(class="animsition")
@@ -79,21 +81,20 @@ html(lang="ru")
 				+callback-form()
 				//end block callback-form
 
-
-		// build:js js/vendor.js
-		script( src="js/libs/jquery/dist/jquery.min.js")
-		script( src="js/libs/animsition/dist/js/animsition.min.js")
-		script( src="js/libs/jquery.maskedinput/dist/jquery.maskedinput.min.js")
-		script( src="js/libs/jquery-validation/dist/jquery.validate.min.js")
-		script( src="js/libs/wow/dist/wow.min.js")
-		// endbuild
-
-
-		// build:js js/main.js
-		script( src="js/main.js")
-		// endbuild
+		block vendors
+			// build:js js/vendor.js
+			script( src="js/libs/jquery/dist/jquery.min.js")
+			script( src="js/libs/animsition/dist/js/animsition.min.js")
+			script( src="js/libs/jquery.maskedinput/dist/jquery.maskedinput.min.js")
+			script( src="js/libs/jquery-validation/dist/jquery.validate.min.js")
+			script( src="js/libs/wow/dist/wow.min.js")
+			script( src="js/libs/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js")
+			// endbuild
 
 		block scripts
+			// build:js js/main.js
+			script( src="js/main.js")
+			// endbuild
 			script.
 				$('.animsition').animsition({
 					inClass: 'fade-in',

@@ -223,6 +223,12 @@ th {
 .svgicon--location::before {
   background: url("data:image/svg+xml;base64,PHN2ZyBpZD0iQ2FwYV8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MzAuMSA0MzAuMSIgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2Ij48c3R5bGU+LnN0MHtmaWxsOiNFRTY4MDA7fTwvc3R5bGU+PHBhdGggaWQ9IkZhY2Vib29rX1BsYWNlcyIgY2xhc3M9InN0MCIgZD0iTTM1Ni4yIDEwNy4xYy0xLjUtNS43LTQuNi0xMS45LTYuOS0xNy4yQzMyMS43IDIzLjcgMjYxLjYgMCAyMTMuMSAwIDE0OC4xIDAgNzYuNSA0My42IDY3IDEzMy40djE4LjRjMCAuOC4zIDcuNi42IDExLjFDNzMgMjA1LjcgMTA2LjcgMjUxLjIgMTMyIDI5NGMyNy4xIDQ1LjkgNTUuMyA5MSA4My4yIDEzNi4xIDE3LjItMjkuNCAzNC40LTU5LjMgNTEuMi04Ny45IDQuNi04LjQgOS45LTE2LjggMTQuNS0yNC45IDMuMS01LjMgOC45LTEwLjcgMTEuNi0xNS43IDI3LjEtNDkuNyA3MC44LTk5LjggNzAuOC0xNDkuMXYtMjAuM2MtLjEtNS4zLTYuNy0yNC03LjEtMjUuMXptLTE0MiA5Mi4xYy0xOS4xIDAtNDAtOS42LTUwLjMtMzUuOS0xLjUtNC4yLTEuNC0xMi42LTEuNC0xMy40VjEzOGMwLTMzLjYgMjguNi00OC45IDUzLjQtNDguOSAzMC42IDAgNTQuMiAyNC41IDU0LjIgNTUuMSAwIDMwLjUtMjUuMyA1NS01NS45IDU1eiIvPjwvc3ZnPg==") 0 0 no-repeat;
 }
+.svgicon--car::before {
+  background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMyIgaGVpZ2h0PSIxMyIgdmlld0JveD0iMCAwIDQ1OSA0NTkiIGZpbGw9IiNlZTY4MDAiPjxwYXRoIGQ9Ik00MDUuNDUgNTFjLTUuMS0xNS4zLTIwLjQtMjUuNS0zNS43LTI1LjVIODkuMjVjLTE3Ljg1IDAtMzAuNiAxMC4yLTM1LjcgMjUuNUwwIDIwNHYyMDRjMCAxNS4zIDEwLjIgMjUuNSAyNS41IDI1LjVINTFjMTUuMyAwIDI1LjUtMTAuMiAyNS41LTI1LjV2LTI1LjVoMzA2VjQwOGMwIDE1LjMgMTAuMiAyNS41IDI1LjUgMjUuNWgyNS41YzE1LjMgMCAyNS41LTEwLjIgMjUuNS0yNS41VjIwNEw0MDUuNDUgNTF6TTg5LjI1IDMwNkM2OC44NSAzMDYgNTEgMjg4LjE1IDUxIDI2Ny43NXMxNy44NS0zOC4yNSAzOC4yNS0zOC4yNSAzOC4yNSAxNy44NSAzOC4yNSAzOC4yNVMxMDkuNjUgMzA2IDg5LjI1IDMwNnptMjgwLjUgMGMtMjAuNCAwLTM4LjI1LTE3Ljg1LTM4LjI1LTM4LjI1czE3Ljg1LTM4LjI1IDM4LjI1LTM4LjI1UzQwOCAyNDcuMzUgNDA4IDI2Ny43NSAzOTAuMTUgMzA2IDM2OS43NSAzMDZ6TTUxIDE3OC41TDg5LjI1IDYzLjc1aDI4MC41TDQwOCAxNzguNUg1MXoiLz48L3N2Zz4=") 0 0 no-repeat;
+}
+.svgicon--company::before {
+  background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGlkPSLQodC70L7QuV8xIiB2aWV3Qm94PSIwIDAgMTYgMTYiPjxzdHlsZT4uc3Qwe2ZpbGw6I0VFNjgwMDt9PC9zdHlsZT48cGF0aCBkPSJNMS40IDguMWMuMS42LjUgMS4zLjYgMS40IDAgLjIuMS4zLjEuNWwuNiA1LjRjMCAuNC4zLjYuNi42aDFjLjMgMCAuNi0uMi42LS42bC41LTUuNGMwLS4yLjEtLjQuMS0uNS4xLS4yIDAtLjMtLjItLjQgMC0uMS0uMiAwLS4zLjItLjEuMi0uMS40LS4yLjdsLS42IDUuNGgtMUwyLjcgMTBjMC0uMi0uMS0uNS0uMi0uNyAwIDAtLjQtLjctLjYtMS4yLS4xLS43LS4yLTEuOSAwLTIuMS4xLS4xLjEtLjIuMi0uMi4zLS4yLjYtLjMuNy0uNGwuNy45Yy4xLjEuMS4xLjIuMXMuMiAwIC4yLS4xbC44LTEuMWMuMi0uMi4yLS40IDAtLjUtLjEtLjEtLjMgMC0uNC4xbC0uNS44LS42LS44Yy0uMS0uMS0uMi0uMi0uNC0uMSAwIDAtLjYuMi0xLjEuNi0uMS4xLS4xLjItLjMuMy0uNC40LS4xIDIuMSAwIDIuNXptMi4zLTMuOGMuNCAwIC44LS4xIDEtLjQuNS0uNS40LTEuNS40LTEuNiAwLTEtLjgtMS40LTEuMy0xLjRoLS4xYy0uNi4xLTEuMy40LTEuMyAxLjQgMCAuMS0uMSAxIC40IDEuNi4yLjMuNS40LjkuNHpNMyAyLjRjMC0uNy41LS44LjctLjguMyAwIC43LjEuNy44IDAgLjIgMCAuOC0uMyAxLjEgMCAuMS0uMS4yLS4zLjItLjIgMC0uNC0uMS0uNS0uMkMzIDMuMiAzIDIuNiAzIDIuNHptNy42IDYuN2MtLjIuMS0uMi4yLS4yLjQuMS4yLjEuMy4xLjVsLjYgNS40YzAgLjMuMy42LjYuNmgxYy4zIDAgLjYtLjIuNi0uNmwuNi01LjRjMC0uMi4xLS40LjEtLjUuMS0uMS41LS44LjYtMS40LjEtLjQuNC0yLjEgMC0yLjVsLS4zLS4zYy0uNS0uNC0xLjEtLjYtMS4xLS42LS4xLS4xLS4zIDAtLjMuMWwtLjYuOC0uNi0uOGMtLjEtLjEtLjMtLjItLjQtLjEtLjEuMS0uMi4zLS4xLjRsLjggMS4xYy4xLjEuMS4xLjIuMXMuMiAwIC4yLS4xbC43LS45Yy4yLjEuNS4yLjcuNC4yLjEuMi4yLjMuMy4xLjIuMSAxLjQtLjEgMi0uMS41LS41IDEuMi0uNiAxLjItLjEuMi0uMi41LS4yLjdsLS42IDUuNGgtMWwtLjQtNS4zYzAtLjItLjEtLjUtLjItLjctLjEtLjItLjMtLjMtLjQtLjJ6bTEuNi00LjhjLjQgMCAuOC0uMSAxLS40LjUtLjUuNC0xLjUuNC0xLjYgMC0xLS43LTEuNC0xLjMtMS40aC0uMWMtLjYgMC0xLjMuNC0xLjMgMS40IDAgLjEtLjEgMSAuNCAxLjYuMi4zLjUuNC45LjR6bS0uNy0xLjljMC0uNy41LS44LjctLjguMyAwIC43LjEuNy44IDAgLjIgMCAuOC0uMyAxLjEtLjEuMS0uMy4yLS41LjJzLS40LS4xLS41LS4yYy0uMi0uMy0uMi0uOS0uMS0xLjF6bS02IDIuNWMtLjQuNS0uMiAyLjMgMCAyLjcuMS42LjUgMS40LjYgMS41LjEuMi4xLjQuMS42bC42IDUuOGMwIC4zLjMuNi43LjZoMWMuMyAwIC42LS4zLjctLjZsLjYtNS44YzAtLjIuMS0uNC4xLS42LjEtLjEuNS0uOS42LTEuNS4xLS40LjQtMi4zLS4xLTIuN2wtLjMtLjNDOS42IDQuMiA5IDQgOSA0Yy0uMi0uMS0uMyAwLS40LjFsLS42LjgtLjYtLjhDNy4zIDQgNy4yIDMuOSA3IDRsLTEuMi42Yy0uMS4xLS4xLjItLjMuM3pNOCAzLjVjLjUgMCAuOC0uMiAxLS40LjUtLjYuNC0xLjYuNC0xLjdDOS40LjQgOC42IDAgOCAwYy0uNiAwLTEuNC40LTEuNCAxLjQgMCAuMS0uMSAxLjEuNCAxLjcuMi4zLjYuNCAxIC40eiIgY2xhc3M9InN0MCIvPjwvc3ZnPg==") 0 0 no-repeat;
+}
 .page {
   position: relative;
   z-index: 0;
@@ -725,8 +731,9 @@ th {
   -webkit-transform-origin: 50% 50% 0;
       -ms-transform-origin: 50% 50% 0;
           transform-origin: 50% 50% 0;
-  -webkit-animation: rotateCircle 20s linear infinite reverse running;
-          animation: rotateCircle 20s linear infinite reverse running;
+  -webkit-animation: rotateCircle 20s linear infinite reverse;
+          animation: rotateCircle 20s linear infinite reverse;
+  will-change: transform;
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 1.5dppx), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-resolution: 144dpi) {
   .hero__circle::before {
@@ -757,8 +764,9 @@ th {
   -webkit-transform-origin: 50% 50% 0;
       -ms-transform-origin: 50% 50% 0;
           transform-origin: 50% 50% 0;
-  -webkit-animation: rotateCircle 30s linear infinite running;
-          animation: rotateCircle 30s linear infinite running;
+  -webkit-animation: rotateCircle 30s linear infinite;
+          animation: rotateCircle 30s linear infinite;
+  will-change: transform;
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 1.5dppx), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-resolution: 144dpi) {
   .hero__circle::after {
@@ -1319,14 +1327,14 @@ th {
       -ms-transform: translate(-50%, -50%) scale(1.6);
           transform: translate(-50%, -50%) scale(1.6);
 }
-.tabs__service:nth-child(1) {
+.tabs__service--service1 {
   top: -17%;
   left: 32%;
 }
-.tabs__service:nth-child(1) .tabs__line {
+.tabs__service--service1 .tabs__line {
   width: 11em;
 }
-.tabs__service:nth-child(1) .tabs__pointer {
+.tabs__service--service1 .tabs__pointer {
   width: 2em;
   bottom: 0.7em;
   left: 10.7em;
@@ -1334,19 +1342,19 @@ th {
       -ms-transform: rotate(45deg);
           transform: rotateZ(45deg);
 }
-.tabs__service:nth-child(1) .tabs__dot {
+.tabs__service--service1 .tabs__dot {
   left: 190%;
   bottom: -35%;
 }
 @media screen and (max-width: 779px) {
-  .tabs__service:nth-child(1) {
+  .tabs__service--service1 {
     top: -35%;
     left: 25%;
   }
-  .tabs__service:nth-child(1) .tabs__line {
+  .tabs__service--service1 .tabs__line {
     width: 6em;
   }
-  .tabs__service:nth-child(1) .tabs__pointer {
+  .tabs__service--service1 .tabs__pointer {
     left: 5.3em;
     bottom: -0.1em;
     width: 4em;
@@ -1354,30 +1362,30 @@ th {
         -ms-transform: rotate(48deg);
             transform: rotateZ(48deg);
   }
-  .tabs__service:nth-child(1) .tabs__dot {
+  .tabs__service--service1 .tabs__dot {
     left: 8em;
     bottom: -3em;
   }
 }
 @media screen and (max-width: 479px) {
-  .tabs__service:nth-child(1) {
+  .tabs__service--service1 {
     top: 0;
     left: 0;
     width: 100%;
   }
-  .tabs__service:nth-child(1) .tabs__dot {
+  .tabs__service--service1 .tabs__dot {
     left: -3em;
     bottom: 0.3em;
   }
 }
-.tabs__service:nth-child(2) {
+.tabs__service--service2 {
   top: 4%;
   left: 4.5%;
 }
-.tabs__service:nth-child(2) .tabs__line {
+.tabs__service--service2 .tabs__line {
   width: 5.5em;
 }
-.tabs__service:nth-child(2) .tabs__pointer {
+.tabs__service--service2 .tabs__pointer {
   width: 3em;
   bottom: 0.32em;
   left: 5em;
@@ -1385,16 +1393,16 @@ th {
       -ms-transform: rotate(45deg);
           transform: rotateZ(45deg);
 }
-.tabs__service:nth-child(2) .tabs__dot {
+.tabs__service--service2 .tabs__dot {
   left: 115%;
   bottom: -60%;
 }
 @media screen and (max-width: 779px) {
-  .tabs__service:nth-child(2) {
+  .tabs__service--service2 {
     top: -18%;
     left: 0;
   }
-  .tabs__service:nth-child(2) .tabs__pointer {
+  .tabs__service--service2 .tabs__pointer {
     width: 5em;
     bottom: -1em;
     left: 3.8em;
@@ -1402,30 +1410,30 @@ th {
         -ms-transform: rotate(72deg);
             transform: rotateZ(72deg);
   }
-  .tabs__service:nth-child(2) .tabs__dot {
+  .tabs__service--service2 .tabs__dot {
     left: 6em;
     bottom: -4.5em;
   }
 }
 @media screen and (max-width: 479px) {
-  .tabs__service:nth-child(2) {
+  .tabs__service--service2 {
     top: 0;
     left: 0;
     width: 100%;
   }
-  .tabs__service:nth-child(2) .tabs__dot {
+  .tabs__service--service2 .tabs__dot {
     left: -3em;
     bottom: 0.3em;
   }
 }
-.tabs__service:nth-child(3) {
+.tabs__service--service3 {
   top: 35%;
   left: -12.5%;
 }
-.tabs__service:nth-child(3) .tabs__line {
+.tabs__service--service3 .tabs__line {
   width: 5em;
 }
-.tabs__service:nth-child(3) .tabs__pointer {
+.tabs__service--service3 .tabs__pointer {
   width: 3.3em;
   bottom: 0.3em;
   left: 4.6em;
@@ -1433,16 +1441,16 @@ th {
       -ms-transform: rotate(40deg);
           transform: rotateZ(40deg);
 }
-.tabs__service:nth-child(3) .tabs__dot {
+.tabs__service--service3 .tabs__dot {
   left: 115%;
   bottom: -60%;
 }
 @media screen and (max-width: 779px) {
-  .tabs__service:nth-child(3) {
+  .tabs__service--service3 {
     top: 13%;
     left: -7%;
   }
-  .tabs__service:nth-child(3) .tabs__pointer {
+  .tabs__service--service3 .tabs__pointer {
     width: 4.5em;
     bottom: -0.75em;
     left: 3.4em;
@@ -1450,30 +1458,30 @@ th {
         -ms-transform: rotate(75deg);
             transform: rotateZ(75deg);
   }
-  .tabs__service:nth-child(3) .tabs__dot {
+  .tabs__service--service3 .tabs__dot {
     left: 5em;
     bottom: -4em;
   }
 }
 @media screen and (max-width: 479px) {
-  .tabs__service:nth-child(3) {
+  .tabs__service--service3 {
     top: 0;
     left: 0;
     width: 100%;
   }
-  .tabs__service:nth-child(3) .tabs__dot {
+  .tabs__service--service3 .tabs__dot {
     left: -3em;
     bottom: 0.3em;
   }
 }
-.tabs__service:nth-child(4) {
+.tabs__service--service4 {
   top: 93%;
   left: -12.5%;
 }
-.tabs__service:nth-child(4) .tabs__line {
+.tabs__service--service4 .tabs__line {
   width: 5.5em;
 }
-.tabs__service:nth-child(4) .tabs__pointer {
+.tabs__service--service4 .tabs__pointer {
   width: 6.5em;
   bottom: 4.1em;
   left: 3.9em;
@@ -1481,16 +1489,16 @@ th {
       -ms-transform: rotate(-58deg);
           transform: rotateZ(-58deg);
 }
-.tabs__service:nth-child(4) .tabs__dot {
+.tabs__service--service4 .tabs__dot {
   left: 135%;
   bottom: 155%;
 }
 @media screen and (max-width: 779px) {
-  .tabs__service:nth-child(4) {
+  .tabs__service--service4 {
     top: 105%;
     left: -7%;
   }
-  .tabs__service:nth-child(4) .tabs__pointer {
+  .tabs__service--service4 .tabs__pointer {
     width: 5em;
     bottom: 3.9em;
     left: 3.3em;
@@ -1498,31 +1506,31 @@ th {
         -ms-transform: rotate(-83deg);
             transform: rotateZ(-83deg);
   }
-  .tabs__service:nth-child(4) .tabs__dot {
+  .tabs__service--service4 .tabs__dot {
     left: 5.2em;
     bottom: 6em;
   }
 }
 @media screen and (max-width: 479px) {
-  .tabs__service:nth-child(4) {
+  .tabs__service--service4 {
     top: 0;
     left: 0;
     width: 100%;
   }
-  .tabs__service:nth-child(4) .tabs__dot {
+  .tabs__service--service4 .tabs__dot {
     left: -3em;
     bottom: 0.3em;
   }
 }
-.tabs__service:nth-child(5) {
+.tabs__service--service5 {
   top: 93%;
   left: 70%;
 }
-.tabs__service:nth-child(5) .tabs__line {
+.tabs__service--service5 .tabs__line {
   left: -1em;
   width: 6em;
 }
-.tabs__service:nth-child(5) .tabs__pointer {
+.tabs__service--service5 .tabs__pointer {
   width: 6.5em;
   bottom: 3.65em;
   left: -6.5em;
@@ -1530,16 +1538,16 @@ th {
       -ms-transform: rotate(45deg);
           transform: rotateZ(45deg);
 }
-.tabs__service:nth-child(5) .tabs__dot {
+.tabs__service--service5 .tabs__dot {
   left: -100%;
   bottom: 115%;
 }
 @media screen and (max-width: 779px) {
-  .tabs__service:nth-child(5) {
+  .tabs__service--service5 {
     top: 105%;
     left: 65%;
   }
-  .tabs__service:nth-child(5) .tabs__pointer {
+  .tabs__service--service5 .tabs__pointer {
     width: 6em;
     bottom: 4em;
     left: -5.5em;
@@ -1547,31 +1555,31 @@ th {
         -ms-transform: rotate(60deg);
             transform: rotateZ(60deg);
   }
-  .tabs__service:nth-child(5) .tabs__dot {
+  .tabs__service--service5 .tabs__dot {
     left: -5em;
     bottom: 6em;
   }
 }
 @media screen and (max-width: 479px) {
-  .tabs__service:nth-child(5) {
+  .tabs__service--service5 {
     top: 0;
     left: 0;
     width: 100%;
   }
-  .tabs__service:nth-child(5) .tabs__dot {
+  .tabs__service--service5 .tabs__dot {
     left: -3em;
     bottom: 0.3em;
   }
 }
-.tabs__service:nth-child(6) {
+.tabs__service--service6 {
   top: 70%;
   left: 100%;
 }
-.tabs__service:nth-child(6) .tabs__line {
+.tabs__service--service6 .tabs__line {
   left: -2em;
   width: 7em;
 }
-.tabs__service:nth-child(6) .tabs__pointer {
+.tabs__service--service6 .tabs__pointer {
   width: 6em;
   bottom: 3.5em;
   left: -7.1em;
@@ -1579,19 +1587,19 @@ th {
       -ms-transform: rotate(45deg);
           transform: rotateZ(45deg);
 }
-.tabs__service:nth-child(6) .tabs__dot {
+.tabs__service--service6 .tabs__dot {
   left: -110%;
   bottom: 115%;
 }
 @media screen and (max-width: 779px) {
-  .tabs__service:nth-child(6) {
+  .tabs__service--service6 {
     top: 80%;
     left: 88%;
   }
-  .tabs__service:nth-child(6) .tabs__line {
+  .tabs__service--service6 .tabs__line {
     width: 6em;
   }
-  .tabs__service:nth-child(6) .tabs__pointer {
+  .tabs__service--service6 .tabs__pointer {
     width: 5.5em;
     bottom: 4em;
     left: -5.7em;
@@ -1599,18 +1607,18 @@ th {
         -ms-transform: rotate(70deg);
             transform: rotateZ(70deg);
   }
-  .tabs__service:nth-child(6) .tabs__dot {
+  .tabs__service--service6 .tabs__dot {
     left: -4.5em;
     bottom: 5em;
   }
 }
 @media screen and (max-width: 479px) {
-  .tabs__service:nth-child(6) {
+  .tabs__service--service6 {
     top: 0;
     left: 0;
     width: 100%;
   }
-  .tabs__service:nth-child(6) .tabs__dot {
+  .tabs__service--service6 .tabs__dot {
     left: -3em;
     bottom: 0.3em;
   }
@@ -1767,6 +1775,9 @@ th {
   border: none;
   background: rgba(0,0,0,0);
   outline: none;
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
+          border-radius: 0;
 }
 .order-form__input--file {
   width: 0.1px;
@@ -2306,8 +2317,7 @@ label.error {
 }
 @media screen and (max-width: 750px) {
   .contacts {
-    padding-top: 5em;
-    padding-left: 2.5em;
+    padding: 5em 6% 2em 2.5em;
     overflow-y: auto;
   }
 }
@@ -2413,11 +2423,11 @@ label.error {
 @media screen and (max-width: 750px) {
   .contacts__map {
     top: 30em;
-    left: 1em;
-    width: 95%;
+    left: 0;
+    width: 100%;
     height: 70vh;
     min-height: 20em;
-    margin-bottom: 1em;
+    margin-bottom: 2em;
   }
 }
 @media screen and (max-width: 450px) {

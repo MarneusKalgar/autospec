@@ -1,0 +1,8 @@
+include ../tabs/tabsSimple
+include ../order-form/order-form
+
+mixin bundlesSimple
+	+b.SECTION.bundles#bundles
+		+e.DIV.wrap
+			+tabsSimple()
+			+order-form()

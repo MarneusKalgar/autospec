@@ -5,7 +5,7 @@ mixin title(titles)
 
 mixin list(items)
 	each item in items
-		+e.LI.service
+		+e.LI.service(class=item.class)
 			+e.SPAN.caption= item.title
 			+e.SPAN.price= item.text
 			+e.SPAN.line
@@ -27,12 +27,12 @@ mixin tabs
 				+e.IMG.img(src="img/tabs/budget-car.png", alt="Автомобиль")
 				+e.UL.list
 					+list([
-						{"title": "Кузовной ремонт", "text": "1000 грн"},
-						{"title": "Кузовной ремонт", "text": "1000 грн"},
-						{"title": "Кузовной ремонт", "text": "1000 грн"},
-						{"title": "Кузовной ремонт", "text": "1000 грн"},
-						{"title": "Кузовной ремонт", "text": "1000 грн"},
-						{"title": "Кузовной ремонт", "text": "1000 грн"}
+						{"class": "--service1", "title": "Кузовной ремонт", "text": "1000 грн"},
+						{"class": "--service2", "title": "Кузовной ремонт", "text": "1000 грн"},
+						{"class": "--service3", "title": "Кузовной ремонт", "text": "1000 грн"},
+						{"class": "--service4", "title": "Кузовной ремонт", "text": "1000 грн"},
+						{"class": "--service5", "title": "Кузовной ремонт", "text": "1000 грн"},
+						{"class": "--service6", "title": "Кузовной ремонт", "text": "1000 грн"}
 					])
 		+e.DIV.item
 			+e.H3.subtitle(class="titles") Пакет ”Стандарт“
@@ -41,12 +41,12 @@ mixin tabs
 				+e.IMG.img(src="img/tabs/standard-car.png", alt="Автомобиль")
 				+e.UL.list
 					+list([
-						{"title": "Кузовной ремонт", "text": "1000 грн"},
-						{"title": "Кузовной ремонт", "text": "1000 грн"},
-						{"title": "Кузовной ремонт", "text": "1000 грн"},
-						{"title": "Кузовной ремонт", "text": "1000 грн"},
-						{"title": "Кузовной ремонт", "text": "1000 грн"},
-						{"title": "Кузовной ремонт", "text": "1000 грн"}
+						{"class": "--service1", "title": "Кузовной ремонт", "text": "1000 грн"},
+						{"class": "--service2", "title": "Кузовной ремонт", "text": "1000 грн"},
+						{"class": "--service3", "title": "Кузовной ремонт", "text": "1000 грн"},
+						{"class": "--service4", "title": "Кузовной ремонт", "text": "1000 грн"},
+						{"class": "--service5", "title": "Кузовной ремонт", "text": "1000 грн"},
+						{"class": "--service6", "title": "Кузовной ремонт", "text": "1000 грн"}
 					])
 		+e.DIV.item
 			+e.H3.subtitle(class="titles") Пакет ”Премиум“
@@ -55,11 +55,11 @@ mixin tabs
 				+e.IMG.img(src="img/tabs/premium-car.png", alt="Автомобиль")
 				+e.UL.list
 					+list([
-						{"title": "Кузовной ремонт", "text": "1000 грн"},
-						{"title": "Кузовной ремонт", "text": "1000 грн"},
-						{"title": "Кузовной ремонт", "text": "1000 грн"},
-						{"title": "Кузовной ремонт", "text": "1000 грн"},
-						{"title": "Кузовной ремонт", "text": "1000 грн"},
-						{"title": "Кузовной ремонт", "text": "1000 грн"}
+						{"class": "--service1", "title": "Кузовной ремонт", "text": "1000 грн"},
+						{"class": "--service2", "title": "Кузовной ремонт", "text": "1000 грн"},
+						{"class": "--service3", "title": "Кузовной ремонт", "text": "1000 грн"},
+						{"class": "--service4", "title": "Кузовной ремонт", "text": "1000 грн"},
+						{"class": "--service5", "title": "Кузовной ремонт", "text": "1000 грн"},
+						{"class": "--service6", "title": "Кузовной ремонт", "text": "1000 грн"}
 					])
 

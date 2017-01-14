@@ -83,7 +83,8 @@
 			background url("../img/sidebar/sidebar-circle-inner.png") center no-repeat
 			background-size cover
 			transform-origin 50% 50% 0
-			animation rotateCircle 20s linear infinite reverse running
+			animation rotateCircle 20s linear infinite reverse
+			will-change transform
 			+retina()
 				background-image url("../img/sidebar/sidebar-circle-inner-lg.png")
 			@media screen and (max-width: 1199px)
@@ -102,7 +103,8 @@
 			background url("../img/sidebar/sidebar-circle-outer.png") center no-repeat
 			background-size cover
 			transform-origin 50% 50% 0
-			animation rotateCircle 30s linear infinite running
+			animation rotateCircle 30s linear infinite
+			will-change transform
 			+retina()
 				background-image url("../img/sidebar/sidebar-circle-outer-lg.png")
 			@media screen and (max-width: 1199px)
