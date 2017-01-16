@@ -97,7 +97,7 @@
 		@media screen and (max-width: 779px)
 			width @width * .7
 			height @height * .7
-			margin-left 1.5em
+			margin-left 1em
 		@media screen and (max-width: 479px)
 			width 100%
 			margin 2em 0 0
@@ -109,6 +109,10 @@
 		height auto
 		@media screen and (max-width: 479px)
 			display none
+
+		&--sedan
+			position relative
+			top 9%
 
 	&__list
 		margin 0
@@ -173,6 +177,11 @@
 					left -3em
 					bottom .3em
 
+		&--service1_sedan_positioned
+			top -10%
+			@media screen and (max-width: 779px)
+				top -25%
+
 			//ITEM2
 		&--service2
 			top 4%
@@ -205,6 +214,11 @@
 				.tabs__dot
 					left -3em
 					bottom .3em
+
+		&--service2_sedan_positioned
+			top 10%
+			@media screen and (max-width: 779px)
+				top -12%
 
 			//ITEM3
 		&--service3
@@ -241,7 +255,7 @@
 
 			//ITEM4
 		&--service4
-			top 93%
+			top 90%
 			left -12.5%
 			.tabs__line
 				width 5.5em
@@ -254,7 +268,7 @@
 				left 135%
 				bottom 155%
 			@media screen and (max-width: 779px)
-				top 105%
+				top 100%
 				left -7%
 				.tabs__pointer
 					width 5em
@@ -271,6 +285,11 @@
 				.tabs__dot
 					left -3em
 					bottom .3em
+
+		&--service4_sedan_positioned
+			top 90%
+			@media screen and (max-width: 779px)
+				top 100%
 
 			//ITEM5
 		&--service5
@@ -289,7 +308,7 @@
 				bottom 115%
 			@media screen and (max-width: 779px)
 				top 105%
-				left 65%
+				left 72%
 				.tabs__pointer
 					width 6em
 					bottom 4em
@@ -305,6 +324,11 @@
 				.tabs__dot
 					left -3em
 					bottom .3em
+
+		&--service5_sedan_positioned
+			top 90%
+			@media screen and (max-width: 779px)
+				top 100%
 
 			//ITEM6
 		&--service6

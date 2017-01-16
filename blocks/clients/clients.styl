@@ -6,11 +6,11 @@
 	padding 7em 3% 0 7.5%
 	box-sizing border-box
 	font-size 1rem
-	overflow hidden
+	overflow-x hidden
 	background #fff url("../img/clients/clients-bg-lg.jpg") 0 0 no-repeat
 	background-size cover
 	@media screen and (max-height: 620px), (max-width: 1090px)
-		overflow auto
+		overflow-y auto
 	@media screen and (min-width: 941px) and (max-width: 1090px)
 		padding 7em 3% 0 5%
 	@media screen and (max-width: 800px)
@@ -40,13 +40,11 @@
 			font-size 1.8em
 
 	&__lead
-		width 20em
+		width 100%
 		margin .5em 0 0
 		font-size 1.5em
 		font-weight bold
-		@media screen and (min-width: 941px) and (max-width: 1130px), (min-width: 601px) and (max-width: 750px)
-			width 15em
-			margin-right 4em
+		@media screen and (min-width: 941px) and (max-width: 1130px), (max-width: 750px), (max-height: 720px)
 			font-size 1.2em
 
 	&__list
@@ -64,6 +62,7 @@
 			height 25em
 			margin-right 0
 
+
 	&__item
 		position relative
 		margin 1.5em 0 0 3.2em
@@ -76,9 +75,16 @@
 			color rgba($base-decor-color, .2)
 			font-size 3em
 			font-weight bold
-			@media screen and (max-width: 600px)
+		@media screen and (max-width: 600px)
+			margin-left 2.7em
+			&::before
 				font-size 2.5em
 				top -.6em
+		@media screen and (max-width: 480px)
+			margin-left 2.3em
+			&::before
+				top -.55em
+				font-size 2.2em
 
 	&__strong
 		font-weight bold
@@ -86,7 +92,6 @@
 		//form
 	&__form
 		position relative
-		top -3.5em
 		width 35%
 		min-width 13.75em
 		@media screen and (min-width: 941px) and (max-width: 1090px), (max-width: 750px)
@@ -98,14 +103,18 @@
 
 	&__set
 		position relative
-		margin 1em 0 0
+		margin .7em 0 0
 		padding 0
 		border none
+		&:first-child
+			margin-top 0
 		&:last-child
-			margin-top 1.5em
+			margin-top 1em
 			padding-bottom 3%
 			@media screen and (max-width: 600px)
 				padding-bottom 3.75em
+		@media screen and (max-height: 720px)
+			margin .5em 0 0
 
 	&__input
 		display block

@@ -1272,7 +1272,7 @@ th {
   .tabs__figure {
     width: 25.375em;
     height: 14.874999999999998em;
-    margin-left: 1.5em;
+    margin-left: 1em;
   }
 }
 @media screen and (max-width: 479px) {
@@ -1290,6 +1290,10 @@ th {
   .tabs__img {
     display: none;
   }
+}
+.tabs__img--sedan {
+  position: relative;
+  top: 9%;
 }
 .tabs__list {
   margin: 0;
@@ -1378,6 +1382,14 @@ th {
     bottom: 0.3em;
   }
 }
+.tabs__service--service1_sedan_positioned {
+  top: -10%;
+}
+@media screen and (max-width: 779px) {
+  .tabs__service--service1_sedan_positioned {
+    top: -25%;
+  }
+}
 .tabs__service--service2 {
   top: 4%;
   left: 4.5%;
@@ -1424,6 +1436,14 @@ th {
   .tabs__service--service2 .tabs__dot {
     left: -3em;
     bottom: 0.3em;
+  }
+}
+.tabs__service--service2_sedan_positioned {
+  top: 10%;
+}
+@media screen and (max-width: 779px) {
+  .tabs__service--service2_sedan_positioned {
+    top: -12%;
   }
 }
 .tabs__service--service3 {
@@ -1475,7 +1495,7 @@ th {
   }
 }
 .tabs__service--service4 {
-  top: 93%;
+  top: 90%;
   left: -12.5%;
 }
 .tabs__service--service4 .tabs__line {
@@ -1495,7 +1515,7 @@ th {
 }
 @media screen and (max-width: 779px) {
   .tabs__service--service4 {
-    top: 105%;
+    top: 100%;
     left: -7%;
   }
   .tabs__service--service4 .tabs__pointer {
@@ -1522,6 +1542,14 @@ th {
     bottom: 0.3em;
   }
 }
+.tabs__service--service4_sedan_positioned {
+  top: 90%;
+}
+@media screen and (max-width: 779px) {
+  .tabs__service--service4_sedan_positioned {
+    top: 100%;
+  }
+}
 .tabs__service--service5 {
   top: 93%;
   left: 70%;
@@ -1545,7 +1573,7 @@ th {
 @media screen and (max-width: 779px) {
   .tabs__service--service5 {
     top: 105%;
-    left: 65%;
+    left: 72%;
   }
   .tabs__service--service5 .tabs__pointer {
     width: 6em;
@@ -1569,6 +1597,14 @@ th {
   .tabs__service--service5 .tabs__dot {
     left: -3em;
     bottom: 0.3em;
+  }
+}
+.tabs__service--service5_sedan_positioned {
+  top: 90%;
+}
+@media screen and (max-width: 779px) {
+  .tabs__service--service5_sedan_positioned {
+    top: 100%;
   }
 }
 .tabs__service--service6 {
