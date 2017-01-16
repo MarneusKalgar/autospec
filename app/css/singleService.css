@@ -1303,6 +1303,7 @@ th {
 .tabs__service {
   position: absolute;
   width: 6em;
+  height: 3.875em;
   cursor: pointer;
   -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
@@ -1661,6 +1662,10 @@ th {
 }
 .tabs__caption {
   display: block;
+  position: absolute;
+  left: 0;
+  bottom: 1.5em;
+  width: 5em;
   font-weight: bold;
   line-height: 1.2;
   -webkit-transition: all 0.2s ease;
@@ -1673,6 +1678,11 @@ th {
   .tabs__caption {
     font-size: 0.875em;
   }
+}
+.tabs__price {
+  position: absolute;
+  left: 0;
+  bottom: 0;
 }
 @media screen and (max-width: 779px) and (min-width: 480px) {
   .tabs__price {
