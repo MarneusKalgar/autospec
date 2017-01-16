@@ -1786,6 +1786,7 @@ th {
   }
 }
 .order-form__caption {
+  margin: 0;
   font-size: 1.5em;
   font-weight: bold;
   color: #ee6800;
