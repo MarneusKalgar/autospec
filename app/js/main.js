@@ -302,7 +302,8 @@ function header() {
 	if ($(".header--singleService").length) {
 		var $btn = $("#to_bundles");
 
-		$btn.on("click", function() {
+		$btn.on("click", function(e) {
+			e.preventDefault();
 			var id = $(this).attr("href");
 			var offset = $(id).offset().top;
 			$("html, body").animate({"scrollTop": offset}, 500);
@@ -313,7 +314,8 @@ function header() {
 function hero() {
 	$link = $(".hero__link");
 
-	$link.on("click", function() {
+	$link.on("click", function(e) {
+		e.preventDefault();
 		var id = $(this).attr("href");
 		var offset = $(id).offset().top;
 		$("html, body").animate({"scrollTop": offset}, 500);
@@ -325,45 +327,6 @@ function mainNav() {
 	$link.on("click", function(e) {
 		e.preventDefault();
 	});
-}
-function menuBtn() {
-	var $btn = $(".menu-btn");
-	var $logo = $(".logo__img");
-	var $sidebar = $(".sidebar");
-
-	var $main = $(".main");
-	var $about = $(".about");
-	var $services = $(".services");
-	var $trust = $(".trust");
-	var $clients = $(".clients");
-	var $contacts = $(".contacts");
-
-	$btn.on("click", function() {
-		$btn.toggleClass("menu-btn--isActive");
-
-		$sidebar.toggleClass("sidebar--isMove");
-		$logo.toggleClass("logo__img--isTransparent");
-
-		if ($main.length ) {
-			$main.toggleClass("main--isOverlay");
-		}
-		if ($about.length ) {
-			$about.toggleClass("about--isOverlay");
-		}
-		if ($services.length ) {
-			$services.toggleClass("services--isOverlay");
-		}
-		if ($trust.length ) {
-			$trust.toggleClass("trust--isOverlay");
-		}
-		if ($clients.length ) {
-			$clients.toggleClass("clients--isOverlay");
-		}
-		if ($contacts.length ) {
-			$contacts.toggleClass("contacts--isOverlay");
-		}
-	});
-
 }
 function orderForm() {
 	var $form = $("#orderForm");
@@ -403,6 +366,45 @@ function orderForm() {
 	});
 
 	$("#usertel").mask("+999 (99) 999 - 99 - 99");
+}
+function menuBtn() {
+	var $btn = $(".menu-btn");
+	var $logo = $(".logo__img");
+	var $sidebar = $(".sidebar");
+
+	var $main = $(".main");
+	var $about = $(".about");
+	var $services = $(".services");
+	var $trust = $(".trust");
+	var $clients = $(".clients");
+	var $contacts = $(".contacts");
+
+	$btn.on("click", function() {
+		$btn.toggleClass("menu-btn--isActive");
+
+		$sidebar.toggleClass("sidebar--isMove");
+		$logo.toggleClass("logo__img--isTransparent");
+
+		if ($main.length ) {
+			$main.toggleClass("main--isOverlay");
+		}
+		if ($about.length ) {
+			$about.toggleClass("about--isOverlay");
+		}
+		if ($services.length ) {
+			$services.toggleClass("services--isOverlay");
+		}
+		if ($trust.length ) {
+			$trust.toggleClass("trust--isOverlay");
+		}
+		if ($clients.length ) {
+			$clients.toggleClass("clients--isOverlay");
+		}
+		if ($contacts.length ) {
+			$contacts.toggleClass("contacts--isOverlay");
+		}
+	});
+
 }
 function page() {
 	var $logo = $(".logo");
