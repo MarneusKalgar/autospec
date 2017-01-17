@@ -14,7 +14,8 @@
 		height 35em
 	@media screen and (max-width: 584px)
 		margin-top 2em
-
+	@media screen and (max-width: 479px)
+		margin-bottom 5em
 
 		//tab-menu
 	&__menu
@@ -372,7 +373,7 @@
 		display block
 		position absolute
 		left 0
-		bottom 1.5em
+		bottom 1.6em
 		width 5em
 		font-weight bold
 		line-height 1.2
@@ -380,6 +381,8 @@
 		transform translate(0, 0) scale(1)
 		@media screen and (max-width: 779px) and (min-width: 480px)
 			font-size .875em
+		@media screen and (max-width: 479px)
+			width 100%
 
 	&__price
 		position absolute

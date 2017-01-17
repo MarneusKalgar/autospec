@@ -251,6 +251,8 @@ th {
 .page--singleService {
   height: auto;
   overflow-x: hidden;
+  min-width: 20rem;
+  max-width: 120rem;
 /***** elem wrap *****/
 }
 .page__wrap {
@@ -621,16 +623,23 @@ th {
   position: relative;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  height: 43.75em;
-  padding-top: 6.5625em;
+  min-height: 43.75em;
+  padding: 6.5625em 0 2em;
   color: #fff;
   text-align: center;
   background: #1f282a url("../img/hero/hero-bg-lg.jpg") center no-repeat;
+  background-size: cover;
 }
 .hero__title {
   position: relative;
-  width: 6em;
+  width: 12em;
   margin: 4.5em auto 0;
+}
+@media screen and (max-width: 599px) {
+  .hero__title {
+    width: 95%;
+    padding: 0 2.5%;
+  }
 }
 @media screen and (max-width: 450px) {
   .hero__title {
@@ -641,7 +650,7 @@ th {
   content: '';
   position: absolute;
   top: -1.7em;
-  left: 36%;
+  left: 44%;
   width: 1.5625em;
   height: 1.5em;
   background: url("../img/hero/hero__title-icon.png") 0 0 no-repeat;
@@ -652,11 +661,11 @@ th {
     width: 1.25em;
     height: 1.2em;
     top: -1.3em;
-    left: 40%;
+    left: 45%;
   }
 }
 .hero__lead {
-  width: 23.95em;
+  width: 25em;
   margin: 0.5em auto 0;
   font-size: 1.5em;
 }
@@ -671,7 +680,7 @@ th {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     width: 100%;
-    padding: 0 3%;
+    padding: 0 2.5%;
   }
 }
 .hero__link {
@@ -685,13 +694,7 @@ th {
 }
 @media screen and (max-width: 450px) {
   .hero__link {
-    position: absolute;
-    bottom: 2em;
-    left: 50%;
-    margin: 0;
-    -webkit-transform: translateX(-50%);
-        -ms-transform: translateX(-50%);
-            transform: translateX(-50%);
+    margin-top: 2em;
   }
 }
 .hero__icon {
@@ -723,7 +726,7 @@ th {
 .hero__circle::before {
   content: '';
   position: absolute;
-  top: 33.5%;
+  top: 15.5em;
   width: 14.3em;
   height: 14.3em;
   background: url("../img/sidebar/sidebar-circle-inner.png") center no-repeat;
@@ -742,12 +745,11 @@ th {
 }
 @media screen and (max-width: 1199px) {
   .hero__circle::before {
-    top: 37%;
     width: 10.01em;
     height: 10.01em;
   }
 }
-@media screen and (max-width: 629px) {
+@media screen and (max-width: 780px) {
   .hero__circle::before {
     display: none;
     background: none;
@@ -756,7 +758,7 @@ th {
 .hero__circle::after {
   content: '';
   position: absolute;
-  top: 21%;
+  top: 9.7em;
   width: 25.6em;
   height: 25.6em;
   background: url("../img/sidebar/sidebar-circle-outer.png") center no-repeat;
@@ -775,12 +777,12 @@ th {
 }
 @media screen and (max-width: 1199px) {
   .hero__circle::after {
-    top: 27.8%;
+    top: 11.5em;
     width: 17.919999999999998em;
     height: 17.919999999999998em;
   }
 }
-@media screen and (max-width: 629px) {
+@media screen and (max-width: 780px) {
   .hero__circle::after {
     display: none;
     background: none;
@@ -1160,6 +1162,11 @@ th {
 @media screen and (max-width: 584px) {
   .tabs {
     margin-top: 2em;
+  }
+}
+@media screen and (max-width: 479px) {
+  .tabs {
+    margin-bottom: 5em;
   }
 }
 .tabs__menu {
@@ -1664,7 +1671,7 @@ th {
   display: block;
   position: absolute;
   left: 0;
-  bottom: 1.5em;
+  bottom: 1.6em;
   width: 5em;
   font-weight: bold;
   line-height: 1.2;
@@ -1677,6 +1684,11 @@ th {
 @media screen and (max-width: 779px) and (min-width: 480px) {
   .tabs__caption {
     font-size: 0.875em;
+  }
+}
+@media screen and (max-width: 479px) {
+  .tabs__caption {
+    width: 100%;
   }
 }
 .tabs__price {
@@ -1987,7 +1999,7 @@ label.error {
 }
 .why__slider {
   position: relative;
-  height: 27em;
+  min-height: 27em;
   margin-top: 2.3em;
   padding: 0 6em;
   overflow: hidden;
@@ -2007,7 +2019,7 @@ label.error {
 @media screen and (max-width: 499px) {
   .why__slider {
     width: 14em;
-    height: 31em;
+    min-height: 31em;
     padding: 0 2em 0 2em;
   }
 }
@@ -2015,7 +2027,12 @@ label.error {
   position: relative;
   left: 0;
   width: 110em;
-  height: 22.875em;
+  height: 100%;
+}
+.why__slider-wrap::after {
+  content: "";
+  display: table;
+  clear: both;
 }
 .why__list {
   position: relative;
@@ -2023,6 +2040,11 @@ label.error {
   margin: 0;
   padding: 0;
   list-style: none;
+}
+.why__list::after {
+  content: "";
+  display: table;
+  clear: both;
 }
 .why__slide {
   float: left;

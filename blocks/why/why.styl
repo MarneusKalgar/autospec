@@ -20,7 +20,7 @@
 
 	&__slider
 		position relative
-		height 27em
+		min-height 27em
 		margin-top 2.3em
 		padding 0 6em
 		overflow hidden
@@ -32,15 +32,18 @@
 			width 16em
 		@media screen and (max-width: 499px)
 			width 14em
-			height 31em
+			min-height 31em
 			padding 0 2em 0 2em
 
 	&__slider-wrap
 		position relative
 		left 0
 		width 110em
-		height 22.875em
-		//overflow hidden
+		height 100%
+		&::after
+			content ""
+			display table
+			clear both
 
 	&__list
 		position relative
@@ -48,6 +51,10 @@
 		margin 0
 		padding 0
 		list-style none
+		&::after
+			content ""
+			display table
+			clear both
 
 	&__slide
 		float left
