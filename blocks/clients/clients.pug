@@ -25,19 +25,19 @@ mixin clients
 		+e.FORM.form#clientsForm(method="POST", action="#", name="price")
 			+e.FIELDSET.set
 				+e.LABEL.label(for="usercompany" class="--company svgicon --company")
-				+e.INPUT.input(type="text", id="usercompany", name="usercompany", aria-required="true", placeholder="Ваша компания")
+				+e.INPUT.input(type="text", id="usercompany", name="usercompany", required, aria-required="true", placeholder="Ваша компания")
 			+e.FIELDSET.set
 				+e.LABEL.label(for="usermessage" class="--car svgicon --car")
-				+e.TEXTAREA.write(id="usermessage", name="usermessage", aria-required="true", placeholder="Количество и марка авто")
+				+e.TEXTAREA.write(id="usermessage", name="usermessage", required, aria-required="true", placeholder="Количество и марка авто")
 			+e.FIELDSET.set
 				+e.LABEL.label(for="username" class="--person svgicon --person")
-				+e.INPUT.input(type="text", id="username", name="username", aria-required="true", placeholder="ФИО контактного лица")
+				+e.INPUT.input(type="text", id="username", name="username", required, aria-required="true", placeholder="ФИО контактного лица")
 			+e.FIELDSET.set
 				+e.LABEL.label(for="userphone" class="--phone svgicon --phone")
-				+e.INPUT.input(type="tel", id="userphone", name="userphone", aria-required="true", placeholder="Номер контактного лица")
+				+e.INPUT.input(type="tel", id="userphone", name="userphone", required, aria-required="true", placeholder="Номер контактного лица")
 			+e.FIELDSET.set
 				+e.LABEL.label(for="usermail" class="--envelope svgicon --envelope")
-				+e.INPUT.input(type="email", id="usermail", name="usermail", aria-required="true", placeholder="Почта контактного лица")
+				+e.INPUT.input(type="email", id="usermail", name="usermail", required, aria-required="true", placeholder="Почта контактного лица")
 			+e.FIELDSET.set
 				+e.LABEL.label(class="--wrap")
 					+e.INPUT.btn(type="submit", id="price-submit" class="btn --price --bordered", value="получить прайс")

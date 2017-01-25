@@ -300,23 +300,45 @@ function contacts() {
 function header() {
 
 	if ($(".header--singleService").length) {
-		var $btn = $("#to_bundles");
+		var $link = $("#to_bundles");
+		var $list = $(".header__list");
+		var $btn = $(".menu-btn");
 
-		$btn.on("click", function(e) {
+		$link.on("click", function (e) {
 			e.preventDefault();
-			var id = $(this).attr("href");
+			var id = $(this).attr("data-link");
 			var offset = $(id).offset().top;
 			$("html, body").animate({"scrollTop": offset}, 500);
+			
+			$btn.removeClass("menu-btn--isActive");
+			$list.removeClass("header__list--isVisible");
 		});
-	}
 
+		if ($(window).width() > 841) {
+			var $window = $(window);
+			var $header = $(".header--singleService");
+			var $tel = $(".header__link");
+
+			$window.on("scroll", function () {
+				var scroll = $window.scrollTop();
+
+				if (scroll > 0) {
+					$header.addClass("header--isScrolled");
+					$tel.addClass("header__link--isHidden");
+				} else {
+					$header.removeClass("header--isScrolled");
+					$tel.removeClass("header__link--isHidden");
+				}
+			});//end window
+		}//end if width
+	}//end if header
 }
 function hero() {
-	$link = $(".hero__link");
+	var $link = $(".hero__link");
 
 	$link.on("click", function(e) {
 		e.preventDefault();
-		var id = $(this).attr("href");
+		var id = $(this).attr("data-link");
 		var offset = $(id).offset().top;
 		$("html, body").animate({"scrollTop": offset}, 500);
 	});
@@ -327,45 +349,6 @@ function mainNav() {
 	$link.on("click", function(e) {
 		e.preventDefault();
 	});
-}
-function orderForm() {
-	var $form = $("#orderForm");
-
-	$form.validate({
-
-		rules: {
-			username: {
-				required: true
-			},
-			usermail: {
-				required: true,
-				email: true
-			},
-			usertel: {
-				required: true
-			},
-			carbrand: "required",
-			carmodel: "required",
-			caryear: "required"
-		},
-
-		messages: {
-			username: {
-				required: "Пожалуйста, введитеимя"
-			},
-			usermail: {
-				required: "Пожалуйста, введите адрес",
-				email: "Формат адреса example@email.com"
-			},
-			usertel: "Пожалуйста, введите номер телефона",
-			carbrand: "Пожалуйста, введите марку автомобиля",
-			carmodel: "Пожалуйста, введите модель автомобиля",
-			caryear: "Пожалуйста, введите год выпуска"
-		}
-
-	});
-
-	$("#usertel").mask("+999 (99) 999 - 99 - 99");
 }
 function menuBtn() {
 	var $btn = $(".menu-btn");
@@ -405,6 +388,55 @@ function menuBtn() {
 		}
 	});
 
+	if ($btn.hasClass("menu-btn--fixed")) {
+		var $list = $(".header__list");
+		$btn.on("click", function() {
+			$logo.removeClass("logo__img--isTransparent");
+			$services.removeClass("services--isOverlay");
+			$contacts.removeClass("contacts--isOverlay");
+			$list.toggleClass("header__list--isVisible");
+		});
+	}
+
+}
+function orderForm() {
+	var $form = $("#orderForm");
+
+	$form.validate({
+
+		rules: {
+			username: {
+				required: true
+			},
+			usermail: {
+				required: true,
+				email: true
+			},
+			usertel: {
+				required: true
+			},
+			carbrand: "required",
+			carmodel: "required",
+			caryear: "required"
+		},
+
+		messages: {
+			username: {
+				required: "Пожалуйста, введитеимя"
+			},
+			usermail: {
+				required: "Пожалуйста, введите адрес",
+				email: "Формат адреса example@email.com"
+			},
+			usertel: "Пожалуйста, введите номер телефона",
+			carbrand: "Пожалуйста, введите марку автомобиля",
+			carmodel: "Пожалуйста, введите модель автомобиля",
+			caryear: "Пожалуйста, введите год выпуска"
+		}
+
+	});
+
+	$("#usertel").mask("+999 (99) 999 - 99 - 99");
 }
 function page() {
 	var $logo = $(".logo");

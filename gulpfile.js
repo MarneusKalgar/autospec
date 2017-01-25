@@ -126,7 +126,7 @@ gulp.task('fontsBuild', ['clean'], function() {
 });
 
 //ftp
-gulp.task('send', ['production'], function() {
+gulp.task('send', function() {
 	var conn = ftp.create( {
 		host:     '77.120.110.166',
 		user:     'alexlabs',

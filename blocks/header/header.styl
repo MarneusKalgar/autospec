@@ -13,13 +13,28 @@
 		padding 5% 6% 0
 
 	&--singleService
+		top 2.0625em
 		width 100%
-		height 6.5625em
-		padding 0
+		height 4.5em
+		transition all .5s ease
+		@media screen and (max-width: 940px)
+			padding 0
 		@media screen and (max-width: 840px)
-			height 10em
-		@media screen and (max-width: 490px)
-			height 13em
+			position fixed
+			top 0
+			left 0
+			height 6.2em
+		@media screen and (max-width: 600px)
+			height 4.5em
+
+	&--isScrolled
+		position fixed
+		top 0
+		left 0
+		height 6.2em
+		padding-bottom 1.2em
+		background: $base-decor-color-dark
+		transition all .5s ease
 
 	&__wrap
 		flex-container(row, wrap, space-between, flex-end)
@@ -37,6 +52,69 @@
 			justify-content center
 		@media screen and (max-width: 490px)
 			width 100%
+
+		&--fixed
+			@media screen and (max-width: 840px)
+				position: relative
+				width: 100%
+				align-items: center
+				justify-content: space-between
+				padding: 0 1.25em;
+				background-color: $base-decor-color-dark
+
+	&__list
+		position: relative
+		flex-container(row, wrap, space-between, center)
+		width: 55%
+		list-style none
+		padding: 0
+		margin: 0
+		@media screen and (max-width: 990px)
+			width: 60%
+		@media screen and (max-width: 840px)
+			position: absolute
+			top 100%
+			left: 0
+			flex-direction: column
+			width: 100%
+			height: 8em;
+			padding 1em 0
+			background-color: rgba($base-decor-color-dark, .8);
+			transition: all .5s linear;
+			will-change transform
+			transform-origin: top
+			transform: scaleY(0)
+
+		&--isVisible
+			transform: scaleY(1)
+			
+	&__list-item
+		transition: all .4s ease .4s;
+
+	&__list-item--telephone
+		position: absolute
+		top: 110%
+		right: 5%
+		@media screen and (max-width: 840px)
+			top 100%
+			left: 0
+			width: 100%
+			padding: 0 0 1em 0;
+			text-align: center
+			background-color: rgba($base-decor-color-dark, .8);
+
+	&__link
+		display: block
+		text-decoration: none
+		font-weight: bold
+		color: $base-text-color-light;
+		opacity: 1
+		visibility: visible
+		transition: all .3s ease
+
+		&--isHidden
+			opacity: 0
+			visibility: hidden
 
 	&__btn
 		@media screen and (max-width: 840px)

@@ -12,6 +12,9 @@
 		padding 6em 5% 1%
 	@media screen and (max-width: 390px)
 		padding 4em 5% 5% 5%
+	@media screen and (min-width: 1400px), (min-height: 1000px)
+		background url("../img/trust/trust-bg-lg.jpg") 0 0 no-repeat
+		background-size cover
 
 	&--isOverlay
 		&::before
@@ -26,7 +29,7 @@
 
 	&__title
 		margin .9em 0 0
-		@media screen and (max-height: 750px), (max-width: 750px)
+		@media screen and (max-height: 780px), (max-width: 750px)
 			margin-top .5em
 		@media screen and (max-width: 450px)
 			font-size 2.1em
@@ -35,8 +38,8 @@
 		width 33.75em
 		margin 2.5em auto 0
 		color $base-text-color-light
-		@media screen and (max-height: 750px)
-			margin-top .5em
+		@media screen and (max-height: 780px)
+			margin-top 1em
 		@media screen and (max-width: 600px)
 			width 100%
 			margin-top .5em
@@ -44,7 +47,7 @@
 	&__cars
 		position relative
 		max-width 45.5em
-		margin 0 auto
+		margin 1em auto 0
 
 	&__thumbs
 		flex-container(row, wrap, center, stretch)
@@ -190,19 +193,20 @@
 			margin-top .5em
 
 	&__info
-		//height 8.5em
-		max-height 15em
+		height 8em
 		overflow-y auto
-		margin .5em 0 1em
-		@media screen and (max-width: 450px)
-			max-height 12em
+		margin .5em 0 1em 0
+		@media screen and (max-width: 700px)
+			height 12em
+		@media screen and (min-width: 450px) and (max-width: 620px), (max-width: 520px)
+			height 15em
 
 
 	&__link
 		display block
 		position absolute
-		bottom 1.5em
-		height 1.5em
+		bottom 1.2em
+		height 1.2em
 		font-family inherit
 		color $base-decor-color
 		text-decoration none
@@ -223,7 +227,7 @@
 				background-color rgba(lighten($base-decor-color, 10%), .5)
 		@media screen and (min-width: 941px) and (max-width: 1020px), (max-width: 580px)
 			left 8.5em
-			bottom 3.5em
+			bottom 1em
 		@media screen and (max-width: 390px)
 			left 1.6em
 
