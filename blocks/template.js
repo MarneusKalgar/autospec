@@ -6,8 +6,6 @@ $(function () {
 
 	mainNav();
 
-	sidebar();
-
 	callbackForm();
 
 	tabPanel();
@@ -19,8 +17,6 @@ $(function () {
 	header();
 	
 	hero();
-
-	//bundles();
 
 	tabs();
 	

@@ -12,9 +12,6 @@
 		padding 6em 5% 1%
 	@media screen and (max-width: 390px)
 		padding 4em 5% 5% 5%
-	@media screen and (min-width: 1400px), (min-height: 1000px)
-		background url("../img/trust/trust-bg-lg.jpg") 0 0 no-repeat
-		background-size cover
 
 	&--isOverlay
 		&::before
@@ -133,29 +130,6 @@
 		//overflow: hidden
 		&:nth-child(odd)
 			background-color lighten(#9aa2a3, 20%)
-		&:nth-child(1)
-			.trust__logo
-				left 2.5em
-		&:nth-child(3)
-		&:nth-child(5)
-		&:nth-child(8)
-			.trust__logo
-				left 4.7em
-				@media screen  and (min-width: 941px) and (max-width: 1020px), (max-width: 580px)
-					transform translateX(-55%) scale(.8)
-		&:nth-child(4)
-		&:nth-child(6)
-			.trust__logo
-				left 3em
-		&:nth-child(2)
-			.trust__logo
-				top 4em
-				left 3.5em
-		&:nth-child(7)
-			.trust__logo
-				left 3.5em
-		//@media screen and (min-width: 1021px) and (max-width: 1180px), (max-width: 750px)
-		//	padding-top 3.5em
 		@media screen and (min-width: 941px) and (max-width: 1020px), (max-width: 580px)
 			padding-left 8.5em
 			padding-right 1em
@@ -177,14 +151,24 @@
 		font-size 1.5em
 		margin 0
 
+	&__logo-wrap
+		position absolute
+		top 4em
+		left: 2.5em
+		display: flex
+		align-items: center
+		justify-content: center
+		width 7.625em
+		height 5.625em
+		@media screen  and (min-width: 941px) and (max-width: 1020px), (max-width: 580px)
+			transform translateX(-25%) scale(.8)
+		@media screen and (max-width: 390px)
+			top 2em
+
 	&__logo
 		display block
-		position absolute
-		top 3em
-		max-width 7.625em
-		max-height 4.5625em
-		@media screen  and (min-width: 941px) and (max-width: 1020px), (max-width: 580px)
-			transform translateX(-20%) scale(.8)
+		max-width: 100%
+		max-height: 100%
 
 	&__lead
 		margin 1.3em 0 0
@@ -193,14 +177,9 @@
 			margin-top .5em
 
 	&__info
-		height 8em
+		height: 50%;
 		overflow-y auto
 		margin .5em 0 1em 0
-		@media screen and (max-width: 700px)
-			height 12em
-		@media screen and (min-width: 450px) and (max-width: 620px), (max-width: 520px)
-			height 15em
-
 
 	&__link
 		display block
@@ -214,10 +193,10 @@
 		&:before
 			content ''
 			position absolute
-			bottom .1em
+			bottom 0
 			left 0
 			width 100%
-			height .0625em
+			height 1px
 			background-color rgba($base-decor-color, .5)
 		&:hover
 		&:active
@@ -231,34 +210,34 @@
 		@media screen and (max-width: 390px)
 			left 1.6em
 
-	&__date
-		position absolute
-		display block
-		right 2.9em
-		bottom 1.5em
-		height 1.5em
-		color #616161
-		&:before
-			content ''
-			position absolute
-			left -1.1em
-			bottom .4em
-			width .8em
-			height .8em
-			background url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkNhcGFfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCA2MCA2MCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNjAgNjA7IiB4bWw6c3BhY2U9InByZXNlcnZlIj48c3R5bGUgdHlwZT0idGV4dC9jc3MiPi5zdDB7ZmlsbDojNjE2MTYxO308L3N0eWxlPjxnPjxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik01Nyw0aC03VjFjMC0wLjYtMC40LTEtMS0xaC03Yy0wLjYsMC0xLDAuNC0xLDF2M0gxOVYxYzAtMC42LTAuNC0xLTEtMWgtN2MtMC42LDAtMSwwLjQtMSwxdjNIM0MyLjQsNCwyLDQuNCwyLDV2MTF2NDNjMCwwLjYsMC40LDEsMSwxaDU0YzAuNiwwLDEtMC40LDEtMVYxNlY1QzU4LDQuNCw1Ny42LDQsNTcsNHogTTQsNThWMTdoNTJ2NDFINHogTTIzLjUsMzYuMkgxMi43VjI1LjRoMTAuOEMyMy41LDI1LjQsMjMuNSwzNi4yLDIzLjUsMzYuMnoiLz48L2c+PHJlY3QgeD0iNCIgeT0iMTciIGNsYXNzPSJzdDAiIHdpZHRoPSIyIiBoZWlnaHQ9IjQxIi8+PHJlY3QgeD0iNTQiIHk9IjE3IiBjbGFzcz0ic3QwIiB3aWR0aD0iMiIgaGVpZ2h0PSI0MSIvPjxyZWN0IHg9IjYiIHk9IjU2LjMiIGNsYXNzPSJzdDAiIHdpZHRoPSI0OCIgaGVpZ2h0PSIxLjgiLz48L3N2Zz4=") 0 0 no-repeat
-			background-size cover
-		@media screen and (min-width: 941px) and (max-width: 1020px), (max-width: 580px)
-			left 9.6em
-		@media screen and (max-width: 390px)
-			left 2.7em
+		//&__date
+		//	position absolute
+		//	display block
+		//	right 2.9em
+		//	bottom 1.5em
+		//	height 1.5em
+		//	color #616161
+		//	&:before
+		//		content ''
+		//		position absolute
+		//		left -1.1em
+		//		bottom .4em
+		//		width .8em
+		//		height .8em
+		//		background url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkNhcGFfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCA2MCA2MCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNjAgNjA7IiB4bWw6c3BhY2U9InByZXNlcnZlIj48c3R5bGUgdHlwZT0idGV4dC9jc3MiPi5zdDB7ZmlsbDojNjE2MTYxO308L3N0eWxlPjxnPjxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik01Nyw0aC03VjFjMC0wLjYtMC40LTEtMS0xaC03Yy0wLjYsMC0xLDAuNC0xLDF2M0gxOVYxYzAtMC42LTAuNC0xLTEtMWgtN2MtMC42LDAtMSwwLjQtMSwxdjNIM0MyLjQsNCwyLDQuNCwyLDV2MTF2NDNjMCwwLjYsMC40LDEsMSwxaDU0YzAuNiwwLDEtMC40LDEtMVYxNlY1QzU4LDQuNCw1Ny42LDQsNTcsNHogTTQsNThWMTdoNTJ2NDFINHogTTIzLjUsMzYuMkgxMi43VjI1LjRoMTAuOEMyMy41LDI1LjQsMjMuNSwzNi4yLDIzLjUsMzYuMnoiLz48L2c+PHJlY3QgeD0iNCIgeT0iMTciIGNsYXNzPSJzdDAiIHdpZHRoPSIyIiBoZWlnaHQ9IjQxIi8+PHJlY3QgeD0iNTQiIHk9IjE3IiBjbGFzcz0ic3QwIiB3aWR0aD0iMiIgaGVpZ2h0PSI0MSIvPjxyZWN0IHg9IjYiIHk9IjU2LjMiIGNsYXNzPSJzdDAiIHdpZHRoPSI0OCIgaGVpZ2h0PSIxLjgiLz48L3N2Zz4=") 0 0 no-repeat
+		//		background-size cover
+		//	@media screen and (min-width: 941px) and (max-width: 1020px), (max-width: 580px)
+		//		left 9.6em
+		//	@media screen and (max-width: 390px)
+		//		left 2.7em
 
 	&__controls
 		position absolute
-		top 0
+		top 12em
 		left 0
 		z-index 800
 		width 10em
-		height 15em
+		height 4em
 		padding 0
 		visibility hidden
 		opacity 0

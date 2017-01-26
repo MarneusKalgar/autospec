@@ -1,71 +1,40 @@
 /************CALLBACK-FORM**************/
 .callback-form
-	position absolute
-	top calc(100vh - 72.5vh)
+	position: relative
+	z-index: 4000
 	box-sizing border-box
-	width 100%
-	height 22.5820625em
-	padding 2em 3em
+	max-height 28.75em
+	padding 1em 1.5em
 	font-size 1rem
 	color $base-text-color-light
+	border-radius: 1em;
 	background url("../img/sidebar/sidebar-bg.jpg") 0 0 repeat
-	border-top $sidebar-elements-bd-width solid $sidebar-bd-color-light
-	border-bottom $sidebar-elements-bd-width solid $sidebar-bd-color-dark
-	transform translateX(100%)
-	transition all .5s ease
-	&:before
-		content ''
-		position absolute
-		top 0
-		left 0
-		width 101%
-		height $sidebar-elements-bd-width
-		background-color $sidebar-bd-color-dark
-	&:after
-		content ''
-		position absolute
-		top 100%
-		left 0
-		width 100%
-		height $sidebar-elements-bd-width
-		background-color $sidebar-bd-color-light
-	@media screen and (max-height: 700px)
-		//top 8.3em
-		top calc(100vh - 75vh)
-		height 19.640625em
-		padding 1.5em
-	@media screen and (max-height: 600px)
-		top 8.75em
-		height 15.4453125em
-		padding .8em 1.5em
-	@media screen and (max-height: 490px) and (orientation: landscape)
-		top 10vmin
-		//height 10.5em
-		height 15.5em
-		padding-top 1em
-	@media screen and (max-height: 490px) and (orientation: portrait)
-		top 25vmax
-	@media screen and (max-height: 400px)
-		height 10.5em
-		padding-top .3em
+	opacity: 0
+	visibility: hidden
+	transition all .5s ease .3s
+	@media screen and (min-width: 1440px)
+		max-height 32em
+		padding 2em
+	@media screen and (max-height: 460px)
+		padding 0 2.5em .5em
 
 	&--isActive
-		transform translateX(0)
-		transition all .5s ease
+		opacity: 1
+		visibility: visible
 
 	&__label
 		display block
-		@media screen and (max-height: 400px) and (orientation: landscape)
-			display inline-block
-			width 25%
+		margin-top: 1em;
+		@media screen and (max-height: 460px)
+			margin-top: .5em;
 
 	&__input
 		display block
 		box-sizing border-box
-		width 100%
+		width 17.5em
 		height 3.4em
 		margin-top 1.5%
-		padding 0 1.3em
+		padding 0 1em
 		background-color #363636
 		border-radius 2.1875em
 		border-style solid
@@ -76,20 +45,67 @@
 		border-right-color $sidebar-bd-color-light
 		outline none
 		transition all .3s ease
+		-webkit-appearance none
 		&:hover
 		&:focus
 			background-color lighten(#363636, 2%)
-		@media screen and (max-height: 600px)
+		@media screen and (min-width: 1440px)
+			width 20em
+		@media screen and (max-width: 375px)
+			width 15em
+		@media screen and (max-height: 460px)
+			width 21em
 			height 2.8em
-		@media screen and (max-height: 400px) and (orientation: landscape)
-			display inline-block
-			width 75%
+
+	&__area
+		display block
+		box-sizing border-box
+		width 17.5em
+		height 6em
+		margin-top 1.5%
+		padding .3em 1em
+		background-color #363636
+		border-radius 1em
+		border-style solid
+		border-width $sidebar-elements-bd-width
+		border-top-color $sidebar-bd-color-dark
+		border-left-color $sidebar-bd-color-dark
+		border-bottom-color $sidebar-bd-color-light
+		border-right-color $sidebar-bd-color-light
+		outline none
+		resize none
+		transition all .3s ease
+		-webkit-appearance none
+		&:hover
+		&:focus
+			background-color lighten(#363636, 2%)
+		@media screen and (min-width: 1440px)
+			width 20em
+			height 7em
+		@media screen and (max-width: 375px)
+			width 15em
+		@media screen and (max-height: 460px)
+			width 21em
+			height 3em
 
 	&__btn
-		margin-top 23%
-		@media screen and (max-width: $media-md) and (orientation: landscape)
-			margin-top 15%
-		@media screen and (max-height: 700px)
-			margin-top 10%
-		@media screen and (max-height: 600px)
-			margin-top 5%
+		margin-top 2em
+
+	&__close
+		position absolute
+		top 1em
+		right 1em
+		width 1.5em
+		height 1.5em
+		padding 0
+		outline none
+		background rgba(0,0,0,0)
+		border none
+		&:hover
+		&:focus
+			.callback-form__icon
+				fill $base-decor-color
+
+	&__icon
+		fill lighten(#000, 15%)
+		transition: all .4s ease;

@@ -19,6 +19,7 @@
     <!-- build:css css/vendor-singleService.css-->
     <link rel="stylesheet" href="js/libs/animsition/dist/css/animsition.min.css">
     <link rel="stylesheet" href="js/libs/animate.css/dist/css/animate.min.css">
+    <link rel="stylesheet" href="js/libs/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.custom.css">
     <!-- endbuild-->
     <!-- build:css css/singleService.css-->
     <link rel="stylesheet" href="css/singleService.css">
@@ -42,7 +43,7 @@
             </li>
             <li class="header__list-item"><a class="btn btn--filled" id="to_bundles" href="#bundles" data-link="#bundles">Записаться на ремонт</a>
             </li>
-            <li class="header__list-item header__list-item--telephone"><a class="header__link" href="tel:+380975555555">+38 (097) 555 - 55 - 55</a><a class="header__link" href="tel:+380635552299">+38 (063) 555 - 22 - 99</a><a class="header__link" href="tel:+380442224433">+38 (044) 222 - 44 - 33</a>
+            <li class="header__list-item header__list-item--telephone"><a class="header__link" href="tel:+380975555555">+38 (097) 555 - 55 - 55</a>
             </li>
           </ul>
           <button class="menu-btn menu-btn--fixed" type="button">
@@ -447,6 +448,17 @@
           </li>
         </ul>
       </div>
+      <!-- block promo-->
+      <section class="promo">
+        <div class="promo__wrap">
+          <h2 class="promo__title titles">Здесь будет заголовок
+          </h2>
+          <p class="promo__info">Душа моя озарена неземной радостью, как чудесные весенние утра, которыми я наслаждаюсь от всего сердца, моя озарена радостью. Совсем один и блаженствую вздешнем краю, словно созданном для таких. наслаждаюсь от всего сердца. Совсем один и блаженствую вздешнем краю. Душа озарена неземной радостью, как чудесные весенние утра. Душа моя озарена неземной радостью, как чудесные весенние утра, которыми я наслаждаюсь от всего сердца, моя озарена радостью. Совсем один и блаженствую вздешнем краю, словно созданном для таких. наслаждаюсь от всего сердца. Совсем один и блаженствую вздешнем краю. Душа озарена неземной радостью, как чудесные весенние утра. Душа озарена неземной радостью, как чудесные весенние утра. Душа моя озарена неземной радостью, как чудесные весенние утра, которыми я наслаждаюсь от всего сердца, моя озарена радостью. Совсем один и блаженствую вздешнем краю, словно созданном для таких. наслаждаюсь от всего сердца. Совсем один и блаженствую вздешнем краю. Душа озарена неземной радостью, как чудесные весенние утра.
+          </p>
+        </div>
+      </section>
+      <!-- end block promo// block services
+      -->
       <section class="services wow zoomIn">
         <div class="services__wrap">
           <h2 class="services__title titles">Услуги
@@ -520,6 +532,7 @@
     <script src="js/libs/jquery.maskedinput/dist/jquery.maskedinput.min.js"></script>
     <script src="js/libs/jquery-validation/dist/jquery.validate.min.js"></script>
     <script src="js/libs/wow/dist/wow.min.js"></script>
+    <script src="js/libs/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
     <!-- endbuild-->
     <!-- build:js js/main.js-->
     <script src="js/main.js"></script>
@@ -552,6 +565,16 @@
       });
       
     </script>
-    <script>new WOW().init();</script>
+    <script>
+      new WOW().init();
+      
+    </script>
+    <script>
+      $(window).on("load", function () {
+      	$(".promo__info").mCustomScrollbar({
+      		theme: "my-theme"
+      	});
+      });
+    </script>
   </body>
 </html>

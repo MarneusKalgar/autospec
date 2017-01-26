@@ -38,6 +38,29 @@
 			font-size 1rem
 			overflow hidden
 
+	&__form-wrap
+		display: flex
+		justify-content: center
+		align-items: center
+		position: absolute
+		top: 0
+		right: 0
+		bottom: 0
+		left: 0
+		z-index: 3000
+		transform: translateX(100%)
+		will-change transform
+		visibility: hidden
+		opacity: 0
+		transition: transform .4s ease .5s, visibility .4s ease, opacity .4s ease, background .4s ease;
+
+		&--isActive
+			transform: translateX(0)
+			visibility: visible
+			opacity: 1
+			background: rgba($base-decor-color-dark,.8);
+			transition: transform .3s ease, visibility .3s ease  .4s, opacity .3s ease  .4s, background .3s ease .4s;
+
 	&__scrollTop
 		position: absolute
 		bottom 2em

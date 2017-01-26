@@ -17,13 +17,16 @@
 		width 100%
 		height 4.5em
 		transition all .5s ease
-		@media screen and (max-width: 940px)
-			padding 0
-		@media screen and (max-width: 840px)
+		@media screen and (max-width: 1100px)
 			position fixed
 			top 0
 			left 0
+			z-index: 2000
+			box-sizing: border-box
+			width 100%
 			height 6.2em
+		@media screen and (max-width: 940px)
+			padding 0
 		@media screen and (max-width: 600px)
 			height 4.5em
 
@@ -31,9 +34,10 @@
 		position fixed
 		top 0
 		left 0
+		z-index: 2000
 		height 6.2em
 		padding-bottom 1.2em
-		background: $base-decor-color-dark
+		background-color $base-decor-color-dark
 		transition all .5s ease
 
 	&__wrap
@@ -54,67 +58,62 @@
 			width 100%
 
 		&--fixed
-			@media screen and (max-width: 840px)
+			@media screen and (max-width: 1100px)
 				position: relative
-				width: 100%
 				align-items: center
 				justify-content: space-between
+				box-sizing: border-box
+				width: 100%
 				padding: 0 1.25em;
-				background-color: $base-decor-color-dark
+				background-color $base-decor-color-dark
 
 	&__list
 		position: relative
-		flex-container(row, wrap, space-between, center)
-		width: 55%
+		flex-container(row, nowrap, space-between, center)
+		width: 70%
 		list-style none
 		padding: 0
 		margin: 0
-		@media screen and (max-width: 990px)
-			width: 60%
-		@media screen and (max-width: 840px)
-			position: absolute
+		@media screen and (max-width: 1100px)
+			position absolute
 			top 100%
-			left: 0
-			flex-direction: column
-			width: 100%
-			height: 8em;
-			padding 1em 0
-			background-color: rgba($base-decor-color-dark, .8);
-			transition: all .5s linear;
+			left 0
+			flex-direction column
+			align-items center
+			width 100%
+			min-height 8em;
+			padding .5em 0
+			background-color rgba($base-decor-color-dark, .8);
+			transition: all .4s linear;
 			will-change transform
-			transform-origin: top
-			transform: scaleY(0)
+			transform-origin top
+			transform translateY(10%) scaleY(1)
+			visibility hidden
+			opacity 0
 
 		&--isVisible
-			transform: scaleY(1)
+			transform: translateY(0%) scaleY(1)
+			visibility: visible
+			opacity: 1
 			
 	&__list-item
 		transition: all .4s ease .4s;
+		@media screen and (max-width: 1100px)
+			padding: 1em 0 1em 0;
 
-	&__list-item--telephone
-		position: absolute
-		top: 110%
-		right: 5%
-		@media screen and (max-width: 840px)
-			top 100%
-			left: 0
-			width: 100%
-			padding: 0 0 1em 0;
-			text-align: center
-			background-color: rgba($base-decor-color-dark, .8);
+		&--telephone
+			font-size: 1.125em;
+			transition: all .4s ease
+			&:hover
+				text-shadow .1em .1em .2em rgba($base-decor-color, .7)
+			@media screen and (max-width: 1100px)
+				text-align: center
 
 	&__link
 		display: block
 		text-decoration: none
 		font-weight: bold
 		color: $base-text-color-light;
-		opacity: 1
-		visibility: visible
-		transition: all .3s ease
-
-		&--isHidden
-			opacity: 0
-			visibility: hidden
 
 	&__btn
 		@media screen and (max-width: 840px)

@@ -2,7 +2,7 @@
 .contacts
 	position relative
 	flex 1
-	padding 7em 6% 3% 7.5%
+	padding 7em 6% 3% 4%
 	box-sizing border-box
 	font-size 1rem
 	color $base-text-color-light
@@ -13,6 +13,8 @@
 	@media screen and (max-width: 750px)
 		padding 5em 6% 2em 2.5em
 		overflow-y auto
+	@media screen and (max-width: 480px)
+		padding-left: 1.25em;
 
 	&--isOverlay
 		&::before
@@ -41,24 +43,42 @@
 			padding 0 1.25em
 
 	&__title
-		margin .85em 0 0
+		margin .5em 0 0
+
+	&__address-wrap
+		width 40%
+		min-width 17.5em
+		max-width 25em
+		min-height 15em
+		height: 80%;
+		overflow-y: auto
+		@media screen and (min-width: 941px) and (max-width: 1100px)
+			width: 18em;
+		@media screen and (max-width: 750px)
+			width: 80%
+			height 50vh
+		@media screen and (max-width: 480px)
+			height 15em
+		@media screen and (min-height: 1024px)
+			height 91%
 
 	&__address
-		width 17.5em
+		box-sizing: border-box
+		width 45%
+		min-width 17.5em
+		padding-right: 1em;
 		font-style normal
+
+		&--isScrollable
+			padding-left: 2em;
 
 		&--isContacts_extended
 			margin-left 1.5em
 
-
 	&__row
-		margin-top 1.5em
-		&:nth-child(2)
-			margin-top 1em
-			line-height 2
+		margin-top 1.25em
 
 	&__caption
-		float left
 		margin 0
 		&:before
 			left -1.5em
@@ -66,26 +86,31 @@
 			width 1em
 			height 1em
 
+		&--phone
+			float: none
+			width: 100%
+			margin-top: 1em
+
+		&--location
+			float: none
+			width: 100%
+
 	&__link
 		display block
-		margin 0 0 0 5.3em
+		margin 0
 		color currentColor
 		text-decoration none
 		font-weight bold
 		transition all .3s ease
-		&:nth-of-type(2)
-		&:nth-of-type(3)
-			margin-top .7em
 
 		&--mail
-			margin-left 3em
 			color $base-decor-color
 			&:hover
 			&:focus
 				color lighten($base-decor-color, 10%)
 
 	&__info
-		margin 0 0 0 3.5em
+		margin 0
 		font-weight bold
 
 	&__map
@@ -98,13 +123,13 @@
 		@media screen and (min-width: 941px) and (max-width: 1100px)
 			width 43%
 		@media screen and (max-width: 750px)
-			top 30em
+			top 140vh
 			left 0
 			width 100%
 			height 70vh
 			min-height 20em
 			margin-bottom 2em
-		@media screen and (max-width: 450px)
+		@media screen and (max-width: 480px)
 			top 28em
 
 		&--overlay

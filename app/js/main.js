@@ -6,8 +6,6 @@ $(function () {
 
 	mainNav();
 
-	sidebar();
-
 	callbackForm();
 
 	tabPanel();
@@ -19,8 +17,6 @@ $(function () {
 	header();
 	
 	hero();
-
-	//bundles();
 
 	tabs();
 	
@@ -34,6 +30,45 @@ $(function () {
 
 
 
+function callbackForm() {
+	var $btn = $(".sidebar__btn");
+	var $form = $(".callback-form");
+	var $wrapper = $(".page__form-wrap");
+	var $close = $(".callback-form__close");
+
+	$btn.on("click", function () {
+		if (!$wrapper.hasClass("page__form-wrap--isActive")) {
+			$wrapper.addClass("page__form-wrap--isActive");
+		}
+
+		if (!$form.hasClass("callback-form--isActive")) {
+			$form.addClass("callback-form--isActive");
+		}
+
+	});
+
+	$close.on("click", function () {
+		$wrapper.removeClass("page__form-wrap--isActive");
+		$form.removeClass("callback-form--isActive");
+	});
+
+	$form.submit(function(e) {
+
+		var ref = $(this).find("[required]");
+
+		$(ref).each(function(){
+			if ( $(this).val() == '' )
+			{
+				alert("Required field should not be blank.");
+
+				$(this).focus();
+
+				e.preventDefault();
+				return false;
+			}
+		});  return true;
+	});
+}
 function bundles() {
 	var $table = $(".bundles__table");
 	var $fixedColumn = $table.clone().insertBefore($table).addClass("fixed-column");
@@ -43,11 +78,6 @@ function bundles() {
 	$fixedColumn.find("tr").each(function(i, elem) {
 		$(this).height($table.find("tr:eq(" + i + ")").height());
 	});
-}
-function callbackForm() {
-	//var $input = $("#callback-tel");
-
-	$("#callback-tel").mask("+999 (99) 999 - 99 - 99");
 }
 function clients() {
 	var $form = $("#clientsForm");
@@ -94,199 +124,12 @@ function clients() {
 	$("#userphone").mask("+999 (99) 999 - 99 - 99");
 }
 function contacts() {
-	var place = { lat: 50.457992, lng: 30.605138 }
+	var place = { lat: 50.4709009, lng: 30.4996281 }
 
 	var map = new google.maps.Map(document.getElementById("map"), {
 		zoom: 17,
 		center: place,
 		disableDefaultUI: true,
-		styles:[
-			{
-				"elementType": "geometry",
-				"stylers": [
-					{
-						"color": "#f5f5f5"
-					}
-				]
-			},
-			{
-				"elementType": "labels.icon",
-				"stylers": [
-					{
-						"visibility": "off"
-					}
-				]
-			},
-			{
-				"elementType": "labels.text.fill",
-				"stylers": [
-					{
-						"color": "#616161"
-					}
-				]
-			},
-			{
-				"elementType": "labels.text.stroke",
-				"stylers": [
-					{
-						"color": "#f5f5f5"
-					}
-				]
-			},
-			{
-				"featureType": "administrative.land_parcel",
-				"elementType": "labels",
-				"stylers": [
-					{
-						"visibility": "off"
-					}
-				]
-			},
-			{
-				"featureType": "administrative.land_parcel",
-				"elementType": "labels.text.fill",
-				"stylers": [
-					{
-						"color": "#bdbdbd"
-					}
-				]
-			},
-			{
-				"featureType": "poi",
-				"elementType": "geometry",
-				"stylers": [
-					{
-						"color": "#eeeeee"
-					}
-				]
-			},
-			{
-				"featureType": "poi",
-				"elementType": "labels.text",
-				"stylers": [
-					{
-						"visibility": "off"
-					}
-				]
-			},
-			{
-				"featureType": "poi",
-				"elementType": "labels.text.fill",
-				"stylers": [
-					{
-						"color": "#757575"
-					}
-				]
-			},
-			{
-				"featureType": "poi.park",
-				"elementType": "geometry",
-				"stylers": [
-					{
-						"color": "#e5e5e5"
-					}
-				]
-			},
-			{
-				"featureType": "poi.park",
-				"elementType": "labels.text.fill",
-				"stylers": [
-					{
-						"color": "#9e9e9e"
-					}
-				]
-			},
-			{
-				"featureType": "road",
-				"elementType": "geometry",
-				"stylers": [
-					{
-						"color": "#ffffff"
-					}
-				]
-			},
-			{
-				"featureType": "road.arterial",
-				"elementType": "labels.text.fill",
-				"stylers": [
-					{
-						"color": "#757575"
-					}
-				]
-			},
-			{
-				"featureType": "road.highway",
-				"elementType": "geometry",
-				"stylers": [
-					{
-						"color": "#dadada"
-					}
-				]
-			},
-			{
-				"featureType": "road.highway",
-				"elementType": "labels.text.fill",
-				"stylers": [
-					{
-						"color": "#616161"
-					}
-				]
-			},
-			{
-				"featureType": "road.local",
-				"elementType": "labels",
-				"stylers": [
-					{
-						"visibility": "off"
-					}
-				]
-			},
-			{
-				"featureType": "road.local",
-				"elementType": "labels.text.fill",
-				"stylers": [
-					{
-						"color": "#9e9e9e"
-					}
-				]
-			},
-			{
-				"featureType": "transit.line",
-				"elementType": "geometry",
-				"stylers": [
-					{
-						"color": "#e5e5e5"
-					}
-				]
-			},
-			{
-				"featureType": "transit.station",
-				"elementType": "geometry",
-				"stylers": [
-					{
-						"color": "#eeeeee"
-					}
-				]
-			},
-			{
-				"featureType": "water",
-				"elementType": "geometry",
-				"stylers": [
-					{
-						"color": "#c9c9c9"
-					}
-				]
-			},
-			{
-				"featureType": "water",
-				"elementType": "labels.text.fill",
-				"stylers": [
-					{
-						"color": "#9e9e9e"
-					}
-				]
-			}
-		]
 	});
 
 	var icon = 'img/contacts/marker.svg';
@@ -296,6 +139,194 @@ function contacts() {
 		map: map,
 		icon: icon
 	});
+
+	/*styles:[
+		{
+			"elementType": "geometry",
+			"stylers": [
+				{
+					"color": "#f5f5f5"
+				}
+			]
+		},
+		{
+			"elementType": "labels.icon",
+			"stylers": [
+				{
+					"visibility": "off"
+				}
+			]
+		},
+		{
+			"elementType": "labels.text.fill",
+			"stylers": [
+				{
+					"color": "#616161"
+				}
+			]
+		},
+		{
+			"elementType": "labels.text.stroke",
+			"stylers": [
+				{
+					"color": "#f5f5f5"
+				}
+			]
+		},
+		{
+			"featureType": "administrative.land_parcel",
+			"elementType": "labels",
+			"stylers": [
+				{
+					"visibility": "off"
+				}
+			]
+		},
+		{
+			"featureType": "administrative.land_parcel",
+			"elementType": "labels.text.fill",
+			"stylers": [
+				{
+					"color": "#bdbdbd"
+				}
+			]
+		},
+		{
+			"featureType": "poi",
+			"elementType": "geometry",
+			"stylers": [
+				{
+					"color": "#eeeeee"
+				}
+			]
+		},
+		{
+			"featureType": "poi",
+			"elementType": "labels.text",
+			"stylers": [
+				{
+					"visibility": "off"
+				}
+			]
+		},
+		{
+			"featureType": "poi",
+			"elementType": "labels.text.fill",
+			"stylers": [
+				{
+					"color": "#757575"
+				}
+			]
+		},
+		{
+			"featureType": "poi.park",
+			"elementType": "geometry",
+			"stylers": [
+				{
+					"color": "#e5e5e5"
+				}
+			]
+		},
+		{
+			"featureType": "poi.park",
+			"elementType": "labels.text.fill",
+			"stylers": [
+				{
+					"color": "#9e9e9e"
+				}
+			]
+		},
+		{
+			"featureType": "road",
+			"elementType": "geometry",
+			"stylers": [
+				{
+					"color": "#ffffff"
+				}
+			]
+		},
+		{
+			"featureType": "road.arterial",
+			"elementType": "labels.text.fill",
+			"stylers": [
+				{
+					"color": "#757575"
+				}
+			]
+		},
+		{
+			"featureType": "road.highway",
+			"elementType": "geometry",
+			"stylers": [
+				{
+					"color": "#dadada"
+				}
+			]
+		},
+		{
+			"featureType": "road.highway",
+			"elementType": "labels.text.fill",
+			"stylers": [
+				{
+					"color": "#616161"
+				}
+			]
+		},
+		{
+			"featureType": "road.local",
+			"elementType": "labels",
+			"stylers": [
+				{
+					"visibility": "off"
+				}
+			]
+		},
+		{
+			"featureType": "road.local",
+			"elementType": "labels.text.fill",
+			"stylers": [
+				{
+					"color": "#9e9e9e"
+				}
+			]
+		},
+		{
+			"featureType": "transit.line",
+			"elementType": "geometry",
+			"stylers": [
+				{
+					"color": "#e5e5e5"
+				}
+			]
+		},
+		{
+			"featureType": "transit.station",
+			"elementType": "geometry",
+			"stylers": [
+				{
+					"color": "#eeeeee"
+				}
+			]
+		},
+		{
+			"featureType": "water",
+			"elementType": "geometry",
+			"stylers": [
+				{
+					"color": "#c9c9c9"
+				}
+			]
+		},
+		{
+			"featureType": "water",
+			"elementType": "labels.text.fill",
+			"stylers": [
+				{
+					"color": "#9e9e9e"
+				}
+			]
+		}
+	]*/
 }
 function header() {
 
@@ -314,7 +345,7 @@ function header() {
 			$list.removeClass("header__list--isVisible");
 		});
 
-		if ($(window).width() > 841) {
+		if ($(window).width() > 1100) {
 			var $window = $(window);
 			var $header = $(".header--singleService");
 			var $tel = $(".header__link");
@@ -324,10 +355,10 @@ function header() {
 
 				if (scroll > 0) {
 					$header.addClass("header--isScrolled");
-					$tel.addClass("header__link--isHidden");
+					//$tel.addClass("header__link--isHidden");
 				} else {
 					$header.removeClass("header--isScrolled");
-					$tel.removeClass("header__link--isHidden");
+					//$tel.removeClass("header__link--isHidden");
 				}
 			});//end window
 		}//end if width
@@ -399,45 +430,6 @@ function menuBtn() {
 	}
 
 }
-function orderForm() {
-	var $form = $("#orderForm");
-
-	$form.validate({
-
-		rules: {
-			username: {
-				required: true
-			},
-			usermail: {
-				required: true,
-				email: true
-			},
-			usertel: {
-				required: true
-			},
-			carbrand: "required",
-			carmodel: "required",
-			caryear: "required"
-		},
-
-		messages: {
-			username: {
-				required: "Пожалуйста, введитеимя"
-			},
-			usermail: {
-				required: "Пожалуйста, введите адрес",
-				email: "Формат адреса example@email.com"
-			},
-			usertel: "Пожалуйста, введите номер телефона",
-			carbrand: "Пожалуйста, введите марку автомобиля",
-			carmodel: "Пожалуйста, введите модель автомобиля",
-			caryear: "Пожалуйста, введите год выпуска"
-		}
-
-	});
-
-	$("#usertel").mask("+999 (99) 999 - 99 - 99");
-}
 function page() {
 	var $logo = $(".logo");
 	var $sidebar = $(".sidebar");
@@ -486,6 +478,45 @@ function page() {
 	}
 	
 }
+function orderForm() {
+	var $form = $("#orderForm");
+
+	$form.validate({
+
+		rules: {
+			username: {
+				required: true
+			},
+			usermail: {
+				required: true,
+				email: true
+			},
+			usertel: {
+				required: true
+			},
+			carbrand: "required",
+			carmodel: "required",
+			caryear: "required"
+		},
+
+		messages: {
+			username: {
+				required: "Пожалуйста, введитеимя"
+			},
+			usermail: {
+				required: "Пожалуйста, введите адрес",
+				email: "Формат адреса example@email.com"
+			},
+			usertel: "Пожалуйста, введите номер телефона",
+			carbrand: "Пожалуйста, введите марку автомобиля",
+			carmodel: "Пожалуйста, введите модель автомобиля",
+			caryear: "Пожалуйста, введите год выпуска"
+		}
+
+	});
+
+	$("#usertel").mask("+999 (99) 999 - 99 - 99");
+}
 /*******************************************/
 /* 							scroll to top
 /********************************************/
@@ -503,12 +534,7 @@ function scrollToTop() {
 }
 	
 function sidebar() {
-	var $btn = $(".sidebar__btn");
-	var $form = $(".callback-form");
-
-	$btn.on("click", function () {
-		$form.toggleClass("callback-form--isActive");
-	});
+	
 }
 function tabPanel () {
 	var $tabs = $(".tab-panel");
