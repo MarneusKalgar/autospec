@@ -30,6 +30,16 @@ $(function () {
 
 
 
+function bundles() {
+	var $table = $(".bundles__table");
+	var $fixedColumn = $table.clone().insertBefore($table).addClass("fixed-column");
+
+	$fixedColumn.find("th:not(:first-child),td:not(:first-child)").remove();
+
+	$fixedColumn.find("tr").each(function(i, elem) {
+		$(this).height($table.find("tr:eq(" + i + ")").height());
+	});
+}
 function callbackForm() {
 	var $btn = $(".sidebar__btn");
 	var $form = $(".callback-form");
@@ -67,16 +77,6 @@ function callbackForm() {
 				return false;
 			}
 		});  return true;
-	});
-}
-function bundles() {
-	var $table = $(".bundles__table");
-	var $fixedColumn = $table.clone().insertBefore($table).addClass("fixed-column");
-
-	$fixedColumn.find("th:not(:first-child),td:not(:first-child)").remove();
-
-	$fixedColumn.find("tr").each(function(i, elem) {
-		$(this).height($table.find("tr:eq(" + i + ")").height());
 	});
 }
 function clients() {
@@ -430,6 +430,45 @@ function menuBtn() {
 	}
 
 }
+function orderForm() {
+	var $form = $("#orderForm");
+
+	$form.validate({
+
+		rules: {
+			username: {
+				required: true
+			},
+			usermail: {
+				required: true,
+				email: true
+			},
+			usertel: {
+				required: true
+			},
+			carbrand: "required",
+			carmodel: "required",
+			caryear: "required"
+		},
+
+		messages: {
+			username: {
+				required: "Пожалуйста, введитеимя"
+			},
+			usermail: {
+				required: "Пожалуйста, введите адрес",
+				email: "Формат адреса example@email.com"
+			},
+			usertel: "Пожалуйста, введите номер телефона",
+			carbrand: "Пожалуйста, введите марку автомобиля",
+			carmodel: "Пожалуйста, введите модель автомобиля",
+			caryear: "Пожалуйста, введите год выпуска"
+		}
+
+	});
+
+	$("#usertel").mask("+999 (99) 999 - 99 - 99");
+}
 function page() {
 	var $logo = $(".logo");
 	var $sidebar = $(".sidebar");
@@ -477,45 +516,6 @@ function page() {
 		});
 	}
 	
-}
-function orderForm() {
-	var $form = $("#orderForm");
-
-	$form.validate({
-
-		rules: {
-			username: {
-				required: true
-			},
-			usermail: {
-				required: true,
-				email: true
-			},
-			usertel: {
-				required: true
-			},
-			carbrand: "required",
-			carmodel: "required",
-			caryear: "required"
-		},
-
-		messages: {
-			username: {
-				required: "Пожалуйста, введитеимя"
-			},
-			usermail: {
-				required: "Пожалуйста, введите адрес",
-				email: "Формат адреса example@email.com"
-			},
-			usertel: "Пожалуйста, введите номер телефона",
-			carbrand: "Пожалуйста, введите марку автомобиля",
-			carmodel: "Пожалуйста, введите модель автомобиля",
-			caryear: "Пожалуйста, введите год выпуска"
-		}
-
-	});
-
-	$("#usertel").mask("+999 (99) 999 - 99 - 99");
 }
 /*******************************************/
 /* 							scroll to top
