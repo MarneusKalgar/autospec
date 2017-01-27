@@ -2019,6 +2019,14 @@ th {
   transition: all 0.4s ease-in 0.1s;
   border-bottom: 2px solid rgba(0,0,0,0);
 }
+@media screen and (max-width: 450px) {
+  .tab-panel__tab {
+    margin-right: 0.5em;
+  }
+  .tab-panel__tab:last-child {
+    margin-right: 0;
+  }
+}
 .tab-panel__tab--active {
   color: #ee6800;
   border-bottom: 2px solid #ee6800;
@@ -3111,7 +3119,7 @@ th {
 }
 @media screen and (max-width: 390px) {
   .trust {
-    padding: 4em 5% 5% 5%;
+    padding: 5.5em 5% 5% 5%;
   }
 }
 .trust--isOverlay::before {
@@ -3295,7 +3303,7 @@ th {
 .trust__slide {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  padding: 3.5em 1.5em 2em 12.6em;
+  padding: 3.5em 1.5em 2em 11.5em;
   visibility: hidden;
   opacity: 0;
   -webkit-border-radius: 0.5em;
@@ -3334,20 +3342,9 @@ th {
   position: absolute;
   top: 4em;
   left: 2.5em;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   width: 7.625em;
   height: 5.625em;
+  padding-top: 1em;
 }
 @media screen and (min-width: 941px) and (max-width: 1020px), (max-width: 580px) {
   .trust__logo-wrap {
@@ -3365,6 +3362,7 @@ th {
   display: block;
   max-width: 100%;
   max-height: 100%;
+  margin: 0 auto;
 }
 .trust__lead {
   margin: 1.3em 0 0;
@@ -3438,7 +3436,7 @@ th {
   .trust__controls {
     left: auto;
     right: 0;
-    top: 5em;
+    top: 4.5em;
     height: 3em;
     width: 8em;
   }
@@ -3513,6 +3511,10 @@ th {
   fill: #2e2e2e;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
+}
+.trust a {
+  text-decoration: none;
+  color: #ee6800;
 }
 .clients {
   -webkit-box-flex: 1;
@@ -3904,7 +3906,7 @@ th {
 @media screen and (max-width: 750px) {
   .contacts__address-wrap {
     width: 80%;
-    height: 50vh;
+    height: 30em;
   }
 }
 @media screen and (max-width: 480px) {
@@ -3987,17 +3989,12 @@ th {
 }
 @media screen and (max-width: 750px) {
   .contacts__map {
-    top: 140vh;
-    left: 0;
-    width: 100%;
+    position: relative;
+    top: 2em;
     height: 70vh;
     min-height: 20em;
-    margin-bottom: 2em;
-  }
-}
-@media screen and (max-width: 480px) {
-  .contacts__map {
-    top: 28em;
+    width: 100%;
+    margin: 0 0 2em;
   }
 }
 .contacts__map--overlay {

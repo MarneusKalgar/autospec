@@ -39,6 +39,10 @@
 		cursor pointer
 		transition all .4s ease-in .1s
 		border-bottom 2px solid rgba(0,0,0,0)
+		@media screen and (max-width: 450px)
+			margin-right: .5em;
+			&:last-child
+				margin-right: 0
 
 		&--active
 			color $base-decor-color

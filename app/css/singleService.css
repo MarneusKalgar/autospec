@@ -2053,7 +2053,6 @@ th {
   -webkit-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  height: 41.5em;
   margin: 0;
   padding: 1em 0 0 2em;
   border-left: 1px solid #d1d1d1;
@@ -2583,10 +2582,10 @@ label.error {
   -webkit-justify-content: flex-start;
       -ms-flex-pack: start;
           justify-content: flex-start;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -2601,8 +2600,7 @@ label.error {
 }
 .services__item {
   position: relative;
-  width: 15.2em;
-  height: 3.75em;
+  width: 15em;
   margin: 6em 2.6em 0 0;
 }
 .services__item::before {
@@ -2622,30 +2620,33 @@ label.error {
 @media screen and (max-width: 630px) {
   .services__item {
     width: 17.5em;
-    margin: 4.5em auto 0;
-    line-height: 3.75em;
+    margin: 5em auto 0;
+    line-height: ;
   }
   .services__item::before {
     left: 41%;
   }
 }
-.services__item:nth-child(2)::before {
-  background-position: 0 -4em;
+.services__item--service::before {
+  background-position: 0 0;
 }
-.services__item:nth-child(3)::before {
-  background-position: 0 -8.4em;
+.services__item--chassis::before {
+  background-position: 0 -203.2px;
 }
-.services__item:nth-child(4)::before {
-  background-position: 0 -12.7em;
+.services__item--transmission::before {
+  background-position: 0 -396.8px;
 }
-.services__item:nth-child(5)::before {
-  background-position: 0 -16.9em;
+.services__item--painting::before {
+  background-position: 0 -64px;
 }
-.services__item:nth-child(6)::before {
-  background-position: 0 -20.7em;
+.services__item--diagnostics::before {
+  background-position: 0 -270.4px;
 }
-.services__item:nth-child(7)::before {
-  background-position: 0 -24.8em;
+.services__item--duplicates::before {
+  background-position: 0 -134.4px;
+}
+.services__item--spec::before {
+  background-position: 0 -331.2px;
 }
 .services__link {
   display: block;
@@ -2747,7 +2748,7 @@ label.error {
 @media screen and (max-width: 750px) {
   .contacts__address-wrap {
     width: 80%;
-    height: 50vh;
+    height: 30em;
   }
 }
 @media screen and (max-width: 480px) {
@@ -2830,17 +2831,12 @@ label.error {
 }
 @media screen and (max-width: 750px) {
   .contacts__map {
-    top: 140vh;
-    left: 0;
-    width: 100%;
+    position: relative;
+    top: 2em;
     height: 70vh;
     min-height: 20em;
-    margin-bottom: 2em;
-  }
-}
-@media screen and (max-width: 480px) {
-  .contacts__map {
-    top: 28em;
+    width: 100%;
+    margin: 0 0 2em;
   }
 }
 .contacts__map--overlay {

@@ -1,6 +1,6 @@
 mixin info(items)
 	each item in items
-		+e.LI.item
+		+e.LI.item(class=item.class)
 			+e.A.link(href=item.link)= item.title
 
 mixin services-simple
@@ -9,11 +9,11 @@ mixin services-simple
 			+e.H2.title(class="titles") Услуги
 			+e.UL.list
 				+info([
-					{"link": "#", "title": "Техническое обслуживание"},
-					{"link": "painting.html", "title": "Покраска"},
-					{"link": "#", "title": "Электрик"},
-					{"link": "#", "title": "Исправление вмятин и царапин"},
-					{"link": "#", "title": "Компьютерная диагностика"},
-					{"link": "#", "title": "Кузовной ремонт"},
-					{"link": "#", "title": "Диагностика ходовой"}
+					{"class": "--service", "link": "#", "title": "Техническое обслуживание"},
+					{"class": "--chassis", "link": "painting.html", "title": "Ходовая часть"},
+					{"class": "--transmission", "link": "#", "title": "ДВС и АКП"},
+					{"class": "--painting", "link": "#", "title": "Малярно-кузовные работы"},
+					{"class": "--diagnostics", "link": "#", "title": "Электрик и компьютерная диагностика"},
+					{"class": "--duplicates", "link": "#", "title": "Запчасти и комплектующие"},
+					{"class": "--spec", "link": "#", "title": "СпецСервис"}
 				])
