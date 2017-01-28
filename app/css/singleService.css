@@ -1413,7 +1413,7 @@ th {
 .tabs {
   position: relative;
   width: 65.21739%;
-  height: 40em;
+  min-height: 40em;
   margin: 0;
   -webkit-animation-duration: 2s;
           animation-duration: 2s;
@@ -1429,7 +1429,6 @@ th {
 @media screen and (max-width: 779px) {
   .tabs {
     width: 100%;
-    height: 35em;
   }
 }
 @media screen and (max-width: 584px) {
@@ -1439,7 +1438,7 @@ th {
 }
 @media screen and (max-width: 479px) {
   .tabs {
-    margin-bottom: 5em;
+    margin-bottom: 3em;
   }
 }
 .tabs__menu {
@@ -2071,7 +2070,7 @@ th {
 }
 @media screen and (max-width: 779px) {
   .order-form {
-    margin: 0;
+    margin-top: 1em;
   }
 }
 @media screen and (max-width: 649px) {
@@ -2095,7 +2094,7 @@ th {
   outline: none;
 }
 .order-form__set--container {
-  height: 20em;
+  min-height: 21em;
   padding: 0;
   border: none;
 }
@@ -2160,7 +2159,7 @@ th {
 .order-form__label--desc {
   position: static;
   width: 90%;
-  height: 4em;
+  height: 4.5em;
   margin-top: 2em;
 }
 @media screen and (max-width: 649px) {
