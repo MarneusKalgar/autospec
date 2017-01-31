@@ -14,6 +14,7 @@ function menuBtn() {
 		$btn.toggleClass("menu-btn--isActive");
 
 		$sidebar.toggleClass("sidebar--isMove");
+
 		$logo.toggleClass("logo__img--isTransparent");
 
 		if ($main.length ) {
@@ -35,6 +36,9 @@ function menuBtn() {
 			$contacts.toggleClass("contacts--isOverlay");
 		}
 	});
+	if ($sidebar.hasClass("sidebar--isComponent")) {
+		$btn.off("click");
+	}
 
 	if ($btn.hasClass("menu-btn--fixed")) {
 		var $list = $(".header__list");

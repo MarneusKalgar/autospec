@@ -40,6 +40,12 @@
 		background-color $base-decor-color-dark
 		transition all .5s ease
 
+	&--isComponent
+		flex-container(row, nowrap, space-between, center)
+		padding: 2em 3em 0 3em
+		@media screen and (max-width: 640px)
+			padding: 2em 5% 0 5%;
+
 	&__wrap
 		flex-container(row, wrap, space-between, flex-end)
 		width $base-wrap-element-width
@@ -90,6 +96,11 @@
 			transform translateY(10%) scaleY(1)
 			visibility hidden
 			opacity 0
+
+		&--isComponent
+			width: 55%
+			@media screen and (max-width: 1100px)
+				width: 100%
 
 		&--isVisible
 			transform: translateY(0%) scaleY(1)

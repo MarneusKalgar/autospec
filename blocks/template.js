@@ -25,6 +25,8 @@ $(function () {
 	whySlider();
 
 	scrollToTop();
+
+	component();
 	
 });
 

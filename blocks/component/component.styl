@@ -1,0 +1,155 @@
+/*!*****************COMPONENT******************/
+.component
+	position: absolute
+	top 0
+	left: 0
+	z-index: 100
+	display: flex
+	flex-direction: row
+	justify-content: center
+	align-items: center
+	box-sizing: border-box
+	width: 100%
+	min-width: 19rem
+	height: 100%
+	min-height 40rem
+	padding: 7em 0 1em
+	color $base-text-color-light
+	background: #fff url("../img/component/component-bg.jpg") 0 0 no-repeat
+	background-size: cover
+	@media screen and (max-height: 640px)
+		align-items: flex-start
+		min-height 43rem
+	@media screen and (max-width: 1200px)
+		min-height 45rem
+
+	&__wrap
+		width: 50%
+		@media screen and (max-width: 1280px)
+			width: 60%
+		@media screen and (max-width: 900px)
+			width: 70%
+		@media screen and (max-width: 600px)
+			width: 80%
+		@media screen and (max-width: 400px)
+			width 90%
+			min-width: 17em
+
+	&__title
+		margin: 0
+		@media screen and (max-width: 600px)
+			font-size: 2rem;
+
+	&__form
+		margin-top: 1em
+		padding .5em 1.5em 1em
+		background-color: rgba(lighten($base-decor-color-dark, 5%), .8)
+		box-shadow .2em .2em .5em .2em rgba(0,0,0,.5)
+		@media screen and (max-width: 480px)
+			padding .5em .8em 1em
+
+	&__set
+		position relative
+		margin .5em 0 0
+		padding 0 0 0 2.5em
+		border none
+		border-bottom 1px solid $base-decor-color
+		outline none
+
+		&--submit
+			margin-top: 1.5em;
+			padding: 0
+			text-align: right;
+			border: none
+
+	&__input
+		display block
+		width 100%
+		min-height 2.8em
+		padding: .3em 0
+		border none
+		background rgba(0,0,0,0)
+		outline none
+		-webkit-appearance none
+		border-radius 0
+		
+		&--submit
+			padding: .1em .5em 0
+			color: $base-decor-color;
+
+	&__area
+		display block
+		width 100%
+		min-height 7em
+		padding: .5em 0
+		border none
+		background rgba(0,0,0,0)
+		outline none
+		-webkit-appearance none
+		border-radius 0
+		resize none
+
+	&__label
+		display block
+		position absolute
+		top 0
+		left .55em
+		width 1em
+		height 100%
+
+		&--wrap
+			display: inline-block
+			position relative
+			top 0
+			left 0
+			width 40%
+			min-width 14.2em
+			height 100%
+			border: 1px solid $base-decor-color
+			&:before
+				content ''
+				position absolute
+				top 0
+				left 0
+				width 100%
+				height 100%
+				//z-index -1
+				background $base-decor-color
+				border 1px solid $base-decor-color
+				transform-origin top
+				transform scaleY(0)
+				transition transform .5s cubic-bezier(0.2, 1, 0.3, 1)
+			&:hover
+			&:focus
+				color #363636
+			&:hover:before
+			&:focus:before
+				transform scaleY(1)
+			@media screen and (max-width: 400px)
+				width: 100%
+
+		&--area
+			top .6em
+			width: .9em;
+			height: .9em;
+
+	&__icon
+		display block
+		position absolute
+		width 100%
+		height 100%
+		fill $base-decor-color
+
+label.error
+	display block
+	position absolute
+	left 2.8em
+	top -.75em
+	width 100%
+	height 1.5em
+	font-size .875em
+	color lighten(#6f1400, 40%)
+	@media screen and (max-width: 430px)
+		left 3.3em
+		top -.65em
+		font-size .75em

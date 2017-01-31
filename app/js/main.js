@@ -25,6 +25,8 @@ $(function () {
 	whySlider();
 
 	scrollToTop();
+
+	component();
 	
 });
 
@@ -122,6 +124,35 @@ function clients() {
 	});
 
 	$("#userphone").mask("+999 (99) 999 - 99 - 99");
+}
+function component() {
+	var $form = $(".component__form");
+
+	$form.validate({
+
+		rules: {
+			username: {
+				required: true
+			},
+			usertel: {
+				required: true
+			},
+			usernum: "required",
+			usertext: "required"
+		},
+
+		messages: {
+			username: {
+				required: "Пожалуйста, введите имя"
+			},
+			usertel: "Пожалуйста, введите номер телефона",
+			usernum: "Пожалуйста, введите VIN код",
+			usertext: "Пожалуйста, введите сообщение"
+		}
+
+	});
+
+	$("#usertel").mask("+999 (99) 999 - 99 - 99");
 }
 function contacts() {
 	var place = { lat: 50.4709009, lng: 30.4996281 }
@@ -397,6 +428,7 @@ function menuBtn() {
 		$btn.toggleClass("menu-btn--isActive");
 
 		$sidebar.toggleClass("sidebar--isMove");
+
 		$logo.toggleClass("logo__img--isTransparent");
 
 		if ($main.length ) {
@@ -418,6 +450,9 @@ function menuBtn() {
 			$contacts.toggleClass("contacts--isOverlay");
 		}
 	});
+	if ($sidebar.hasClass("sidebar--isComponent")) {
+		$btn.off("click");
+	}
 
 	if ($btn.hasClass("menu-btn--fixed")) {
 		var $list = $(".header__list");
@@ -533,9 +568,6 @@ function scrollToTop() {
 
 }
 	
-function sidebar() {
-	
-}
 function tabPanel () {
 	var $tabs = $(".tab-panel");
 	var $menu = $(".tab-panel__menu");
@@ -720,4 +752,7 @@ function whySlider() {
 		$slider.find($list).find(".why__slide").eq(-1).remove();
 		$slider.find($wrapper).animate({ 'left': 0 }, 500);
 	});
+}
+function sidebar() {
+	
 }
