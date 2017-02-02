@@ -250,8 +250,8 @@ th {
 }
 .page--singleService {
   height: auto;
-  min-width: 20rem;
-  max-width: 120rem;
+  width: 100%;
+  overflow-x: hidden;
 /***** elem wrap *****/
 }
 .page__wrap {
@@ -310,7 +310,7 @@ th {
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: 3000;
+  z-index: 5000;
   -webkit-transform: translateX(100%);
       -ms-transform: translateX(100%);
           transform: translateX(100%);
@@ -841,7 +841,7 @@ th {
 /*******************MENU-BTN******************/
 .menu-btn {
   position: relative;
-  z-index: 2000;
+  z-index: 9999;
   width: 1.8rem;
   height: 1.8rem;
   padding: 0;
@@ -979,6 +979,7 @@ th {
 @media screen and (max-width: 450px) {
   .hero__title {
     margin-top: 5.5em;
+    width: 90%;
   }
 }
 .hero__title::before {
@@ -1016,6 +1017,11 @@ th {
             box-sizing: border-box;
     width: 100%;
     padding: 0 2.5%;
+  }
+}
+@media screen and (max-width: 450px) {
+  .hero__lead {
+    width: 90%;
   }
 }
 .hero__link {

@@ -6,6 +6,8 @@ $(function () {
 
 	mainNav();
 
+	//sidebar();
+
 	callbackForm();
 
 	tabPanel();
