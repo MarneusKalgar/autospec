@@ -4,9 +4,9 @@ mixin info(items)
 			+e.A.link(href=item.link)= item.title
 
 mixin services-simple
-	+b.SECTION.services(class="wow zoomIn")
+	+b.SECTION.services(class="wow slideInLeft")
 		+e.DIV.wrap
-			+e.H2.title(class="titles") Услуги
+			+e.H2.title(class="titles --landing") Услуги
 			+e.UL.list
 				+info([
 					{"class": "--service", "link": "#", "title": "Техническое обслуживание"},

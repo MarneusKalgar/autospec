@@ -21,7 +21,7 @@ function orderForm() {
 
 		messages: {
 			username: {
-				required: "Пожалуйста, введитеимя"
+				required: "Пожалуйста, введите имя"
 			},
 			usermail: {
 				required: "Пожалуйста, введите адрес",

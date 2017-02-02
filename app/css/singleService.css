@@ -250,7 +250,6 @@ th {
 }
 .page--singleService {
   height: auto;
-  overflow-x: hidden;
   min-width: 20rem;
   max-width: 120rem;
 /***** elem wrap *****/
@@ -353,6 +352,10 @@ th {
     font-size: 2.4em;
   }
 }
+.titles--landing {
+  font-size: 2.6em;
+  line-height: 1.2;
+}
 .btn {
   position: relative;
   display: block;
@@ -371,7 +374,7 @@ th {
 }
 .btn--bordered {
   z-index: 100;
-  height: 3.5em;
+  min-height: 3.5em;
   line-height: 3.5em;
   padding: 0 2.5em 0 3.5em;
   font-size: 0.875em;
@@ -426,7 +429,7 @@ th {
 }
 .btn--filled {
   z-index: 100;
-  height: 3.5em;
+  min-height: 3.5em;
   line-height: 3.5em;
   padding: 0 2em 0 1.5em;
   font-size: 0.875em;
@@ -512,9 +515,9 @@ th {
   }
 }
 .header--singleService {
-  top: 2.0625em;
+  top: 1em;
   width: 100%;
-  height: 4.5em;
+  height: 5em;
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
 }
@@ -527,7 +530,7 @@ th {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     width: 100%;
-    height: 6.2em;
+    height: 5.5em;
   }
 }
 @media screen and (max-width: 940px) {
@@ -537,7 +540,7 @@ th {
 }
 @media screen and (max-width: 600px) {
   .header--singleService {
-    height: 4.5em;
+    height: 4em;
   }
 }
 .header--isScrolled {
@@ -545,11 +548,16 @@ th {
   top: 0;
   left: 0;
   z-index: 2000;
-  height: 6.2em;
-  padding-bottom: 1.2em;
+  min-height: 5.2em;
+  padding-bottom: 0.5em;
   background-color: #1f282a;
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
+}
+@media screen and (max-width: 1100px) {
+  .header--isScrolled {
+    padding-bottom: 0;
+  }
 }
 .header--isComponent {
   display: -webkit-box;
@@ -641,8 +649,13 @@ th {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     width: 100%;
-    padding: 0 1.25em;
+    padding: 0.5em 1.25em;
     background-color: #1f282a;
+  }
+}
+@media screen and (max-width: 600px) {
+  .header__wrap--fixed {
+    height: 100%;
   }
 }
 .header__list {
@@ -1477,6 +1490,7 @@ th {
 @media screen and (max-width: 779px) {
   .tabs {
     width: 100%;
+    min-height: 43em;
   }
 }
 @media screen and (max-width: 584px) {
@@ -1486,7 +1500,7 @@ th {
 }
 @media screen and (max-width: 479px) {
   .tabs {
-    margin-bottom: 3em;
+    min-height: 52em;
   }
 }
 .tabs__menu {
@@ -1561,12 +1575,8 @@ th {
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
 }
-@media screen and (max-width: 479px) {
-  .tabs__item {
-    width: 100%;
-  }
-}
 .tabs__item--active {
+  position: relative;
   opacity: 1;
   visibility: visible;
   -webkit-transition: all 0.5s ease;
@@ -1605,7 +1615,8 @@ th {
 @media screen and (max-width: 479px) {
   .tabs__figure {
     width: 100%;
-    margin: 2em 0 0;
+    min-height: 35em;
+    margin: 1em 0 0;
   }
 }
 .tabs__img {
@@ -1644,6 +1655,7 @@ th {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     width: 100%;
+    height: 5em;
     margin: 1em 0 0 3em;
   }
 }
@@ -1681,7 +1693,7 @@ th {
 @media screen and (max-width: 779px) {
   .tabs__service--service1 {
     top: -35%;
-    left: 25%;
+    left: 30%;
   }
   .tabs__service--service1 .tabs__line {
     width: 6em;
@@ -1703,7 +1715,7 @@ th {
   .tabs__service--service1 {
     top: 0;
     left: 0;
-    width: 100%;
+    width: 80%;
   }
   .tabs__service--service1 .tabs__dot {
     left: -3em;
@@ -1759,7 +1771,7 @@ th {
   .tabs__service--service2 {
     top: 0;
     left: 0;
-    width: 100%;
+    width: 80%;
   }
   .tabs__service--service2 .tabs__dot {
     left: -3em;
@@ -1775,8 +1787,8 @@ th {
   }
 }
 .tabs__service--service3 {
-  top: 35%;
-  left: -12.5%;
+  top: 24%;
+  left: -15%;
 }
 .tabs__service--service3 .tabs__line {
   width: 5em;
@@ -1795,7 +1807,7 @@ th {
 }
 @media screen and (max-width: 779px) {
   .tabs__service--service3 {
-    top: 13%;
+    top: 8%;
     left: -7%;
   }
   .tabs__service--service3 .tabs__pointer {
@@ -1815,7 +1827,7 @@ th {
   .tabs__service--service3 {
     top: 0;
     left: 0;
-    width: 100%;
+    width: 80%;
   }
   .tabs__service--service3 .tabs__dot {
     left: -3em;
@@ -1823,22 +1835,22 @@ th {
   }
 }
 .tabs__service--service4 {
-  top: 90%;
+  top: 91%;
   left: -12.5%;
 }
 .tabs__service--service4 .tabs__line {
-  width: 5.5em;
+  width: 6em;
 }
 .tabs__service--service4 .tabs__pointer {
   width: 6.5em;
   bottom: 4.1em;
-  left: 3.9em;
+  left: 4.5em;
   -webkit-transform: rotateZ(-58deg);
       -ms-transform: rotate(-58deg);
           transform: rotateZ(-58deg);
 }
 .tabs__service--service4 .tabs__dot {
-  left: 135%;
+  left: 140%;
   bottom: 155%;
 }
 @media screen and (max-width: 779px) {
@@ -1849,13 +1861,13 @@ th {
   .tabs__service--service4 .tabs__pointer {
     width: 5em;
     bottom: 3.9em;
-    left: 3.3em;
+    left: 3.8em;
     -webkit-transform: rotateZ(-83deg);
         -ms-transform: rotate(-83deg);
             transform: rotateZ(-83deg);
   }
   .tabs__service--service4 .tabs__dot {
-    left: 5.2em;
+    left: 5.6em;
     bottom: 6em;
   }
 }
@@ -1863,7 +1875,7 @@ th {
   .tabs__service--service4 {
     top: 0;
     left: 0;
-    width: 100%;
+    width: 80%;
   }
   .tabs__service--service4 .tabs__dot {
     left: -3em;
@@ -1879,7 +1891,7 @@ th {
   }
 }
 .tabs__service--service5 {
-  top: 93%;
+  top: 97%;
   left: 70%;
 }
 .tabs__service--service5 .tabs__line {
@@ -1920,7 +1932,7 @@ th {
   .tabs__service--service5 {
     top: 0;
     left: 0;
-    width: 100%;
+    width: 80%;
   }
   .tabs__service--service5 .tabs__dot {
     left: -3em;
@@ -1958,21 +1970,22 @@ th {
 @media screen and (max-width: 779px) {
   .tabs__service--service6 {
     top: 80%;
-    left: 88%;
+    left: 85%;
   }
   .tabs__service--service6 .tabs__line {
-    width: 6em;
+    left: -0.5em;
+    width: 5em;
   }
   .tabs__service--service6 .tabs__pointer {
     width: 5.5em;
     bottom: 4em;
-    left: -5.7em;
+    left: -4.23em;
     -webkit-transform: rotateZ(70deg);
         -ms-transform: rotate(70deg);
             transform: rotateZ(70deg);
   }
   .tabs__service--service6 .tabs__dot {
-    left: -4.5em;
+    left: -3.1em;
     bottom: 5em;
   }
 }
@@ -1980,7 +1993,7 @@ th {
   .tabs__service--service6 {
     top: 0;
     left: 0;
-    width: 100%;
+    width: 80%;
   }
   .tabs__service--service6 .tabs__dot {
     left: -3em;
@@ -1992,7 +2005,7 @@ th {
   position: absolute;
   left: 0;
   bottom: 1.6em;
-  width: 5em;
+  width: 8em;
   font-weight: bold;
   line-height: 1.2;
   -webkit-transition: all 0.2s ease;
@@ -2111,7 +2124,7 @@ th {
 @media screen and (max-width: 1199px) {
   .order-form {
     width: 50%;
-    margin: 0 auto;
+    margin: 2em auto 0;
     padding-left: 0;
     border: none;
   }
@@ -3166,6 +3179,23 @@ label.error {
   color: #ee6800;
   letter-spacing: 0.1em;
   cursor: pointer;
+}
+label.error {
+  display: block;
+  position: absolute;
+  left: 2.3em;
+  top: -0.75em;
+  width: 100%;
+  height: 1.5em;
+  font-size: 0.875em;
+  color: #e72a00;
+}
+@media screen and (max-width: 374px) {
+  label.error {
+    left: 2.7em;
+    top: -0.65em;
+    font-size: 0.75em;
+  }
 }
 /*********************************************
 		Block .scroll-to top

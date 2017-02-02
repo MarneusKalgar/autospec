@@ -4,6 +4,34 @@ function callbackForm() {
 	var $wrapper = $(".page__form-wrap");
 	var $close = $(".callback-form__close");
 
+	var $tel = $("#callback-tel");
+
+	if ($tel.length) {
+		$tel.mask("+999 (99) 999 - 99 - 99");
+
+		$form.validate({
+
+			rules: {
+				username: {
+					required: true
+				},
+				usertel: {
+					required: true
+				}
+			},
+
+			messages: {
+				username: {
+					required: "Пожалуйста, введите имя"
+				},
+				usertel: "Пожалуйста, введите номер телефона"
+			}
+
+		});
+	}
+
+
+
 	$btn.on("click", function () {
 		if (!$wrapper.hasClass("page__form-wrap--isActive")) {
 			$wrapper.addClass("page__form-wrap--isActive");
@@ -20,20 +48,25 @@ function callbackForm() {
 		$form.removeClass("callback-form--isActive");
 	});
 
-	$form.submit(function(e) {
+	if (navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1) {
+		console.log('Its Safari');
+		$form.submit(function(e) {
 
-		var ref = $(this).find("[required]");
+			var ref = $(this).find("[required]");
 
-		$(ref).each(function(){
-			if ( $(this).val() == '' )
-			{
-				alert("Required field should not be blank.");
+			$(ref).each(function(){
+				if ( $(this).val() == '' )
+				{
+					alert("Required field should not be blank.");
 
-				$(this).focus();
+					$(this).focus();
 
-				e.preventDefault();
-				return false;
-			}
-		});  return true;
-	});
+					e.preventDefault();
+					return false;
+				}
+			});  return true;
+		});
+	}
+
+
 }

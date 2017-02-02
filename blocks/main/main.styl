@@ -59,7 +59,9 @@
 			height 9em
 		@media screen and (max-width: 600px) and (orientation: landscape)
 			margin-top 0
-			height 25vw
+			padding-top: 0
+			padding-bottom: 0
+			height 8.5em
 			&::before
 			&::after
 				top -10%
@@ -99,17 +101,21 @@
 		transform scaleY(0)
 		animation slideBtn 2s ease 3s forwards
 		@media screen and (max-width: 600px) and (orientation: portrait)
-			bottom -5em
+			//bottom -5em
+			top 100%
 			right 50%
+			width: 80%
 			transform scaleY(0) translateX(50%)
 			animation slideBtnMobile 1.5s ease 3s forwards
 		@media screen and (max-width: 600px) and (orientation: landscape)
-			bottom -5vw
-			right 30vw
+			//bottom -5vw
+			top 100%
+			right 50%
+			width: 60%
 			transform scaleY(0) translateX(50%)
 			animation slideBtnMobile 1.5s ease 3s forwards
 		@media screen and (max-width: 481px) and (orientation: landscape)
-			bottom -10vw
+			top 100%
 
 
 	&__image
@@ -126,6 +132,27 @@
 		@media screen and (min-width: 1400px), (min-height: 1200px)
 			background url("../img/main/main-bg-lg.jpg") 0 0 no-repeat
 			background-size cover
+		@media screen and (max-width: 600px) and (orientation: portrait)
+			background-position: 40% 0;
+
+	&__light
+		position absolute
+		top 0
+		left 0
+		z-index 20
+		width 100%
+		height 100%
+		background url("../img/main/main-bg-lighted.jpg") 0 0 no-repeat
+		background-size cover
+		opacity 0
+		@media screen and (min-width: 1400px), (min-height: 1200px)
+			background url("../img/main/main-bg-lg-lighted.jpg") 0 0 no-repeat
+			background-size cover
+		@media screen and (max-width: 600px) and (orientation: portrait)
+			background-position: 40% 0;
+
+		&--isAnimated
+			animation fadeInBgLighted 1s ease 0s 2
 
 	&__bg
 		position absolute
@@ -146,26 +173,21 @@
 		opacity 0
 
 		&--one
-			background-position 0 0
 			animation slidePanel1 1.5s forwards
 
 		&--two
-			background-position 24% 0
 			animation slidePanel2 1.5s forwards
 			animation-delay .1s
 
 		&--three
-			background-position 48% 0
 			animation slidePanel3 1.5s forwards
 			animation-delay .2s
 
 		&--four
-			background-position 72% 0
 			animation slidePanel4 1.5s forwards
 			animation-delay .3s
 
 		&--five
-			background-position 100% 0
 			animation slidePanel5 1.5s forwards
 			animation-delay .4s
 
@@ -186,6 +208,16 @@
 		opacity 0
 	100%
 		opacity 1
+
+	//background image with light
+@keyframes fadeInBgLighted
+	0%,
+	50%
+		opacity 0
+	51%
+		opacity 1
+	100%
+		opacity 0
 
 	//panels
 @keyframes slidePanel1

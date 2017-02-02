@@ -18,17 +18,14 @@ function header() {
 		if ($(window).width() > 1100) {
 			var $window = $(window);
 			var $header = $(".header--singleService");
-			var $tel = $(".header__link");
 
 			$window.on("scroll", function () {
 				var scroll = $window.scrollTop();
 
 				if (scroll > 0) {
 					$header.addClass("header--isScrolled");
-					//$tel.addClass("header__link--isHidden");
 				} else {
 					$header.removeClass("header--isScrolled");
-					//$tel.removeClass("header__link--isHidden");
 				}
 			});//end window
 		}//end if width

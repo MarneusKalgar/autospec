@@ -68,6 +68,8 @@
         </div>
         <div class="main__image">
         </div>
+        <div class="main__light">
+        </div>
       </main>
       <div class="sidebar">
         <!--block main-nav-->
@@ -115,6 +117,9 @@
     <script src="js/main.js"></script>
     <script>
       $(".sidebar").addClass("sidebar--isAnimated");
+      setTimeout(function () {
+      	$(".main__light").addClass("main__light--isAnimated");
+      }, 2500);
       
     </script>
     <script>

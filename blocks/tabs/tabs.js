@@ -27,32 +27,32 @@ function tabs () {
 	});
 
 	//lazy load images
-	/*
-	if ($(window).width() > 479) {
-		$(window).on('DOMContentLoaded load resize scroll', function () {
-			var images = $(".tabs img[data-src]");
-			// load images that have entered the viewport
-			$(images).each(function (index) {
-				if (isElementInViewport(this)) {
-					$(this).attr("src", $(this).attr("data-src"));
-					$(this).removeAttr("data-src");
-				}
-			});
-			// if all the images are loaded, stop calling the handler
-			if (images.length == 0) {
-				$(window).off('DOMContentLoaded load resize scroll')
-			}
-		});
-	}
+	//$(window).on('resize', function () {
+	//	var $images = $(".tabs img[src]");
+	//	var width = $(window).width();
+//
+	//	if ( width <= 479) {
+	//		$images.each(function (index) {
+	//			$(this).attr("data-src", $(this).attr("src"));
+	//			$(this).removeAttr("src");
+	//		});
+	//	} else {
+	//		$images.each(function (index) {
+	//			$(this).attr("src", $(this).attr("data-src"));
+	//			$(this).removeAttr("data-src");
+	//		});
+	//	}
+//
+	//});
 
-	function isElementInViewport (el) {
-		var rect = el.getBoundingClientRect();
-		return (
-			rect.top >= -1000 &&
-			rect.left >= 0 &&
-			rect.bottom <= $(window).height() + 1000 &&
-			rect.right <= $(window).width()
-		);
-	}*/
+	//function isElementInViewport (el) {
+	//	var rect = el.getBoundingClientRect();
+	//	return (
+	//		rect.top >= -1000 &&
+	//		rect.left >= 0 &&
+	//		rect.bottom <= $(window).height() + 1000 &&
+	//		rect.right <= $(window).width()
+	//	);
+	//}
 
 }

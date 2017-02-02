@@ -11,10 +11,11 @@
 		margin 0 auto
 	@media screen and (max-width: 779px)
 		width 100%
+		min-height 43em
 	@media screen and (max-width: 584px)
 		margin-top 2em
 	@media screen and (max-width: 479px)
-		margin-bottom 3em
+		min-height 52em
 
 		//tab-menu
 	&__menu
@@ -70,13 +71,13 @@
 		opacity 0
 		visibility hidden
 		transition all .5s ease
-		@media screen and (max-width: 479px)
-			width 100%
 
 		&--active
+			position: relative
 			opacity 1
 			visibility visible
 			transition all .5s ease
+
 
 	&__subtitle
 		margin 0
@@ -100,7 +101,8 @@
 			margin-left 1em
 		@media screen and (max-width: 479px)
 			width 100%
-			margin 2em 0 0
+			min-height 35em
+			margin 1em 0 0
 
 
 	&__img
@@ -119,7 +121,6 @@
 		padding 0
 		list-style none
 
-
 	&__service
 		position absolute
 		width 6em
@@ -131,6 +132,7 @@
 			position relative
 			box-sizing border-box
 			width 100%
+			height: 5em;
 			margin 1em 0 0 3em
 
 		&--isSelected
@@ -159,7 +161,7 @@
 				bottom -35%
 			@media screen and (max-width: 779px)
 				top -35%
-				left 25%
+				left 30%
 				.tabs__line
 					width 6em
 				.tabs__pointer
@@ -173,7 +175,7 @@
 			@media screen and (max-width: 479px)
 				top 0
 				left 0
-				width 100%
+				width 80%
 				.tabs__dot
 					left -3em
 					bottom .3em
@@ -211,7 +213,7 @@
 			@media screen and (max-width: 479px)
 				top 0
 				left 0
-				width 100%
+				width 80%
 				.tabs__dot
 					left -3em
 					bottom .3em
@@ -223,8 +225,8 @@
 
 			//ITEM3
 		&--service3
-			top 35%
-			left -12.5%
+			top 24%
+			left -15%
 			.tabs__line
 				width 5em
 			.tabs__pointer
@@ -236,7 +238,7 @@
 				left 115%
 				bottom -60%
 			@media screen and (max-width: 779px)
-				top 13%
+				top 8%
 				left -7%
 				.tabs__pointer
 					width 4.5em
@@ -249,24 +251,24 @@
 			@media screen and (max-width: 479px)
 				top 0
 				left 0
-				width 100%
+				width 80%
 				.tabs__dot
 					left -3em
 					bottom .3em
 
 			//ITEM4
 		&--service4
-			top 90%
+			top 91%
 			left -12.5%
 			.tabs__line
-				width 5.5em
+				width 6em
 			.tabs__pointer
 				width 6.5em
 				bottom 4.1em
-				left 3.9em
+				left 4.5em
 				transform rotateZ(-58deg)
 			.tabs__dot
-				left 135%
+				left 140%
 				bottom 155%
 			@media screen and (max-width: 779px)
 				top 100%
@@ -274,15 +276,15 @@
 				.tabs__pointer
 					width 5em
 					bottom 3.9em
-					left 3.3em
+					left 3.8em
 					transform rotateZ(-83deg)
 				.tabs__dot
-					left 5.2em
+					left 5.6em
 					bottom 6em
 			@media screen and (max-width: 479px)
 				top 0
 				left 0
-				width 100%
+				width 80%
 				.tabs__dot
 					left -3em
 					bottom .3em
@@ -294,7 +296,7 @@
 
 			//ITEM5
 		&--service5
-			top 93%
+			top 97%
 			left 70%
 			.tabs__line
 				left -1em
@@ -321,7 +323,7 @@
 			@media screen and (max-width: 479px)
 				top 0
 				left 0
-				width 100%
+				width 80%
 				.tabs__dot
 					left -3em
 					bottom .3em
@@ -348,21 +350,22 @@
 				bottom 115%
 			@media screen and (max-width: 779px)
 				top 80%
-				left 88%
+				left 85%
 				.tabs__line
-					width 6em
+					left: -.5em;
+					width 5em
 				.tabs__pointer
 					width 5.5em
 					bottom 4em
-					left -5.7em
+					left -4.23em
 					transform rotateZ(70deg)
 				.tabs__dot
-					left -4.5em
+					left -3.1em
 					bottom 5em
 			@media screen and (max-width: 479px)
 				top 0
 				left 0
-				width 100%
+				width 80%
 				.tabs__dot
 					left -3em
 					bottom .3em
@@ -373,7 +376,7 @@
 		position absolute
 		left 0
 		bottom 1.6em
-		width 5em
+		width 8em
 		font-weight bold
 		line-height 1.2
 		transition all .2s ease
