@@ -26,13 +26,39 @@
 			left 44%
 			width 1.5625em
 			height 1.5em
-			background url("../img/hero/hero__title-icon.png") 0 0 no-repeat
-			background-size cover
 			@media screen and (max-width: 450px)
 				width @width * .8
 				height @height * .8
 				top -1.3em
 				left 43%
+
+		&--service::before
+			background url("../img/hero/hero__title-icon1.png") 0 0 no-repeat
+			background-size cover
+		&--chassis::before
+			background url("../img/hero/hero__title-icon2.png") 0 0 no-repeat
+			background-size cover
+		&--transmission::before
+			background url("../img/hero/hero__title-icon3.png") 0 0 no-repeat
+			background-size cover
+		&--painting::before
+			background url("../img/hero/hero__title-icon4.png") 0 0 no-repeat
+			background-size cover
+		&--diagnostics::before
+			background url("../img/hero/hero__title-icon5.png") 0 0 no-repeat
+			background-size cover
+		&--duplicates::before
+			height 1.5625em
+			background url("../img/hero/hero__title-icon6.png") 0 0 no-repeat
+			background-size cover
+			@media screen and (max-width: 450px)
+				height @height * .8
+		&--spec::before
+			width 1.75em
+			background url("../img/hero/hero__title-icon7.png") 0 0 no-repeat
+			background-size cover
+			@media screen and (max-width: 450px)
+				width @width * .8
 
 	&__lead
 		width 25em

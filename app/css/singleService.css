@@ -989,8 +989,6 @@ th {
   left: 44%;
   width: 1.5625em;
   height: 1.5em;
-  background: url("../img/hero/hero__title-icon.png") 0 0 no-repeat;
-  background-size: cover;
 }
 @media screen and (max-width: 450px) {
   .hero__title::before {
@@ -998,6 +996,46 @@ th {
     height: 1.2em;
     top: -1.3em;
     left: 43%;
+  }
+}
+.hero__title--service::before {
+  background: url("../img/hero/hero__title-icon1.png") 0 0 no-repeat;
+  background-size: cover;
+}
+.hero__title--chassis::before {
+  background: url("../img/hero/hero__title-icon2.png") 0 0 no-repeat;
+  background-size: cover;
+}
+.hero__title--transmission::before {
+  background: url("../img/hero/hero__title-icon3.png") 0 0 no-repeat;
+  background-size: cover;
+}
+.hero__title--painting::before {
+  background: url("../img/hero/hero__title-icon4.png") 0 0 no-repeat;
+  background-size: cover;
+}
+.hero__title--diagnostics::before {
+  background: url("../img/hero/hero__title-icon5.png") 0 0 no-repeat;
+  background-size: cover;
+}
+.hero__title--duplicates::before {
+  height: 1.5625em;
+  background: url("../img/hero/hero__title-icon6.png") 0 0 no-repeat;
+  background-size: cover;
+}
+@media screen and (max-width: 450px) {
+  .hero__title--duplicates::before {
+    height: 1.25em;
+  }
+}
+.hero__title--spec::before {
+  width: 1.75em;
+  background: url("../img/hero/hero__title-icon7.png") 0 0 no-repeat;
+  background-size: cover;
+}
+@media screen and (max-width: 450px) {
+  .hero__title--spec::before {
+    width: 1.4em;
   }
 }
 .hero__lead {
