@@ -1,16 +1,26 @@
 /*******************SERVICES******************/
 .services
+	position: relative
 	padding 3.125em 0 4.5em
 	background $base-decor-color-light-grey url("../img/services/services-simple-bg.jpg") 0 0 no-repeat
 	background-size cover
 	animation-duration 2s
 	animation-delay 0s
-	@media screen and (max-width: 1199px)
-		background-image url("../img/services/services-simple-bg-lg.jpg")
+	&::before
+		content: ""
+		position: absolute
+		z-index: 10
+		top: 0
+		right: 0
+		bottom: 0
+		left: 0
+		background-color: rgba(#ebebeb, .9)
 	@media screen and (max-width: 630px)
 		padding-bottom 2em
 
 	&__wrap
+		position: relative
+		z-index: 20
 		width $base-wrap-element-width
 		margin 0 auto
 		@media screen and (max-width: 1199px)

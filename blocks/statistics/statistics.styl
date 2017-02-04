@@ -1,13 +1,24 @@
 /***********************STATISTICS***********************/
 .statistics
+	position: relative
 	padding 2em 0
 	background $base-decor-color-light-grey url("../img/statistics/statistics-bg.jpg") 0 0 no-repeat
 	background-size cover
+	&::before
+		content: ""
+		position: absolute
+		z-index: 10
+		top: 0
+		right: 0
+		bottom: 0
+		left: 0
+		background-color: rgba(#ebebeb, .9)
 	@media screen and (max-width: 799px)
 		padding 1em 0
-		background url("../img/statistics/statistics-bg-sm.jpg")
 
 	&__list
+		position: relative
+		z-index: 20
 		flex-container(row, wrap, center, center)
 		margin 0
 		padding 0

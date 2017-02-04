@@ -252,6 +252,16 @@ th {
   height: auto;
   width: 100%;
   overflow-x: hidden;
+}
+.page--isOverlay::before {
+  content: "";
+  position: absolute;
+  z-index: 300;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(44,58,60,0.8);
 /***** elem wrap *****/
 }
 .page__wrap {
@@ -1107,6 +1117,12 @@ th {
   -webkit-animation: slideBar 1.5s;
           animation: slideBar 1.5s;
 }
+@media screen and (max-width: 940px) {
+  .sidebar--isAnimated {
+    -webkit-animation: none;
+            animation: none;
+  }
+}
 .sidebar--isComponent {
   position: absolute;
   top: 0;
@@ -1693,6 +1709,16 @@ th {
   -webkit-animation: fadeInBg 1s ease 2s forwards;
           animation: fadeInBg 1s ease 2s forwards;
 }
+.main__image::before {
+  content: "";
+  position: absolute;
+  z-index: 20;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(44,58,60,0.8);
+}
 @media screen and (min-width: 1400px), (min-height: 1200px) {
   .main__image {
     background: url("../img/main/main-bg-lg.jpg") 0 0 no-repeat;
@@ -1708,7 +1734,7 @@ th {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 20;
+  z-index: 30;
   width: 100%;
   height: 100%;
   background: url("../img/main/main-bg-lighted.jpg") 0 0 no-repeat;
@@ -1786,8 +1812,8 @@ th {
   }
   100% {
     opacity: 1;
-    -webkit-transform: scaleY(100%);
-            transform: scaleY(100%);
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1);
   }
 }
 @keyframes fadeInFragments {
@@ -1798,8 +1824,8 @@ th {
   }
   100% {
     opacity: 1;
-    -webkit-transform: scaleY(100%);
-            transform: scaleY(100%);
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1);
   }
 }
 @-webkit-keyframes fadeInBg {
@@ -1848,8 +1874,8 @@ th {
   }
   37%, 100% {
     opacity: 1;
-    -webkit-transform: scaleX(100%);
-            transform: scaleX(100%);
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
   }
 }
 @keyframes slidePanel1 {
@@ -1860,8 +1886,8 @@ th {
   }
   37%, 100% {
     opacity: 1;
-    -webkit-transform: scaleX(100%);
-            transform: scaleX(100%);
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
   }
 }
 @-webkit-keyframes slidePanel2 {
@@ -1871,8 +1897,8 @@ th {
   }
   44%, 100% {
     opacity: 1;
-    -webkit-transform: scaleX(100%);
-            transform: scaleX(100%);
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
   }
 }
 @keyframes slidePanel2 {
@@ -1882,8 +1908,8 @@ th {
   }
   44%, 100% {
     opacity: 1;
-    -webkit-transform: scaleX(100%);
-            transform: scaleX(100%);
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
   }
 }
 @-webkit-keyframes slidePanel3 {
@@ -1893,8 +1919,8 @@ th {
   }
   51%, 100% {
     opacity: 1;
-    -webkit-transform: scaleX(100%);
-            transform: scaleX(100%);
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
   }
 }
 @keyframes slidePanel3 {
@@ -1904,8 +1930,8 @@ th {
   }
   51%, 100% {
     opacity: 1;
-    -webkit-transform: scaleX(100%);
-            transform: scaleX(100%);
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
   }
 }
 @-webkit-keyframes slidePanel4 {
@@ -1915,8 +1941,8 @@ th {
   }
   58%, 100% {
     opacity: 1;
-    -webkit-transform: scaleX(100%);
-            transform: scaleX(100%);
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
   }
 }
 @keyframes slidePanel4 {
@@ -1926,8 +1952,8 @@ th {
   }
   58%, 100% {
     opacity: 1;
-    -webkit-transform: scaleX(100%);
-            transform: scaleX(100%);
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
   }
 }
 @-webkit-keyframes slidePanel5 {
@@ -1937,8 +1963,8 @@ th {
   }
   65%, 100% {
     opacity: 1;
-    -webkit-transform: scaleX(100%);
-            transform: scaleX(100%);
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
   }
 }
 @keyframes slidePanel5 {
@@ -1948,8 +1974,8 @@ th {
   }
   65%, 100% {
     opacity: 1;
-    -webkit-transform: scaleX(100%);
-            transform: scaleX(100%);
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
   }
 }
 @-webkit-keyframes fadeInTitle {
@@ -2059,6 +2085,7 @@ th {
 .about__title {
   margin: 0;
   position: relative;
+  z-index: 20;
 }
 .tab-panel {
   width: 100%;
@@ -2181,8 +2208,8 @@ th {
   position: relative;
   padding: 0;
   background: rgba(0,0,0,0);
-  -webkit-border-radius: none;
-          border-radius: none;
+  -webkit-border-radius: 0;
+          border-radius: 0;
 }
 @media screen and (max-width: 800px) {
   .tab-panel__item--history {
@@ -3228,10 +3255,10 @@ th {
   -webkit-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  height: 100vh;
-  padding: 7em 5% 3% 7.5%;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  height: 100%;
+  padding: 7em 5% 3% 7.5%;
   font-size: 1rem;
   background: #2f3d41 url("../img/trust/trust-bg.jpg") 0 0 no-repeat;
   background-size: cover;
@@ -3247,17 +3274,9 @@ th {
     padding: 5.5em 5% 5% 5%;
   }
 }
-.trust--isOverlay::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 600;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0,0,0,0.4);
-}
 .trust__title {
+  position: relative;
+  z-index: 100;
   margin: 0.9em 0 0;
 }
 @media screen and (max-height: 780px), (max-width: 750px) {
@@ -3271,6 +3290,8 @@ th {
   }
 }
 .trust__desc {
+  position: relative;
+  z-index: 100;
   width: 33.75em;
   margin: 2.5em auto 0;
   color: #fff;
@@ -3748,7 +3769,6 @@ th {
 }
 .clients__list {
   position: relative;
-  z-index: 2000;
   width: 60%;
   height: 21em;
   overflow: hidden;
@@ -3990,16 +4010,6 @@ th {
     padding-left: 1.25em;
   }
 }
-.contacts--isOverlay::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 200;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.4);
-}
 .contacts--isContacts_extended {
   padding: 1em 0 4em 0;
   -webkit-animation-duration: 2s;
@@ -4025,15 +4035,16 @@ th {
   }
 }
 .contacts__title {
+  width: 6em;
   margin: 0.5em 0 0;
 }
 .contacts__address-wrap {
   width: 40%;
   min-width: 17.5em;
   max-width: 25em;
-  min-height: 15em;
-  height: 80%;
+  height: 22em;
   overflow-y: auto;
+  overflow-x: hidden;
 }
 @media screen and (min-width: 941px) and (max-width: 1100px) {
   .contacts__address-wrap {
@@ -4051,9 +4062,14 @@ th {
     height: 15em;
   }
 }
-@media screen and (min-height: 1024px) {
+@media screen and (min-height: 900px) {
   .contacts__address-wrap {
-    height: 91%;
+    height: 32em;
+  }
+}
+@media screen and (max-height: 600px) {
+  .contacts__address-wrap {
+    height: 15em;
   }
 }
 .contacts__address {
@@ -4288,6 +4304,9 @@ th {
 @media screen and (max-height: 600px) {
   .btn--callback {
     padding: 0.9em 1.4em 0.9em 2.4em;
+  }
+  .btn--callback .btn__icon {
+    top: 1.2em;
   }
 }
 .btn--callback-isActive {

@@ -2,9 +2,9 @@
 .trust
 	position: relative
 	flex 1
-	height 100vh
+	box-sizing: border-box
+	height: 100%
 	padding 7em 5% 3% 7.5%
-	box-sizing border-box
 	font-size 1rem
 	background #2f3d41 url("../img/trust/trust-bg.jpg") 0 0 no-repeat
 	background-size cover
@@ -13,19 +13,10 @@
 		padding 6em 5% 1%
 	@media screen and (max-width: 390px)
 		padding 5.5em 5% 5% 5%
-
-	&--isOverlay
-		&::before
-			content ""
-			position absolute
-			top 0
-			left 0
-			z-index 600
-			width 100vw
-			height 100vh
-			background rgba(#000, .4)
 		
 	&__title
+		position: relative
+		z-index: 100
 		margin .9em 0 0
 		@media screen and (max-height: 780px), (max-width: 750px)
 			margin-top .5em
@@ -33,6 +24,8 @@
 			font-size 2.1em
 
 	&__desc
+		position: relative
+		z-index: 100
 		width 33.75em
 		margin 2.5em auto 0
 		color $base-text-color-light

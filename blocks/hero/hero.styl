@@ -6,11 +6,24 @@
 	padding 6.5625em 0 2em
 	color $base-text-color-light
 	text-align center
-	background $base-decor-color-dark url("../img/hero/hero-bg-lg.jpg") center no-repeat
+	background $base-overlay-element-color url("../img/hero/hero-bg-lg.jpg") center no-repeat
 	background-size cover
+	@media screen and (max-width: 1000px)
+		background $base-decor-color-dark url("../img/hero/hero-bg-sm.jpg") center no-repeat
+		background-size cover
+	&::before
+		content: ""
+		position: absolute
+		z-index: 10
+		top: 0
+		right: 0
+		bottom: 0
+		left: 0
+		background-color: rgba($base-overlay-element-color, .9)
 
 	&__title
 		position relative
+		z-index: 100
 		width 12em
 		margin 4.5em auto 0
 		@media screen and (max-width: 599px)
@@ -61,6 +74,8 @@
 				width @width * .8
 
 	&__lead
+		position: relative
+		z-index: 100
 		width 25em
 		margin .5em auto 0
 		font-size 1.5em
@@ -75,6 +90,8 @@
 			width: 90%
 
 	&__link
+		position: relative
+		z-index: 100
 		display block
 		width 1.2em
 		height 1em
@@ -99,6 +116,7 @@
 	&__circle
 		position absolute
 		top 0
+		z-index: 100
 		height 100%
 		width 12.8em
 		@media screen and (max-width: 599px)

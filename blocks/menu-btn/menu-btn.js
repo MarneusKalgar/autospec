@@ -3,6 +3,8 @@ function menuBtn() {
 	var $logo = $(".logo__img");
 	var $sidebar = $(".sidebar");
 
+	var $body = $('body');
+
 	var $main = $(".main");
 	var $tabs = $(".tab-panel__menu");
 	var $services = $(".services");
@@ -16,8 +18,12 @@ function menuBtn() {
 
 		$sidebar.toggleClass("sidebar--isMove");
 
+		if ( !$body.hasClass("page--singleService") ) {
+			$body.toggleClass("page--isOverlay");
+		}
+
 		if ($sidebar.hasClass("sidebar--isMove")) {
-			$('body').on('scroll touchmove mousewheel', function (e) {
+			$body.on('scroll touchmove mousewheel', function(e) {
 				e.preventDefault();
 				e.stopPropagation();
 				return false;
@@ -59,12 +65,6 @@ function menuBtn() {
 			$contacts.removeClass("contacts--isOverlay");
 			$list.toggleClass("header__list--isVisible");
 		});
-	}
-
-	function lockScroll(e) {
-		e.preventDefault();
-		e.stopPropagation();
-		return false;
 	}
 
 }

@@ -119,6 +119,15 @@
 		background-size cover
 		opacity 0
 		animation fadeInBg 1s ease 2s forwards
+		&::before
+			content: ""
+			position: absolute
+			z-index: 20
+			top: 0
+			right: 0
+			bottom: 0
+			left: 0
+			background-color: rgba($base-overlay-element-color, .8)
 		@media screen and (min-width: 1400px), (min-height: 1200px)
 			background url("../img/main/main-bg-lg.jpg") 0 0 no-repeat
 			background-size cover
@@ -129,7 +138,7 @@
 		position absolute
 		top 0
 		left 0
-		z-index 20
+		z-index 30
 		width 100%
 		height 100%
 		background url("../img/main/main-bg-lighted.jpg") 0 0 no-repeat
@@ -190,7 +199,7 @@
 		transform scaleY(0)
 	100%
 		opacity 1
-		transform scaleY(100%)
+		transform scaleY(1)
 
 	//background image fragments
 @keyframes fadeInBg
@@ -218,7 +227,7 @@
 	37%,
 	100%
 		opacity 1
-		transform scaleX(100%)
+		transform scaleX(1)
 
 @keyframes slidePanel2
 	0%,
@@ -227,7 +236,7 @@
 	44%,
 	100%
 		opacity 1
-		transform scaleX(100%)
+		transform scaleX(1)
 
 @keyframes slidePanel3
 	0%,
@@ -236,7 +245,7 @@
 	51%,
 	100%
 		opacity 1
-		transform scaleX(100%)
+		transform scaleX(1)
 
 @keyframes slidePanel4
 	0%,
@@ -245,7 +254,7 @@
 	58%,
 	100%
 		opacity 1
-		transform scaleX(100%)
+		transform scaleX(1)
 
 @keyframes slidePanel5
 	0%,
@@ -254,7 +263,7 @@
 	65%,
 	100%
 		opacity 1
-		transform scaleX(100%)
+		transform scaleX(1)
 
 	//title
 @keyframes fadeInTitle

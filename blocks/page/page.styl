@@ -20,6 +20,17 @@
 		height auto
 		width: 100%
 		overflow-x: hidden
+
+	&--isOverlay::before
+		content: ""
+		position: absolute
+		z-index: 300
+		top: 0
+		right: 0
+		bottom: 0
+		left: 0
+		background-color: rgba($base-overlay-element-color, .8)
+
 		
 		/***** elem wrap *****/
 	&__wrap
