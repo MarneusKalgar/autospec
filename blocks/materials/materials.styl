@@ -31,10 +31,12 @@
 	&__item
 		flex-container(row, wrap, center, center)
 		width 12.5em
-		height 4.25em
+		min-height 4.25em
 		margin 1em 7%
 		@media screen and (max-width: 1500px)
 			margin 1em 4%
+		@media screen and (max-width: 860px)
+			margin 2em 4%
 
 	&__img
 		display block

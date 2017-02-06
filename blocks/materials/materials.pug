@@ -5,6 +5,4 @@ mixin materials(items)
 			+e.UL.list
 				each item in items
 					+e.item
-						picture
-							source(media="(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)", srcset=item.set)
-							+e.IMG.img(src=item.src, alt=item.alt)
+						+e.IMG.img(src=item.src, alt=item.alt)

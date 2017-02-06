@@ -1414,12 +1414,17 @@ th {
       -ms-flex-align: center;
           align-items: center;
   width: 12.5em;
-  height: 4.25em;
+  min-height: 4.25em;
   margin: 1em 7%;
 }
 @media screen and (max-width: 1500px) {
   .materials__item {
     margin: 1em 4%;
+  }
+}
+@media screen and (max-width: 860px) {
+  .materials__item {
+    margin: 2em 4%;
   }
 }
 .materials__img {
