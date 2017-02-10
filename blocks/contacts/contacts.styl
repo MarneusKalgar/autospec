@@ -8,11 +8,10 @@
 	color $base-text-color-light
 	background #2c3a3c
 	overflow hidden
-	@media screen and (max-height: 480px)
+	@media screen and (max-height: 480px), (max-width: 1100px)
 		overflow-y auto
 	@media screen and (max-width: 750px)
 		padding 5em 6% 2em 2.5em
-		overflow-y auto
 	@media screen and (max-width: 480px)
 		padding-left: 1.25em;
 
@@ -20,7 +19,7 @@
 		padding 1em 0 4em 0
 		animation-duration 2s
 		animation-delay 0s
-		@media screen and (max-width: 850px)
+		@media screen and (max-width: 1100px)
 			padding-bottom 7em
 
 	&__wrap
@@ -35,16 +34,16 @@
 		width: 6em
 		margin .5em 0 0
 
+
+		//address
 	&__address-wrap
-		width 40%
+		width 50%
 		min-width 17.5em
-		max-width 25em
+		max-width 28em
 		height 22em
 		overflow-y: auto
 		overflow-x: hidden
-		@media screen and (min-width: 941px) and (max-width: 1100px)
-			width: 18em;
-		@media screen and (max-width: 750px)
+		@media screen and (max-width: 1100px)
 			width: 80%
 			height 30em
 		@media screen and (max-width: 480px)
@@ -59,16 +58,65 @@
 		width 45%
 		min-width 17.5em
 		padding-right: 1em;
+		padding-left: 2em;
 		font-style normal
+		@media screen and (max-width: 1100px)
+			width: 30em;
+		@media screen and (max-width: 600px)
+			width: 100%
+			padding-right: 0
 
 		&--isScrollable
 			padding-left: 2em;
+			padding-right: 0
+			width: 100%
 
 		&--isContacts_extended
 			margin-left 1.5em
 
 	&__row
-		margin-top 1.25em
+		display: flex
+		align-items: flex-start
+		justify-content: space-between
+		margin-top 2em
+		width: 100%
+
+	&__col
+		width: 50%
+
+		&--full
+			width: 100%
+
+		&--info
+			min-width: 7.5em
+			margin-right: 2%
+			@media screen and (max-width: 600px)
+				width: 80%
+
+		&--photo
+			width: 30%
+			max-width: 6.4em
+			@media screen and (max-width: 600px)
+				display: none
+
+
+	&__photo
+		width: 100%
+		margin: 0
+		padding: 0
+
+	&__img
+		display: block
+		width: 100%
+		max-width: 6.4em
+		height: auto
+		max-height: 6.4em
+		margin: 0 auto
+
+	&__name
+		margin-top: .5em;
+		text-align: center
+		font-size: .875em;
 
 	&__caption
 		margin 0
@@ -81,7 +129,6 @@
 		&--phone
 			float: none
 			width: 100%
-			margin-top: 1em
 
 		&--location
 			float: none
@@ -96,6 +143,8 @@
 		transition all .3s ease
 
 		&--mail
+			display: inline-block;
+			min-width: 11em;
 			color $base-decor-color
 			&:hover
 			&:focus
@@ -105,6 +154,8 @@
 		margin 0
 		font-weight bold
 
+
+		//map
 	&__map
 		position absolute
 		right 0
@@ -112,9 +163,9 @@
 		width 50%
 		bottom 0
 		background-color #dadada
-		@media screen and (min-width: 941px) and (max-width: 1100px)
-			width 43%
-		@media screen and (max-width: 750px)
+			//@media screen and (min-width: 941px) and (max-width: 1100px)
+			//	width 43%
+		@media screen and (max-width: 1100px)
 			position: relative
 			top: 2em
 			height 70vh
@@ -125,9 +176,7 @@
 		&--overlay
 			z-index 100
 			min-height 40.5em
-			@media screen and (min-width: 941px) and (max-width: 1100px)
-				width 50%
-			@media screen and (max-width: 850px)
+			@media screen and (max-width: 1100px)
 				position relative
 				width 100%
 				min-height 19em

@@ -1,27 +1,112 @@
 include ../callback-form/callback-form-embeded
 
 mixin contacts-extended
-	+b.SECTION.contacts(class="--isContacts_extended wow fadeIn")
+	+b.SECTION.contacts(class="--isContacts_extended")
 		+e.DIV.wrap
-			+e.H2.title(class="titles --landing") Контакты
+			+e.H2.title(class="titles --landing wow slideInLeft") Контакты
 
-			+e.ADDRESS.address(class="--isContacts_extended")
+			+e.ADDRESS.address(class="wow slideInLeft")
 				+e.DIV.row
-					+e.P.caption(class="svgicon --phone") Телефоны:
-					+e.link(href="tel:+380975555555")
-						| +38 (097) 555 - 55 - 55
-					+e.link(href="tel:+380635552299")
-						| +38 (063) 555 - 22 - 99
-					+e.link(href="tel:+380442224433")
-						| +38 (044) 222 - 44 - 33
+					+e.DIV.col(class="--info")
+						+e.P.caption(class="--phone svgicon --phone") Администратор:
+						+e.link(href="tel:+380442251553")
+							| (044) 225-15-53
+						+e.link(href="tel:+380")
+							| 073-044-10-15
+						+e.link(href="tel:+380")
+							| 068-982-12-18
+					+e.DIV.col(class="--photo")
+						+e.FIGURE.photo
+							+e.IMG.img(src="img/contacts/teammate.jpg", alt="фото сотрудника")
+							+e.FIGCAPTION.name John Doe
+
 				+e.DIV.row
-					+e.P.caption(class="svgicon --location") Адрес:
-					+e.P.info 150-35, Украина, Киев, просп. Освободителей, 5
+					+e.DIV.col(class="--info")
+						+e.P.caption(class="--phone svgicon --phone") Малярно-Кузовной Цех:
+						+e.link(href="tel:+380")
+							| 066-078-42-38
+						+e.link(href="tel:+380")
+							| 068-504-99-29
+					+e.DIV.col(class="--photo")
+						+e.FIGURE.photo
+							+e.IMG.img(src="img/contacts/teammate.jpg", alt="фото сотрудника")
+							+e.FIGCAPTION.name Антон
+
 				+e.DIV.row
-					+e.P.caption(class="svgicon --envelope") Email:
-					+e.link(class="--mail", href="mailto:avtoservice@ukr.net") avtoservice@ukr.net
+					+e.DIV.col(class="--info")
+						+e.P.caption(class="--phone svgicon --phone") Мастер-приемщик:
+						+e.link(href="tel:+380")
+							| 073-130-97-24
+						+e.link(href="tel:+380")
+							| 068-504-98-78
+					+e.DIV.col(class="--photo")
+						+e.FIGURE.photo
+							+e.IMG.img(src="img/contacts/teammate.jpg", alt="фото сотрудника")
+							+e.FIGCAPTION.name Вячеслав
+
+				+e.DIV.row
+					+e.DIV.col(class="--info")
+						+e.P.caption(class="--phone svgicon --phone") Мастер-приемщик 2:
+						+e.link(href="tel:+380")
+							| 073-130-97-23
+						+e.link(href="tel:+380")
+							| 068-504-99-79
+					+e.DIV.col(class="--photo")
+						+e.FIGURE.photo
+							+e.IMG.img(src="img/contacts/teammate.jpg", alt="фото сотрудника")
+							+e.FIGCAPTION.name John Doe
+
+				+e.DIV.row
+					+e.DIV.col(class="--info")
+						+e.P.caption(class="--phone svgicon --phone") Отдел запчастей:
+						+e.link(href="tel:+380")
+							| 066-078-42-28
+						+e.link(href="tel:+380")
+							| 068-504-94-68
+					+e.DIV.col(class="--photo")
+						+e.FIGURE.photo
+							+e.IMG.img(src="img/contacts/teammate.jpg", alt="фото сотрудника")
+							+e.FIGCAPTION.name Богдан
+
+				+e.DIV.row
+					+e.DIV.col(class="--info")
+						+e.P.caption(class="--phone svgicon --phone") Заместитель директора:
+						+e.link(href="tel:+380")
+							| 097-636-96-53
+						+e.link(href="tel:+380")
+							| 093-212-45-67
+					+e.DIV.col(class="--photo")
+						+e.FIGURE.photo
+							+e.IMG.img(src="img/contacts/teammate.jpg", alt="фото сотрудника")
+							+e.FIGCAPTION.name Сергей Викторович
+
+				+e.DIV.row
+					+e.DIV.col(class="--full")
+						+e.P.caption(class="--location svgicon --location") Адрес:
+						+e.P.info Киев, ул. Кирилловская 40 г  (бывшая Фрунзе)
+
+				+e.DIV.row
+					+e.DIV.col(class="--full")
+						+e.P.caption(class="svgicon --envelope") Email:
+						+e.link(class="--mail", href="mailto:office@auto-spec.in.ua") office@auto-spec.in.ua
+			//-
+				+e.ADDRESS.address(class="--isContacts_extended")
+					+e.DIV.row
+						+e.P.caption(class="svgicon --phone") Телефоны:
+						+e.link(href="tel:+380975555555")
+							| +38 (097) 555 - 55 - 55
+						+e.link(href="tel:+380635552299")
+							| +38 (063) 555 - 22 - 99
+						+e.link(href="tel:+380442224433")
+							| +38 (044) 222 - 44 - 33
+					+e.DIV.row
+						+e.P.caption(class="svgicon --location") Адрес:
+						+e.P.info 150-35, Украина, Киев, просп. Освободителей, 5
+					+e.DIV.row
+						+e.P.caption(class="svgicon --envelope") Email:
+						+e.link(class="--mail", href="mailto:avtoservice@ukr.net") avtoservice@ukr.net
 
 			+e.H2.title(class="titles --landing") Обратная связь
 			+callback-form-embeded()
 
-		+e.DIV.map(class="--overlay")#map
+		+e.DIV.map(class="--overlay wow slideInRight")#map

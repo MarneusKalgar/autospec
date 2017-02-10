@@ -1,5 +1,5 @@
 function contacts() {
-	var place = { lat: 50.4709009, lng: 30.4996281 }
+	var place = { lat: 50.471599, lng: 30.500438 }
 
 	var map = new google.maps.Map(document.getElementById("map"), {
 		zoom: 17,

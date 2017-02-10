@@ -44,78 +44,6 @@ function bundles() {
 		$(this).height($table.find("tr:eq(" + i + ")").height());
 	});
 }
-function callbackForm() {
-	var $btn = $(".sidebar__btn");
-	var $form = $(".callback-form");
-	var $wrapper = $(".page__form-wrap");
-	var $close = $(".callback-form__close");
-
-	var $tel = $("#callback-tel");
-
-	if ($tel.length) {
-		$tel.mask("+999 (99) 999 - 99 - 99");
-
-		$form.validate({
-
-			rules: {
-				username: {
-					required: true
-				},
-				usertel: {
-					required: true
-				}
-			},
-
-			messages: {
-				username: {
-					required: "Пожалуйста, введите имя"
-				},
-				usertel: "Пожалуйста, введите номер телефона"
-			}
-
-		});
-	}
-
-
-
-	$btn.on("click", function () {
-		if (!$wrapper.hasClass("page__form-wrap--isActive")) {
-			$wrapper.addClass("page__form-wrap--isActive");
-		}
-
-		if (!$form.hasClass("callback-form--isActive")) {
-			$form.addClass("callback-form--isActive");
-		}
-
-	});
-
-	$close.on("click", function () {
-		$wrapper.removeClass("page__form-wrap--isActive");
-		$form.removeClass("callback-form--isActive");
-	});
-
-	if (navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1) {
-		console.log('Its Safari');
-		$form.submit(function(e) {
-
-			var ref = $(this).find("[required]");
-
-			$(ref).each(function(){
-				if ( $(this).val() == '' )
-				{
-					alert("Required field should not be blank.");
-
-					$(this).focus();
-
-					e.preventDefault();
-					return false;
-				}
-			});  return true;
-		});
-	}
-
-
-}
 function clients() {
 	var $form = $("#clientsForm");
 
@@ -190,7 +118,7 @@ function component() {
 	$("#usertel").mask("+999 (99) 999 - 99 - 99");
 }
 function contacts() {
-	var place = { lat: 50.4709009, lng: 30.4996281 }
+	var place = { lat: 50.471599, lng: 30.500438 }
 
 	var map = new google.maps.Map(document.getElementById("map"), {
 		zoom: 17,
@@ -444,54 +372,6 @@ function mainNav() {
 		e.preventDefault();
 	});
 }
-function page() {
-	var $logo = $(".logo");
-	var $sidebar = $(".sidebar");
-	
-	var $about = $(".about");
-	var $services = $(".services");
-	var $trust = $(".trust");
-	var $clients = $(".clients");
-	var $contacts = $(".contacts");
-
-
-	if ( $about.length ) {
-		toggleScroll( $about);
-	}
-
-	if ( $services.length ) {
-		toggleScroll($services);
-	}
-
-	if ( $trust.length ) {
-		toggleScroll($trust);
-	}
-
-	if ( $clients.length ) {
-		toggleScroll($clients);
-	}
-
-	if ( $contacts.length ) {
-		toggleScroll($contacts);
-	}
-
-
-	function toggleScroll(item) {
-		item.on("scroll", function() {
-			console.log(item.scrollTop());
-			if( item.scrollTop() > 0 ) {
-				if (!$sidebar.hasClass("sidebar--isMove")) {
-					$logo.addClass("logo--isFaded");
-				}
-			} else {
-				if (!$sidebar.hasClass("sidebar--isMove")) {
-					$logo.removeClass("logo--isFaded");
-				}
-			}
-		});
-	}
-	
-}
 function menuBtn() {
 	var $btn = $(".menu-btn");
 	var $logo = $(".logo__img");
@@ -600,6 +480,54 @@ function orderForm() {
 	});
 
 	$("#usertel").mask("+999 (99) 999 - 99 - 99");
+}
+function page() {
+	var $logo = $(".logo");
+	var $sidebar = $(".sidebar");
+	
+	var $about = $(".about");
+	var $services = $(".services");
+	var $trust = $(".trust");
+	var $clients = $(".clients");
+	var $contacts = $(".contacts");
+
+
+	if ( $about.length ) {
+		toggleScroll( $about);
+	}
+
+	if ( $services.length ) {
+		toggleScroll($services);
+	}
+
+	if ( $trust.length ) {
+		toggleScroll($trust);
+	}
+
+	if ( $clients.length ) {
+		toggleScroll($clients);
+	}
+
+	if ( $contacts.length ) {
+		toggleScroll($contacts);
+	}
+
+
+	function toggleScroll(item) {
+		item.on("scroll", function() {
+			console.log(item.scrollTop());
+			if( item.scrollTop() > 0 ) {
+				if (!$sidebar.hasClass("sidebar--isMove")) {
+					$logo.addClass("logo--isFaded");
+				}
+			} else {
+				if (!$sidebar.hasClass("sidebar--isMove")) {
+					$logo.removeClass("logo--isFaded");
+				}
+			}
+		});
+	}
+	
 }
 /*******************************************/
 /* 							scroll to top
@@ -814,4 +742,76 @@ function whySlider() {
 		$slider.find($list).find(".why__slide").eq(-1).remove();
 		$slider.find($wrapper).animate({ 'left': 0 }, 500);
 	});
+}
+function callbackForm() {
+	var $btn = $(".sidebar__btn");
+	var $form = $(".callback-form");
+	var $wrapper = $(".page__form-wrap");
+	var $close = $(".callback-form__close");
+
+	var $tel = $("#callback-tel");
+
+	if ($tel.length) {
+		$tel.mask("+999 (99) 999 - 99 - 99");
+
+		$form.validate({
+
+			rules: {
+				username: {
+					required: true
+				},
+				usertel: {
+					required: true
+				}
+			},
+
+			messages: {
+				username: {
+					required: "Пожалуйста, введите имя"
+				},
+				usertel: "Пожалуйста, введите номер телефона"
+			}
+
+		});
+	}
+
+
+
+	$btn.on("click", function () {
+		if (!$wrapper.hasClass("page__form-wrap--isActive")) {
+			$wrapper.addClass("page__form-wrap--isActive");
+		}
+
+		if (!$form.hasClass("callback-form--isActive")) {
+			$form.addClass("callback-form--isActive");
+		}
+
+	});
+
+	$close.on("click", function () {
+		$wrapper.removeClass("page__form-wrap--isActive");
+		$form.removeClass("callback-form--isActive");
+	});
+
+	if (navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1) {
+		console.log('Its Safari');
+		$form.submit(function(e) {
+
+			var ref = $(this).find("[required]");
+
+			$(ref).each(function(){
+				if ( $(this).val() == '' )
+				{
+					alert("Required field should not be blank.");
+
+					$(this).focus();
+
+					e.preventDefault();
+					return false;
+				}
+			});  return true;
+		});
+	}
+
+
 }

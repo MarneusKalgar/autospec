@@ -1,4 +1,7 @@
 ## Build Systems
 node_modules/
 app/js/libs/
+!app/js/libs/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.custom.css
+blocks/_assets/img
+
 .idea/
