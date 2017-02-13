@@ -3201,7 +3201,7 @@ label.error {
 }
 .contacts__photo {
   width: 100%;
-  margin: 0;
+  margin: -0.5em 0 0;
   padding: 0;
 }
 .contacts__img {
@@ -3211,9 +3211,14 @@ label.error {
   height: auto;
   max-height: 6.4em;
   margin: 0 auto;
+  -webkit-border-radius: 50%;
+          border-radius: 50%;
+  -webkit-transform: scale(0.8);
+      -ms-transform: scale(0.8);
+          transform: scale(0.8);
 }
 .contacts__name {
-  margin-top: 0.5em;
+  margin-top: 0;
   text-align: center;
   font-size: 0.875em;
 }

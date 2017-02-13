@@ -44,6 +44,78 @@ function bundles() {
 		$(this).height($table.find("tr:eq(" + i + ")").height());
 	});
 }
+function callbackForm() {
+	var $btn = $(".sidebar__btn");
+	var $form = $(".callback-form");
+	var $wrapper = $(".page__form-wrap");
+	var $close = $(".callback-form__close");
+
+	var $tel = $("#callback-tel");
+
+	if ($tel.length) {
+		$tel.mask("+999 (99) 999 - 99 - 99");
+
+		$form.validate({
+
+			rules: {
+				username: {
+					required: true
+				},
+				usertel: {
+					required: true
+				}
+			},
+
+			messages: {
+				username: {
+					required: "Пожалуйста, введите имя"
+				},
+				usertel: "Пожалуйста, введите номер телефона"
+			}
+
+		});
+	}
+
+
+
+	$btn.on("click", function () {
+		if (!$wrapper.hasClass("page__form-wrap--isActive")) {
+			$wrapper.addClass("page__form-wrap--isActive");
+		}
+
+		if (!$form.hasClass("callback-form--isActive")) {
+			$form.addClass("callback-form--isActive");
+		}
+
+	});
+
+	$close.on("click", function () {
+		$wrapper.removeClass("page__form-wrap--isActive");
+		$form.removeClass("callback-form--isActive");
+	});
+
+	if (navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1) {
+		console.log('Its Safari');
+		$form.submit(function(e) {
+
+			var ref = $(this).find("[required]");
+
+			$(ref).each(function(){
+				if ( $(this).val() == '' )
+				{
+					alert("Required field should not be blank.");
+
+					$(this).focus();
+
+					e.preventDefault();
+					return false;
+				}
+			});  return true;
+		});
+	}
+
+
+}
 function clients() {
 	var $form = $("#clientsForm");
 
@@ -481,6 +553,22 @@ function orderForm() {
 
 	$("#usertel").mask("+999 (99) 999 - 99 - 99");
 }
+/*******************************************/
+/* 							scroll to top
+/********************************************/
+function scrollToTop() {
+
+	var $scrollBtn = $('.scroll-to-top');
+
+	$scrollBtn.on("click", function(e) {
+		e.preventDefault();
+		var id = $(this).attr('href');
+		var offset = $(id).offset().top;
+		$('html, body').animate({'scrollTop': offset}, 500)
+	});
+
+}
+	
 function page() {
 	var $logo = $(".logo");
 	var $sidebar = $(".sidebar");
@@ -529,22 +617,6 @@ function page() {
 	}
 	
 }
-/*******************************************/
-/* 							scroll to top
-/********************************************/
-function scrollToTop() {
-
-	var $scrollBtn = $('.scroll-to-top');
-
-	$scrollBtn.on("click", function(e) {
-		e.preventDefault();
-		var id = $(this).attr('href');
-		var offset = $(id).offset().top;
-		$('html, body').animate({'scrollTop': offset}, 500)
-	});
-
-}
-	
 function sidebar() {
 	var $sidebar = $(".sidebar");
 
@@ -637,6 +709,40 @@ function tabs () {
 	//}
 
 }
+function whySlider() {
+
+	var $slider = $(".why__slider");
+	var $wrapper = $(".why__slider-wrap");
+	var $list = $(".why__list")
+	var $next = $(".why__control--next");
+	var $prev = $(".why__control--prev");
+	var $slide = $(".why__slide");
+
+	var slideWidth;
+
+	if ($(window).width() >= 500) {
+		slideWidth = 22;
+	} else {
+		slideWidth = 18.5;
+	}
+
+	console.log(slideWidth);
+
+	$next.on("click", function() {
+		$slider.find($wrapper).animate({'left': '-' + slideWidth + 'em' }, 500, function() {
+			$slider.find($list).find(".why__slide").eq(0).clone().appendTo($slider.find($wrapper).find($list));
+			$slider.find($list).find(".why__slide").eq(0).remove();
+			$slider.find($wrapper).css({'left': 0});
+		});
+	});
+
+	$prev.on("click", function() {
+		$slider.find($list).find(".why__slide").eq(-1).clone().prependTo($slider.find($wrapper).find($list));
+		$slider.find($wrapper).css({'left': '-' + slideWidth + 'em' });
+		$slider.find($list).find(".why__slide").eq(-1).remove();
+		$slider.find($wrapper).animate({ 'left': 0 }, 500);
+	});
+}
 function trust() {
 	var $container = $(".thumbs__cars");
 	var $thumbs = $(".trust__thumbs");
@@ -708,110 +814,3 @@ function trust() {
 
 }
 
-
-function whySlider() {
-
-	var $slider = $(".why__slider");
-	var $wrapper = $(".why__slider-wrap");
-	var $list = $(".why__list")
-	var $next = $(".why__control--next");
-	var $prev = $(".why__control--prev");
-	var $slide = $(".why__slide");
-
-	var slideWidth;
-
-	if ($(window).width() >= 500) {
-		slideWidth = 22;
-	} else {
-		slideWidth = 18.5;
-	}
-
-	console.log(slideWidth);
-
-	$next.on("click", function() {
-		$slider.find($wrapper).animate({'left': '-' + slideWidth + 'em' }, 500, function() {
-			$slider.find($list).find(".why__slide").eq(0).clone().appendTo($slider.find($wrapper).find($list));
-			$slider.find($list).find(".why__slide").eq(0).remove();
-			$slider.find($wrapper).css({'left': 0});
-		});
-	});
-
-	$prev.on("click", function() {
-		$slider.find($list).find(".why__slide").eq(-1).clone().prependTo($slider.find($wrapper).find($list));
-		$slider.find($wrapper).css({'left': '-' + slideWidth + 'em' });
-		$slider.find($list).find(".why__slide").eq(-1).remove();
-		$slider.find($wrapper).animate({ 'left': 0 }, 500);
-	});
-}
-function callbackForm() {
-	var $btn = $(".sidebar__btn");
-	var $form = $(".callback-form");
-	var $wrapper = $(".page__form-wrap");
-	var $close = $(".callback-form__close");
-
-	var $tel = $("#callback-tel");
-
-	if ($tel.length) {
-		$tel.mask("+999 (99) 999 - 99 - 99");
-
-		$form.validate({
-
-			rules: {
-				username: {
-					required: true
-				},
-				usertel: {
-					required: true
-				}
-			},
-
-			messages: {
-				username: {
-					required: "Пожалуйста, введите имя"
-				},
-				usertel: "Пожалуйста, введите номер телефона"
-			}
-
-		});
-	}
-
-
-
-	$btn.on("click", function () {
-		if (!$wrapper.hasClass("page__form-wrap--isActive")) {
-			$wrapper.addClass("page__form-wrap--isActive");
-		}
-
-		if (!$form.hasClass("callback-form--isActive")) {
-			$form.addClass("callback-form--isActive");
-		}
-
-	});
-
-	$close.on("click", function () {
-		$wrapper.removeClass("page__form-wrap--isActive");
-		$form.removeClass("callback-form--isActive");
-	});
-
-	if (navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1) {
-		console.log('Its Safari');
-		$form.submit(function(e) {
-
-			var ref = $(this).find("[required]");
-
-			$(ref).each(function(){
-				if ( $(this).val() == '' )
-				{
-					alert("Required field should not be blank.");
-
-					$(this).focus();
-
-					e.preventDefault();
-					return false;
-				}
-			});  return true;
-		});
-	}
-
-
-}
