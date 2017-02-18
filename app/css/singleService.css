@@ -241,6 +241,8 @@ th {
   font: normal 100%/1.5 'Proxima Nova', Arial, sans-serif;
   color: #2e2e2e;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #ccc;
 /***** block to style headings *****/
 }
 @media screen and (max-height: 640px) and (orientation: landscape) {
@@ -251,17 +253,8 @@ th {
 .page--singleService {
   height: auto;
   width: 100%;
+  background-color: #fff;
   overflow-x: hidden;
-}
-.page--isOverlay::before {
-  content: "";
-  position: absolute;
-  z-index: 300;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-color: rgba(44,58,60,0.8);
 /***** elem wrap *****/
 }
 .page__wrap {
@@ -489,7 +482,7 @@ th {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 400;
+  z-index: 300;
   width: 100%;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -523,6 +516,16 @@ th {
   .header {
     padding: 5% 6% 0;
   }
+}
+.header--isOverlay::before {
+  content: "";
+  position: absolute;
+  z-index: 400;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(44,58,60,0.8);
 }
 .header--singleService {
   top: 1em;
@@ -777,7 +780,6 @@ th {
 /*******************LOGO******************/
 .logo {
   position: relative;
-  z-index: 200;
   display: block;
   width: 16.875em;
   height: 3.8125em;
@@ -829,9 +831,6 @@ th {
   max-width: 100%;
   height: auto;
 }
-.logo__img--isTransparent {
-  opacity: 0.5;
-}
 @-webkit-keyframes fadeInLogo {
   0% {
     opacity: 0;
@@ -859,10 +858,8 @@ th {
   background: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkNhcGFfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCAzMS4xIDMxLjEiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDMxLjEgMzEuMTsiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+LnN0MHtmaWxsOiNFRTY4MDA7fTwvc3R5bGU+PGc+PGc+PHBhdGggY2xhc3M9InN0MCIgZD0iTTMwLjIsNS4zSDAuOUMwLjQsNS4zLDAsNC45LDAsNC40czAuNC0wLjksMC45LTAuOWgyOS4zYzAuNSwwLDAuOSwwLjQsMC45LDAuOUMzMS4xLDQuOSwzMC43LDUuMywzMC4yLDUuM3oiLz48L2c+PGc+PHBhdGggY2xhc3M9InN0MCIgZD0iTTMwLjIsMTYuNEgwLjlDMC40LDE2LjQsMCwxNiwwLDE1LjVjMC0wLjUsMC40LTAuOSwwLjktMC45aDI5LjNjMC41LDAsMC45LDAuNCwwLjksMC45QzMxLjEsMTYsMzAuNywxNi40LDMwLjIsMTYuNHoiLz48L2c+PGc+PHBhdGggY2xhc3M9InN0MCIgZD0iTTMwLjIsMjcuNkgwLjljLTAuNSwwLTAuOS0wLjQtMC45LTAuOXMwLjQtMC45LDAuOS0wLjloMjkuM2MwLjUsMCwwLjksMC40LDAuOSwwLjlDMzEuMSwyNy4yLDMwLjcsMjcuNiwzMC4yLDI3LjZ6Ii8+PC9nPjwvZz48L3N2Zz4=");
   font-size: 0;
   -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-  -webkit-border-radius: none;
-          border-radius: none;
+  -webkit-border-radius: 0;
+          border-radius: 0;
   cursor: pointer;
   -webkit-transform: translateX(0);
       -ms-transform: translateX(0);
@@ -1430,7 +1427,7 @@ th {
 .materials__img {
   display: block;
   margin: 0 auto;
-  max-width: 100%;
+  width: 100%;
   height: auto;
 }
 .bundles {

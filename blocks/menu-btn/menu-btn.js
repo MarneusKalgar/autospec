@@ -1,6 +1,7 @@
 function menuBtn() {
 	var $btn = $(".menu-btn");
-	var $logo = $(".logo__img");
+	//var $logo = $(".logo");
+	var $header = $(".header");
 	var $sidebar = $(".sidebar");
 
 	var $body = $('body');
@@ -19,7 +20,8 @@ function menuBtn() {
 		$sidebar.toggleClass("sidebar--isMove");
 
 		if ( !$body.hasClass("page--singleService") ) {
-			$body.toggleClass("page--isOverlay");
+			//$body.toggleClass("page--isOverlay");
+			$header.toggleClass("header--isOverlay");
 		}
 
 		if ($sidebar.hasClass("sidebar--isMove")) {
@@ -31,7 +33,6 @@ function menuBtn() {
 		} else {
 			$('body').off('scroll touchmove mousewheel');
 		}
-		$logo.toggleClass("logo__img--isTransparent");
 
 		//if ($main.length ) {
 		//	$main.toggleClass("main--isOverlay");
@@ -60,7 +61,6 @@ function menuBtn() {
 	if ($btn.hasClass("menu-btn--fixed")) {
 		var $list = $(".header__list");
 		$btn.on("click", function() {
-			$logo.removeClass("logo__img--isTransparent");
 			$services.removeClass("services--isOverlay");
 			$contacts.removeClass("contacts--isOverlay");
 			$list.toggleClass("header__list--isVisible");

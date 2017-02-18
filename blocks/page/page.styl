@@ -12,6 +12,7 @@
 	color $base-text-color
 	-webkit-font-smoothing antialiased
 	-moz-osx-font-smoothing grayscale
+	background-color: #ccc
 		//overflow hidden
 	@media screen and (max-height: 640px) and (orientation: landscape)
 		height 100vh
@@ -19,17 +20,8 @@
 	&--singleService
 		height auto
 		width: 100%
+		background-color: #fff;
 		overflow-x: hidden
-
-	&--isOverlay::before
-		content: ""
-		position: absolute
-		z-index: 300
-		top: 0
-		right: 0
-		bottom: 0
-		left: 0
-		background-color: rgba($base-overlay-element-color, .8)
 
 		
 		/***** elem wrap *****/

@@ -1,5 +1,5 @@
 function callbackForm() {
-	var $btn = $(".sidebar__btn");
+	var $btn = $("#callBtn");
 	var $form = $(".callback-form");
 	var $wrapper = $(".page__form-wrap");
 	var $close = $(".callback-form__close");

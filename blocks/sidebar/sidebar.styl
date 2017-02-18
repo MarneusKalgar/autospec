@@ -3,6 +3,7 @@
 	position relative
 	z-index 4000
 	width $sidebar-width
+	min-height: 20rem
 	background $sidebar-bg-color url("../img/sidebar/sidebar-bg.jpg") repeat 0 0
 	overflow hidden
 	transform-origin right
@@ -88,6 +89,16 @@
 		@media screen and (max-height: 600px)
 			margin 3% auto 0
 
+		&--write
+			display: block
+			@media screen and (max-width: 768px)
+				display: none
+
+		&--call
+			display: none
+			@media screen and (max-width: 768px)
+				display: block
+
 	&__socials
 		margin 13% 0 0
 		@media screen and (max-height: 750px)
@@ -108,5 +119,5 @@
 		transform scaleX(0)
 	65%,
 	100%
-		transform scaleX(100%)
+		transform scaleX(1)
 
