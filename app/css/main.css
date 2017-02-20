@@ -781,8 +781,8 @@ th {
     min-height: 8em;
     padding: 0.5em 0;
     background-color: rgba(31,40,42,0.8);
-    -webkit-transition: all 0.4s linear;
-    transition: all 0.4s linear;
+    -webkit-transition: all 0.3s linear;
+    transition: all 0.3s linear;
     will-change: transform;
     -webkit-transform-origin: top;
         -ms-transform-origin: top;
@@ -1091,8 +1091,6 @@ th {
   transition: opacity 0.4s ease, -webkit-transform 0.3s;
   transition: transform 0.3s, opacity 0.4s ease;
   transition: transform 0.3s, opacity 0.4s ease, -webkit-transform 0.3s;
-  -webkit-animation: fadeInBtn 2s ease 3s forwards;
-          animation: fadeInBtn 2s ease 3s forwards;
 }
 .menu-btn:focus {
   outline: none;
@@ -1107,6 +1105,10 @@ th {
     width: 1.3rem;
     height: 1.3rem;
   }
+}
+.menu-btn--isAnimated {
+  -webkit-animation: fadeInBtn 2s ease 3s forwards;
+          animation: fadeInBtn 2s ease 3s forwards;
 }
 .menu-btn--isActive {
   -webkit-transform: translateX(-20.5rem);

@@ -13,38 +13,84 @@ function menuBtn() {
 	var $clients = $(".clients");
 	var $contacts = $(".contacts");
 
+	if (!$main.length) {
+		$btn.removeClass("menu-btn--isAnimated").css({"opacity": "1"});
+	}
+
+	window.addEventListener("resize", function() {
+		if ( $header.hasClass("header--isOverlay") && window.outerWidth > 768 ) {
+			console.log("works!");
+			$header.removeClass("header--isOverlay");
+			$sidebar.removeClass("sidebar--isMove");
+			$btn.removeClass("menu-btn--isActive");
+			if ($tabs.length ) {
+				$tabs.removeClass("tab-panel__menu--isOverlay");
+			}
+			if ($trust.length ) {
+				$trust.removeClass("trust__cars--isOverlay");
+			}
+		}
+	}, false);
+
 	$btn.on("click", function() {
 
-		$btn.toggleClass("menu-btn--isActive");
+		if ( $btn.hasClass("menu-btn--isActive") ) {
+			$btn.removeClass("menu-btn--isActive");
+		} else {
+			$btn.addClass("menu-btn--isActive");
+		}
 
-		$sidebar.toggleClass("sidebar--isMove");
+		if ( $sidebar.hasClass("sidebar--isMove") ) {
+			$sidebar.removeClass("sidebar--isMove");
+		} else {
+			$sidebar.addClass("sidebar--isMove");
+		}
+
+		//$btn.toggleClass("menu-btn--isActive");
+
+		//$sidebar.toggleClass("sidebar--isMove");
 
 		if ( !$body.hasClass("page--singleService") ) {
 			//$body.toggleClass("page--isOverlay");
-			$header.toggleClass("header--isOverlay");
+			if ( $header.hasClass("header--isOverlay") ) {
+				$header.removeClass("header--isOverlay");
+			} else {
+				$header.addClass("header--isOverlay");
+			}
+
 		}
 
-		if ($sidebar.hasClass("sidebar--isMove")) {
-			$body.on('scroll touchmove mousewheel', function(e) {
-				e.preventDefault();
-				e.stopPropagation();
-				return false;
-			});
-		} else {
-			$('body').off('scroll touchmove mousewheel');
-		}
+		//if ($sidebar.hasClass("sidebar--isMove")) {
+		//	$body.on('scroll touchmove mousewheel', function(e) {
+		//		e.preventDefault();
+		//		e.stopPropagation();
+		//		return false;
+		//	});
+		//	console.log("disable");
+		//} else {
+		//	$('body').off('scroll touchmove mousewheel');
+		//	console.log("enable");
+		//}
 
 		//if ($main.length ) {
 		//	$main.toggleClass("main--isOverlay");
 		//}
 		if ($tabs.length ) {
-			$tabs.toggleClass("tab-panel__menu--isOverlay");
+			if ( $tabs.hasClass("tab-panel__menu--isOverlay") ) {
+				$tabs.removeClass("tab-panel__menu--isOverlay");
+			} else {
+				$tabs.addClass("tab-panel__menu--isOverlay");
+			}
 		}
 		//if ($services.length ) {
 		//	$services.toggleClass("services--isOverlay");
 		//}
 		if ($trust.length ) {
-			$trust.toggleClass("trust__cars--isOverlay");
+			if ( $trust.hasClass("trust__cars--isOverlay") ) {
+				$trust.removeClass("trust__cars--isOverlay");
+			} else {
+				$trust.addClass("trust__cars--isOverlay");
+			}
 		}
 		//if ($clients.length ) {
 		//	$clients.toggleClass("clients--isOverlay");

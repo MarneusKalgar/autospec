@@ -716,8 +716,8 @@ th {
     min-height: 8em;
     padding: 0.5em 0;
     background-color: rgba(31,40,42,0.8);
-    -webkit-transition: all 0.4s linear;
-    transition: all 0.4s linear;
+    -webkit-transition: all 0.3s linear;
+    transition: all 0.3s linear;
     will-change: transform;
     -webkit-transform-origin: top;
         -ms-transform-origin: top;
@@ -869,8 +869,6 @@ th {
   transition: opacity 0.4s ease, -webkit-transform 0.3s;
   transition: transform 0.3s, opacity 0.4s ease;
   transition: transform 0.3s, opacity 0.4s ease, -webkit-transform 0.3s;
-  -webkit-animation: fadeInBtn 2s ease 3s forwards;
-          animation: fadeInBtn 2s ease 3s forwards;
 }
 .menu-btn:focus {
   outline: none;
@@ -885,6 +883,10 @@ th {
     width: 1.3rem;
     height: 1.3rem;
   }
+}
+.menu-btn--isAnimated {
+  -webkit-animation: fadeInBtn 2s ease 3s forwards;
+          animation: fadeInBtn 2s ease 3s forwards;
 }
 .menu-btn--isActive {
   -webkit-transform: translateX(-20.5rem);
@@ -1595,8 +1597,8 @@ th {
 }
 .tabs__menu {
   position: absolute;
-  top: 1.5em;
-  right: 4.5em;
+  top: 2em;
+  right: 4em;
   z-index: 100;
   margin: 0;
   padding: 0;
@@ -1607,6 +1609,7 @@ th {
 }
 @media screen and (max-width: 779px) {
   .tabs__menu {
+    top: 2.5em;
     right: 1em;
   }
 }
@@ -1623,8 +1626,11 @@ th {
           box-sizing: border-box;
   text-transform: uppercase;
   cursor: pointer;
-  -webkit-transition: all 0.4s ease-in 0.1s;
-  transition: all 0.4s ease-in 0.1s;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+.tabs__tab:hover {
+  color: #ee6800;
 }
 .tabs__tab::before {
   content: '';
@@ -1635,11 +1641,6 @@ th {
   background-color: rgba(0,0,0,0);
   -webkit-transition: all 0.4s ease-in 0.1s;
   transition: all 0.4s ease-in 0.1s;
-}
-@media screen and (max-width: 779px) {
-  .tabs__tab {
-    margin-top: 0.5em;
-  }
 }
 @media screen and (max-width: 584px) {
   .tabs__tab {
@@ -1699,7 +1700,7 @@ th {
   .tabs__figure {
     width: 25.375em;
     height: 14.874999999999998em;
-    margin-left: 1em;
+    margin: 8em auto 0;
   }
 }
 @media screen and (max-width: 479px) {
@@ -1820,6 +1821,62 @@ th {
     top: -25%;
   }
 }
+.tabs__service--service1_chassis {
+  top: 0;
+  left: 0;
+}
+@media screen and (min-width: 780px) {
+  .tabs__service--service1_chassis {
+    top: -5%;
+    left: 31%;
+  }
+}
+@media screen and (min-width: 480px) and (max-width: 779px) {
+  .tabs__service--service1_chassis {
+    top: -20%;
+    left: 30%;
+  }
+}
+.tabs__service--service1_transmission {
+  top: 0;
+  left: 0;
+}
+.tabs__service--service1_transmission .tabs__pointer {
+  width: 4em;
+  bottom: 0;
+  left: 10.4em;
+}
+@media screen and (min-width: 780px) {
+  .tabs__service--service1_transmission {
+    top: -22%;
+    left: 0;
+  }
+  .tabs__service--service1_transmission .tabs__dot {
+    left: 210%;
+    bottom: -65%;
+  }
+}
+@media screen and (min-width: 480px) and (max-width: 779px) {
+  .tabs__service--service1_transmission {
+    top: -40%;
+    left: -5%;
+  }
+  .tabs__service--service1_transmission .tabs__line {
+    width: 11em;
+  }
+  .tabs__service--service1_transmission .tabs__pointer {
+    width: 6em;
+    bottom: -1.4em;
+    left: 9em;
+    -webkit-transform: rotateZ(70deg);
+        -ms-transform: rotate(70deg);
+            transform: rotateZ(70deg);
+  }
+  .tabs__service--service1_transmission .tabs__dot {
+    left: 195%;
+    bottom: -120%;
+  }
+}
 .tabs__service--service2 {
   top: 4%;
   left: 4.5%;
@@ -1876,6 +1933,38 @@ th {
     top: -12%;
   }
 }
+.tabs__service--service2_chassis {
+  top: 0;
+  left: 0;
+}
+@media screen and (min-width: 780px) {
+  .tabs__service--service2_chassis {
+    top: 28%;
+    left: -5%;
+  }
+}
+@media screen and (min-width: 480px) and (max-width: 779px) {
+  .tabs__service--service2_chassis {
+    top: 10%;
+    left: -6%;
+  }
+}
+.tabs__service--service2_transmission {
+  top: 0;
+  left: 0;
+}
+@media screen and (min-width: 780px) {
+  .tabs__service--service2_transmission {
+    top: 0;
+    left: -10%;
+  }
+}
+@media screen and (min-width: 480px) and (max-width: 779px) {
+  .tabs__service--service2_transmission {
+    top: -15%;
+    left: -5%;
+  }
+}
 .tabs__service--service3 {
   top: 24%;
   left: -15%;
@@ -1922,6 +2011,22 @@ th {
   .tabs__service--service3 .tabs__dot {
     left: -3em;
     bottom: 0.3em;
+  }
+}
+.tabs__service--service3_diagnostics {
+  top: 0;
+  left: 0;
+}
+@media screen and (min-width: 780px) {
+  .tabs__service--service3_diagnostics {
+    top: 32%;
+    left: -14%;
+  }
+}
+@media screen and (min-width: 480px) and (max-width: 779px) {
+  .tabs__service--service3_diagnostics {
+    top: 10%;
+    left: -6%;
   }
 }
 .tabs__service--service4 {
@@ -1978,6 +2083,67 @@ th {
 @media screen and (max-width: 779px) {
   .tabs__service--service4_sedan_positioned {
     top: 100%;
+  }
+}
+.tabs__service--service4_chassis1 {
+  top: 0;
+  left: 0;
+}
+.tabs__service--service4_chassis1 .tabs__caption {
+  width: auto;
+}
+@media screen and (min-width: 780px), (min-width: 480px) and (max-width: 779px) {
+  .tabs__service--service4_chassis1 {
+    top: 98%;
+    left: -6%;
+  }
+  .tabs__service--service4_chassis1 .tabs__caption {
+    width: 7em;
+  }
+}
+.tabs__service--service4_chassis2 {
+  top: 0;
+  left: 0;
+}
+@media screen and (min-width: 780px) {
+  .tabs__service--service4_chassis2 {
+    top: 120%;
+    left: 12%;
+  }
+}
+@media screen and (min-width: 480px) and (max-width: 779px) {
+  .tabs__service--service4_chassis2 {
+    top: 127%;
+    left: 15%;
+  }
+}
+.tabs__service--service4_transmission {
+  top: 0;
+  left: 0;
+}
+@media screen and (min-width: 780px), (min-width: 480px) and (max-width: 779px) {
+  .tabs__service--service4_transmission {
+    top: 85%;
+    left: -2%;
+  }
+  .tabs__service--service4_transmission .tabs__caption {
+    width: 7em;
+  }
+}
+.tabs__service--service4_diagnostics {
+  top: 0;
+  left: 0;
+}
+@media screen and (min-width: 780px) {
+  .tabs__service--service4_diagnostics {
+    top: 85%;
+    left: -14%;
+  }
+}
+@media screen and (min-width: 480px) and (max-width: 779px) {
+  .tabs__service--service4_diagnostics {
+    top: 100%;
+    left: -6%;
   }
 }
 .tabs__service--service5 {
@@ -2037,6 +2203,64 @@ th {
     top: 100%;
   }
 }
+.tabs__service--service5_chassis {
+  top: 0;
+  left: 0;
+}
+@media screen and (min-width: 780px) {
+  .tabs__service--service5_chassis {
+    top: 103%;
+    left: 60%;
+  }
+}
+@media screen and (min-width: 480px) and (max-width: 779px) {
+  .tabs__service--service5_chassis {
+    top: 110%;
+    left: 63%;
+  }
+}
+.tabs__service--service5_transmission {
+  top: 0;
+  left: 0;
+}
+@media screen and (min-width: 780px) {
+  .tabs__service--service5_transmission {
+    top: 75%;
+    left: 72%;
+  }
+}
+@media screen and (min-width: 480px) and (max-width: 779px) {
+  .tabs__service--service5_transmission {
+    top: 85%;
+    left: 70%;
+  }
+  .tabs__service--service5_transmission .tabs__caption,
+  .tabs__service--service5_transmission .tabs__price {
+    left: -0.9em;
+  }
+}
+.tabs__service--service5_diagnostics {
+  top: 0;
+  left: 0;
+}
+@media screen and (min-width: 780px) {
+  .tabs__service--service5_diagnostics {
+    top: 85%;
+    left: 57%;
+  }
+  .tabs__service--service5_diagnostics .tabs__caption {
+    width: 10em;
+  }
+}
+@media screen and (min-width: 480px) and (max-width: 779px) {
+  .tabs__service--service5_diagnostics {
+    top: 95%;
+    left: 50%;
+  }
+  .tabs__service--service5_diagnostics .tabs__caption {
+    width: 10em;
+  }
+}
 .tabs__service--service6 {
   top: 70%;
   left: 100%;
@@ -2090,6 +2314,46 @@ th {
     bottom: 0.3em;
   }
 }
+.tabs__service--service6_transmission {
+  top: 0;
+  left: 0;
+}
+@media screen and (min-width: 780px) {
+  .tabs__service--service6_transmission {
+    top: 56%;
+    left: 90%;
+  }
+}
+@media screen and (min-width: 480px) and (max-width: 779px) {
+  .tabs__service--service6_transmission {
+    top: 56%;
+    left: 80%;
+  }
+}
+.tabs__service--service6_diagnostics {
+  top: 0;
+  left: 0;
+}
+@media screen and (min-width: 780px) {
+  .tabs__service--service6_diagnostics {
+    top: 65%;
+    left: 90%;
+  }
+  .tabs__service--service6_diagnostics .tabs__caption,
+  .tabs__service--service6_diagnostics .tabs__price {
+    left: -1.3em;
+  }
+}
+@media screen and (min-width: 480px) and (max-width: 779px) {
+  .tabs__service--service6_diagnostics {
+    top: 65%;
+    left: 75%;
+  }
+  .tabs__service--service6_diagnostics .tabs__caption,
+  .tabs__service--service6_diagnostics .tabs__price {
+    left: -0.5em;
+  }
+}
 .tabs__caption {
   display: block;
   position: absolute;
@@ -2107,6 +2371,7 @@ th {
 @media screen and (max-width: 779px) and (min-width: 480px) {
   .tabs__caption {
     font-size: 0.875em;
+    bottom: 1.8em;
   }
 }
 @media screen and (max-width: 479px) {

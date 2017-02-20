@@ -14,7 +14,6 @@
 	transform translateX(0)
 	opacity 0
 	transition transform .3s, opacity .4s ease
-	animation fadeInBtn 2s ease 3s forwards
 	&:focus
 		outline none
 	@media screen and (min-width: 940px)
@@ -22,6 +21,9 @@
 	@media screen and (max-width: $media-md)
 		width 1.3rem
 		height 1.3rem
+
+	&--isAnimated
+		animation fadeInBtn 2s ease 3s forwards
 
 	&--isActive
 		transform translateX(-20.5rem)

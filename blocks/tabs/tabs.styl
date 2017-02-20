@@ -20,8 +20,8 @@
 		//tab-menu
 	&__menu
 		position absolute
-		top 1.5em
-		right 4.5em
+		top 2em
+		right 4em
 		z-index 100
 		margin 0
 		padding 0
@@ -30,6 +30,7 @@
 		letter-spacing .05em
 		line-height 2.4
 		@media screen and (max-width: 779px)
+			top 2.5em
 			right 1em
 		@media screen and (max-width: 584px)
 			right 0
@@ -41,7 +42,9 @@
 		box-sizing border-box
 		text-transform uppercase
 		cursor pointer
-		transition all .4s ease-in .1s
+		transition all .4s ease
+		&:hover
+			color $base-decor-color
 		&::before
 			content ''
 			position absolute
@@ -50,8 +53,6 @@
 			bottom .2em
 			background-color rgba(0,0,0,0)
 			transition all .4s ease-in .1s
-		@media screen and (max-width: 779px)
-			margin-top .5em
 		@media screen and (max-width: 584px)
 			display inline-block
 			margin-right 4%
@@ -98,7 +99,8 @@
 		@media screen and (max-width: 779px)
 			width @width * .7
 			height @height * .7
-			margin-left 1em
+			//margin-left 1em
+			margin 8em auto 0
 		@media screen and (max-width: 479px)
 			width 100%
 			min-height 35em
@@ -185,6 +187,44 @@
 			@media screen and (max-width: 779px)
 				top -25%
 
+		&--service1_chassis
+			top: 0
+			left: 0
+			@media screen and (min-width: 780px)
+				top -5%
+				left 31%
+			@media screen and (min-width: 480px) and (max-width: 779px)
+				top -20%
+				left 30%
+
+		&--service1_transmission
+			top: 0
+			left: 0
+			.tabs__pointer
+				width 4em
+				bottom 0
+				left 10.4em
+			@media screen and (min-width: 780px)
+				top -22%
+				left 0
+				.tabs__dot
+					left 210%
+					bottom -65%
+			@media screen and (min-width: 480px) and (max-width: 779px)
+				top -40%
+				left -5%
+				.tabs__line
+					width: 11em
+				.tabs__pointer
+					width 6em
+					bottom -1.4em
+					left 9em
+					transform: rotateZ(70deg)
+				.tabs__dot
+					left 195%
+					bottom -120%
+
+
 			//ITEM2
 		&--service2
 			top 4%
@@ -223,6 +263,26 @@
 			@media screen and (max-width: 779px)
 				top -12%
 
+		&--service2_chassis
+			top: 0
+			left: 0
+			@media screen and (min-width: 780px)
+				top 28%
+				left -5%
+			@media screen and (min-width: 480px) and (max-width: 779px)
+				top 10%
+				left -6%
+
+		&--service2_transmission
+			top: 0
+			left: 0
+			@media screen and (min-width: 780px)
+				top 0
+				left -10%
+			@media screen and (min-width: 480px) and (max-width: 779px)
+				top -15%
+				left -5%
+
 			//ITEM3
 		&--service3
 			top 24%
@@ -255,6 +315,17 @@
 				.tabs__dot
 					left -3em
 					bottom .3em
+
+		&--service3_diagnostics
+			top: 0
+			left: 0
+			@media screen and (min-width: 780px)
+				top 32%
+				left -14%
+			@media screen and (min-width: 480px) and (max-width: 779px)
+				top 10%
+				left -6%
+
 
 			//ITEM4
 		&--service4
@@ -293,6 +364,47 @@
 			top 90%
 			@media screen and (max-width: 779px)
 				top 100%
+
+		&--service4_chassis1
+			top 0
+			left 0
+			.tabs__caption
+				width: auto
+			@media screen and (min-width: 780px), (min-width: 480px) and (max-width: 779px)
+				top 98%
+				left -6%
+				.tabs__caption
+					width 7em
+
+		&--service4_chassis2
+			top: 0
+			left: 0
+			@media screen and (min-width: 780px)
+				top 120%
+				left 12%
+			@media screen and (min-width: 480px) and (max-width: 779px)
+				top 127%
+				left 15%
+
+		&--service4_transmission
+			top: 0
+			left: 0
+			@media screen and (min-width: 780px), (min-width: 480px) and (max-width: 779px)
+				top 85%
+				left -2%
+				.tabs__caption
+					width 7em
+
+		&--service4_diagnostics
+			top: 0
+			left: 0
+			@media screen and (min-width: 780px)
+				top 85%
+				left -14%
+			@media screen and (min-width: 480px) and (max-width: 779px)
+				top 100%
+				left -6%
+
 
 			//ITEM5
 		&--service5
@@ -333,6 +445,43 @@
 			@media screen and (max-width: 779px)
 				top 100%
 
+		&--service5_chassis
+			top: 0
+			left: 0
+			@media screen and (min-width: 780px)
+				top 103%
+				left 60%
+			@media screen and (min-width: 480px) and (max-width: 779px)
+				top 110%
+				left 63%
+
+		&--service5_transmission
+			top: 0
+			left: 0
+			@media screen and (min-width: 780px)
+				top 75%
+				left 72%
+			@media screen and (min-width: 480px) and (max-width: 779px)
+				top 85%
+				left 70%
+				.tabs__caption
+				.tabs__price
+					left -.9em
+
+		&--service5_diagnostics
+			top: 0
+			left: 0
+			@media screen and (min-width: 780px)
+				top 85%
+				left 57%
+				.tabs__caption
+					width: 10em
+			@media screen and (min-width: 480px) and (max-width: 779px)
+				top 95%
+				left 50%
+				.tabs__caption
+					width: 10em
+
 			//ITEM6
 		&--service6
 			top 70%
@@ -370,6 +519,32 @@
 					left -3em
 					bottom .3em
 
+		&--service6_transmission
+			top: 0
+			left: 0
+			@media screen and (min-width: 780px)
+				top 56%
+				left 90%
+			@media screen and (min-width: 480px) and (max-width: 779px)
+				top 56%
+				left 80%
+
+		&--service6_diagnostics
+			top: 0
+			left: 0
+			@media screen and (min-width: 780px)
+				top 65%
+				left 90%
+				.tabs__caption
+				.tabs__price
+					left -1.3em
+			@media screen and (min-width: 480px) and (max-width: 779px)
+				top 65%
+				left 75%
+				.tabs__caption
+				.tabs__price
+					left -.5em
+
 
 	&__caption
 		display block
@@ -383,6 +558,7 @@
 		transform translate(0, 0) scale(1)
 		@media screen and (max-width: 779px) and (min-width: 480px)
 			font-size .875em
+			bottom 1.8em
 		@media screen and (max-width: 479px)
 			width 100%
 

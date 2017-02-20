@@ -32,7 +32,6 @@ function page() {
 
 	function toggleScroll(item) {
 		item.on("scroll", function() {
-			console.log(item.scrollTop());
 			if( item.scrollTop() > 0 ) {
 				if (!$sidebar.hasClass("sidebar--isMove")) {
 					$logo.addClass("logo--isFaded");
