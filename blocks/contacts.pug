@@ -61,8 +61,12 @@ block scripts
 		});
 
 	script.
-		$(window).on("load", function () {
+		$(window).on("load resize", function () {
 			$(".contacts__address-wrap").mCustomScrollbar({
 				theme: "my-theme"
 			});
+
+			if ( $(window).width() < 768 ) {
+				$(".contacts__address-wrap").mCustomScrollbar("destroy");
+			}
 		});

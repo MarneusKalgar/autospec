@@ -1,0 +1,117 @@
+/*******************ACCORDION******************/
+.vacancies
+	margin-top: 2.5em;
+	text-align: left;
+	color: $base-text-color;
+	position: relative;
+	z-index: 500
+
+	&--isOverlay
+		z-index: 200
+
+	&__title
+		text-align: center;
+
+		//panel
+	&__panel
+		position: relative;
+		display: flex;
+		flex-direction: row;
+		flex-wrap: nowrap;
+		justify-content: flex-start;
+		align-items: center;
+		margin: 0
+		padding: 1.2em 2em;
+		color: $base-text-color-light;
+		background: $base-text-color;
+		cursor: pointer
+		transition: background .4s ease;
+		&:nth-child(odd)
+			border-bottom: 1px solid #ccc;
+		&:hover
+			background-color: lighten( $base-text-color, 10%);
+		@media screen and (max-width: 600px)
+			justify-content: space-between
+			padding: 1em
+
+		&--isActive
+			background: $base-decor-color;
+			&:hover
+				background-color: darken($base-decor-color, 10%);
+
+	&__number
+		display: block;
+		width: 2.8em;
+		min-width 2.8em
+		height: 2.8em;
+		text-align: center;
+		line-height: 2.8em;
+		color: $base-text-color-light;
+		border: 1px solid $base-text-color-light;
+		border-radius: 50%;
+
+	&__caption
+		margin-left: 5%;
+
+	&__text
+		margin: 0;
+		font-size: $base-font-size;
+
+	&__position
+		margin: .4em 0 0;
+		font-size: $base-font-size * 1.5;
+		line-height: 1;
+
+	&__control
+		display: block;
+		width: 2em;
+		height: 1.1em;
+		margin-left: auto;
+		cursor: pointer;
+		will-change: transform;
+		transform: rotateZ(0deg);
+		transition: all .4s ease;
+
+		&--isActive
+			transform: rotateZ(180deg);
+
+	&__icon
+		width: 100%;
+		fill: $base-text-color-light;
+
+
+		//content
+	&__content
+		display: none
+		padding: 2em
+		background: #ebebeb
+		@media screen and (min-width: 1441px)
+			flex-direction: row
+			flex-wrap: wrap
+			justify-content: space-between
+			align-items: flex-start
+		@media screen and (max-width: 600px)
+			padding: 2em 1em
+
+		&--isActive
+			display: flex
+
+	&__desc
+		box-sizing: border-box
+		max-width: 33.3333em
+		min-width 15.3em
+		margin-right: 2em;
+		@media screen and (max-width: 1440px)
+			width: 100%
+			margin: 0
+
+	&__subtitle
+		margin: 0;
+		font-weight: bold;
+
+	&__list
+		margin: .8em 0 2em 0;
+		padding: 0 0 0 1.1em;
+		line-height: 1.7;
+		&:last-child
+			margin-bottom: 0;

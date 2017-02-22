@@ -1,10 +1,10 @@
 function contacts() {
-	var place = { lat: 50.471599, lng: 30.500438 }
+	var place = { lat: 50.471540, lng: 30.500401 };
 
 	var map = new google.maps.Map(document.getElementById("map"), {
-		zoom: 17,
+		zoom: 16,
 		center: place,
-		disableDefaultUI: true,
+		disableDefaultUI: true
 	});
 
 	var icon = 'img/contacts/marker.svg';

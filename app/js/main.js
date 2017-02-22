@@ -190,12 +190,12 @@ function component() {
 	$("#usertel").mask("+999 (99) 999 - 99 - 99");
 }
 function contacts() {
-	var place = { lat: 50.471599, lng: 30.500438 }
+	var place = { lat: 50.471540, lng: 30.500401 };
 
 	var map = new google.maps.Map(document.getElementById("map"), {
-		zoom: 17,
+		zoom: 16,
 		center: place,
-		disableDefaultUI: true,
+		disableDefaultUI: true
 	});
 
 	var icon = 'img/contacts/marker.svg';
@@ -454,9 +454,12 @@ function menuBtn() {
 
 	var $main = $(".main");
 	var $tabs = $(".tab-panel__menu");
+	var $panel = $(".vacancies");
 	var $services = $(".services");
 	var $trust = $(".trust__cars");
 	var $clients = $(".clients");
+	var $clientsForm = $(".clients__form");
+	var $clietsList = $(".clients__list");
 	var $contacts = $(".contacts");
 
 	if (!$main.length) {
@@ -471,6 +474,7 @@ function menuBtn() {
 			$btn.removeClass("menu-btn--isActive");
 			if ($tabs.length ) {
 				$tabs.removeClass("tab-panel__menu--isOverlay");
+				$panel.removeClass("vacancies--isOverlay");
 			}
 			if ($trust.length ) {
 				$trust.removeClass("trust__cars--isOverlay");
@@ -527,6 +531,12 @@ function menuBtn() {
 			} else {
 				$tabs.addClass("tab-panel__menu--isOverlay");
 			}
+
+			if ( $panel.hasClass("vacancies--isOverlay") ) {
+				$panel.removeClass("vacancies--isOverlay");
+			} else {
+				$panel.addClass("vacancies--isOverlay");
+			}
 		}
 		//if ($services.length ) {
 		//	$services.toggleClass("services--isOverlay");
@@ -538,12 +548,13 @@ function menuBtn() {
 				$trust.addClass("trust__cars--isOverlay");
 			}
 		}
-		//if ($clients.length ) {
-		//	$clients.toggleClass("clients--isOverlay");
-		//}
-		//if ($contacts.length ) {
-		//	$contacts.toggleClass("contacts--isOverlay");
-		//}
+		if ($clients.length ) {
+			$clientsForm.toggleClass("clients__form--isOverlay");
+			$clietsList.toggleClass("clients__list--isOverlay");
+		}
+		if ($contacts.length ) {
+			$contacts.toggleClass("contacts--isOverlay");
+		}
 	});
 
 	if ($sidebar.hasClass("sidebar--isComponent")) {
@@ -561,7 +572,7 @@ function menuBtn() {
 
 }
 function orderForm() {
-	var $form = $("#orderForm");
+	var $form = $(".order-form");
 
 	$form.validate({
 
@@ -662,6 +673,19 @@ function scrollToTop() {
 
 }
 	
+function sidebar() {
+	var $sidebar = $(".sidebar");
+
+	if ( $sidebar.hasClass("sidebar--isMove") ) {
+		//$('body').on('scroll touchmove mousewheel', function(e){
+		//	e.preventDefault();
+		//	e.stopPropagation();
+		//	return false;
+		//})
+		
+		//$('body').css({"width": "100vw", "height": "100vh", "overflow": "hidden"});
+	}
+}
 function tabPanel () {
 	var $tabs = $(".tab-panel");
 	var $menu = $(".tab-panel__menu");
@@ -813,6 +837,75 @@ function trust() {
 }
 
 
+(function($) {
+
+	var methods = {
+
+		init : function(params) {
+			var options = $.extend({
+				speed: 400
+			}, params);
+
+			var panel = options.panel;
+			var panelActive = panel.attr("class") + "--isActive";
+			var control = options.control;
+			var controlActive = control.attr("class") + "--isActive";
+			var content = options.content;
+			var contentActive = content.attr("class") + "--isActive";
+
+			panel.removeClass(panelActive);
+			control.removeClass(controlActive);
+			content.removeClass(contentActive);
+
+			panel.on("click", function () {
+
+				if ( $(this).hasClass(panelActive) ) {
+					$(this).removeClass(panelActive);
+					$(this).find(control).removeClass(controlActive);
+					$(this).next().slideUp(options.speed);
+					$(this).siblings().find(control).removeClass(controlActive);
+				} else {
+					$(this).addClass(panelActive).siblings().removeClass(panelActive);
+					$(this).find(control).addClass(controlActive);
+					$(this).siblings().find(control).removeClass(controlActive);
+
+					if ( $(window).width() > 1440 ) {
+						$(this).next().slideDown(options.speed).css({
+							"display": "-webkit-box",
+							"display": "-webkit-flex",
+							"display": "-ms-flexbox",
+							"display": "flex",
+							"-webkit-box-orient": "horizontal",
+							"-webkit-box-direction": "normal",
+							"-webkit-flex-direction": "row",
+							"-ms-flex-direction": "row",
+							"flex-direction": "row",
+							"-webkit-flex-wrap": "wrap",
+							"-ms-flex-wrap": "wrap",
+							"flex-wrap": "wrap"
+						})
+						  .siblings().not(panel).slideUp(options.speed);
+					} else {
+
+					}
+					$(this).next().slideDown(options.speed)
+						.siblings().not(panel).slideUp(options.speed);
+				}
+			});
+		}
+	};
+
+	$.fn.accordionModule = function(method) {
+		if ( methods[method] ) {
+			return methods[ method ].apply( this, Array.prototype.slice.call( arguments, 1 ));
+		} else if ( typeof method === 'object' || ! method ) {
+			return methods.init.apply( this, arguments );
+		} else {
+			$.error('Метод "' + method + '" в плагине не найден');
+		}
+
+	};
+})(jQuery);
 function whySlider() {
 
 	var $slider = $(".why__slider");
@@ -846,17 +939,4 @@ function whySlider() {
 		$slider.find($list).find(".why__slide").eq(-1).remove();
 		$slider.find($wrapper).animate({ 'left': 0 }, 500);
 	});
-}
-function sidebar() {
-	var $sidebar = $(".sidebar");
-
-	if ( $sidebar.hasClass("sidebar--isMove") ) {
-		//$('body').on('scroll touchmove mousewheel', function(e){
-		//	e.preventDefault();
-		//	e.stopPropagation();
-		//	return false;
-		//})
-		
-		//$('body').css({"width": "100vw", "height": "100vh", "overflow": "hidden"});
-	}
 }

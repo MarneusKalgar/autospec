@@ -3,7 +3,6 @@
 	position relative
 	z-index 0
 	height 100vh
-	min-height 20rem
 	min-width 20rem
 	max-width 120rem
 	margin 0 auto
@@ -13,9 +12,9 @@
 	-webkit-font-smoothing antialiased
 	-moz-osx-font-smoothing grayscale
 	background-color: #ccc
-		//overflow hidden
-	@media screen and (max-height: 640px) and (orientation: landscape)
-		height 100vh
+	overflow hidden
+	::selection
+		background rgba($base-decor-color, .5)
 
 	&--singleService
 		height auto
@@ -32,8 +31,6 @@
 		height 100%
 		margin 0
 		overflow hidden
-		@media screen and (max-height: 640px), (max-width: 640px), (orientation: landscape)
-			overflow-y auto
 
 		&--singleService
 			display block

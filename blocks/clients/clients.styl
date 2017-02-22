@@ -18,16 +18,6 @@
 	@media screen and (max-width: 600px)
 		padding 6em 1.25em 0 1.25em
 
-	&--isOverlay
-		&::before
-			content ""
-			position absolute
-			top 0
-			left 0
-			z-index 200
-			width 100%
-			height 100%
-			background rgba(#000, .4)
 
 	&__title
 		width 100%
@@ -49,19 +39,23 @@
 
 	&__list
 		position: relative
+		//z-index: 500
 		width 60%
-		height 21em
-		overflow hidden
 		margin 1.3em 0 0 0
 		padding 0
 		list-style none
 		counter-reset myCounter
 		@media screen and (min-width: 941px) and (max-width: 1090px), (max-width: 750px)
 			width 55%
-		@media screen and (max-width: 600px)
+		@media screen and (max-width: 767px)
 			width 100%
-			height 25em
 			margin-right 0
+		@media screen and (min-width: 768px)
+			height 21em
+			overflow hidden
+
+		&--isOverlay
+			z-index 200
 
 
 	&__item
@@ -93,15 +87,18 @@
 		//form
 	&__form
 		position relative
-		z-index: 2000
+		//z-index: 500
 		width 35%
 		min-width 13.75em
 		@media screen and (min-width: 941px) and (max-width: 1090px), (max-width: 750px)
 			width 40%
-		@media screen and (max-width: 600px)
+		@media screen and (max-width: 767px)
 			top 0
 			width 100%
 			margin-top 2em
+
+		&--isOverlay
+			z-index 200
 
 	&__set
 		position relative

@@ -59,10 +59,21 @@ block scripts
 		});
 
 	script.
-		$(window).on("load", function () {
+		var options = {
+			panel: $(".vacancies__panel"),
+			control: $(".vacancies__control"),
+			content: $(".vacancies__content")
+		};
+
+		$(".vacancies__accordion").accordionModule(options);
+
+	script.
+		$(window).on("load resize", function () {
 			$(".tab-panel__item").mCustomScrollbar({
 				theme: "my-theme"
 			});
+			if ($(window).width() < 768) {
+				$(".tab-panel__item").mCustomScrollbar("destroy");
+			}
+			$(".tab-panel__item--career").mCustomScrollbar("destroy");
 		});
-
-

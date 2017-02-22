@@ -1,5 +1,5 @@
 function orderForm() {
-	var $form = $("#orderForm");
+	var $form = $(".order-form");
 
 	$form.validate({
 

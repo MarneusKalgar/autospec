@@ -144,3 +144,44 @@
 			line-height @height
 		@media screen and (max-height: 479px)
 			margin-top .5em
+
+	&--filled
+		z-index 100
+		min-height 3.5em
+		line-height 3.5em
+		padding 0 2em 0 1.5em
+		font-size .875em
+		border 1px solid $base-decor-color
+		overflow hidden
+		&:before
+			content ''
+			position absolute
+			top 0
+			left 0
+			z-index -1
+			box-sizing border-box
+			width 100%
+			height 100%
+			background-color $base-decor-color
+			transition all .5s cubic-bezier(0.2, 1, 0.3, 1)
+			transform-origin top
+			transform scaleY(1)
+		&:hover:before
+		&:active:before
+		&:focus:before
+			transform scaleY(0)
+
+	&--square
+		border-radius: 0
+
+	&--rounded
+		border-radius: 2em
+
+
+	&__icon
+		position absolute
+		width 1em
+		fill $base-decor-color
+		//stroke $base-text-color-light
+		//stroke-width 8px
+		transition all .5s cubic-bezier(0.2, 1, 0.3, 1)

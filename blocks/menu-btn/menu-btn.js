@@ -8,9 +8,12 @@ function menuBtn() {
 
 	var $main = $(".main");
 	var $tabs = $(".tab-panel__menu");
+	var $panel = $(".vacancies");
 	var $services = $(".services");
 	var $trust = $(".trust__cars");
 	var $clients = $(".clients");
+	var $clientsForm = $(".clients__form");
+	var $clietsList = $(".clients__list");
 	var $contacts = $(".contacts");
 
 	if (!$main.length) {
@@ -25,6 +28,7 @@ function menuBtn() {
 			$btn.removeClass("menu-btn--isActive");
 			if ($tabs.length ) {
 				$tabs.removeClass("tab-panel__menu--isOverlay");
+				$panel.removeClass("vacancies--isOverlay");
 			}
 			if ($trust.length ) {
 				$trust.removeClass("trust__cars--isOverlay");
@@ -81,6 +85,12 @@ function menuBtn() {
 			} else {
 				$tabs.addClass("tab-panel__menu--isOverlay");
 			}
+
+			if ( $panel.hasClass("vacancies--isOverlay") ) {
+				$panel.removeClass("vacancies--isOverlay");
+			} else {
+				$panel.addClass("vacancies--isOverlay");
+			}
 		}
 		//if ($services.length ) {
 		//	$services.toggleClass("services--isOverlay");
@@ -92,12 +102,13 @@ function menuBtn() {
 				$trust.addClass("trust__cars--isOverlay");
 			}
 		}
-		//if ($clients.length ) {
-		//	$clients.toggleClass("clients--isOverlay");
-		//}
-		//if ($contacts.length ) {
-		//	$contacts.toggleClass("contacts--isOverlay");
-		//}
+		if ($clients.length ) {
+			$clientsForm.toggleClass("clients__form--isOverlay");
+			$clietsList.toggleClass("clients__list--isOverlay");
+		}
+		if ($contacts.length ) {
+			$contacts.toggleClass("contacts--isOverlay");
+		}
 	});
 
 	if ($sidebar.hasClass("sidebar--isComponent")) {
