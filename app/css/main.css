@@ -256,6 +256,7 @@ th {
   width: 100%;
   background-color: #fff;
   overflow-x: hidden;
+  overflow-y: auto;
 /***** elem wrap *****/
 }
 .page__wrap {
@@ -289,7 +290,6 @@ th {
 .page__wrap--singleService {
   display: block;
   font-size: 1rem;
-  overflow-y: auto;
 }
 .page__form-wrap {
   display: -webkit-box;
@@ -2643,11 +2643,12 @@ th {
   font-style: italic;
 }
 .vacancies {
+  position: relative;
+  z-index: 500;
+  max-width: 62.5em;
   margin-top: 2.5em;
   text-align: left;
   color: #2e2e2e;
-  position: relative;
-  z-index: 500;
 }
 .vacancies--isOverlay {
   z-index: 200;
@@ -2700,6 +2701,11 @@ th {
     padding: 1em;
   }
 }
+@media screen and (max-width: 480px) {
+  .vacancies__panel {
+    padding: 0.5em 1em;
+  }
+}
 .vacancies__panel--isActive {
   background: #ee6800;
 }
@@ -2730,6 +2736,12 @@ th {
   font-size: 150%;
   line-height: 1;
 }
+@media screen and (max-width: 480px) {
+  .vacancies__position {
+    margin: 0.2em 0 0;
+    font-size: 130%;
+  }
+}
 .vacancies__control {
   display: block;
   width: 2em;
@@ -2757,26 +2769,6 @@ th {
   padding: 2em;
   background: #ebebeb;
 }
-@media screen and (min-width: 1441px) {
-  .vacancies__content {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: row;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-flex-wrap: wrap;
-        -ms-flex-wrap: wrap;
-            flex-wrap: wrap;
-    -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    -webkit-box-align: start;
-    -webkit-align-items: flex-start;
-        -ms-flex-align: start;
-            align-items: flex-start;
-  }
-}
 @media screen and (max-width: 600px) {
   .vacancies__content {
     padding: 2em 1em;
@@ -2789,9 +2781,11 @@ th {
   display: flex;
 }
 .vacancies__desc {
+  display: inline-block;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  max-width: 33.3333em;
+  max-width: 35em;
+  width: 70%;
   min-width: 15.3em;
   margin-right: 2em;
 }
@@ -2849,9 +2843,11 @@ th {
   -webkit-flex: 0;
       -ms-flex: 0;
           flex: 0;
+  display: inline-block;
+  vertical-align: top;
   min-width: 18.75em;
-  max-width: 28em;
-  margin-top: 2em;
+  width: 29%;
+  max-width: 30em;
   padding: 0;
   border: none;
 }
@@ -2861,7 +2857,7 @@ th {
     min-width: 17.5em;
   }
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 700px) {
   .order-form--vacancies {
     min-width: 14.8em;
     width: 100%;
@@ -4934,6 +4930,7 @@ label.error {
   top: 0;
   width: 50%;
   bottom: 0;
+  background-color: #dadada;
 }
 @media screen and (max-width: 1100px) {
   .contacts__map {

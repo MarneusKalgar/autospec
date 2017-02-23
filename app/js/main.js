@@ -574,41 +574,43 @@ function menuBtn() {
 function orderForm() {
 	var $form = $(".order-form");
 
-	$form.validate({
+	$form.each(function () {
+		$(this).validate({
 
-		rules: {
-			username: {
-				required: true
+			rules: {
+				username: {
+					required: true
+				},
+				usermail: {
+					required: true,
+					email: true
+				},
+				usertel: {
+					required: true
+				},
+				carbrand: "required",
+				carmodel: "required",
+				caryear: "required"
 			},
-			usermail: {
-				required: true,
-				email: true
-			},
-			usertel: {
-				required: true
-			},
-			carbrand: "required",
-			carmodel: "required",
-			caryear: "required"
-		},
 
-		messages: {
-			username: {
-				required: "Пожалуйста, введите имя"
-			},
-			usermail: {
-				required: "Пожалуйста, введите адрес",
-				email: "Формат адреса example@email.com"
-			},
-			usertel: "Пожалуйста, введите номер телефона",
-			carbrand: "Пожалуйста, введите марку автомобиля",
-			carmodel: "Пожалуйста, введите модель автомобиля",
-			caryear: "Пожалуйста, введите год выпуска"
-		}
+			messages: {
+				username: {
+					required: "Пожалуйста, введите имя"
+				},
+				usermail: {
+					required: "Пожалуйста, введите адрес",
+					email: "Формат адреса example@email.com"
+				},
+				usertel: "Пожалуйста, введите номер телефона",
+				carbrand: "Пожалуйста, введите марку автомобиля",
+				carmodel: "Пожалуйста, введите модель автомобиля",
+				caryear: "Пожалуйста, введите год выпуска"
+			}
 
+		});
 	});
 
-	$("#usertel").mask("+999 (99) 999 - 99 - 99");
+	$(":input[type='tel']").mask("+999 (99) 999 - 99 - 99");
 }
 function page() {
 	var $logo = $(".logo");
@@ -673,40 +675,6 @@ function scrollToTop() {
 
 }
 	
-function sidebar() {
-	var $sidebar = $(".sidebar");
-
-	if ( $sidebar.hasClass("sidebar--isMove") ) {
-		//$('body').on('scroll touchmove mousewheel', function(e){
-		//	e.preventDefault();
-		//	e.stopPropagation();
-		//	return false;
-		//})
-		
-		//$('body').css({"width": "100vw", "height": "100vh", "overflow": "hidden"});
-	}
-}
-function tabPanel () {
-	var $tabs = $(".tab-panel");
-	var $menu = $(".tab-panel__menu");
-	var $item = $(".tab-panel__item");
-
-	$menu.on('click', 'li:not(.tab-panel__tab--active)', function() {
-		var self = this;
-		//setTimeout(function() {
-			$(self)
-				.addClass('tab-panel__tab--active')
-				.siblings().removeClass('tab-panel__tab--active')
-				.closest($tabs).find($item).removeClass('tab-panel__item--active')
-				.eq($(self).index()).addClass('tab-panel__item--active');
-		//}, 100);
-		setTimeout(function() {
-			$(self)
-				.closest($tabs).find($item).removeClass('tab-panel__item--animate')
-				.eq($(self).index()).addClass('tab-panel__item--animate');
-		}, 100);
-	});
-}
 function tabs () {
 	var $tabs = $(".tabs");
 	var $menu = $(".tabs__menu");
@@ -868,26 +836,6 @@ function trust() {
 					$(this).addClass(panelActive).siblings().removeClass(panelActive);
 					$(this).find(control).addClass(controlActive);
 					$(this).siblings().find(control).removeClass(controlActive);
-
-					if ( $(window).width() > 1440 ) {
-						$(this).next().slideDown(options.speed).css({
-							"display": "-webkit-box",
-							"display": "-webkit-flex",
-							"display": "-ms-flexbox",
-							"display": "flex",
-							"-webkit-box-orient": "horizontal",
-							"-webkit-box-direction": "normal",
-							"-webkit-flex-direction": "row",
-							"-ms-flex-direction": "row",
-							"flex-direction": "row",
-							"-webkit-flex-wrap": "wrap",
-							"-ms-flex-wrap": "wrap",
-							"flex-wrap": "wrap"
-						})
-						  .siblings().not(panel).slideUp(options.speed);
-					} else {
-
-					}
 					$(this).next().slideDown(options.speed)
 						.siblings().not(panel).slideUp(options.speed);
 				}
@@ -939,4 +887,38 @@ function whySlider() {
 		$slider.find($list).find(".why__slide").eq(-1).remove();
 		$slider.find($wrapper).animate({ 'left': 0 }, 500);
 	});
+}
+function tabPanel () {
+	var $tabs = $(".tab-panel");
+	var $menu = $(".tab-panel__menu");
+	var $item = $(".tab-panel__item");
+
+	$menu.on('click', 'li:not(.tab-panel__tab--active)', function() {
+		var self = this;
+		//setTimeout(function() {
+			$(self)
+				.addClass('tab-panel__tab--active')
+				.siblings().removeClass('tab-panel__tab--active')
+				.closest($tabs).find($item).removeClass('tab-panel__item--active')
+				.eq($(self).index()).addClass('tab-panel__item--active');
+		//}, 100);
+		setTimeout(function() {
+			$(self)
+				.closest($tabs).find($item).removeClass('tab-panel__item--animate')
+				.eq($(self).index()).addClass('tab-panel__item--animate');
+		}, 100);
+	});
+}
+function sidebar() {
+	var $sidebar = $(".sidebar");
+
+	if ( $sidebar.hasClass("sidebar--isMove") ) {
+		//$('body').on('scroll touchmove mousewheel', function(e){
+		//	e.preventDefault();
+		//	e.stopPropagation();
+		//	return false;
+		//})
+		
+		//$('body').css({"width": "100vw", "height": "100vh", "overflow": "hidden"});
+	}
 }

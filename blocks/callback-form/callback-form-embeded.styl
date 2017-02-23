@@ -1,8 +1,10 @@
 /************CALLBACK-FORM**************/
 .callback-form
 	position: relative
-	width 13em
-
+	width 18em
+	@media screen and (max-width: 600px)
+		width: 100%
+		
 	&__row
 		position: relative
 		width 100%
@@ -34,6 +36,7 @@
 
 	&__input
 		display block
+		box-sizing: border-box
 		width 100%
 		margin 1em 0 0 0
 		padding .5em .5em .5em 2em

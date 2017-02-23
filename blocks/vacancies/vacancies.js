@@ -29,26 +29,6 @@
 					$(this).addClass(panelActive).siblings().removeClass(panelActive);
 					$(this).find(control).addClass(controlActive);
 					$(this).siblings().find(control).removeClass(controlActive);
-
-					if ( $(window).width() > 1440 ) {
-						$(this).next().slideDown(options.speed).css({
-							"display": "-webkit-box",
-							"display": "-webkit-flex",
-							"display": "-ms-flexbox",
-							"display": "flex",
-							"-webkit-box-orient": "horizontal",
-							"-webkit-box-direction": "normal",
-							"-webkit-flex-direction": "row",
-							"-ms-flex-direction": "row",
-							"flex-direction": "row",
-							"-webkit-flex-wrap": "wrap",
-							"-ms-flex-wrap": "wrap",
-							"flex-wrap": "wrap"
-						})
-						  .siblings().not(panel).slideUp(options.speed);
-					} else {
-
-					}
 					$(this).next().slideDown(options.speed)
 						.siblings().not(panel).slideUp(options.speed);
 				}
