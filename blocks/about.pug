@@ -59,21 +59,13 @@ block scripts
 		});
 
 	script.
-		var options = {
-			panel: $(".vacancies__panel"),
-			control: $(".vacancies__control"),
-			content: $(".vacancies__content")
-		};
-
-		$(".vacancies__accordion").accordionModule(options);
-
-	script.
 		$(window).on("load resize", function () {
-			$(".tab-panel__item").mCustomScrollbar({
+			var $container = $(".tab-panel__item").not(".tab-panel__item--tour");
+			$container.mCustomScrollbar({
 				theme: "my-theme"
 			});
 			if ($(window).width() < 768) {
-				$(".tab-panel__item").mCustomScrollbar("destroy");
+				$container.mCustomScrollbar("destroy");
 			}
-			$(".tab-panel__item--career").mCustomScrollbar("destroy");
+			//$(".tab-panel__item--tour").mCustomScrollbar("destroy");
 		});

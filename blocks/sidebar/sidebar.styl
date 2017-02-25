@@ -6,6 +6,7 @@
 	min-height: 20rem
 	background $sidebar-bg-color url("../img/sidebar/sidebar-bg.jpg") repeat 0 0
 	overflow hidden
+	text-align: center
 	transform-origin right
 	will-change transform
 	&:before
@@ -23,7 +24,7 @@
 			left 11%
 			width 6.6rem
 			height 6.6rem
-		@media screen and (max-height: 490px) and (orientation: landscape)
+		@media screen and (max-height: 490px) and (orientation: landscape), (max-width: 400px)
 			display none
 	&:after
 		content ''
@@ -41,7 +42,7 @@
 			left -20.5%
 			width 12rem
 			height 12rem
-		@media screen and (max-height: 490px) and (orientation: landscape)
+		@media screen and (max-height: 490px) and (orientation: landscape), (max-width: 400px)
 			display none
 	@media screen and (max-width: 940px)
 		position absolute
@@ -82,12 +83,42 @@
 		&:after
 			animation-play-state paused
 
+	&__link
+		position: relative
+		display: inline-block
+		margin: 1em auto 0;
+		text-decoration: none
+		text-align: center
+		font-size: $base-font-size * 1.125;
+		font-weight: bold
+		color $base-decor-color
+		transition: all .4s ease
+		&::before
+			content: "";
+			position: absolute
+			top 100%
+			width: 100%
+			height: 1px;
+			opacity: 0
+			background-color: $base-decor-color;
+			transition: all .4s ease
+		&:hover
+		&:focus
+			&::before
+				opacity: 1
+		@media screen and (max-height: 490px)
+			margin-top: .5em;
+
+
 	&__btn
 		margin 13% auto 0
 		@media screen and (max-height: 750px)
 			margin 7% auto 0
 		@media screen and (max-height: 600px)
 			margin 3% auto 0
+		@media screen and (max-height: 490px)
+			margin-top: .5em;
+
 
 		&--write
 			display: block

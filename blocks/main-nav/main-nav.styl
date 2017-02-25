@@ -8,12 +8,15 @@
 	color $base-text-color-light
 	@media screen and (max-height: 700px)
 		margin calc(100vh - 75vh) 0 0
-	@media screen and (max-height: 600px)
+	@media screen and (max-height: 600px), (max-width: 768px)
 		margin-top 10em
 	@media screen and (max-height: 490px) and (orientation: landscape)
-		margin-top 10vmin
+		margin-top 5vmin
 	@media screen and (max-height: 490px) and (orientation: portrait)
 		margin-top 25vmax
+	@media screen and (max-width: 400px)
+		margin-top: 15vmax;
+
 
 	&__menu
 		margin 0

@@ -1,13 +1,15 @@
 function sidebar() {
-	var $sidebar = $(".sidebar");
+	var $link = $(".sidebar__link");
+	var $wrapper = $(".page__frame-wrap");
+	var $close = $(".page__close");
 
-	if ( $sidebar.hasClass("sidebar--isMove") ) {
-		//$('body').on('scroll touchmove mousewheel', function(e){
-		//	e.preventDefault();
-		//	e.stopPropagation();
-		//	return false;
-		//})
-		
-		//$('body').css({"width": "100vw", "height": "100vh", "overflow": "hidden"});
-	}
+	$link.on("click", function () {
+		if (!$wrapper.hasClass("page__frame-wrap--isActive")) {
+			$wrapper.addClass("page__frame-wrap--isActive");
+		}
+	});
+
+	$close.on("click", function () {
+		$wrapper.removeClass("page__frame-wrap--isActive");
+	});
 }

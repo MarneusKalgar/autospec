@@ -7,6 +7,7 @@ function page() {
 	var $trust = $(".trust");
 	var $clients = $(".clients");
 	var $contacts = $(".contacts");
+	var $vacancies = $(".vacancies");
 
 
 	if ( $about.length ) {
@@ -27,6 +28,10 @@ function page() {
 
 	if ( $contacts.length ) {
 		toggleScroll($contacts);
+	}
+
+	if ( $vacancies.length ) {
+		toggleScroll($vacancies);
 	}
 
 

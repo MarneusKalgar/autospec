@@ -1,17 +1,33 @@
 /*******************ACCORDION******************/
 .vacancies
-	position: relative;
-	z-index: 500
-	max-width 62.5em
-	margin-top: 2.5em;
+	position: relative
+	z-index: 200
+	flex 1
+	padding 9em 5% 1em 5%
 	text-align: left;
 	color: $base-text-color;
+	overflow-y: auto
+	@media screen and (max-width: 600px)
+		padding 5em 5% 1em 5%
 
 	&--isOverlay
 		z-index: 200
 
 	&__title
-		text-align: center;
+		position: relative
+		z-index: 100
+		margin: 0
+		font-size: 2.5em;
+		@media screen and (max-width: 480px)
+			font-size: 2.2em;
+
+	&__accordion
+		position: relative;
+		z-index: 500
+		max-width 62.5em
+		margin-top: 2.5em;
+		@media screen and (max-width: 600px)
+			margin-top: 2em
 
 		//panel
 	&__panel
@@ -25,10 +41,12 @@
 		padding: 1.2em 2em;
 		color: $base-text-color-light;
 		background: $base-text-color;
+		border-top: 1px solid #ccc;
 		cursor: pointer
 		transition: background .4s ease;
-		&:nth-child(odd)
-			border-bottom: 1px solid #ccc;
+		border-top: 1px solid #ccc;
+		&:first-child
+			border-top: none;
 		&:hover
 			background-color: lighten( $base-text-color, 10%);
 		@media screen and (max-width: 600px)

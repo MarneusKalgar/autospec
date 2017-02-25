@@ -1,40 +1,39 @@
-include ../bemto/bemto
+include _assets/bemto/bemto
 - set_bemto_settings({ modifier: "--" })
 
-include includes
+include _assets/components/includes
 
 doctype html
 html(lang="ru")
 
-	block head
-		head
-			+head({
-				"title": "autospecservice home page",
-				"author": "Interact Agency",
-				"description": "autospecservice home page"
-			})
-			// build:css css/vendor.css
-			link(rel="stylesheet", href="js/libs/animsition/dist/css/animsition.min.css")
-			link(rel="stylesheet", href="js/libs/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.custom.css")
-			// endbuild
-			// build:css css/main.css
-			link(rel="stylesheet", href="css/main.css")
-			// endbuild
+	head
+		+head({
+			"title": "autospecservice home page",
+			"author": "Interact Agency",
+			"description": "autospecservice home page"
+		})
+		// build:css css/vendor.css
+		link(rel="stylesheet", href="js/libs/animsition/dist/css/animsition.min.css")
+		link(rel="stylesheet", href="js/libs/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.custom.css")
+		// endbuild
+		// build:css css/main.css
+		link(rel="stylesheet", href="css/main.css")
+		// endbuild
 
 	+b.BODY.page
-		+e.DIV.wrap(class="animsition")
+		+e.DIV.wrap(class="--element animsition")
 			+b.HEADER.header
-				block logo
-					// block logo
-					+logo({
-						"id": "logo",
-						"class": "logo --isAnimated",
-						"href": "#",
-						"set": "img/logo/autospec-logo-light@2.png",
-						"src": "img/logo/autospec-logo-light.png",
-						"alt": "логотип компании автоспецсервис"
-					})
-					// end block logo
+
+				// block logo
+				+logo({
+					"id": "logo",
+					"class": "logo",
+					"href": "#",
+					"set": "img/logo/autospec-logo-light@2.png",
+					"src": "img/logo/autospec-logo-light.png",
+					"alt": "логотип компании автоспецсервис"
+				})
+				// end block logo
 
 				// block menu-btn
 				+menu-btn({"class": "--isAnimated header__btn"})
@@ -46,18 +45,14 @@ html(lang="ru")
 						+e.SVG.icon(xmlns="http://www.w3.org/2000/svg", viewBox="0 0 22.88 22.88", width="24", height="24")
 							path(d="M.32 1.9C-.1 1.5-.1.78.32.33c.45-.43 1.15-.43 1.6 0l9.5 9.54L20.98.32c.43-.43 1.15-.43 1.57 0 .45.45.45 1.16 0 1.6l-9.52 9.5 9.52 9.55c.45.43.45 1.15 0 1.6-.42.42-1.14.42-1.57 0L11.43 13 1.9 22.56c-.43.43-1.13.43-1.58 0-.43-.44-.43-1.16 0-1.6l9.53-9.53L.32 1.9z")
 					+e.IFRAME.frame(src="https://www.youtube.com/embed/tEGICoRb-n8", frameborder="0", allowfullscreen)
-					//block callback-form
-					//-+callback-form()
-					//end block callback-form
 
-			block content
-				div content
+			+vacancies()
 
 			+b.DIV.sidebar
 				block main-nav
 					//block main-nav
 					+main-nav([
-						{"class": "main-nav__link main-nav__link--active", "link": "index.html", "title": "главная"},
+						{"class": "main-nav__link animsition-link", "link": "index.html", "title": "главная"},
 						{"class": "main-nav__link animsition-link", "link": "about.html", "title": "о нас"},
 						{"class": "main-nav__link animsition-link", "link": "services.html", "title": "сервис и цены"},
 						{"class": "main-nav__link animsition-link", "link": "trust.html", "title": "нам доверяют"},
@@ -91,42 +86,52 @@ html(lang="ru")
 				])
 				//end block socials
 
-		block vendors
-			// build:js js/vendor.js
-			script( src="js/libs/jquery/dist/jquery.min.js")
-			script( src="js/libs/animsition/dist/js/animsition.min.js")
-			script( src="js/libs/jquery.maskedinput/dist/jquery.maskedinput.min.js")
-			script( src="js/libs/jquery-validation/dist/jquery.validate.min.js")
-			script( src="js/libs/wow/dist/wow.min.js")
-			script( src="js/libs/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js")
-			// endbuild
 
-		block scripts
-			// build:js js/main.js
-			script( src="js/main.js")
-			// endbuild
-			script.
-				$('.animsition').animsition({
-					inClass: 'fade-in',
-					outClass: 'fade-out',
-					inDuration: 300,
-					outDuration: 300,
-					linkElement: '.animsition-link',
-					// e.g. linkElement: 'a:not([target="_blank"]):not([href^="#"])'
-					loading: true,
-					loadingParentElement: 'body', //animsition wrapper element
-					loadingClass: 'animsition-loading',
-					loadingInner: '', // e.g '<img src="loading.svg" />'
-					timeout: false,
-					timeoutCountdown: 1000,
-					onLoadEvent: true,
-					browser: ['animation-duration', '-webkit-animation-duration'],
-					// "browser" option allows you to disable the "animsition" in case the css property in the array is not supported by your browser.
-					// The default setting is to disable the "animsition" in a browser that does not support "animation-duration".
-					overlay: false,
-					overlayClass: 'animsition-overlay-slide',
-					overlayParentElement: 'body',
-					transition: function (url) {
-						window.location.href = url;
-					}
-				});
+		// build:js js/vendor.js
+		script( src="js/libs/jquery/dist/jquery.min.js")
+		script( src="js/libs/animsition/dist/js/animsition.min.js")
+		script( src="js/libs/jquery.maskedinput/dist/jquery.maskedinput.min.js")
+		script( src="js/libs/jquery-validation/dist/jquery.validate.min.js")
+		script( src="js/libs/wow/dist/wow.min.js")
+		script( src="js/libs/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js")
+		// endbuild
+
+
+		// build:js js/main.js
+		script( src="js/main.js")
+		// endbuild
+
+		script.
+			$('.animsition').animsition({
+				inClass: 'fade-in',
+				outClass: 'fade-out',
+				inDuration: 500,
+				outDuration: 500,
+				linkElement: '.animsition-link',
+				// e.g. linkElement: 'a:not([target="_blank"]):not([href^="#"])'
+				loading: true,
+				loadingParentElement: 'body', //animsition wrapper element
+				loadingClass: 'animsition-loading',
+				loadingInner: '', // e.g '<img src="loading.svg" />'
+				timeout: false,
+				timeoutCountdown: 1000,
+				onLoadEvent: true,
+				browser: ['animation-duration', '-webkit-animation-duration'],
+				// "browser" option allows you to disable the "animsition" in case the css property in the array is not supported by your browser.
+				// The default setting is to disable the "animsition" in a browser that does not support "animation-duration".
+				overlay: false,
+				overlayClass: 'animsition-overlay-slide',
+				overlayParentElement: 'body',
+				transition: function (url) {
+					window.location.href = url;
+				}
+			});
+
+		script.
+			var options = {
+				panel: $(".vacancies__panel"),
+				control: $(".vacancies__control"),
+				content: $(".vacancies__content")
+			};
+
+			$(".vacancies__accordion").accordionModule(options);
