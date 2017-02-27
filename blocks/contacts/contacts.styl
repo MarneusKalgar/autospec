@@ -39,6 +39,7 @@
 	&__address-wrap
 		width 70%
 		min-width: 17.5em
+		margin-top: 1em
 		@media screen and (min-width: 768px)
 			min-width 18.75em
 			max-width 28em
@@ -108,6 +109,8 @@
 		margin: 0 auto
 		border-radius: 50%;
 		transform: scale(0.8)
+		object-fit contain
+		background-color: #fff;
 
 	&__name
 		margin-top: 0;
@@ -149,16 +152,17 @@
 		&--vacancies
 			position: relative
 			display: inline-block
+			padding-left: 2em;
 			&:hover
 			&:focus
 				color $base-decor-color
 
 	&__icon
 		position: absolute
-		top: -.1em
-		left: -1.8em
-		width: 1.5em
-		height: 1.5em
+		top: .1em
+		left: .3em
+		width: 1.3em
+		height: 1.3em
 		fill $base-decor-color
 
 	&__info
