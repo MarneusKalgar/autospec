@@ -1054,14 +1054,7 @@ th {
   padding: 6.5625em 0 2em;
   color: #fff;
   text-align: center;
-  background: #2c3a3c url("../img/hero/hero-bg-lg.jpg") center no-repeat;
-  background-size: cover;
-}
-@media screen and (max-width: 1000px) {
-  .hero {
-    background: #1f282a url("../img/hero/hero-bg-sm.jpg") center no-repeat;
-    background-size: cover;
-  }
+  overflow: hidden;
 }
 .hero::before {
   content: "";
@@ -1072,6 +1065,15 @@ th {
   bottom: 0;
   left: 0;
   background-color: rgba(44,58,60,0.9);
+}
+.hero__bg {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 .hero__title {
   position: relative;
