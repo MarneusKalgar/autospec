@@ -89,25 +89,17 @@
 		margin: 1em auto 0;
 		text-decoration: none
 		text-align: center
-		font-size: $base-font-size * 1.125;
-		font-weight: bold
-		color $base-decor-color
+		font-size: $base-font-size * .875;
+		color $base-text-color-light
+		text-transform: uppercase
 		transition: all .4s ease
-		&::before
-			content: "";
-			position: absolute
-			top 100%
-			width: 100%
-			height: 1px;
-			opacity: 0
-			background-color: $base-decor-color;
-			transition: all .4s ease
 		&:hover
 		&:focus
-			&::before
-				opacity: 1
-		@media screen and (max-height: 490px)
+			color $base-decor-color
+		@media screen and (max-height: 700px)
 			margin-top: .5em;
+		@media screen and (max-height: 480px)
+			margin-top: 0
 
 
 	&__btn
@@ -117,7 +109,7 @@
 		@media screen and (max-height: 600px)
 			margin 3% auto 0
 		@media screen and (max-height: 490px)
-			margin-top: .5em;
+			margin-top: .8em;
 
 
 		&--write
@@ -131,11 +123,11 @@
 				display: block
 
 	&__socials
-		margin 13% 0 0
-		@media screen and (max-height: 750px)
-			margin 7% auto 5%
-		@media screen and (max-height: 600px)
-			margin 2% auto 3%
+		margin 1.2em auto 1.2em
+		@media screen and (max-height: 700px)
+			margin .8em auto .8em
+		@media screen and (max-height: 480px)
+			margin .6em auto .5em
 
 
 @keyframes rotateCircle

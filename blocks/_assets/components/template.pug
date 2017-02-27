@@ -45,7 +45,10 @@ html(lang="ru")
 					+e.BUTTON.close(type="button")
 						+e.SVG.icon(xmlns="http://www.w3.org/2000/svg", viewBox="0 0 22.88 22.88", width="24", height="24")
 							path(d="M.32 1.9C-.1 1.5-.1.78.32.33c.45-.43 1.15-.43 1.6 0l9.5 9.54L20.98.32c.43-.43 1.15-.43 1.57 0 .45.45.45 1.16 0 1.6l-9.52 9.5 9.52 9.55c.45.43.45 1.15 0 1.6-.42.42-1.14.42-1.57 0L11.43 13 1.9 22.56c-.43.43-1.13.43-1.58 0-.43-.44-.43-1.16 0-1.6l9.53-9.53L.32 1.9z")
-					+e.IFRAME.frame(src="https://www.youtube.com/embed/tEGICoRb-n8", frameborder="0", allowfullscreen)
+					//-+e.IFRAME.frame(src="https://www.youtube.com/embed/tEGICoRb-n8", frameborder="0", allowfullscreen)
+					+e.VIDEO.frame#autoSpecVideo(controls, preload="none")
+						source(src="video/rangerover.mp4", type="video/mp4")
+						source(src="video/rangerover.ogv", type="video/ogg")
 					//block callback-form
 					//-+callback-form()
 					//end block callback-form
@@ -66,7 +69,6 @@ html(lang="ru")
 					])
 					//end block main-nav
 
-				+e.A.link(href="#") Видео Авто Спец Сервис
 				//block btn
 				//-+b.BUTTON.btn#callBtn(class="--callback sidebar__btn --write", type="button") написать нам
 				//-	+e.SVG.icon(xmlns="http://www.w3.org/2000/svg", viewBox="0 0 268 268", width="13", height="13" )
@@ -90,6 +92,8 @@ html(lang="ru")
 					}
 				])
 				//end block socials
+
+				+e.A.link(href="#") Видео Авто Спец Сервис
 
 		block vendors
 			// build:js js/vendor.js
