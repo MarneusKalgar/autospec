@@ -29,6 +29,8 @@ $(function () {
 	scrollToTop();
 
 	component();
+
+	gallery();
 	
 });
 

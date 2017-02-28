@@ -14,88 +14,99 @@ mixin list(items)
 
 mixin tabs
 	+b.DIV.tabs(class="wow slideInLeft")
-		+title([
-			{"class": "--active", "text": "бюджет"},
-			{"class": "", "text": "стандарт"},
-			{"class": "", "text": "премиум"}
-		])
+		//-+title([
+		//-	{"class": "--active", "text": "бюджет"},
+		//-	{"class": "", "text": "стандарт"},
+		//-	{"class": "", "text": "премиум"}
+		//-])
 
 		+e.DIV.item(class="--active")
-			+e.H3.subtitle(class="titles --landing") Ходовая
-			+e.FIGURE.figure
-				+e.IMG.img(class="", src="img/tabs/skelet1.png", alt="Автомобиль")
-				+e.UL.list
-					+list([
-						{"class": "--service1 --service1_chassis", "title": "Ремонт пневмостоек", "text": "от 8000 грн"},
-						{"class": "--service2 --service2_chassis", "title": "Восстановление рычагов подвески", "text": "от 500 грн"},
-						{"class": "--service4 --service4_chassis1", "title": "Реставрация рулевой рейки", "text": "от 1500 грн"},
-						{"class": "--service4 --service4_chassis2", "title": "Проточка тормозных дисков", "text": "от 350 грн"},
-						{"class": "--service5 --service5_chassis", "title": "Замена тормозных колодок", "text": "от 120 грн"}
-					])
-		+e.DIV.item
-			+e.H3.subtitle(class="titles --landing") ДВС и АКПП
-			+e.FIGURE.figure
-				+e.IMG.img(class="", src="img/tabs/skelet2.png", alt="Автомобиль")
-				+e.UL.list
-					+list([
-						{"class": "--service1 --service1_transmission", "title": "Ремонт ГБЦ", "text": "от 1200 грн"},
-						{"class": "--service2 --service2_transmission", "title": "Регулировка клапанов", "text": "от 1500 грн"},
-						{"class": "--service4 --service4_transmission", "title": "Замена комплекта ГРМ", "text": "от 900 грн"},
-						{"class": "--service5 --service5_transmission", "title": "Реставрация гидротрансформатора", "text": "от 5500 грн"},
-						{"class": "--service6 --service6_transmission", "title": "Ремонт АКПП", "text": "от 15000 грн"}
-					])
-		+e.DIV.item
-			+e.H3.subtitle(class="titles --landing") Компьютерная диагностика
-			+e.FIGURE.figure
-				+e.IMG.img(class="", src="img/tabs/skelet3.png", alt="Автомобиль")
-				+e.UL.list
-					+list([
-						{"class": "--service1 --service1_diagnostics", "title": "Компьютерная диагностика", "text": "от 260 грн"},
-						{"class": "--service3 --service3_diagnostics", "title": "Ремонт генератора", "text": "от 1200 грн"},
-						{"class": "--service4 --service4_diagnostics", "title": "Ремонт и прошивка блоков ЭБУ", "text": "от 2000 грн"},
-						{"class": "--service5 --service5_diagnostics", "title": "Инсталляция охранной системы (сигнализация)", "text": "от 900 грн"},
-						{"class": "--service6 --service6_diagnostics", "title": "Ремонт электропроводки", "text": "от 220 грн"}
-					])
-	//-
-		+e.DIV.item(class="--active")
-			+e.H3.subtitle(class="titles --landing") Пакет ”Бюджет“
-			+e.P.info Для тех, кому важно очень срочно и не дорого! Бюджет-покраска, это быстро обновить внешний вид детали или заменить цвет автомобиля. При этом преображение происходит буквально на глазах. Покраска просходит в камере. Цена покраски одной стандартной детали – 1900 грн.
-			+e.FIGURE.figure
-				+e.IMG.img(class="--sedan", src="img/tabs/budget-car.png", alt="Автомобиль")
-				+e.UL.list
-					+list([
-						{"class": "--service1 --service1_sedan_positioned", "title": "Капот", "text": "1000 грн"},
-						{"class": "--service2 --service2_sedan_positioned", "title": "Капот", "text": "1000 грн"},
-						{"class": "--service3", "title": "Капот", "text": "1000 грн"},
-						{"class": "--service4 --service4_sedan_positioned", "title": "Бампер", "text": "1000 грн"},
-						{"class": "--service5 --service5_sedan_positioned", "title": "Бампер", "text": "1000 грн"},
-						{"class": "--service6", "title": "Кузовной ремонт ремонт", "text": "1000 грн"}
-					])
-		+e.DIV.item
-			+e.H3.subtitle(class="titles --landing") Пакет ”Стандарт“
-			+e.P.info Для тех, кому важно очень срочно и не дорого! Бюджет-покраска, это быстро обновить внешний вид детали или заменить цвет автомобиля. При этом преображение происходит буквально на глазах. Покраска просходит в камере. Цена покраски одной стандартной детали – 1900 грн.
-			+e.FIGURE.figure
-				+e.IMG.img(src="img/tabs/standard-car.png", alt="Автомобиль")
-				+e.UL.list
-					+list([
-						{"class": "--service1", "title": "Кузовной ремонт", "text": "1000 грн"},
-						{"class": "--service2", "title": "Ремонт, реставрация и восстановление рычагов подвески", "text": "1000 грн"},
-						{"class": "--service3", "title": "Реставрация шаровых опор", "text": "1000 грн"},
-						{"class": "--service4", "title": "Люк и стеклоподъемники", "text": "1000 грн"},
-						{"class": "--service5", "title": "Замена / долив антифриза", "text": "1000 грн"},
-						{"class": "--service6", "title": "Сварочные работы", "text": "1000 грн"}
-					])
-		+e.DIV.item
-			+e.H3.subtitle(class="titles --landing") Пакет ”Премиум“
-			+e.P.info Ремонт машины неизменно оборачивается кошмаром. Раз за разом вам приходится объезжать все новые и новые автосервисы в поисках приемлемых цен.
-			+e.FIGURE.figure
-				+e.IMG.img(class="--sedan", src="img/tabs/premium-car.png", alt="Автомобиль")
-				+e.UL.list
-					+list([
-						{"class": "--service1 --service1_sedan_positioned", "title": "Кузовной ремонт", "text": "1000 грн"},
-						{"class": "--service2 --service2_sedan_positioned", "title": "Кузовной ремонт", "text": "1000 грн"},
-						{"class": "--service3", "title": "Кузовной ремонт", "text": "1000 грн"},
-						{"class": "--service4 --service4_sedan_positioned", "title": "Кузовной ремонт", "text": "1000 грн"},
-						{"class": "--service5 --service5_sedan_positioned", "title": "Кузовной ремонт", "text": "1000 грн"},
-						{"class": "--service6", "title": "Кузовной ремонт", "text": "1000 грн"}
-					])
+		+e.H3.subtitle(class="titles --landing") Наши цены
+		+e.FIGURE.figure
+			+e.IMG.img(class="", src="img/tabs/lumma.png", alt="Автомобиль")
+			+e.UL.list
+				+list([
+					{"class": "--service1 --service1_spec", "title": "Реставрация и/или перешив элементов салона", "text": "от 1000 грн"},
+					{"class": "--service2 --service2_spec", "title": "Проверка автомобиля на прослушивание и устройства слежения", "text": "от 1000 грн"},
+					{"class": "--service3 --service3_spec", "title": "Защита бронированной пленкой", "text": "от 1000 грн"},
+					{"class": "--service4 --service4_spec", "title": "Химчистка и предпродажная подготовка", "text": "от 1000 грн"},
+					{"class": "--service5 --service5_spec", "title": "Комплексная диагностика при покупке/продаже", "text": "от 1000 грн"}
+				])
+		//-+e.H3.subtitle(class="titles --landing") Ходовая
+		//-+e.FIGURE.figure
+		//-	+e.IMG.img(class="", src="img/tabs/skelet1.png", alt="Автомобиль")
+		//-	+e.UL.list
+		//-		+list([
+		//-			{"class": "--service1 --service1_chassis", "title": "Ремонт пневмостоек", "text": "от 8000 грн"},
+		//-			{"class": "--service2 --service2_chassis", "title": "Восстановление рычагов подвески", "text": "от 500 грн"},
+		//-			{"class": "--service4 --service4_chassis1", "title": "Реставрация рулевой рейки", "text": "от 1500 грн"},
+		//-			{"class": "--service4 --service4_chassis2", "title": "Проточка тормозных дисков", "text": "от 350 грн"},
+		//-			{"class": "--service5 --service5_chassis", "title": "Замена тормозных колодок", "text": "от 120 грн"}
+		//-		])
+		//-+e.DIV.item
+		//-	+e.H3.subtitle(class="titles --landing") ДВС и АКПП
+		//-	+e.FIGURE.figure
+		//-		+e.IMG.img(class="", src="img/tabs/skelet2.png", alt="Автомобиль")
+		//-		+e.UL.list
+		//-			+list([
+		//-				{"class": "--service1 --service1_transmission", "title": "Ремонт ГБЦ", "text": "от 1200 грн"},
+		//-				{"class": "--service2 --service2_transmission", "title": "Регулировка клапанов", "text": "от 1500 грн"},
+		//-				{"class": "--service4 --service4_transmission", "title": "Замена комплекта ГРМ", "text": "от 900 грн"},
+		//-				{"class": "--service5 --service5_transmission", "title": "Реставрация гидротрансформатора", "text": "от 5500 грн"},
+		//-				{"class": "--service6 --service6_transmission", "title": "Ремонт АКПП", "text": "от 15000 грн"}
+		//-			])
+		//-+e.DIV.item
+		//-	+e.H3.subtitle(class="titles --landing") Компьютерная диагностика
+		//-	+e.FIGURE.figure
+		//-		+e.IMG.img(class="", src="img/tabs/skelet3.png", alt="Автомобиль")
+		//-		+e.UL.list
+		//-			+list([
+		//-				{"class": "--service1 --service1_diagnostics", "title": "Компьютерная диагностика", "text": "от 260 грн"},
+		//-				{"class": "--service3 --service3_diagnostics", "title": "Ремонт генератора", "text": "от 1200 грн"},
+		//-				{"class": "--service4 --service4_diagnostics", "title": "Ремонт и прошивка блоков ЭБУ", "text": "от 2000 грн"},
+		//-				{"class": "--service5 --service5_diagnostics", "title": "Инсталляция охранной системы (сигнализация)", "text": "от 900 грн"},
+		//-				{"class": "--service6 --service6_diagnostics", "title": "Ремонт электропроводки", "text": "от 220 грн"}
+		//-			])
+		//-
+		//-+e.DIV.item(class="--active")
+		//-	+e.H3.subtitle(class="titles --landing") Пакет ”Бюджет“
+		//-	+e.P.info Для тех, кому важно очень срочно и не дорого! Бюджет-покраска, это быстро обновить внешний вид детали или заменить цвет автомобиля. При этом преображение происходит буквально на глазах. Покраска просходит в камере. Цена покраски одной стандартной детали – 1900 грн.
+		//-	+e.FIGURE.figure
+		//-		+e.IMG.img(class="--sedan", src="img/tabs/budget-car.png", alt="Автомобиль")
+		//-		+e.UL.list
+		//-			+list([
+		//-				{"class": "--service1 --service1_sedan_positioned", "title": "Капот", "text": "1000 грн"},
+		//-				{"class": "--service2 --service2_sedan_positioned", "title": "Капот", "text": "1000 грн"},
+		//-				{"class": "--service3", "title": "Капот", "text": "1000 грн"},
+		//-				{"class": "--service4 --service4_sedan_positioned", "title": "Бампер", "text": "1000 грн"},
+		//-				{"class": "--service5 --service5_sedan_positioned", "title": "Бампер", "text": "1000 грн"},
+		//-				{"class": "--service6", "title": "Кузовной ремонт ремонт", "text": "1000 грн"}
+		//-			])
+		//-+e.DIV.item
+		//-	+e.H3.subtitle(class="titles --landing") Пакет ”Стандарт“
+		//-	+e.P.info Для тех, кому важно очень срочно и не дорого! Бюджет-покраска, это быстро обновить внешний вид детали или заменить цвет автомобиля. При этом преображение происходит буквально на глазах. Покраска просходит в камере. Цена покраски одной стандартной детали – 1900 грн.
+		//-	+e.FIGURE.figure
+		//-		+e.IMG.img(src="img/tabs/standard-car.png", alt="Автомобиль")
+		//-		+e.UL.list
+		//-			+list([
+		//-				{"class": "--service1", "title": "Кузовной ремонт", "text": "1000 грн"},
+		//-				{"class": "--service2", "title": "Ремонт, реставрация и восстановление рычагов подвески", "text": "1000 грн"},
+		//-				{"class": "--service3", "title": "Реставрация шаровых опор", "text": "1000 грн"},
+		//-				{"class": "--service4", "title": "Люк и стеклоподъемники", "text": "1000 грн"},
+		//-				{"class": "--service5", "title": "Замена / долив антифриза", "text": "1000 грн"},
+		//-				{"class": "--service6", "title": "Сварочные работы", "text": "1000 грн"}
+		//-			])
+		//-+e.DIV.item
+		//-	+e.H3.subtitle(class="titles --landing") Пакет ”Премиум“
+		//-	+e.P.info Ремонт машины неизменно оборачивается кошмаром. Раз за разом вам приходится объезжать все новые и новые автосервисы в поисках приемлемых цен.
+		//-	+e.FIGURE.figure
+		//-		+e.IMG.img(class="--sedan", src="img/tabs/premium-car.png", alt="Автомобиль")
+		//-		+e.UL.list
+		//-			+list([
+		//-				{"class": "--service1 --service1_sedan_positioned", "title": "Кузовной ремонт", "text": "1000 грн"},
+		//-				{"class": "--service2 --service2_sedan_positioned", "title": "Кузовной ремонт", "text": "1000 грн"},
+		//-				{"class": "--service3", "title": "Кузовной ремонт", "text": "1000 грн"},
+		//-				{"class": "--service4 --service4_sedan_positioned", "title": "Кузовной ремонт", "text": "1000 грн"},
+		//-				{"class": "--service5 --service5_sedan_positioned", "title": "Кузовной ремонт", "text": "1000 грн"},
+		//-				{"class": "--service6", "title": "Кузовной ремонт", "text": "1000 грн"}
+		//-			])

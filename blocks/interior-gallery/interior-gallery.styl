@@ -3,8 +3,6 @@
 	position relative
 	margin-top 3em
 	padding-bottom 6em
-	@media screen and (max-width: 480px)
-		display: none
 
 	&__tour
 		margin: 0
@@ -15,6 +13,7 @@
 		display: block
 		height: 100%
 		width: 100%
+		pointer-events none
 
 	&__list
 		flex-container(row, wrap, center, center)
@@ -32,9 +31,7 @@
 		position relative
 		z-index 100
 		width 20%
-		//min-width 14.25em
 		height auto
-		//min-height 10.55555em
 		transform scale(1)
 		&:nth-child(1)
 			transform-origin left

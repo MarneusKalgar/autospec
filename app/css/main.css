@@ -2501,6 +2501,13 @@ th {
   min-width: 15em;
   height: 25em;
   margin-top: 2.5em;
+  pointer-events: none;
+}
+.tab-panel__video {
+  width: 100%;
+  min-width: 15em;
+  height: 25em;
+  margin-top: 2.5em;
   background: rgba(46,46,46,0.8);
 }
 .tab-panel__subtitle {
@@ -4986,6 +4993,7 @@ label.error {
   }
 }
 .contacts__map--overlay {
+  position: absolute;
   z-index: 100;
   min-height: 40.5em;
 }
