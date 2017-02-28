@@ -69,3 +69,23 @@ block scripts
 			}
 			//$(".tab-panel__item--tour").mCustomScrollbar("destroy");
 		});
+
+	script.
+
+		var player;
+		function onYouTubeIframeAPIReady () {
+			player = new YT.Player('player', {
+				width: "1280",
+				height: "720",
+				autoplay: false,
+				videoId: 'KmtSqnqOZGw',
+				events: {
+					'onReady': onPlayerReady
+				}
+			});
+		}
+
+		function onPlayerReady (event) {
+			event.target.setVolume(100);
+			player.setPlaybackQuality("hd720");
+		}

@@ -2,7 +2,7 @@ function tabPanel () {
 	var $tabs = $(".tab-panel");
 	var $menu = $(".tab-panel__menu");
 	var $item = $(".tab-panel__item");
-	
+
 	var $itemActive = $(".tab-panel__item--tour");
 	var $frame = $("#frame");
 
@@ -21,7 +21,6 @@ function tabPanel () {
 				.eq($(self).index()).addClass('tab-panel__item--animate');
 		}, 100);
 	});
-
 	
 	$itemActive.on("click", function () {
 			$frame.css("pointer-events", "auto");
