@@ -6,11 +6,11 @@ function sidebar() {
 	var $page = $(".page");
 
 	if ( !$page.hasClass("page--singleService") ) {
-		$link.on("click", function () {
-			if (!$wrapper.hasClass("page__frame-wrap--isActive")) {
-				$wrapper.addClass("page__frame-wrap--isActive");
-			}
-		});
+		//$link.on("click", function () {
+		//	if (!$wrapper.hasClass("page__frame-wrap--isActive")) {
+		//		$wrapper.addClass("page__frame-wrap--isActive");
+		//	}
+		//});
 
 		//video.addEventListener("timeupdate", function () {
 		//	if (this.currentTime > 0) {

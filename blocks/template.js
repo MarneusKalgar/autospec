@@ -6,7 +6,7 @@ $(function () {
 
 	mainNav();
 
-	sidebar();
+	//sidebar();
 
 	callbackForm();
 

@@ -106,6 +106,15 @@
 		outline none
 		background rgba(0,0,0,0)
 		border none
+		&::after
+			content: ""
+			position: absolute
+			top: 50%
+			left: 50%
+			width: 350%
+			height: 350%
+			transform: translate(-50%, -50%)
+			background: rgba(0,0,0,0)
 		&::before
 			content: ""
 			position: absolute

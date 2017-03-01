@@ -384,6 +384,18 @@ th {
   background: rgba(0,0,0,0);
   border: none;
 }
+.page__close::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 350%;
+  height: 350%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background: rgba(0,0,0,0);
+}
 .page__close::before {
   content: "";
   position: absolute;

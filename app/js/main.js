@@ -6,7 +6,7 @@ $(function () {
 
 	mainNav();
 
-	sidebar();
+	//sidebar();
 
 	callbackForm();
 
@@ -36,6 +36,60 @@ $(function () {
 
 
 
+function bundles() {
+	var $table = $(".bundles__table");
+	var $fixedColumn = $table.clone().insertBefore($table).addClass("fixed-column");
+
+	$fixedColumn.find("th:not(:first-child),td:not(:first-child)").remove();
+
+	$fixedColumn.find("tr").each(function(i, elem) {
+		$(this).height($table.find("tr:eq(" + i + ")").height());
+	});
+}
+function clients() {
+	var $form = $("#clientsForm");
+
+	$form.validate({
+		rules: {
+			usercompany: {
+				required: true
+			},
+			usermessage: {
+				required: true
+			},
+			username: {
+				required: true
+			},
+			usermail: {
+				required: true,
+				email: true
+			},
+			userphone: {
+				required: true
+			}
+		},
+		messages: {
+			usercompany: {
+				required: "Пожалуйста, введите компанию"
+			},
+			username: {
+				required: "Пожалуйста, введите ФИО"
+			},
+			usermail: {
+				required: "Пожалуйста, введите адрес",
+				email: "Адрес должен быть в формате example@email.com"
+			},
+			usermessage: {
+				required: "Пожалуйста, введите данные"
+			},
+			userphone: {
+				required: "Пожалуйста, введите номер"
+			}
+		}
+	});
+
+	$("#userphone").mask("+999 (99) 999 - 99 - 99");
+}
 function callbackForm() {
 	var $btn = $("#callBtn");
 	var $form = $(".callback-form");
@@ -107,60 +161,6 @@ function callbackForm() {
 	}
 
 
-}
-function bundles() {
-	var $table = $(".bundles__table");
-	var $fixedColumn = $table.clone().insertBefore($table).addClass("fixed-column");
-
-	$fixedColumn.find("th:not(:first-child),td:not(:first-child)").remove();
-
-	$fixedColumn.find("tr").each(function(i, elem) {
-		$(this).height($table.find("tr:eq(" + i + ")").height());
-	});
-}
-function clients() {
-	var $form = $("#clientsForm");
-
-	$form.validate({
-		rules: {
-			usercompany: {
-				required: true
-			},
-			usermessage: {
-				required: true
-			},
-			username: {
-				required: true
-			},
-			usermail: {
-				required: true,
-				email: true
-			},
-			userphone: {
-				required: true
-			}
-		},
-		messages: {
-			usercompany: {
-				required: "Пожалуйста, введите компанию"
-			},
-			username: {
-				required: "Пожалуйста, введите ФИО"
-			},
-			usermail: {
-				required: "Пожалуйста, введите адрес",
-				email: "Адрес должен быть в формате example@email.com"
-			},
-			usermessage: {
-				required: "Пожалуйста, введите данные"
-			},
-			userphone: {
-				required: "Пожалуйста, введите номер"
-			}
-		}
-	});
-
-	$("#userphone").mask("+999 (99) 999 - 99 - 99");
 }
 function component() {
 	var $form = $(".component__form");
@@ -626,58 +626,6 @@ function orderForm() {
 
 	$(":input[type='tel']").mask("+999 (99) 999 - 99 - 99");
 }
-function page() {
-	var $logo = $(".logo");
-	var $sidebar = $(".sidebar");
-	
-	var $about = $(".about");
-	var $services = $(".services");
-	var $trust = $(".trust");
-	var $clients = $(".clients");
-	var $contacts = $(".contacts");
-	var $vacancies = $(".vacancies");
-
-
-	if ( $about.length ) {
-		toggleScroll( $about);
-	}
-
-	if ( $services.length ) {
-		toggleScroll($services);
-	}
-
-	if ( $trust.length ) {
-		toggleScroll($trust);
-	}
-
-	if ( $clients.length ) {
-		toggleScroll($clients);
-	}
-
-	if ( $contacts.length ) {
-		toggleScroll($contacts);
-	}
-
-	if ( $vacancies.length ) {
-		toggleScroll($vacancies);
-	}
-
-
-	function toggleScroll(item) {
-		item.on("scroll", function() {
-			if( item.scrollTop() > 0 ) {
-				if (!$sidebar.hasClass("sidebar--isMove")) {
-					$logo.addClass("logo--isFaded");
-				}
-			} else {
-				if (!$sidebar.hasClass("sidebar--isMove")) {
-					$logo.removeClass("logo--isFaded");
-				}
-			}
-		});
-	}
-	
-}
 /*******************************************/
 /* 							scroll to top
 /********************************************/
@@ -702,11 +650,11 @@ function sidebar() {
 	var $page = $(".page");
 
 	if ( !$page.hasClass("page--singleService") ) {
-		$link.on("click", function () {
-			if (!$wrapper.hasClass("page__frame-wrap--isActive")) {
-				$wrapper.addClass("page__frame-wrap--isActive");
-			}
-		});
+		//$link.on("click", function () {
+		//	if (!$wrapper.hasClass("page__frame-wrap--isActive")) {
+		//		$wrapper.addClass("page__frame-wrap--isActive");
+		//	}
+		//});
 
 		//video.addEventListener("timeupdate", function () {
 		//	if (this.currentTime > 0) {
@@ -753,6 +701,78 @@ function tabPanel () {
 			$frame.css("pointer-events", "none");
 		});
 }
+function trust() {
+	var $container = $(".thumbs__cars");
+	var $thumbs = $(".trust__thumbs");
+	var $thumb = $(".trust__thumbs-item");
+	var $slide = $(".trust__slide");
+	var $modals = $(".trust__modals");
+	var $controls = $(".trust__controls");
+
+	var $btn = $(".trust__btn");
+
+	var $next = $(".trust__toggle--next");
+	var $prev = $(".trust__toggle--prev");
+
+	//activate modal slide
+	$thumbs.on("click", "li", function() {
+		$modals.addClass("trust__modals--isActive");
+		setTimeout(function() {
+			$controls.addClass("trust__controls--isActive");
+			$btn.addClass("trust__btn--isActive");
+		},200);
+		$modals.find($slide.eq($(this).index())).addClass("trust__slide--isActive")
+	});
+
+	//close modal slide
+	$btn.on("click", function() {
+		$modals.addClass("trust__modals--isMove");
+		$controls.removeClass("trust__controls--isActive");
+		$btn.removeClass("trust__btn--isActive");
+		setTimeout(function() {
+			$modals.removeClass("trust__modals--isMove");
+			$modals.removeClass("trust__modals--isActive");
+			$slide.removeClass("trust__slide--isActive");
+		}, 200);
+	});
+
+	//slider
+	$next.on("click", function() {
+		var $current = $(".trust__slide--isActive");
+		var $next = $current.next();
+		var $slide = $(".trust__slide");
+
+		if ($next.length === 0) {
+			$next = $slide.first();
+		}
+		setTimeout(function () {
+			$current.removeClass("trust__slide--isActive");
+		}, 300);
+		setTimeout(function () {
+			$next.addClass("trust__slide--isActive");
+		}, 300);
+	});
+
+	$prev.on("click", function() {
+		var $current = $(".trust__slide--isActive");
+		var $prev = $current.prev();
+		var $slide = $(".trust__slide");
+
+		if ($prev.length === 0) {
+			$prev = $slide.last();
+		}
+		setTimeout(function () {
+			$current.removeClass("trust__slide--isActive");
+		}, 300);
+		setTimeout(function () {
+			$prev.addClass("trust__slide--isActive");
+		}, 300);
+	});
+
+
+}
+
+
 function tabs () {
 	var $tabs = $(".tabs");
 	var $menu = $(".tabs__menu");
@@ -860,78 +880,58 @@ function tabs () {
 
 	};
 })(jQuery);
-function trust() {
-	var $container = $(".thumbs__cars");
-	var $thumbs = $(".trust__thumbs");
-	var $thumb = $(".trust__thumbs-item");
-	var $slide = $(".trust__slide");
-	var $modals = $(".trust__modals");
-	var $controls = $(".trust__controls");
-
-	var $btn = $(".trust__btn");
-
-	var $next = $(".trust__toggle--next");
-	var $prev = $(".trust__toggle--prev");
-
-	//activate modal slide
-	$thumbs.on("click", "li", function() {
-		$modals.addClass("trust__modals--isActive");
-		setTimeout(function() {
-			$controls.addClass("trust__controls--isActive");
-			$btn.addClass("trust__btn--isActive");
-		},200);
-		$modals.find($slide.eq($(this).index())).addClass("trust__slide--isActive")
-	});
-
-	//close modal slide
-	$btn.on("click", function() {
-		$modals.addClass("trust__modals--isMove");
-		$controls.removeClass("trust__controls--isActive");
-		$btn.removeClass("trust__btn--isActive");
-		setTimeout(function() {
-			$modals.removeClass("trust__modals--isMove");
-			$modals.removeClass("trust__modals--isActive");
-			$slide.removeClass("trust__slide--isActive");
-		}, 200);
-	});
-
-	//slider
-	$next.on("click", function() {
-		var $current = $(".trust__slide--isActive");
-		var $next = $current.next();
-		var $slide = $(".trust__slide");
-
-		if ($next.length === 0) {
-			$next = $slide.first();
-		}
-		setTimeout(function () {
-			$current.removeClass("trust__slide--isActive");
-		}, 300);
-		setTimeout(function () {
-			$next.addClass("trust__slide--isActive");
-		}, 300);
-	});
-
-	$prev.on("click", function() {
-		var $current = $(".trust__slide--isActive");
-		var $prev = $current.prev();
-		var $slide = $(".trust__slide");
-
-		if ($prev.length === 0) {
-			$prev = $slide.last();
-		}
-		setTimeout(function () {
-			$current.removeClass("trust__slide--isActive");
-		}, 300);
-		setTimeout(function () {
-			$prev.addClass("trust__slide--isActive");
-		}, 300);
-	});
+function page() {
+	var $logo = $(".logo");
+	var $sidebar = $(".sidebar");
+	
+	var $about = $(".about");
+	var $services = $(".services");
+	var $trust = $(".trust");
+	var $clients = $(".clients");
+	var $contacts = $(".contacts");
+	var $vacancies = $(".vacancies");
 
 
+	if ( $about.length ) {
+		toggleScroll( $about);
+	}
+
+	if ( $services.length ) {
+		toggleScroll($services);
+	}
+
+	if ( $trust.length ) {
+		toggleScroll($trust);
+	}
+
+	if ( $clients.length ) {
+		toggleScroll($clients);
+	}
+
+	if ( $contacts.length ) {
+		toggleScroll($contacts);
+	}
+
+	if ( $vacancies.length ) {
+		toggleScroll($vacancies);
+	}
+
+
+	function toggleScroll(item) {
+		item.on("scroll", function() {
+			if( item.scrollTop() > 0 ) {
+				if (!$sidebar.hasClass("sidebar--isMove")) {
+					$logo.addClass("logo--isFaded");
+				}
+			} else {
+				if (!$sidebar.hasClass("sidebar--isMove")) {
+					$logo.removeClass("logo--isFaded");
+				}
+			}
+		});
+	}
+	
 }
-
-
 function whySlider() {
 
 	var $slider = $(".why__slider");

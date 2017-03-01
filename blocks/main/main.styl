@@ -38,7 +38,7 @@
 			background-color rgba(#5a3112, .55)
 			opacity 0
 			transform-origin bottom
-			animation fadeInFragments 1s ease-in 3.5s forwards
+			animation fadeInFragments 1s ease-in 3s forwards
 		@media screen and (max-width: 1050px) and (min-width: 941px)
 			width 80%
 		@media screen and (max-width: 940px)
@@ -65,7 +65,7 @@
 		line-height 1.3
 		font-weight normal
 		opacity 0
-		animation fadeInTitle 1.5s ease 3s forwards
+		animation fadeInTitle 1.5s ease 2.5s forwards
 		@media screen and (min-width: 1600px)
 			font-size 3.75em
 		@media screen and (max-width: 940px)
@@ -89,21 +89,21 @@
 		transform-origin top
 		opacity 0
 		transform scaleY(0)
-		animation slideBtn 2s ease 3s forwards
+		animation slideBtn 2s ease 2.5s forwards
 		@media screen and (max-width: 600px) and (orientation: portrait)
 			//bottom -5em
 			top 100%
 			right 50%
 			width: 80%
 			transform scaleY(0) translateX(50%)
-			animation slideBtnMobile 1.5s ease 3s forwards
+			animation slideBtnMobile 1.5s ease 2.5s forwards
 		@media screen and (max-width: 600px) and (orientation: landscape)
 			//bottom -5vw
 			top 100%
 			right 50%
 			width: 60%
 			transform scaleY(0) translateX(50%)
-			animation slideBtnMobile 1.5s ease 3s forwards
+			animation slideBtnMobile 1.5s ease 2.5s forwards
 		@media screen and (max-width: 481px) and (orientation: landscape)
 			top 100%
 
@@ -118,7 +118,7 @@
 		background url("../img/main/main-bg.jpg") 0 0 no-repeat
 		background-size cover
 		opacity 0
-		animation fadeInBg 1s ease 2s forwards
+		animation fadeInBg 1s ease 2.5s forwards
 		&::before
 			content: ""
 			position: absolute
@@ -177,22 +177,23 @@
 
 		&--one
 			animation slidePanel1 1.5s forwards
+			animation-delay .5s
 
 		&--two
 			animation slidePanel2 1.5s forwards
-			animation-delay .1s
+			animation-delay .6s
 
 		&--three
 			animation slidePanel3 1.5s forwards
-			animation-delay .2s
+			animation-delay .7s
 
 		&--four
 			animation slidePanel4 1.5s forwards
-			animation-delay .3s
+			animation-delay .8s
 
 		&--five
 			animation slidePanel5 1.5s forwards
-			animation-delay .4s
+			animation-delay .9s
 
 
 	//background image
