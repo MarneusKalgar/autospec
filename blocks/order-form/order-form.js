@@ -17,7 +17,8 @@ function orderForm() {
 				},
 				carbrand: "required",
 				carmodel: "required",
-				caryear: "required"
+				caryear: "required",
+				vincode: "required"
 			},
 
 			messages: {
@@ -31,7 +32,8 @@ function orderForm() {
 				usertel: "Пожалуйста, введите номер телефона",
 				carbrand: "Пожалуйста, введите марку автомобиля",
 				carmodel: "Пожалуйста, введите модель автомобиля",
-				caryear: "Пожалуйста, введите год выпуска"
+				caryear: "Пожалуйста, введите год выпуска",
+				vincode: "Пожалуйста, введите VIN код"
 			}
 
 		});

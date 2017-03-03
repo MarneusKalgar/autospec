@@ -1197,6 +1197,7 @@ th {
   -webkit-transform-origin: 50% 50% 0;
       -ms-transform-origin: 50% 50% 0;
           transform-origin: 50% 50% 0;
+  cursor: pointer;
 }
 @media screen and (max-width: 450px) {
   .hero__link {
@@ -1915,7 +1916,7 @@ th {
 }
 @media screen and (max-width: 779px) {
   .tabs__service--service1_sedan_positioned {
-    top: -25%;
+    top: -27%;
   }
 }
 .tabs__service--service1_chassis {
@@ -2018,7 +2019,7 @@ th {
 @media screen and (max-width: 779px) {
   .tabs__service--service2 {
     top: -18%;
-    left: 0;
+    left: 11%;
   }
   .tabs__service--service2 .tabs__pointer {
     width: 5em;
@@ -2127,8 +2128,8 @@ th {
 }
 @media screen and (max-width: 779px) {
   .tabs__service--service3 {
-    top: 8%;
-    left: -7%;
+    top: 10%;
+    left: -6%;
   }
   .tabs__service--service3 .tabs__pointer {
     width: 4.5em;
@@ -2214,7 +2215,7 @@ th {
 @media screen and (max-width: 779px) {
   .tabs__service--service4 {
     top: 100%;
-    left: -7%;
+    left: -6%;
   }
   .tabs__service--service4 .tabs__pointer {
     width: 5em;
@@ -2245,7 +2246,7 @@ th {
 }
 @media screen and (max-width: 779px) {
   .tabs__service--service4_sedan_positioned {
-    top: 100%;
+    top: 95%;
   }
 }
 .tabs__service--service4_chassis1 {
@@ -2593,8 +2594,9 @@ th {
 }
 @media screen and (max-width: 779px) and (min-width: 480px) {
   .tabs__caption {
-    font-size: 0.875em;
     bottom: 1.8em;
+    font-size: 0.875em;
+    width: 8em;
   }
 }
 @media screen and (max-width: 479px) {
@@ -2605,7 +2607,8 @@ th {
 .tabs__price {
   position: absolute;
   left: 0;
-  bottom: 0;
+  top: 65%;
+  min-width: 7em;
 }
 @media screen and (max-width: 779px) and (min-width: 480px) {
   .tabs__price {

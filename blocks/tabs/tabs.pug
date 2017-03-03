@@ -20,18 +20,18 @@ mixin tabs
 		//-	{"class": "", "text": "премиум"}
 		//-])
 
-		+e.DIV.item(class="--active")
-		+e.H3.subtitle(class="titles --landing") Наши цены
-		+e.FIGURE.figure
-			+e.IMG.img(class="", src="img/tabs/lumma.png", alt="Автомобиль")
-			+e.UL.list
-				+list([
-					{"class": "--service1 --service1_spec", "title": "Реставрация и/или перешив элементов салона", "text": "от 1000 грн"},
-					{"class": "--service2 --service2_spec", "title": "Проверка автомобиля на прослушивание и устройства слежения", "text": "от 1000 грн"},
-					{"class": "--service3 --service3_spec", "title": "Защита бронированной пленкой", "text": "от 1000 грн"},
-					{"class": "--service4 --service4_spec", "title": "Химчистка и предпродажная подготовка", "text": "от 1000 грн"},
-					{"class": "--service5 --service5_spec", "title": "Комплексная диагностика при покупке/продаже", "text": "от 1000 грн"}
-				])
+		//-+e.DIV.item(class="--active")
+		//-+e.H3.subtitle(class="titles --landing") Наши цены
+		//-+e.FIGURE.figure
+		//-	+e.IMG.img(class="", src="img/tabs/lumma.png", alt="Автомобиль")
+		//-	+e.UL.list
+		//-		+list([
+		//-			{"class": "--service1 --service1_spec", "title": "Реставрация и/или перешив элементов салона", "text": "от 1000 грн"},
+		//-			{"class": "--service2 --service2_spec", "title": "Проверка автомобиля на прослушивание и устройства слежения", "text": "от 1000 грн"},
+		//-			{"class": "--service3 --service3_spec", "title": "Защита бронированной пленкой", "text": "от 1000 грн"},
+		//-			{"class": "--service4 --service4_spec", "title": "Химчистка и предпродажная подготовка", "text": "от 1000 грн"},
+		//-			{"class": "--service5 --service5_spec", "title": "Комплексная диагностика при покупке/продаже", "text": "от 1000 грн"}
+		//-		])
 		//-+e.H3.subtitle(class="titles --landing") Ходовая
 		//-+e.FIGURE.figure
 		//-	+e.IMG.img(class="", src="img/tabs/skelet1.png", alt="Автомобиль")
@@ -96,17 +96,17 @@ mixin tabs
 		//-				{"class": "--service5", "title": "Замена / долив антифриза", "text": "1000 грн"},
 		//-				{"class": "--service6", "title": "Сварочные работы", "text": "1000 грн"}
 		//-			])
-		//-+e.DIV.item
-		//-	+e.H3.subtitle(class="titles --landing") Пакет ”Премиум“
-		//-	+e.P.info Ремонт машины неизменно оборачивается кошмаром. Раз за разом вам приходится объезжать все новые и новые автосервисы в поисках приемлемых цен.
-		//-	+e.FIGURE.figure
-		//-		+e.IMG.img(class="--sedan", src="img/tabs/premium-car.png", alt="Автомобиль")
-		//-		+e.UL.list
-		//-			+list([
-		//-				{"class": "--service1 --service1_sedan_positioned", "title": "Кузовной ремонт", "text": "1000 грн"},
-		//-				{"class": "--service2 --service2_sedan_positioned", "title": "Кузовной ремонт", "text": "1000 грн"},
-		//-				{"class": "--service3", "title": "Кузовной ремонт", "text": "1000 грн"},
-		//-				{"class": "--service4 --service4_sedan_positioned", "title": "Кузовной ремонт", "text": "1000 грн"},
-		//-				{"class": "--service5 --service5_sedan_positioned", "title": "Кузовной ремонт", "text": "1000 грн"},
-		//-				{"class": "--service6", "title": "Кузовной ремонт", "text": "1000 грн"}
-		//-			])
+		+e.DIV.item(class="--active")
+			+e.H3.subtitle(class="titles --landing") Пакет ”Премиум“
+			+e.P.info Ремонт машины неизменно оборачивается кошмаром. Раз за разом вам приходится объезжать все новые и новые автосервисы в поисках приемлемых цен.
+			+e.FIGURE.figure
+				+e.IMG.img(class="--sedan", src="img/tabs/premium-car.png", alt="Автомобиль")
+				+e.UL.list
+					+list([
+						{"class": "--service1 --service1_sedan_positioned", "title": "Полная покраска", "text": "от 30000 грн"},
+						{"class": "--service2 --service2_sedan_positioned", "title": "Покраска капота", "text": "от 4000 грн"},
+						{"class": "--service3", "title": "Ремонт (рихтовка) бампера", "text": "от 500 грн"},
+						{"class": "--service4 --service4_sedan_positioned", "title": "Покрска бампера", "text": "от 3200 грн"},
+						{"class": "--service5 --service5_sedan_positioned", "title": "Покраска крыла", "text": "от 3200 грн"},
+						{"class": "--service6", "title": "Сварочные работы", "text": "от 500 грн"}
+					])

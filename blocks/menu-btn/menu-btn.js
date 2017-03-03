@@ -5,6 +5,7 @@ function menuBtn() {
 	var $sidebar = $(".sidebar");
 
 	var $body = $('body');
+	var $wrap = $('.page__wrap');
 
 	var $main = $(".main");
 	var $tabs = $(".tab-panel__menu");
@@ -15,6 +16,7 @@ function menuBtn() {
 	var $clientsForm = $(".clients__form");
 	var $clietsList = $(".clients__list");
 	var $contacts = $(".contacts");
+	var $component = $(".component");
 
 	if (!$main.length) {
 		$btn.removeClass("menu-btn--isAnimated").css({"opacity": "1"});
@@ -54,7 +56,7 @@ function menuBtn() {
 
 		//$sidebar.toggleClass("sidebar--isMove");
 
-		if ( !$body.hasClass("page--singleService") ) {
+		if ( !$wrap.hasClass("page__wrap--singleService") ) {
 			//$body.toggleClass("page--isOverlay");
 			if ( $header.hasClass("header--isOverlay") ) {
 				$header.removeClass("header--isOverlay");

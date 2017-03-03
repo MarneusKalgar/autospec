@@ -46,50 +46,6 @@ function bundles() {
 		$(this).height($table.find("tr:eq(" + i + ")").height());
 	});
 }
-function clients() {
-	var $form = $("#clientsForm");
-
-	$form.validate({
-		rules: {
-			usercompany: {
-				required: true
-			},
-			usermessage: {
-				required: true
-			},
-			username: {
-				required: true
-			},
-			usermail: {
-				required: true,
-				email: true
-			},
-			userphone: {
-				required: true
-			}
-		},
-		messages: {
-			usercompany: {
-				required: "Пожалуйста, введите компанию"
-			},
-			username: {
-				required: "Пожалуйста, введите ФИО"
-			},
-			usermail: {
-				required: "Пожалуйста, введите адрес",
-				email: "Адрес должен быть в формате example@email.com"
-			},
-			usermessage: {
-				required: "Пожалуйста, введите данные"
-			},
-			userphone: {
-				required: "Пожалуйста, введите номер"
-			}
-		}
-	});
-
-	$("#userphone").mask("+999 (99) 999 - 99 - 99");
-}
 function callbackForm() {
 	var $btn = $("#callBtn");
 	var $form = $(".callback-form");
@@ -161,6 +117,50 @@ function callbackForm() {
 	}
 
 
+}
+function clients() {
+	var $form = $("#clientsForm");
+
+	$form.validate({
+		rules: {
+			usercompany: {
+				required: true
+			},
+			usermessage: {
+				required: true
+			},
+			username: {
+				required: true
+			},
+			usermail: {
+				required: true,
+				email: true
+			},
+			userphone: {
+				required: true
+			}
+		},
+		messages: {
+			usercompany: {
+				required: "Пожалуйста, введите компанию"
+			},
+			username: {
+				required: "Пожалуйста, введите ФИО"
+			},
+			usermail: {
+				required: "Пожалуйста, введите адрес",
+				email: "Адрес должен быть в формате example@email.com"
+			},
+			usermessage: {
+				required: "Пожалуйста, введите данные"
+			},
+			userphone: {
+				required: "Пожалуйста, введите номер"
+			}
+		}
+	});
+
+	$("#userphone").mask("+999 (99) 999 - 99 - 99");
 }
 function component() {
 	var $form = $(".component__form");
@@ -465,6 +465,7 @@ function menuBtn() {
 	var $sidebar = $(".sidebar");
 
 	var $body = $('body');
+	var $wrap = $('.page__wrap');
 
 	var $main = $(".main");
 	var $tabs = $(".tab-panel__menu");
@@ -475,6 +476,7 @@ function menuBtn() {
 	var $clientsForm = $(".clients__form");
 	var $clietsList = $(".clients__list");
 	var $contacts = $(".contacts");
+	var $component = $(".component");
 
 	if (!$main.length) {
 		$btn.removeClass("menu-btn--isAnimated").css({"opacity": "1"});
@@ -514,7 +516,7 @@ function menuBtn() {
 
 		//$sidebar.toggleClass("sidebar--isMove");
 
-		if ( !$body.hasClass("page--singleService") ) {
+		if ( !$wrap.hasClass("page__wrap--singleService") ) {
 			//$body.toggleClass("page--isOverlay");
 			if ( $header.hasClass("header--isOverlay") ) {
 				$header.removeClass("header--isOverlay");
@@ -604,7 +606,8 @@ function orderForm() {
 				},
 				carbrand: "required",
 				carmodel: "required",
-				caryear: "required"
+				caryear: "required",
+				vincode: "required"
 			},
 
 			messages: {
@@ -618,13 +621,66 @@ function orderForm() {
 				usertel: "Пожалуйста, введите номер телефона",
 				carbrand: "Пожалуйста, введите марку автомобиля",
 				carmodel: "Пожалуйста, введите модель автомобиля",
-				caryear: "Пожалуйста, введите год выпуска"
+				caryear: "Пожалуйста, введите год выпуска",
+				vincode: "Пожалуйста, введите VIN код"
 			}
 
 		});
 	});
 
 	$(":input[type='tel']").mask("+999 (99) 999 - 99 - 99");
+}
+function page() {
+	var $logo = $(".logo");
+	var $sidebar = $(".sidebar");
+	
+	var $about = $(".about");
+	var $services = $(".services");
+	var $trust = $(".trust");
+	var $clients = $(".clients");
+	var $contacts = $(".contacts");
+	var $vacancies = $(".vacancies");
+
+
+	if ( $about.length ) {
+		toggleScroll( $about);
+	}
+
+	if ( $services.length ) {
+		toggleScroll($services);
+	}
+
+	if ( $trust.length ) {
+		toggleScroll($trust);
+	}
+
+	if ( $clients.length ) {
+		toggleScroll($clients);
+	}
+
+	if ( $contacts.length ) {
+		toggleScroll($contacts);
+	}
+
+	if ( $vacancies.length ) {
+		toggleScroll($vacancies);
+	}
+
+
+	function toggleScroll(item) {
+		item.on("scroll", function() {
+			if( item.scrollTop() > 0 ) {
+				if (!$sidebar.hasClass("sidebar--isMove")) {
+					$logo.addClass("logo--isFaded");
+				}
+			} else {
+				if (!$sidebar.hasClass("sidebar--isMove")) {
+					$logo.removeClass("logo--isFaded");
+				}
+			}
+		});
+	}
+	
 }
 /*******************************************/
 /* 							scroll to top
@@ -701,6 +757,64 @@ function tabPanel () {
 			$frame.css("pointer-events", "none");
 		});
 }
+function tabs () {
+	var $tabs = $(".tabs");
+	var $menu = $(".tabs__menu");
+	var $item = $(".tabs__item");
+
+	//tabs
+	$menu.on('click', 'li:not(.tabs__tab--active)', function() {
+		var self = this;
+		setTimeout(function() {
+			$(self)
+				.addClass('tabs__tab--active')
+				.siblings().removeClass('tabs__tab--active')
+				.closest($tabs).find($item).removeClass('tabs__item--active')
+				.eq($(self).index()).addClass('tabs__item--active');
+			//}, 100);
+			//setTimeout(function() {
+				//$(self)
+				//	.closest($tabs).find($item).removeClass('tabs__item--animate')
+				//	.eq($(self).index()).addClass('tabs__item--animate');
+		}, 300);
+	});
+
+	var $service = $(".tabs__service");
+
+	$service.on("click", function () {
+		$(this).toggleClass("tabs__service--isSelected");
+	});
+
+	//lazy load images
+	//$(window).on('resize', function () {
+	//	var $images = $(".tabs img[src]");
+	//	var width = $(window).width();
+//
+	//	if ( width <= 479) {
+	//		$images.each(function (index) {
+	//			$(this).attr("data-src", $(this).attr("src"));
+	//			$(this).removeAttr("src");
+	//		});
+	//	} else {
+	//		$images.each(function (index) {
+	//			$(this).attr("src", $(this).attr("data-src"));
+	//			$(this).removeAttr("data-src");
+	//		});
+	//	}
+//
+	//});
+
+	//function isElementInViewport (el) {
+	//	var rect = el.getBoundingClientRect();
+	//	return (
+	//		rect.top >= -1000 &&
+	//		rect.left >= 0 &&
+	//		rect.bottom <= $(window).height() + 1000 &&
+	//		rect.right <= $(window).width()
+	//	);
+	//}
+
+}
 function trust() {
 	var $container = $(".thumbs__cars");
 	var $thumbs = $(".trust__thumbs");
@@ -773,64 +887,6 @@ function trust() {
 }
 
 
-function tabs () {
-	var $tabs = $(".tabs");
-	var $menu = $(".tabs__menu");
-	var $item = $(".tabs__item");
-
-	//tabs
-	$menu.on('click', 'li:not(.tabs__tab--active)', function() {
-		var self = this;
-		setTimeout(function() {
-			$(self)
-				.addClass('tabs__tab--active')
-				.siblings().removeClass('tabs__tab--active')
-				.closest($tabs).find($item).removeClass('tabs__item--active')
-				.eq($(self).index()).addClass('tabs__item--active');
-			//}, 100);
-			//setTimeout(function() {
-				//$(self)
-				//	.closest($tabs).find($item).removeClass('tabs__item--animate')
-				//	.eq($(self).index()).addClass('tabs__item--animate');
-		}, 300);
-	});
-
-	var $service = $(".tabs__service");
-
-	$service.on("click", function () {
-		$(this).toggleClass("tabs__service--isSelected");
-	});
-
-	//lazy load images
-	//$(window).on('resize', function () {
-	//	var $images = $(".tabs img[src]");
-	//	var width = $(window).width();
-//
-	//	if ( width <= 479) {
-	//		$images.each(function (index) {
-	//			$(this).attr("data-src", $(this).attr("src"));
-	//			$(this).removeAttr("src");
-	//		});
-	//	} else {
-	//		$images.each(function (index) {
-	//			$(this).attr("src", $(this).attr("data-src"));
-	//			$(this).removeAttr("data-src");
-	//		});
-	//	}
-//
-	//});
-
-	//function isElementInViewport (el) {
-	//	var rect = el.getBoundingClientRect();
-	//	return (
-	//		rect.top >= -1000 &&
-	//		rect.left >= 0 &&
-	//		rect.bottom <= $(window).height() + 1000 &&
-	//		rect.right <= $(window).width()
-	//	);
-	//}
-
-}
 (function($) {
 
 	var methods = {
@@ -880,58 +936,6 @@ function tabs () {
 
 	};
 })(jQuery);
-function page() {
-	var $logo = $(".logo");
-	var $sidebar = $(".sidebar");
-	
-	var $about = $(".about");
-	var $services = $(".services");
-	var $trust = $(".trust");
-	var $clients = $(".clients");
-	var $contacts = $(".contacts");
-	var $vacancies = $(".vacancies");
-
-
-	if ( $about.length ) {
-		toggleScroll( $about);
-	}
-
-	if ( $services.length ) {
-		toggleScroll($services);
-	}
-
-	if ( $trust.length ) {
-		toggleScroll($trust);
-	}
-
-	if ( $clients.length ) {
-		toggleScroll($clients);
-	}
-
-	if ( $contacts.length ) {
-		toggleScroll($contacts);
-	}
-
-	if ( $vacancies.length ) {
-		toggleScroll($vacancies);
-	}
-
-
-	function toggleScroll(item) {
-		item.on("scroll", function() {
-			if( item.scrollTop() > 0 ) {
-				if (!$sidebar.hasClass("sidebar--isMove")) {
-					$logo.addClass("logo--isFaded");
-				}
-			} else {
-				if (!$sidebar.hasClass("sidebar--isMove")) {
-					$logo.removeClass("logo--isFaded");
-				}
-			}
-		});
-	}
-	
-}
 function whySlider() {
 
 	var $slider = $(".why__slider");

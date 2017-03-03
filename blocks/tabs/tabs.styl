@@ -185,7 +185,7 @@
 		&--service1_sedan_positioned
 			top -10%
 			@media screen and (max-width: 779px)
-				top -25%
+				top -27%
 
 		&--service1_chassis
 			top: 0
@@ -255,7 +255,7 @@
 				bottom -60%
 			@media screen and (max-width: 779px)
 				top -18%
-				left 0
+				left 11%
 				.tabs__pointer
 					width 5em
 					bottom -1em
@@ -327,8 +327,8 @@
 				left 115%
 				bottom -60%
 			@media screen and (max-width: 779px)
-				top 8%
-				left -7%
+				top 10%
+				left -6%
 				.tabs__pointer
 					width 4.5em
 					bottom -.75em
@@ -386,7 +386,7 @@
 				bottom 155%
 			@media screen and (max-width: 779px)
 				top 100%
-				left -7%
+				left -6%
 				.tabs__pointer
 					width 5em
 					bottom 3.9em
@@ -406,7 +406,7 @@
 		&--service4_sedan_positioned
 			top 90%
 			@media screen and (max-width: 779px)
-				top 100%
+				top 95%
 
 		&--service4_chassis1
 			top 0
@@ -640,15 +640,18 @@
 		transition all .2s ease
 		transform translate(0, 0) scale(1)
 		@media screen and (max-width: 779px) and (min-width: 480px)
-			font-size .875em
 			bottom 1.8em
+			font-size .875em
+			width: 8em;
 		@media screen and (max-width: 479px)
 			width 100%
 
 	&__price
 		position absolute
 		left 0
-		bottom 0
+		//bottom 0
+		top 65%
+		min-width 7em
 		@media screen and (max-width: 779px) and (min-width: 480px)
 			font-size .875em
 		
