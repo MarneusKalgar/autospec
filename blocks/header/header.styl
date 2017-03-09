@@ -48,16 +48,18 @@
 		z-index: 2000
 		min-height 5.2em
 		padding-bottom .5em
-		background-color $base-decor-color-dark
+		background-color rgba($base-overlay-element-color, .8)
 		transition all .5s ease
 		@media screen and (max-width: 1100px)
 			padding-bottom: 0
+			background: none
 
 	&--isComponent
 		flex-container(row, nowrap, space-between, center)
 		padding: 2em 3em 0 3em
 		@media screen and (max-width: 640px)
 			padding: 2em 5% 0 5%;
+
 
 	&__wrap
 		flex-container(row, wrap, space-between, flex-end)
@@ -84,7 +86,7 @@
 				box-sizing: border-box
 				width: 100%
 				padding: .5em 1.25em;
-				background-color $base-decor-color-dark
+				background-color rgba($base-overlay-element-color, .8)
 			@media screen and (max-width: 600px)
 				height: 100%
 
@@ -104,7 +106,7 @@
 			width 100%
 			min-height 8em;
 			padding .5em 0
-			background-color rgba($base-decor-color-dark, .8);
+			background-color rgba($base-overlay-element-color, .8)
 			transition: all .3s linear;
 			will-change transform
 			transform-origin top

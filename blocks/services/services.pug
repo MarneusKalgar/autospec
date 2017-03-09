@@ -9,6 +9,13 @@ mixin inform(items)
 
 mixin services
 	+b.MAIN.services
+		+e.DIV.refs
+			+e.A.sign(href="rangerover.html")
+				+e.IMG.img(src="img/services/land_rover.png", alt="Land Rover лого")
+				//-+e.P.text Ознакомиться
+			+e.A.sign(href="#")
+				+e.IMG.img(src="img/services/mercedes_benz.png", alt="Mercedes Benz лого")
+				//-+e.P.text Ознакомиться
 		+e.DIV.scheme
 			+e.IMG.photo(src="img/services/services__photo.png", alt="сервис и цены")
 			+e.UL.list

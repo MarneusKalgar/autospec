@@ -1,21 +1,25 @@
 function callbackForm() {
 	var $btn = $("#callBtn");
-	var $form = $(".callback-form");
-	var $wrapper = $(".page__form-wrap");
-	var $close = $(".callback-form__close");
+	var $form = $("#callForm");
+	var $validadteForm = $(".callback-form, .action-form");
+	var $wrapper = $(".callus__form-wrap");
+	var $close = $("#actionClose");
 
 	var $tel = $("#callback-tel");
 
 	if ($tel.length) {
 		$tel.mask("+999 (99) 999 - 99 - 99");
 
-		$form.validate({
+		$validadteForm.validate({
 
 			rules: {
 				username: {
 					required: true
 				},
 				usertel: {
+					required: true
+				},
+				usermail: {
 					required: true
 				}
 			},
@@ -24,7 +28,11 @@ function callbackForm() {
 				username: {
 					required: "Пожалуйста, введите имя"
 				},
-				usertel: "Пожалуйста, введите номер телефона"
+				usertel: "Пожалуйста, введите номер телефона",
+				usermail: {
+					required: "Пожалуйста, введите email",
+					email: "Формат почты example@email.com"
+				}
 			}
 
 		});
@@ -33,18 +41,18 @@ function callbackForm() {
 
 
 	$btn.on("click", function () {
-		if (!$wrapper.hasClass("page__form-wrap--isActive")) {
-			$wrapper.addClass("page__form-wrap--isActive");
+		if (!$wrapper.hasClass("callus__form-wrap--isActive")) {
+			$wrapper.addClass("callus__form-wrap--isActive");
 		}
 
-		if (!$form.hasClass("callback-form--isActive")) {
-			$form.addClass("callback-form--isActive");
+		if (!$form.hasClass("action-form--isActive")) {
+			$form.addClass("action-form--isActive");
 		}
 
 	});
 
 	$close.on("click", function () {
-		$wrapper.removeClass("page__form-wrap--isActive");
+		$wrapper.removeClass("callus__form-wrap--isActive");
 		$form.removeClass("callback-form--isActive");
 	});
 

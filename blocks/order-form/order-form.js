@@ -1,4 +1,5 @@
 function orderForm() {
+	
 	var $form = $(".order-form");
 
 	$form.each(function () {
@@ -38,6 +39,5 @@ function orderForm() {
 
 		});
 	});
-
 	$(":input[type='tel']").mask("+999 (99) 999 - 99 - 99");
 }

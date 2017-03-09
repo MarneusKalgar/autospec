@@ -31,6 +31,8 @@ $(function () {
 	component();
 
 	gallery();
+
+	prices();
 	
 });
 
@@ -48,22 +50,26 @@ function bundles() {
 }
 function callbackForm() {
 	var $btn = $("#callBtn");
-	var $form = $(".callback-form");
-	var $wrapper = $(".page__form-wrap");
-	var $close = $(".callback-form__close");
+	var $form = $("#callForm");
+	var $validadteForm = $(".callback-form, .action-form");
+	var $wrapper = $(".callus__form-wrap");
+	var $close = $("#actionClose");
 
 	var $tel = $("#callback-tel");
 
 	if ($tel.length) {
 		$tel.mask("+999 (99) 999 - 99 - 99");
 
-		$form.validate({
+		$validadteForm.validate({
 
 			rules: {
 				username: {
 					required: true
 				},
 				usertel: {
+					required: true
+				},
+				usermail: {
 					required: true
 				}
 			},
@@ -72,7 +78,11 @@ function callbackForm() {
 				username: {
 					required: "Пожалуйста, введите имя"
 				},
-				usertel: "Пожалуйста, введите номер телефона"
+				usertel: "Пожалуйста, введите номер телефона",
+				usermail: {
+					required: "Пожалуйста, введите email",
+					email: "Формат почты example@email.com"
+				}
 			}
 
 		});
@@ -81,18 +91,18 @@ function callbackForm() {
 
 
 	$btn.on("click", function () {
-		if (!$wrapper.hasClass("page__form-wrap--isActive")) {
-			$wrapper.addClass("page__form-wrap--isActive");
+		if (!$wrapper.hasClass("callus__form-wrap--isActive")) {
+			$wrapper.addClass("callus__form-wrap--isActive");
 		}
 
-		if (!$form.hasClass("callback-form--isActive")) {
-			$form.addClass("callback-form--isActive");
+		if (!$form.hasClass("action-form--isActive")) {
+			$form.addClass("action-form--isActive");
 		}
 
 	});
 
 	$close.on("click", function () {
-		$wrapper.removeClass("page__form-wrap--isActive");
+		$wrapper.removeClass("callus__form-wrap--isActive");
 		$form.removeClass("callback-form--isActive");
 	});
 
@@ -431,8 +441,16 @@ function header() {
 }
 function hero() {
 	var $link = $(".hero__link");
+	var $btn = $(".hero__btn");
 
 	$link.on("click", function(e) {
+		e.preventDefault();
+		var id = $(this).attr("data-link");
+		var offset = $(id).offset().top;
+		$("html, body").animate({"scrollTop": offset}, 500);
+	});
+
+	$btn.on("click", function(e) {
 		e.preventDefault();
 		var id = $(this).attr("data-link");
 		var offset = $(id).offset().top;
@@ -588,6 +606,7 @@ function menuBtn() {
 
 }
 function orderForm() {
+	
 	var $form = $(".order-form");
 
 	$form.each(function () {
@@ -627,7 +646,6 @@ function orderForm() {
 
 		});
 	});
-
 	$(":input[type='tel']").mask("+999 (99) 999 - 99 - 99");
 }
 function page() {
@@ -681,6 +699,52 @@ function page() {
 		});
 	}
 	
+}
+function prices() {
+	var $btnContainer = $(".prices__cars");
+	var $carBtn = $(".prices__cars-btn");
+	var $modals = $(".prices__modals");
+	var $modalItem = $(".prices__modal");
+	
+	var $priceBtn = $(".prices__modal-btn");
+	var $price = $(".prices__modal-price");
+	var $close = $(".prices__close");
+	var $container = $(".prices__modal");
+	var $body = $("body");
+
+	var $pricesPos = $(".prices").position().top;
+	var scroll;
+
+	console.log($pricesPos);
+
+	$carBtn.on("click", function() {
+			$modals.find($modalItem.eq($(this).index())).siblings().removeClass("prices__modal--isActive").slideUp(400);
+			$modals.find($modalItem.eq($(this).index())).toggleClass("prices__modal--isActive");
+			$modals.find($modalItem.eq($(this).index())).slideToggle(400);
+	});
+
+	$priceBtn.on("click", function() {
+		//$body.on('scroll touchmove mousewheel', function(e) {
+		//	e.preventDefault();
+		//	e.stopPropagation();
+		//	return false;
+		//});
+		$(this).closest($container).find($price).addClass("prices__modal-price--isActive");
+		//$price.addClass("prices__modal-price--isActive");
+		setTimeout(function() {
+			$body.addClass("page--isModal");
+		}, 400);
+		scroll = $(window).scrollTop();
+	});
+
+	$close.on("click", function() {
+		$price.removeClass("prices__modal-price--isActive");
+		$body.removeClass("page--isModal");
+		setTimeout(function() {
+			$(window).scrollTop(scroll);
+		}, 100);
+		//$body.off('scroll touchmove mousewheel');
+	})
 }
 /*******************************************/
 /* 							scroll to top

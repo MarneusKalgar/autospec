@@ -1,0 +1,110 @@
+/*******************callUs******************/
+.callus
+	position: relative
+	min-height 25em
+	padding: 3em 0 2em
+	text-align: center
+
+	&__wrap
+		width $base-wrap-element-width
+		margin 0 auto
+		@media screen and (max-width: 1199px)
+			box-sizing border-box
+			width 100%
+			padding 0 1.25em
+
+	&__content
+		width: 50%
+		margin: 0 auto
+
+	&__title
+		margin 0 auto .5em
+
+	&__list
+		margin: 0
+		padding: 0
+		list-style none
+		font-size 1.5em
+
+	&__icon
+		width: 1.1em
+		height: 1.1em
+		fill $base-decor-color
+
+	&__link
+		display block
+		margin .2em 0 0
+		color $base-text-color
+		text-decoration none
+		font-weight bold
+		transition all .3s ease
+		&:hover
+			color $base-decor-color
+
+	&__text
+		display: inline-block
+		position: relative
+		margin-top: 1em
+		text-transform: uppercase
+		&::before
+		&::after
+			content: ""
+			position: absolute
+			width: 5em
+			height: 2px
+			top: 50%
+			background-color: $base-text-color
+		&::before
+			left: 3em
+		&::after
+			right: 3em
+
+	&__btn
+		position: relative
+		min-height 3em
+		line-height: 3em
+		margin: 2em auto 0
+		padding: 0 2em 0 2.5em
+		border: none
+		&:before
+			transform: none
+		&:hover
+		&:focus
+			&:before
+				background: darken($base-decor-color, 10%)
+				transform: none
+
+	&__btn-icon
+		position: absolute
+		width: .85em
+		height: .85em
+		top: 47%
+		left: 1.2em
+		transform: translateY(-50%)
+		fill $base-text-color-light
+		stroke-width 0
+
+
+		//callback-form
+	&__form-wrap
+		display: flex
+		justify-content: center
+		align-items: center
+		position: absolute
+		top: 0
+		right: 0
+		bottom: 0
+		left: 0
+		z-index: 200
+		transform: translateX(102%)
+		will-change transform
+		visibility: hidden
+		opacity: 0
+		transition: transform .4s ease .5s, visibility .4s ease, opacity .4s ease, background .4s ease;
+
+		&--isActive
+			transform: translateX(0)
+			visibility: visible
+			opacity: 1
+			//background: rgba($base-decor-color-dark,.8);
+			transition: transform .3s ease, visibility .3s ease  .4s, opacity .3s ease  .4s, background .3s ease .4s;

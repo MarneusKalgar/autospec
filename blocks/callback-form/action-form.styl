@@ -1,9 +1,11 @@
-/************CALLBACK-FORM**************/
-.callback-form
+/************action-form**************/
+.action-form
 	position: relative
-	z-index: 6000
+	z-index: 200
 	box-sizing border-box
 	max-height 28.75em
+	min-height 25em
+	margin-top: 1em
 	padding 1em 1.5em
 	font-size 1rem
 	color $base-text-color-light
@@ -22,9 +24,13 @@
 		opacity: 1
 		visibility: visible
 
+	&__row
+		position: relative
+
 	&__label
 		display block
-		margin-top: 1em;
+		margin-top: 1.5em;
+		text-align: left;
 		@media screen and (max-height: 460px)
 			margin-top: .5em;
 
@@ -89,7 +95,27 @@
 			height 3em
 
 	&__btn
-		margin-top 2em
+		box-sizing: border-box
+		margin-top 4em
+		width: 100%
+		color $base-decor-color
+		letter-spacing .1em
+		background-color #363636
+		border-radius 1.5em
+		border-style solid
+		border-width $sidebar-elements-bd-width
+		border-top-color $sidebar-bd-color-light
+		border-left-color $sidebar-bd-color-light
+		border-bottom-color $sidebar-bd-color-dark
+		border-right-color $sidebar-bd-color-dark
+		transition all .3s ease
+		&:hover
+		&:focus
+			background-color lighten(#363636, 2%)
+		&:active
+			border-top-color $sidebar-bd-color-dark
+			border-left-color $sidebar-bd-color-dark
+
 
 	&__close
 		position absolute
@@ -103,9 +129,19 @@
 		border none
 		&:hover
 		&:focus
-			.callback-form__icon
+			.action-form__icon
 				fill $base-decor-color
 
 	&__icon
 		fill lighten(#000, 15%)
 		transition: all .4s ease;
+
+	label.error
+		display block
+		position: relative
+		top: 0
+		left: 0
+		width 100%
+		text-align: left;
+		font-size 1em
+		color lighten(#bc0d0d, 30%)

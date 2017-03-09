@@ -85,6 +85,14 @@
 	&--rounded
 		border-radius: 2em
 
+	&--white
+		color $base-text-color
+		border 1px solid $base-text-color-light
+		&:before
+			background-color $base-text-color-light
+		&:hover
+			color $base-text-color-light
+
 
 	&__icon
 		position absolute
@@ -93,3 +101,5 @@
 		stroke $base-text-color-light
 		stroke-width 8px
 		transition all .5s cubic-bezier(0.2, 1, 0.3, 1)
+
+

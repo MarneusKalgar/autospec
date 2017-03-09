@@ -1,0 +1,15 @@
+mixin action-form
+	+b.FORM.action-form#callForm(method="POST", action="#", name="callback")
+		+e.BUTTON.close#actionClose(type="button")
+			+e.SVG.icon(xmlns="http://www.w3.org/2000/svg", viewBox="0 0 22.88 22.88", width="24", height="24")
+				path(d="M.32 1.9C-.1 1.5-.1.78.32.33c.45-.43 1.15-.43 1.6 0l9.5 9.54L20.98.32c.43-.43 1.15-.43 1.57 0 .45.45.45 1.16 0 1.6l-9.52 9.5 9.52 9.55c.45.43.45 1.15 0 1.6-.42.42-1.14.42-1.57 0L11.43 13 1.9 22.56c-.43.43-1.13.43-1.58 0-.43-.44-.43-1.16 0-1.6l9.53-9.53L.32 1.9z")
+		+e.DIV.row
+			+e.LABEL.label Ваше имя
+			+e.INPUT.input(type="text", name="username", required, aria-required="true", placeholder="Как Вас зовут?")
+		+e.DIV.row
+			+e.LABEL.label Ваша почта
+			+e.INPUT.input(type="email", name="usermail", required, aria-required="true", placeholder="Ваша почта")
+		//-+e.DIV.row
+		//-	+e.LABEL.label Ваше сообщение
+		//-	+e.TEXTAREA.area(name="usermessage", required, aria-required="true", placeholder="Ваше сообщение")
+		+b.INPUT.btn(type="submit", class="--filled --rounded action-form__btn", value="позвонить нам")
