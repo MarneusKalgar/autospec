@@ -16,6 +16,8 @@
 	&__content
 		width: 50%
 		margin: 0 auto
+		@media screen and (max-width: 700px)
+			width: 100%
 
 	&__title
 		margin 0 auto .5em
@@ -58,9 +60,14 @@
 			left: 3em
 		&::after
 			right: 3em
+		@media screen and (max-width: 480px)
+			&::before
+			&::after
+				display: none
 
 	&__btn
 		position: relative
+		min-width 14.5em
 		min-height 3em
 		line-height: 3em
 		margin: 2em auto 0
@@ -73,6 +80,9 @@
 			&:before
 				background: darken($base-decor-color, 10%)
 				transform: none
+		@media screen and (max-width: 480px)
+			min-width 13.2em
+			padding: 0 1em 0 2.3em
 
 	&__btn-icon
 		position: absolute

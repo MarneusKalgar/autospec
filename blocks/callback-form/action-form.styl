@@ -14,11 +14,6 @@
 	opacity: 0
 	visibility: hidden
 	transition all .5s ease .3s
-	@media screen and (min-width: 1440px)
-		max-height 32em
-		padding 2em
-	@media screen and (max-height: 460px)
-		padding 0 2.5em .5em
 
 	&--isActive
 		opacity: 1
@@ -32,7 +27,7 @@
 		margin-top: 1.5em;
 		text-align: left;
 		@media screen and (max-height: 460px)
-			margin-top: .5em;
+			margin-top: 1em;
 
 	&__input
 		display block
@@ -59,9 +54,6 @@
 			width 20em
 		@media screen and (max-width: 375px)
 			width 15em
-		@media screen and (max-height: 460px)
-			width 21em
-			height 2.8em
 
 	&__area
 		display block
@@ -90,9 +82,6 @@
 			height 7em
 		@media screen and (max-width: 375px)
 			width 15em
-		@media screen and (max-height: 460px)
-			width 21em
-			height 3em
 
 	&__btn
 		box-sizing: border-box

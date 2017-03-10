@@ -23,8 +23,6 @@
 		
 	&--range
 		padding-bottom: 3em
-		background: #fff url("../img/hero/hero-range.jpg") center no-repeat;
-		background-size: cover
 		&::before
 			display: none
 
@@ -40,10 +38,16 @@
 
 	&__wrap
 		display: inline-block
-		margin-top: 5em;
+		box-sizing: border-box
+		margin: 5em 1.25em 0;
 		padding: 2em
 		border-radius: 1em;
 		background-color rgba(97,42,0, .7)
+		@media screen and (max-width: 750px)
+			box-sizing: border-box
+			width: 90%
+			padding: 2em 1em
+			margin: 5em auto 0;
 
 
 	&__title
@@ -120,6 +124,19 @@
 			padding 0 2.5%
 		@media screen and (max-width: 450px)
 			width: 90%
+
+		&--brandLanding
+			padding: 0
+			@media screen and (max-width: 840px)
+				margin-top 1em
+				font-size 1.5em
+			@media screen and (max-width: 750px)
+				box-sizing border-box
+				width 100%
+			@media screen and (max-width: 599px)
+				padding: 0
+			@media screen and (max-width: 480px)
+				font-size 1.25em
 
 	&__link
 		position: relative

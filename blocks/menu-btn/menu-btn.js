@@ -94,8 +94,12 @@ function menuBtn() {
 				$panel.addClass("vacancies--isOverlay");
 			}
 		}
+
+
 		//if ($services.length ) {
-		//	$services.toggleClass("services--isOverlay");
+		//	var $cars = $(".services__refs");
+		//	$cars.toggleClass("services__refs--isOverlay");
+		//	//$services.toggleClass("services--isOverlay");
 		//}
 		if ($trust.length ) {
 			if ( $trust.hasClass("trust__cars--isOverlay") ) {

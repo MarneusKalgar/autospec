@@ -34,14 +34,12 @@
             <source media="(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)" srcset="img/logo/autospec-logo-light@2.png"/><img class="logo__img" src="img/logo/autospec-logo-light.png" alt="логотип компании автоспецсервис" title=""/>
           </picture></a>
           <!-- end block logo-->
-          <ul class="header__list">
+          <ul class="header__list header__list--isComponent">
             <li class="header__list-item"><a class="btn btn--bordered btn--arrow btn--rounded" href="services.html">В Сервис и цены
               <svg class="btn__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32.635 32.635" width="14" height="8">
                 <path d="M32.13 16.82H.5c-.28 0-.5-.23-.5-.5s.22-.5.5-.5h31.64c.27 0 .5.22.5.5s-.23.5-.5.5z"></path>
                 <path d="M13.04 29.35c-.13 0-.26-.05-.36-.14L.15 16.68c-.1-.1-.15-.22-.15-.36s.05-.24.15-.34L12.68 3.43c.2-.2.52-.2.7 0s.2.5 0 .7L1.22 16.34l12.2 12.17c.2.2.2.5 0 .7-.1.1-.24.15-.36.15z"></path>
               </svg></a>
-            </li>
-            <li class="header__list-item"><a class="btn btn--filled btn--rounded" id="to_bundles" href="#bundles" data-link="#bundles">Записаться на ремонт</a>
             </li>
             <li class="header__list-item header__list-item--telephone"><a class="header__link" href="tel:+380975555555">+38 (097) 555 - 55 - 55</a>
             </li>
@@ -51,11 +49,11 @@
         </div>
         <!-- block hero-->
       </header>
-      <section class="hero hero--range" id="hero">
+      <section class="hero hero--range" style="background-image: url('img/hero/hero-range.jpg')" id="hero">
         <div class="hero__wrap">
           <h1 class="hero__title hero__title--brandLanding titles">Range Rover
           </h1>
-          <p class="hero__lead">Изящный и современный, Range Rover отличается бесподобными характеристиками и уникальным происхождением. Впервые появившись 45 лет назад, автомобиль с таким культовым дизайном определил &laquo;внедорожное будущее&raquo; всей автопромышленности. За годы своего существования он стал ярким воплощением легендарного мастерства британских дизайнеров.
+          <p class="hero__lead hero__lead--brandLanding">Изящный и современный, Range Rover отличается бесподобными характеристиками и уникальным происхождением. Впервые появившись 45 лет назад, автомобиль с таким культовым дизайном определил &laquo;внедорожное будущее&raquo; всей автопромышленности. За годы своего существования он стал ярким воплощением легендарного мастерства британских дизайнеров.
           </p><a class="btn btn--filled btn--white btn--rounded hero__btn" href="#about" data-link="#about">узнать больше</a>
         </div>
         <!-- end block hero-->
@@ -71,7 +69,7 @@
           </iframe>
         </div>
       </section>
-      <section class="advantages advantages--range1 wow slideInRight">
+      <section class="advantages advantages--range1 wow slideInRight" style="background-image: url('img/advantages/advantages-bg.jpg')">
         <div class="advantages__wrap">
           <div class="advantages__content">
             <h2 class="advantages__title titles titles--landing">Наши преимущества
@@ -169,14 +167,12 @@
                       <use xlink:href="#close"></use>
                     </svg>
                   </button>
-                  <div class="prices__table-wrap">
-                    <h3 class="prices__caption">Стоимость периодического ТО
-                    </h3>
+                  <h3 class="prices__table-caption">Стоимость периодического ТО
+                  </h3>
+                  <div class="prices__content">
                     <table class="prices__table">
                       <thead class="prices__table-head">
-                      </thead>
-                      <tbody class="prices__table-body">
-                        <tr class="prices__row">
+                        <tr class="prices__row prices__row--head">
                           <th class="prices__cell prices__cell--head">Периодичность ТО км/месяцев
                           </th>
                           <th class="prices__cell prices__cell--head">12000 км / 6
@@ -200,6 +196,8 @@
                           <th class="prices__cell prices__cell--head">120000 км / 60
                           </th>
                         </tr>
+                      </thead>
+                      <tbody class="prices__table-body">
                         <tr class="prices__row">
                           <td class="prices__cell">Кількість нормо-годин
                           </td>
@@ -560,9 +558,7 @@
                           <td class="prices__cell">812
                           </td>
                         </tr>
-                      </tbody>
-                      <tfoot class="prices__table-body">
-                        <tr class="prices__row">
+                        <tr class="prices__row prices__row--foot">
                           <td class="prices__cell prices__cell--foot">Загальна вартість запчастин
                           </td>
                           <td class="prices__cell prices__cell--foot">3364
@@ -586,7 +582,7 @@
                           <td class="prices__cell prices__cell--foot">16414
                           </td>
                         </tr>
-                      </tfoot>
+                      </tbody>
                     </table>
                   </div>
                 </div>
@@ -609,14 +605,12 @@
                       <use xlink:href="#close"></use>
                     </svg>
                   </button>
-                  <div class="prices__table-wrap">
-                    <h3 class="prices__caption">Стоимость периодического ТО
-                    </h3>
+                  <h3 class="prices__table-caption">Стоимость периодического ТО
+                  </h3>
+                  <div class="prices__content">
                     <table class="prices__table">
                       <thead class="prices__table-head">
-                      </thead>
-                      <tbody class="prices__table-body">
-                        <tr class="prices__row">
+                        <tr class="prices__row prices__row--head">
                           <th class="prices__cell prices__cell--head">Периодичность ТО км/месяцев
                           </th>
                           <th class="prices__cell prices__cell--head">12000 км / 6
@@ -640,6 +634,8 @@
                           <th class="prices__cell prices__cell--head">120000 км / 60
                           </th>
                         </tr>
+                      </thead>
+                      <tbody class="prices__table-body">
                         <tr class="prices__row">
                           <td class="prices__cell">Кількість нормо-годин
                           </td>
@@ -1000,9 +996,7 @@
                           <td class="prices__cell">812
                           </td>
                         </tr>
-                      </tbody>
-                      <tfoot class="prices__table-body">
-                        <tr class="prices__row">
+                        <tr class="prices__row prices__row--foot">
                           <td class="prices__cell prices__cell--foot">Загальна вартість запчастин
                           </td>
                           <td class="prices__cell prices__cell--foot">3364
@@ -1026,7 +1020,7 @@
                           <td class="prices__cell prices__cell--foot">16414
                           </td>
                         </tr>
-                      </tfoot>
+                      </tbody>
                     </table>
                   </div>
                 </div>
@@ -1049,14 +1043,12 @@
                       <use xlink:href="#close"></use>
                     </svg>
                   </button>
-                  <div class="prices__table-wrap">
-                    <h3 class="prices__caption">Стоимость периодического ТО
-                    </h3>
+                  <h3 class="prices__table-caption">Стоимость периодического ТО
+                  </h3>
+                  <div class="prices__content">
                     <table class="prices__table">
                       <thead class="prices__table-head">
-                      </thead>
-                      <tbody class="prices__table-body">
-                        <tr class="prices__row">
+                        <tr class="prices__row prices__row--head">
                           <th class="prices__cell prices__cell--head">Периодичность ТО км/месяцев
                           </th>
                           <th class="prices__cell prices__cell--head">12000 км / 6
@@ -1080,6 +1072,8 @@
                           <th class="prices__cell prices__cell--head">120000 км / 60
                           </th>
                         </tr>
+                      </thead>
+                      <tbody class="prices__table-body">
                         <tr class="prices__row">
                           <td class="prices__cell">Кількість нормо-годин
                           </td>
@@ -1440,9 +1434,7 @@
                           <td class="prices__cell">812
                           </td>
                         </tr>
-                      </tbody>
-                      <tfoot class="prices__table-body">
-                        <tr class="prices__row">
+                        <tr class="prices__row prices__row--foot">
                           <td class="prices__cell prices__cell--foot">Загальна вартість запчастин
                           </td>
                           <td class="prices__cell prices__cell--foot">3364
@@ -1466,7 +1458,7 @@
                           <td class="prices__cell prices__cell--foot">16414
                           </td>
                         </tr>
-                      </tfoot>
+                      </tbody>
                     </table>
                   </div>
                 </div>
@@ -1489,14 +1481,12 @@
                       <use xlink:href="#close"></use>
                     </svg>
                   </button>
-                  <div class="prices__table-wrap">
-                    <h3 class="prices__caption">Стоимость периодического ТО
-                    </h3>
+                  <h3 class="prices__table-caption">Стоимость периодического ТО
+                  </h3>
+                  <div class="prices__content">
                     <table class="prices__table">
                       <thead class="prices__table-head">
-                      </thead>
-                      <tbody class="prices__table-body">
-                        <tr class="prices__row">
+                        <tr class="prices__row prices__row--head">
                           <th class="prices__cell prices__cell--head">Периодичность ТО км/месяцев
                           </th>
                           <th class="prices__cell prices__cell--head">12000 км / 6
@@ -1520,6 +1510,8 @@
                           <th class="prices__cell prices__cell--head">120000 км / 60
                           </th>
                         </tr>
+                      </thead>
+                      <tbody class="prices__table-body">
                         <tr class="prices__row">
                           <td class="prices__cell">Кількість нормо-годин
                           </td>
@@ -1880,9 +1872,7 @@
                           <td class="prices__cell">812
                           </td>
                         </tr>
-                      </tbody>
-                      <tfoot class="prices__table-body">
-                        <tr class="prices__row">
+                        <tr class="prices__row prices__row--foot">
                           <td class="prices__cell prices__cell--foot">Загальна вартість запчастин
                           </td>
                           <td class="prices__cell prices__cell--foot">3364
@@ -1906,7 +1896,7 @@
                           <td class="prices__cell prices__cell--foot">16414
                           </td>
                         </tr>
-                      </tfoot>
+                      </tbody>
                     </table>
                   </div>
                 </div>
@@ -1933,7 +1923,7 @@
           </li>
         </ul>
       </div>
-      <section class="advantages advantages--range2 wow slideInRight">
+      <section class="advantages advantages--range2 wow slideInRight" style="background-image: url('img/advantages/advantages-bg2.jpg')">
         <div class="advantages__wrap">
           <div class="advantages__content">
             <h2 class="advantages__title titles titles--landing">Наши преимущества
@@ -2110,6 +2100,16 @@
     <script>
       new WOW().init();
       
+    </script>
+    <script>
+      (function ($) {
+      	$(window).on("load resize", function () {
+      		$(".prices__content").mCustomScrollbar({
+      			axis: "xy",
+      			theme: "my-theme-dark"
+      		});
+      	});
+      })(jQuery);
     </script>
   </body>
 </html>

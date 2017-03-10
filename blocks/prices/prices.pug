@@ -24,12 +24,11 @@ mixin prices(cars, modals)
 								+e.BUTTON.close(type="button")
 									+e.SVG.icon(width="24", height="24")
 										use(xlink:href="#close")
-								+e.DIV.table-wrap
-									+e.H3.caption Стоимость периодического ТО
+								+e.H3.table-caption Стоимость периодического ТО
+								+e.DIV.content
 									+e.TABLE.table
 										+e.THEAD.table-head
-										+e.TBODY.table-body
-											+e.TR.row
+											+e.TR.row(class="--head")
 												+e.TH.cell(class="--head") Периодичность ТО км/месяцев
 												+e.TH.cell(class="--head") 12000 км / 6
 												+e.TH.cell(class="--head") 24000 км / 12
@@ -41,6 +40,7 @@ mixin prices(cars, modals)
 												+e.TH.cell(class="--head") 96000 км / 48
 												+e.TH.cell(class="--head") 108000 км / 54
 												+e.TH.cell(class="--head") 120000 км / 60
+										+e.TBODY.table-body
 											+e.TR.row
 												+e.TD.cell Кількість нормо-годин
 												+e.TD.cell 3,4
@@ -221,8 +221,7 @@ mixin prices(cars, modals)
 												+e.TD.cell 812
 												+e.TD.cell 812
 												+e.TD.cell 812
-										+e.TFOOT.table-body
-											+e.TR.row
+											+e.TR.row(class="--foot")
 												+e.TD.cell(class="--foot") Загальна вартість запчастин
 												+e.TD.cell(class="--foot") 3364
 												+e.TD.cell(class="--foot") 11339

@@ -47,14 +47,14 @@ html(lang="ru")
 					})
 					// end block logo
 
-					+e.UL.list
+					+e.UL.list(class="--isComponent")
 						+e.LI.list-item
 							+b.A.btn(href="services.html", class="--bordered --arrow --rounded") В Сервис и цены
 								+e.SVG.icon(xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32.635 32.635" width="14" height="8")
 									path(d="M32.13 16.82H.5c-.28 0-.5-.23-.5-.5s.22-.5.5-.5h31.64c.27 0 .5.22.5.5s-.23.5-.5.5z")
 									path(d="M13.04 29.35c-.13 0-.26-.05-.36-.14L.15 16.68c-.1-.1-.15-.22-.15-.36s.05-.24.15-.34L12.68 3.43c.2-.2.52-.2.7 0s.2.5 0 .7L1.22 16.34l12.2 12.17c.2.2.2.5 0 .7-.1.1-.24.15-.36.15z")
-						+e.LI.list-item
-							+b.A.btn#to_bundles(href="#bundles", data-link="#bundles", class="--filled --rounded") Записаться на ремонт
+						//-+e.LI.list-item
+						//-	+b.A.btn#to_bundles(href="#bundles", data-link="#bundles", class="--filled --rounded") Записаться на ремонт
 						+e.LI.list-item(class="--telephone")
 							+e.link(href="tel:+380975555555")
 								| +38 (097) 555 - 55 - 55
@@ -62,10 +62,10 @@ html(lang="ru")
 					+menu-btn({"class": "--fixed"})
 
 				// block hero
-			+b.SECTION.hero(class="--range")#hero
+			+b.SECTION.hero(class="--range", style="background-image: url('img/hero/hero-range.jpg')")#hero
 				+e.DIV.wrap
 					+e.H1.title(class="--brandLanding titles") Range Rover
-					+e.P.lead Изящный и современный, Range Rover отличается бесподобными характеристиками и уникальным происхождением. Впервые появившись 45 лет назад, автомобиль с таким культовым дизайном определил &laquo;внедорожное будущее&raquo; всей автопромышленности. За годы своего существования он стал ярким воплощением легендарного мастерства британских дизайнеров.
+					+e.P.lead(class="--brandLanding") Изящный и современный, Range Rover отличается бесподобными характеристиками и уникальным происхождением. Впервые появившись 45 лет назад, автомобиль с таким культовым дизайном определил &laquo;внедорожное будущее&raquo; всей автопромышленности. За годы своего существования он стал ярким воплощением легендарного мастерства британских дизайнеров.
 					+b.A.btn(class="--filled --white --rounded hero__btn", href="#about", data-link="#about") узнать больше
 				// end block hero
 
@@ -77,7 +77,8 @@ html(lang="ru")
 
 				//block advantages
 			+advantages({
-				"class": "--range1 wow slideInRight"
+				"class": "--range1 wow slideInRight",
+				"style": "background-image: url('img/advantages/advantages-bg.jpg')"
 			})
 				//end block advantages
 
@@ -138,7 +139,8 @@ html(lang="ru")
 
 				//block advantages
 			+advantages({
-				"class": "--range2 wow slideInRight"
+				"class": "--range2 wow slideInRight",
+				"style": "background-image: url('img/advantages/advantages-bg2.jpg')"
 			})
 				//end block advantages
 
@@ -195,9 +197,12 @@ html(lang="ru")
 		script.
 			new WOW().init();
 
-		//-script.
-		//-	$(window).on("load", function () {
-		//-		$(".promo__info").mCustomScrollbar({
-		//-			theme: "my-theme"
-		//-		});
-		//-	});
+		script.
+			(function ($) {
+				$(window).on("load resize", function () {
+					$(".prices__content").mCustomScrollbar({
+						axis: "xy",
+						theme: "my-theme-dark"
+					});
+				});
+			})(jQuery);
