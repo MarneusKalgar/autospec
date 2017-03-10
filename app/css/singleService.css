@@ -254,6 +254,7 @@ th {
 .page--singleService {
   height: auto;
   width: 100%;
+  min-width: 19rem;
   background-color: #fff;
   overflow-x: hidden;
   overflow-y: auto;
@@ -2982,7 +2983,7 @@ th {
 .order-form__icon--vacancies {
   left: 4em;
 }
-label.error {
+.order-form label.error {
   display: block;
   position: absolute;
   left: 2.3em;
@@ -2990,10 +2991,10 @@ label.error {
   width: 100%;
   height: 1.5em;
   font-size: 0.875em;
-  color: #e72a00;
+  color: #f13535;
 }
 @media screen and (max-width: 374px) {
-  label.error {
+  .order-form label.error {
     left: 2.7em;
     top: -0.65em;
     font-size: 0.75em;
@@ -4775,22 +4776,15 @@ label.error {
   letter-spacing: 0.1em;
   cursor: pointer;
 }
-label.error {
+.callback-form label.error {
   display: block;
-  position: absolute;
-  left: 2.3em;
-  top: -0.75em;
-  width: 100%;
-  height: 1.5em;
-  font-size: 0.875em;
-  color: #e72a00;
-}
-@media screen and (max-width: 374px) {
-  label.error {
-    left: 2.7em;
-    top: -0.65em;
-    font-size: 0.75em;
-  }
+  position: relative;
+  left: 2em;
+  top: 0;
+  width: 85%;
+  text-align: left;
+  font-size: 1em;
+  color: #f13535;
 }
 /*********************************************
 		Block .scroll-to top

@@ -1,43 +1,38 @@
 function callbackForm() {
 	var $btn = $("#callBtn");
 	var $form = $("#callForm");
-	var $validadteForm = $(".callback-form, .action-form");
+	var $validateForm = $(".callback-form, .action-form");
 	var $wrapper = $(".callus__form-wrap");
 	var $close = $("#actionClose");
 
-	var $tel = $("#callback-tel");
+	var $tel = $("");
 
 	if ($tel.length) {
-		$tel.mask("+999 (99) 999 - 99 - 99");
+		$(":input[type='tel']").mask("+999 (99) 999 - 99 - 99");
+	}
 
-		$validadteForm.validate({
-
+	$validateForm.each(function () {
+		$(this).validate({
 			rules: {
-				username: {
+				"callback-name": {
 					required: true
 				},
-				usertel: {
-					required: true
-				},
-				usermail: {
+				"callback-tel": {
 					required: true
 				}
 			},
-
 			messages: {
-				username: {
+				"callback-name": {
 					required: "Пожалуйста, введите имя"
 				},
-				usertel: "Пожалуйста, введите номер телефона",
+				"callback-tel": "Пожалуйста, введите номер телефона",
 				usermail: {
 					required: "Пожалуйста, введите email",
 					email: "Формат почты example@email.com"
 				}
 			}
-
 		});
-	}
-
+	});
 
 
 	$btn.on("click", function () {
@@ -56,25 +51,23 @@ function callbackForm() {
 		$form.removeClass("callback-form--isActive");
 	});
 
-	if (navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1) {
-		console.log('Its Safari');
-		$form.submit(function(e) {
+	/*if (navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1) {
+	 console.log('Its Safari');
+	 $form.submit(function(e) {
 
-			var ref = $(this).find("[required]");
+	 var ref = $(this).find("[required]");
 
-			$(ref).each(function(){
-				if ( $(this).val() == '' )
-				{
-					alert("Required field should not be blank.");
+	 $(ref).each(function(){
+	 if ( $(this).val() == '' )
+	 {
+	 alert("Required field should not be blank.");
 
-					$(this).focus();
+	 $(this).focus();
 
-					e.preventDefault();
-					return false;
-				}
-			});  return true;
-		});
-	}
-
-
+	 e.preventDefault();
+	 return false;
+	 }
+	 });  return true;
+	 });
+	 }*/
 }
