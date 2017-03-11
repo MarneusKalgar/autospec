@@ -391,6 +391,7 @@ th {
   height: 100%;
   max-height: 100%;
   background: rgba(46,46,46,0.8);
+  border: none;
 }
 .page__close {
   position: absolute;
@@ -715,6 +716,7 @@ th {
   width: 100%;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  pointer-events: none;
 }
 @media screen and (max-width: 940px) {
   .header {
@@ -754,6 +756,7 @@ th {
   left: 0;
   width: 100vw;
   height: 100vh;
+  overflow: hidden;
   background-color: rgba(44,58,60,0.8);
 }
 .header--singleService {
@@ -762,6 +765,7 @@ th {
   height: 5em;
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
+  pointer-events: auto;
 }
 @media screen and (max-width: 1100px) {
   .header--singleService {
@@ -1018,6 +1022,7 @@ th {
   opacity: 1;
   -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
+  pointer-events: auto;
 }
 @media screen and (max-width: 940px) {
   .logo {
@@ -1261,6 +1266,7 @@ th {
   transition: opacity 0.4s ease, -webkit-transform 0.3s;
   transition: transform 0.3s, opacity 0.4s ease;
   transition: transform 0.3s, opacity 0.4s ease, -webkit-transform 0.3s;
+  pointer-events: auto;
 }
 .menu-btn:focus {
   outline: none;
@@ -2539,6 +2545,7 @@ th {
   height: 25em;
   margin-top: 2.5em;
   pointer-events: none;
+  border: none;
 }
 .tab-panel__video {
   width: 100%;
@@ -2547,6 +2554,7 @@ th {
   margin-top: 2.5em;
   background: rgba(46,46,46,0.8);
   pointer-events: auto;
+  border: none;
 }
 .tab-panel__subtitle {
   line-height: 1.2;

@@ -6,27 +6,31 @@
 	z-index 300
 	width 100%
 	box-sizing border-box
+	pointer-events none
 	@media screen and (max-width: 940px)
 		flex-container(row, nowrap, space-between, center)
 		padding 5% 5% 0
 	@media screen and (max-width: 600px)
 		padding 5% 6% 0
 
-	&--isOverlay::before
-		content: ""
-		position: absolute
-		z-index: 400
-		top: 0
-		left: 0
-		width: 100vw;
-		height: 100vh;
-		background-color: rgba($base-overlay-element-color, .8)
+	&--isOverlay
+		&::before
+			content: ""
+			position: absolute
+			z-index: 400
+			top: 0
+			left: 0
+			width: 100vw;
+			height: 100vh;
+			overflow: hidden
+			background-color: rgba($base-overlay-element-color, .8)
 
 	&--singleService
 		top 1em
 		width 100%
 		height 5em
 		transition all .5s ease
+		pointer-events auto
 		@media screen and (max-width: 1100px)
 			position fixed
 			top 0
