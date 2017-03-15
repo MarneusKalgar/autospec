@@ -1,0 +1,6 @@
+mixin errors(item)
+	+b.SECTION.errors
+		+e.P.desc= item.descEng
+		+e.H1.title= item.title
+		+e.P.desc= item.descRu
+		+b.A.btn(href="index.html", class="--filled errors__btn") на главную

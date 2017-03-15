@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <title>error</title>
+    <meta charset="utf-8"/>
+    <meta content="Interact Agency" name="author"/>
+    <meta content="error" name="description"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+    <link rel="shortcut icon" href="img/favicon/favicon.png" type="image/x-icon"/>
+    <link rel="apple-touch-icon" href="img/favicon/apple-touch-icon.png"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-touch-icon-72x72.png"/>
+    <link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-touch-icon-114x114.png"/>
+    <link rel="apple-touch-icon" sizes="144x144" href="img/favicon/apple-touch-icon-144x144.png"/>
+    <link rel="apple-touch-icon" sizes="152x152" href="img/favicon/apple-touch-icon-152x152.png"/>
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon-180x180.png"/>
+    <!-- build:css css/vendor.css-->
+    <link rel="stylesheet" href="js/libs/animsition/dist/css/animsition.min.css">
+    <link rel="stylesheet" href="js/libs/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.custom.css">
+    <!-- endbuild-->
+    <!-- build:css css/main.css-->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- endbuild-->
+  </head>
+  <body class="page page--singleService animsition">
+    <div class="page__wrap">
+      <section class="errors">
+        <p class="errors__desc">Page not found
+        </p>
+        <h1 class="errors__title">404
+        </h1>
+        <p class="errors__desc">Страница не найдена
+        </p><a class="btn btn--filled errors__btn" href="index.html">на главную</a>
+      </section>
+    </div>
+    <!-- build:js js/vendor.js-->
+    <script src="js/libs/jquery/dist/jquery.min.js"></script>
+    <script src="js/libs/animsition/dist/js/animsition.min.js"></script>
+    <script src="js/libs/jquery.maskedinput/dist/jquery.maskedinput.min.js"></script>
+    <script src="js/libs/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="js/libs/wow/dist/wow.min.js"></script>
+    <script src="js/libs/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+    <!-- endbuild-->
+    <!-- build:js js/main.js-->
+    <script src="js/main.js"></script>
+    <!-- endbuild-->
+    <script>
+      $('.animsition').animsition({
+      	inClass: 'fade-in',
+      	outClass: 'fade-out',
+      	inDuration: 500,
+      	outDuration: 500,
+      	linkElement: '.animsition-link',
+      	// e.g. linkElement: 'a:not([target="_blank"]):not([href^="#"])'
+      	loading: true,
+      	loadingParentElement: 'body', //animsition wrapper element
+      	loadingClass: 'animsition-loading',
+      	loadingInner: '', // e.g '<img src="loading.svg" />'
+      	timeout: false,
+      	timeoutCountdown: 1000,
+      	onLoadEvent: true,
+      	browser: ['animation-duration', '-webkit-animation-duration'],
+      	// "browser" option allows you to disable the "animsition" in case the css property in the array is not supported by your browser.
+      	// The default setting is to disable the "animsition" in a browser that does not support "animation-duration".
+      	overlay: false,
+      	overlayClass: 'animsition-overlay-slide',
+      	overlayParentElement: 'body',
+      	transition: function (url) {
+      		window.location.href = url;
+      	}
+      });
+    </script>
+  </body>
+</html>

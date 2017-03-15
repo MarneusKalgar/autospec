@@ -1,0 +1,66 @@
+include ../bemto/bemto
+- set_bemto_settings({ modifier: "--" })
+
+include ../../head/head
+include ../../errors/errors
+
+doctype html
+html(lang="ru")
+
+	head
+		+head({
+			"title": "error",
+			"author": "Interact Agency",
+			"description": "error"
+		})
+		// build:css css/vendor.css
+		link(rel="stylesheet", href="js/libs/animsition/dist/css/animsition.min.css")
+		link(rel="stylesheet", href="js/libs/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.custom.css")
+		// endbuild
+		// build:css css/main.css
+		link(rel="stylesheet", href="css/main.css")
+		// endbuild
+
+	+b.BODY.page(class="--singleService animsition")
+		+e.DIV.wrap
+			block content
+				div content
+
+		// build:js js/vendor.js
+		script( src="js/libs/jquery/dist/jquery.min.js")
+		script( src="js/libs/animsition/dist/js/animsition.min.js")
+		script( src="js/libs/jquery.maskedinput/dist/jquery.maskedinput.min.js")
+		script( src="js/libs/jquery-validation/dist/jquery.validate.min.js")
+		script( src="js/libs/wow/dist/wow.min.js")
+		script( src="js/libs/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js")
+		// endbuild
+
+		// build:js js/main.js
+		script( src="js/main.js")
+		// endbuild
+
+		script.
+			$('.animsition').animsition({
+				inClass: 'fade-in',
+				outClass: 'fade-out',
+				inDuration: 500,
+				outDuration: 500,
+				linkElement: '.animsition-link',
+				// e.g. linkElement: 'a:not([target="_blank"]):not([href^="#"])'
+				loading: true,
+				loadingParentElement: 'body', //animsition wrapper element
+				loadingClass: 'animsition-loading',
+				loadingInner: '', // e.g '<img src="loading.svg" />'
+				timeout: false,
+				timeoutCountdown: 1000,
+				onLoadEvent: true,
+				browser: ['animation-duration', '-webkit-animation-duration'],
+				// "browser" option allows you to disable the "animsition" in case the css property in the array is not supported by your browser.
+				// The default setting is to disable the "animsition" in a browser that does not support "animation-duration".
+				overlay: false,
+				overlayClass: 'animsition-overlay-slide',
+				overlayParentElement: 'body',
+				transition: function (url) {
+					window.location.href = url;
+				}
+			});
