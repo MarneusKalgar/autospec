@@ -622,8 +622,7 @@ function orderForm() {
 				},
 				carbrand: "required",
 				carmodel: "required",
-				caryear: "required",
-				vincode: "required"
+				caryear: "required"
 			},
 
 			messages: {
@@ -637,8 +636,7 @@ function orderForm() {
 				usertel: "Пожалуйста, введите номер телефона",
 				carbrand: "Пожалуйста, введите марку автомобиля",
 				carmodel: "Пожалуйста, введите модель автомобиля",
-				caryear: "Пожалуйста, введите год выпуска",
-				vincode: "Пожалуйста, введите VIN код"
+				caryear: "Пожалуйста, введите год выпуска"
 			}
 
 		});
@@ -747,6 +745,22 @@ function prices() {
 
 	})
 }
+/*******************************************/
+/* 							scroll to top
+/********************************************/
+function scrollToTop() {
+
+	var $scrollBtn = $('.scroll-to-top');
+
+	$scrollBtn.on("click", function(e) {
+		e.preventDefault();
+		var id = $(this).attr('href');
+		var offset = $(id).offset().top;
+		$('html, body').animate({'scrollTop': offset}, 500)
+	});
+
+}
+	
 function sidebar() {
 	var $link = $(".sidebar__link");
 	var $wrapper = $(".page__frame-wrap");
@@ -1019,19 +1033,3 @@ function whySlider() {
 		$slider.find($wrapper).animate({ 'left': 0 }, 500);
 	});
 }
-/*******************************************/
-/* 							scroll to top
-/********************************************/
-function scrollToTop() {
-
-	var $scrollBtn = $('.scroll-to-top');
-
-	$scrollBtn.on("click", function(e) {
-		e.preventDefault();
-		var id = $(this).attr('href');
-		var offset = $(id).offset().top;
-		$('html, body').animate({'scrollTop': offset}, 500)
-	});
-
-}
-	
