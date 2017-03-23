@@ -9,6 +9,7 @@ include aboutRange/aboutRange
 include advantages/advantages
 include callUs/callUs
 include prices/prices
+include enrol-modal/enrol-modal
 
 include interior-gallery/interior-gallery
 include contacts/contacts-extended
@@ -89,47 +90,45 @@ html(lang="ru")
 				//block prices
 			+prices(
 				[
-					{ "id": "RR", "value": "Range Rover" },
-					{ "id": "RRS", "value": "Range Rover Sport" },
-					{ "id": "RRV", "value": "Range Rover Velar" },
-					{ "id": "RRE", "value": "Range Rover Evoque" }
+					{ "index": "1", "value": "Range Rover" },
+					{ "index": "2", "value": "Range Rover Sport" },
+					{ "index": "3", "value": "Range Rover Velar" },
+					{ "index": "4", "value": "Range Rover Evoque" }
 				],
 				[
 					{
-						"id": "forRR",
 						"caption": "Range Rover",
 						"text": "Изящный и современный, этот Range Rover отличается бесподобными характеристиками и уникальным происхождением. Благодаря трем классическим чертам: выразительным акцентам в нижней части кузова, контура крыши и сплошной поясной линии - Range Rover невозможно спутать с другим автомобилем. Культовый силуэт имеет несколько суженный вверх и изогнутую форму, в то время как остекление почти вровень с поверхностью кузова и глянцево-черные стойки подчеркивают «плавающую» крышу, выделяя ее обтекаемую и элегантную форму.",
 						"src": "img/prices/range-rover.png",
 						"alt": "Range Rover",
-						"closeID": "#close1"
+						"index": "1"
 					},
 					{
-						"id": "forRRS",
 						"caption": "Range Rover Sport",
 						"text": "Исключительный. Мощный. Так и хочется сесть за руль. Быстрый, динамичный и очень выносливый Range Rover Sport можно оснастить одним из перечня мощных двигателей. В результате автомобиль сможет развивать скорость до 250 км/ч. Чрезвычайная управляемость и несравненные возможности при движении по бездорожью позволяют этому транспортному средству справиться с любым вызовом на любом дорожном покрытии.",
 						"src": "img/prices/range-rover-sport.png",
 						"alt": "Range Rover Sport",
-						"closeID": "#close2"
+						"index": "2"
 					},
 					{
-						"id": "forRRV",
 						"caption": "Range Rover Velar",
 						"text": "Новая модель в линейке Range Rover, занимает почетное место между Range Rover Evoque и Range Rover Sport. Елегантність, футуристичність та провідні технології – ключові ознаки Range Rover Velar.",
 						"src": "img/prices/range-rover-velar.png",
 						"alt": "Range Rover Velar",
-						"closeID": "#close3"
+						"index": "3"
 					},
 					{
-						"id": "forRRE",
 						"caption": "Range Rover Evoque",
 						"text": "Смелая эволюция, ни одна другая модель Range Rover не проходила таких перевоплощений. Однако вы никогда не ошибетесь, ведь это настоящий Range Rover. Восходящая поясная линия, мускулистые плечи и сужен крышу способствуют мощному и атлетическом внешнему виду Range Rover Evoque. Уникальная детализация зависит от вас. Выбирайте из широкого ассортимента легкосплавных колесных дисков, цветов и вариантов отделки на свой вкус.",
 						"src": "img/prices/range-rover-evoque.png",
 						"alt": "Range Rover Evoque",
-						"closeID": "#close4"
+						"index": "4"
 					}
 				]
 			)
 				//end block prices
+
+			+enrol-modal()
 
 				// block interior-gallery
 			+interior-gallery([
@@ -148,9 +147,9 @@ html(lang="ru")
 			})
 				//end block advantages
 
-				// block services
+				// block contacts
 			+contacts-extended()
-				// end services
+				// end contacts
 
 			+scroll-to-top({
 				"class": "page__scrollTop wow bounceIn",
@@ -204,7 +203,7 @@ html(lang="ru")
 		script.
 			(function ($) {
 				$(window).on("load resize", function () {
-					$(".prices__content").mCustomScrollbar({
+					$(".enrol-modal__content").mCustomScrollbar({
 						axis: "xy",
 						theme: "my-theme-dark"
 					});

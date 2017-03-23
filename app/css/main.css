@@ -4914,10 +4914,12 @@ th {
 }
 .contacts--isContacts_extended {
   padding: 1em 0 4em 0;
+  min-height: 30em;
   -webkit-animation-duration: 2s;
           animation-duration: 2s;
   -webkit-animation-delay: 0s;
           animation-delay: 0s;
+  overflow: hidden;
 }
 @media screen and (max-width: 1100px) {
   .contacts--isContacts_extended {

@@ -1,0 +1,225 @@
+mixin enrol-modal
+	+b.DIV.enrol-modal
+		svg(xmlns="http://www.w3.org/2000/svg", style="display:none")
+			symbol(id="close", viewBox="0 0 22.88 22.88")
+				path(d="M.32 1.9C-.1 1.5-.1.78.32.33c.45-.43 1.15-.43 1.6 0l9.5 9.54L20.98.32c.43-.43 1.15-.43 1.57 0 .45.45.45 1.16 0 1.6l-9.52 9.5 9.52 9.55c.45.43.45 1.15 0 1.6-.42.42-1.14.42-1.57 0L11.43 13 1.9 22.56c-.43.43-1.13.43-1.58 0-.43-.44-.43-1.16 0-1.6l9.53-9.53L.32 1.9z")
+		+e.DIV.wrap
+			+item()
+			+item()
+			+item()
+			+item()
+
+mixin item
+	+e.DIV.item()
+		+e.BUTTON.close(type="button")
+			+e.SVG.icon(width="24", height="24")
+				use(xlink:href="#close")
+		+e.H3.caption Стоимость периодического ТО
+		+e.DIV.content
+			+e.TABLE.table
+				+e.THEAD.table-head
+					+e.TR.row(class="--head")
+						+e.TH.cell(class="--head") Периодичность ТО км/месяцев
+						+e.TH.cell(class="--head") 12000 км / 6
+						+e.TH.cell(class="--head") 24000 км / 12
+						+e.TH.cell(class="--head") 36000 км / 18
+						+e.TH.cell(class="--head") 48000 км / 24
+						+e.TH.cell(class="--head") 60000 км / 30
+						+e.TH.cell(class="--head") 72000 км / 36
+						+e.TH.cell(class="--head") 84000 км / 42
+						+e.TH.cell(class="--head") 96000 км / 48
+						+e.TH.cell(class="--head") 108000 км / 54
+						+e.TH.cell(class="--head") 120000 км / 60
+				+e.TBODY.table-body
+					+e.TR.row
+						+e.TD.cell Кількість нормо-годин
+						+e.TD.cell 3,4
+						+e.TD.cell 4,4
+						+e.TD.cell 3,4
+						+e.TD.cell 5,5
+						+e.TD.cell 5,1
+						+e.TD.cell 4,4
+						+e.TD.cell 5,0
+						+e.TD.cell 5,5
+						+e.TD.cell 3,4
+						+e.TD.cell 6,5
+					+e.TR.row
+						+e.TD.cell Вартість обслуговування
+						+e.TD.cell 1020
+						+e.TD.cell 1320
+						+e.TD.cell 1020
+						+e.TD.cell 1650
+						+e.TD.cell 1530
+						+e.TD.cell 1320
+						+e.TD.cell 1500
+						+e.TD.cell 1650
+						+e.TD.cell 1020
+						+e.TD.cell 1950
+					+e.TR.row
+						+e.TD.cell Масло 5W-30
+						+e.TD.cell 2552
+						+e.TD.cell 2552
+						+e.TD.cell 2552
+						+e.TD.cell 2552
+						+e.TD.cell 2552
+						+e.TD.cell 2552
+						+e.TD.cell 2552
+						+e.TD.cell 2552
+						+e.TD.cell 2552
+						+e.TD.cell 2552
+					+e.TR.row
+						+e.TD.cell Фільтр повітряний
+						+e.TD.cell 1885
+						+e.TD.cell 1885
+						+e.TD.cell 1885
+						+e.TD.cell 1885
+						+e.TD.cell 1885
+						+e.TD.cell 1885
+						+e.TD.cell 1885
+						+e.TD.cell 1885
+						+e.TD.cell 1885
+						+e.TD.cell 1885
+					+e.TR.row
+						+e.TD.cell Фільтр масляний
+						+e.TD.cell 812
+						+e.TD.cell 812
+						+e.TD.cell 812
+						+e.TD.cell 812
+						+e.TD.cell 812
+						+e.TD.cell 812
+						+e.TD.cell 812
+						+e.TD.cell 812
+						+e.TD.cell 812
+						+e.TD.cell 812
+					+e.TR.row
+						+e.TD.cell Фільтр масляний
+						+e.TD.cell 812
+						+e.TD.cell 812
+						+e.TD.cell 812
+						+e.TD.cell 812
+						+e.TD.cell 812
+						+e.TD.cell 812
+						+e.TD.cell 812
+						+e.TD.cell 812
+						+e.TD.cell 812
+						+e.TD.cell 812
+					+e.TR.row
+						+e.TD.cell Фільтр масляний
+						+e.TD.cell 812
+						+e.TD.cell 812
+						+e.TD.cell 812
+						+e.TD.cell 812
+						+e.TD.cell 812
+						+e.TD.cell 812
+						+e.TD.cell 812
+						+e.TD.cell 812
+						+e.TD.cell 812
+						+e.TD.cell 812
+					+e.TR.row
+						+e.TD.cell Фільтр масляний
+						+e.TD.cell 812
+						+e.TD.cell 812
+						+e.TD.cell 812
+						+e.TD.cell 812
+						+e.TD.cell 812
+						+e.TD.cell 812
+						+e.TD.cell 812
+						+e.TD.cell 812
+						+e.TD.cell 812
+						+e.TD.cell 812
+					+e.TR.row
+						+e.TD.cell Фільтр масляний
+						+e.TD.cell 812
+						+e.TD.cell 812
+						+e.TD.cell 812
+						+e.TD.cell 812
+						+e.TD.cell 812
+						+e.TD.cell 812
+						+e.TD.cell 812
+						+e.TD.cell 812
+						+e.TD.cell 812
+						+e.TD.cell 812
+					+e.TR.row
+						+e.TD.cell Фільтр масляний
+						+e.TD.cell 812
+						+e.TD.cell 812
+						+e.TD.cell 812
+						+e.TD.cell 812
+						+e.TD.cell 812
+						+e.TD.cell 812
+						+e.TD.cell 812
+						+e.TD.cell 812
+						+e.TD.cell 812
+						+e.TD.cell 812
+					+e.TR.row
+						+e.TD.cell Кількість нормо-годин
+						+e.TD.cell 3,4
+						+e.TD.cell 4,4
+						+e.TD.cell 3,4
+						+e.TD.cell 5,5
+						+e.TD.cell 5,1
+						+e.TD.cell 4,4
+						+e.TD.cell 5,0
+						+e.TD.cell 5,5
+						+e.TD.cell 3,4
+						+e.TD.cell 6,5
+					+e.TR.row
+						+e.TD.cell Вартість обслуговування
+						+e.TD.cell 1020
+						+e.TD.cell 1320
+						+e.TD.cell 1020
+						+e.TD.cell 1650
+						+e.TD.cell 1530
+						+e.TD.cell 1320
+						+e.TD.cell 1500
+						+e.TD.cell 1650
+						+e.TD.cell 1020
+						+e.TD.cell 1950
+					+e.TR.row
+						+e.TD.cell Масло 5W-30
+						+e.TD.cell 2552
+						+e.TD.cell 2552
+						+e.TD.cell 2552
+						+e.TD.cell 2552
+						+e.TD.cell 2552
+						+e.TD.cell 2552
+						+e.TD.cell 2552
+						+e.TD.cell 2552
+						+e.TD.cell 2552
+						+e.TD.cell 2552
+					+e.TR.row
+						+e.TD.cell Фільтр повітряний
+						+e.TD.cell 1885
+						+e.TD.cell 1885
+						+e.TD.cell 1885
+						+e.TD.cell 1885
+						+e.TD.cell 1885
+						+e.TD.cell 1885
+						+e.TD.cell 1885
+						+e.TD.cell 1885
+						+e.TD.cell 1885
+						+e.TD.cell 1885
+					+e.TR.row
+						+e.TD.cell Фільтр масляний
+						+e.TD.cell 812
+						+e.TD.cell 812
+						+e.TD.cell 812
+						+e.TD.cell 812
+						+e.TD.cell 812
+						+e.TD.cell 812
+						+e.TD.cell 812
+						+e.TD.cell 812
+						+e.TD.cell 812
+						+e.TD.cell 812
+					+e.TR.row(class="--foot")
+						+e.TD.cell(class="--foot") Загальна вартість запчастин
+						+e.TD.cell(class="--foot") 3364
+						+e.TD.cell(class="--foot") 11339
+						+e.TD.cell(class="--foot") 3364
+						+e.TD.cell(class="--foot") 13949
+						+e.TD.cell(class="--foot") 8439
+						+e.TD.cell(class="--foot") 11339
+						+e.TD.cell(class="--foot") 26564
+						+e.TD.cell(class="--foot") 13949
+						+e.TD.cell(class="--foot") 3364
+						+e.TD.cell(class="--foot") 16414

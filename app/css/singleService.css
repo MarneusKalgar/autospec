@@ -3887,7 +3887,10 @@ th {
       -ms-transform: none;
           transform: none;
 }
-.prices__modal-price {
+.enrol-modal {
+  position: absolute;
+}
+.enrol-modal__item {
   position: fixed;
   z-index: 3000;
   top: 0;
@@ -3906,40 +3909,40 @@ th {
   -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
 }
-.prices__modal-price::before {
+.enrol-modal__item::before {
   content: "";
   position: absolute;
-  width: 130%;
-  height: 130%;
-  left: -2.5em;
-  top: -2.5em;
+  width: 150%;
+  height: 150%;
+  left: -15%;
+  top: -15%;
   background: url("../img/prices/price-modal-bg.jpg") center no-repeat;
   background-size: cover;
   -webkit-filter: blur(10px);
           filter: blur(10px);
 }
 @media screen and (max-width: 600px) {
-  .prices__modal-price {
+  .enrol-modal__item {
     padding-top: 4em;
   }
-  .prices__modal-price::before {
+  .enrol-modal__item::before {
     left: -4em;
     top: -6em;
   }
 }
 @media screen and (max-height: 480px) and (orientation: landscape) {
-  .prices__modal-price {
+  .enrol-modal__item {
     padding-top: 2em;
   }
 }
-.prices__modal-price--isActive {
+.enrol-modal__item--isActive {
   opacity: 1;
   visibility: visible;
-  -webkit-transform: none;
-      -ms-transform: none;
-          transform: none;
+  -webkit-transform: translateX(0);
+      -ms-transform: translateX(0);
+          transform: translateX(0);
 }
-.prices__content {
+.enrol-modal__content {
   width: 100%;
   height: 85%;
   min-height: 15em;
@@ -3947,26 +3950,27 @@ th {
   overflow: auto;
 }
 @media screen and (max-width: 600px) {
-  .prices__content {
+  .enrol-modal__content {
     margin-top: 0.5em;
     height: 88%;
   }
 }
 @media screen and (max-height: 480px) and (orientation: landscape) {
-  .prices__content {
+  .enrol-modal__content {
     height: 80%;
     min-height: 12em;
   }
 }
-.prices__table-caption {
-  font-size: 1.5em;
-  width: 90%;
-  margin: 1em auto 0;
+.enrol-modal__caption {
   position: relative;
   z-index: 4000;
+  width: 90%;
+  margin: 1em auto 0;
+  font-size: 1.5em;
+  text-align: center;
 }
 @media screen and (max-width: 600px) {
-  .prices__table-caption {
+  .enrol-modal__caption {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     width: 100%;
@@ -3975,11 +3979,11 @@ th {
   }
 }
 @media screen and (max-width: 480px) {
-  .prices__table-caption {
+  .enrol-modal__caption {
     font-size: 1.3em;
   }
 }
-.prices__table {
+.enrol-modal__table {
   position: relative;
   z-index: 5000;
   width: 100%;
@@ -3989,32 +3993,32 @@ th {
   table-layout: fixed;
 }
 @media screen and (max-width: 920px) {
-  .prices__table {
+  .enrol-modal__table {
     font-size: 0.875em;
     min-width: 55em;
   }
 }
-.prices__table-head {
+.enrol-modal__table-head {
   display: table-header-group;
 }
-.prices__table-body {
+.enrol-modal__table-body {
   display: block;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   width: 100%;
   height: 100%;
 }
-.prices__row {
+.enrol-modal__row {
   display: table-row;
   border-bottom: 1px solid rgba(151,151,151,0.5);
 }
-.prices__row:nth-child(odd):not(.prices__row--head) {
+.enrol-modal__row:nth-child(odd):not(.enrol-modal__row--head) {
   background: rgba(255,255,255,0.3);
 }
-.prices__row:nth-child(even) {
+.enrol-modal__row:nth-child(even) {
   background: rgba(255,255,255,0.5);
 }
-.prices__row--head {
+.enrol-modal__row--head {
   display: block;
   position: relative;
   padding: 0;
@@ -4022,36 +4026,36 @@ th {
   background: #ee6800;
   border: none;
 }
-.prices__row--foot {
+.enrol-modal__row--foot {
   border: none;
 }
-.prices__cell {
+.enrol-modal__cell {
   width: 7%;
   min-width: 3.5em;
   padding: 0.2em 0.5em;
 }
-.prices__cell:first-child {
+.enrol-modal__cell:first-child {
   padding-left: 1em;
   text-align: left;
   border-left: none;
 }
-.prices__cell:last-child {
+.enrol-modal__cell:last-child {
   padding-right: 1.5em;
   border-right: none;
 }
-.prices__cell--head {
+.enrol-modal__cell--head {
   font-weight: bold;
   padding-top: 1em;
   padding-bottom: 1em;
   border-top: none;
   border-bottom: none;
 }
-.prices__cell--foot {
+.enrol-modal__cell--foot {
   font-weight: bold;
   padding-bottom: 1em;
   border-bottom: none;
 }
-.prices__close {
+.enrol-modal__close {
   position: absolute;
   z-index: 5000;
   top: 3rem;
@@ -4063,17 +4067,17 @@ th {
   background: rgba(0,0,0,0);
   border: none;
 }
-.prices__close:hover .prices__icon,
-.prices__close:focus .prices__icon {
+.enrol-modal__close:hover .enrol-modal__icon,
+.enrol-modal__close:focus .enrol-modal__icon {
   fill: #ee6800;
 }
 @media screen and (max-width: 600px) {
-  .prices__close {
+  .enrol-modal__close {
     top: 1.5rem;
     right: 1rem;
   }
 }
-.prices__icon {
+.enrol-modal__icon {
   width: 100%;
   height: 100%;
   fill: #2e2e2e;
@@ -4493,10 +4497,12 @@ label.error {
 }
 .contacts--isContacts_extended {
   padding: 1em 0 4em 0;
+  min-height: 30em;
   -webkit-animation-duration: 2s;
           animation-duration: 2s;
   -webkit-animation-delay: 0s;
           animation-delay: 0s;
+  overflow: hidden;
 }
 @media screen and (max-width: 1100px) {
   .contacts--isContacts_extended {

@@ -3,11 +3,13 @@ function prices() {
 	var $carBtn = $(".prices__cars-btn");
 	var $modals = $(".prices__modals");
 	var $modalItem = $(".prices__modal");
-	
 	var $priceBtn = $(".prices__modal-btn");
-	var $price = $(".prices__modal-price");
-	var $close = $(".prices__close");
-	var $container = $(".prices__modal");
+
+	var $modalContainer = $(".enrol-modal");
+	var $enrolWrap = $(".enrol-modal__wrap");
+	var $enrolModal = $(".enrol-modal__item");
+	var $close = $(".enrol-modal__close");
+
 	var $body = $("body");
 
 	//var $pricesPos = $(".prices").position().top;
@@ -15,22 +17,23 @@ function prices() {
 	var $top = $body.offset().top;
 	var $left = $body.offset().left;
 
-	//console.log($pricesPos);
+	console.log($enrolModal);
 
 	$carBtn.on("click", function() {
-			$(this).addClass("prices__cars-btn--isActive");
-			$modals.find($(this).siblings().removeClass("prices__cars-btn--isActive"));
-			$modals.find($modalItem.eq($(this).index())).siblings().removeClass("prices__modal--isActive").slideUp(400);
-			$modals.find($modalItem.eq($(this).index())).toggleClass("prices__modal--isActive");
-			$modals.find($modalItem.eq($(this).index())).slideToggle(400);
+		$(this).addClass("prices__cars-btn--isActive");
+		$modals.find($(this).siblings().removeClass("prices__cars-btn--isActive"));
+		$modals.find($modalItem.eq($(this).index())).siblings().removeClass("prices__modal--isActive").slideUp(400);
+		$modals.find($modalItem.eq($(this).index())).toggleClass("prices__modal--isActive");
+		$modals.find($modalItem.eq($(this).index())).slideToggle(400);
 	});
 
 	$priceBtn.on("click", function() {
+		//var self = $(this);
+		var index = $(this).attr("data-index") - 1;
+		console.log(index);
 
-		$(this).closest($container).find($price).addClass("prices__modal-price--isActive")
-		  .css({top:$top, left: $left});
-		console.log($price.offset());
-		console.log($body.offset().top);
+		$(this).closest($body).find($modalContainer).find($enrolWrap).find($enrolModal.eq(index)).addClass("enrol-modal__item--isActive");
+
 
 		//$price.addClass("prices__modal-price--isActive");
 		setTimeout(function() {
@@ -40,7 +43,7 @@ function prices() {
 	});
 
 	$close.on("click", function() {
-		$price.removeClass("prices__modal-price--isActive");
+		$enrolModal.removeClass("enrol-modal__item--isActive");
 		$body.removeClass("page--isModal");
 		setTimeout(function() {
 			$(window).scrollTop(scroll);
