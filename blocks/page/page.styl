@@ -72,18 +72,14 @@
 		bottom: 0
 		left: 0
 		z-index: 5000
-		transform: translateX(102%)
-		will-change transform
-		visibility: hidden
 		opacity: 0
-		transition: transform .4s ease .5s, visibility .4s ease, opacity .4s ease, background .4s ease;
+		visibility: hidden
+		transition: visibility .4s ease, opacity .4s ease, background .4s ease;
 
 		&--isActive
-			transform: translateX(0)
 			visibility: visible
 			opacity: 1
-			background: rgba($base-decor-color-dark,.8);
-			transition: transform .3s ease, visibility .3s ease  .4s, opacity .3s ease  .4s, background .3s ease .4s;
+			background: rgba($base-decor-color-dark,.8); //transition: visibility .3s ease .4s, opacity .3s ease .4s, background .3s ease .4s;
 
 	&__frame-container
 		position: relative
@@ -105,6 +101,7 @@
 		max-height 100%
 		background: rgba($base-text-color, .8);
 		border: none
+
 
 	&__close
 		position absolute
@@ -173,3 +170,9 @@
 		line-height: 1.2
 		@media screen and (max-width: 450px)
 			font-size: 2.2em;
+
+//iframe:-webkit-full-screen
+//	position: fixed
+//	top: 0
+//	left: 0
+//	z-index: 5010 !important

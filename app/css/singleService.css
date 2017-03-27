@@ -345,28 +345,15 @@ th {
   bottom: 0;
   left: 0;
   z-index: 5000;
-  -webkit-transform: translateX(102%);
-      -ms-transform: translateX(102%);
-          transform: translateX(102%);
-  will-change: transform;
-  visibility: hidden;
   opacity: 0;
-  -webkit-transition: visibility 0.4s ease, opacity 0.4s ease, background 0.4s ease, -webkit-transform 0.4s ease 0.5s;
-  transition: visibility 0.4s ease, opacity 0.4s ease, background 0.4s ease, -webkit-transform 0.4s ease 0.5s;
-  transition: transform 0.4s ease 0.5s, visibility 0.4s ease, opacity 0.4s ease, background 0.4s ease;
-  transition: transform 0.4s ease 0.5s, visibility 0.4s ease, opacity 0.4s ease, background 0.4s ease, -webkit-transform 0.4s ease 0.5s;
+  visibility: hidden;
+  -webkit-transition: visibility 0.4s ease, opacity 0.4s ease, background 0.4s ease;
+  transition: visibility 0.4s ease, opacity 0.4s ease, background 0.4s ease;
 }
 .page__frame-wrap--isActive {
-  -webkit-transform: translateX(0);
-      -ms-transform: translateX(0);
-          transform: translateX(0);
   visibility: visible;
   opacity: 1;
   background: rgba(31,40,42,0.8);
-  -webkit-transition: visibility 0.3s ease 0.4s, opacity 0.3s ease 0.4s, background 0.3s ease 0.4s, -webkit-transform 0.3s ease;
-  transition: visibility 0.3s ease 0.4s, opacity 0.3s ease 0.4s, background 0.3s ease 0.4s, -webkit-transform 0.3s ease;
-  transition: transform 0.3s ease, visibility 0.3s ease 0.4s, opacity 0.3s ease 0.4s, background 0.3s ease 0.4s;
-  transition: transform 0.3s ease, visibility 0.3s ease 0.4s, opacity 0.3s ease 0.4s, background 0.3s ease 0.4s, -webkit-transform 0.3s ease;
 }
 .page__frame-container {
   position: relative;
@@ -4497,7 +4484,7 @@ label.error {
 }
 .contacts--isContacts_extended {
   padding: 1em 0 4em 0;
-  min-height: 30em;
+  min-height: 50em;
   -webkit-animation-duration: 2s;
           animation-duration: 2s;
   -webkit-animation-delay: 0s;

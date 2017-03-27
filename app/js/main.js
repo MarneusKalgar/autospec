@@ -48,78 +48,34 @@ function bundles() {
 		$(this).height($table.find("tr:eq(" + i + ")").height());
 	});
 }
-function callbackForm() {
-	var $btn = $("#callBtn");
-	var $form = $("#callForm");
-	var $validateForm = $(".callback-form, .action-form");
-	var $wrapper = $(".callus__form-wrap");
-	var $close = $("#actionClose");
+function component() {
+	var $form = $(".component__form");
 
-	var $tel = $("");
+	$form.validate({
 
-	if ($tel.length) {
-		$(":input[type='tel']").mask("+999 (99) 999 - 99 - 99");
-	}
-
-	$validateForm.each(function () {
-		$(this).validate({
-			rules: {
-				"callback-name": {
-					required: true
-				},
-				"callback-tel": {
-					required: true
-				}
+		rules: {
+			username: {
+				required: true
 			},
-			messages: {
-				"callback-name": {
-					required: "Пожалуйста, введите имя"
-				},
-				"callback-tel": "Пожалуйста, введите номер телефона",
-				usermail: {
-					required: "Пожалуйста, введите email",
-					email: "Формат почты example@email.com"
-				}
-			}
-		});
-	});
+			usertel: {
+				required: true
+			},
+			usernum: "required",
+			usertext: "required"
+		},
 
-
-	$btn.on("click", function () {
-		if (!$wrapper.hasClass("callus__form-wrap--isActive")) {
-			$wrapper.addClass("callus__form-wrap--isActive");
-		}
-
-		if (!$form.hasClass("action-form--isActive")) {
-			$form.addClass("action-form--isActive");
+		messages: {
+			username: {
+				required: "Пожалуйста, введите имя"
+			},
+			usertel: "Пожалуйста, введите номер телефона",
+			usernum: "Пожалуйста, введите VIN код",
+			usertext: "Пожалуйста, введите сообщение"
 		}
 
 	});
 
-	$close.on("click", function () {
-		$wrapper.removeClass("callus__form-wrap--isActive");
-		$form.removeClass("callback-form--isActive");
-	});
-
-	/*if (navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1) {
-	 console.log('Its Safari');
-	 $form.submit(function(e) {
-
-	 var ref = $(this).find("[required]");
-
-	 $(ref).each(function(){
-	 if ( $(this).val() == '' )
-	 {
-	 alert("Required field should not be blank.");
-
-	 $(this).focus();
-
-	 e.preventDefault();
-	 return false;
-	 }
-	 });  return true;
-	 });
-	 }*/
+	$("#usertel").mask("+999 (99) 999 - 99 - 99");
 }
 function clients() {
 	var $form = $("#clientsForm");
@@ -164,35 +120,6 @@ function clients() {
 	});
 
 	$("#userphone").mask("+999 (99) 999 - 99 - 99");
-}
-function component() {
-	var $form = $(".component__form");
-
-	$form.validate({
-
-		rules: {
-			username: {
-				required: true
-			},
-			usertel: {
-				required: true
-			},
-			usernum: "required",
-			usertext: "required"
-		},
-
-		messages: {
-			username: {
-				required: "Пожалуйста, введите имя"
-			},
-			usertel: "Пожалуйста, введите номер телефона",
-			usernum: "Пожалуйста, введите VIN код",
-			usertext: "Пожалуйста, введите сообщение"
-		}
-
-	});
-
-	$("#usertel").mask("+999 (99) 999 - 99 - 99");
 }
 function contacts() {
 	var place = { lat: 50.471540, lng: 30.500401 };
@@ -432,23 +359,78 @@ function header() {
 		}//end if width
 	}//end if header
 }
-function hero() {
-	var $link = $(".hero__link");
-	var $btn = $(".hero__btn");
+function callbackForm() {
+	var $btn = $("#callBtn");
+	var $form = $("#callForm");
+	var $validateForm = $(".callback-form, .action-form");
+	var $wrapper = $(".callus__form-wrap");
+	var $close = $("#actionClose");
 
-	$link.on("click", function(e) {
-		e.preventDefault();
-		var id = $(this).attr("data-link");
-		var offset = $(id).offset().top;
-		$("html, body").animate({"scrollTop": offset}, 500);
+	var $tel = $("");
+
+	if ($tel.length) {
+		$(":input[type='tel']").mask("+999 (99) 999 - 99 - 99");
+	}
+
+	$validateForm.each(function () {
+		$(this).validate({
+			rules: {
+				"callback-name": {
+					required: true
+				},
+				"callback-tel": {
+					required: true
+				}
+			},
+			messages: {
+				"callback-name": {
+					required: "Пожалуйста, введите имя"
+				},
+				"callback-tel": "Пожалуйста, введите номер телефона",
+				usermail: {
+					required: "Пожалуйста, введите email",
+					email: "Формат почты example@email.com"
+				}
+			}
+		});
 	});
 
-	$btn.on("click", function(e) {
-		e.preventDefault();
-		var id = $(this).attr("data-link");
-		var offset = $(id).offset().top;
-		$("html, body").animate({"scrollTop": offset}, 500);
+
+	$btn.on("click", function () {
+		if (!$wrapper.hasClass("callus__form-wrap--isActive")) {
+			$wrapper.addClass("callus__form-wrap--isActive");
+		}
+
+		if (!$form.hasClass("action-form--isActive")) {
+			$form.addClass("action-form--isActive");
+		}
+
 	});
+
+	$close.on("click", function () {
+		$wrapper.removeClass("callus__form-wrap--isActive");
+		$form.removeClass("callback-form--isActive");
+	});
+
+	/*if (navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1) {
+	 console.log('Its Safari');
+	 $form.submit(function(e) {
+
+	 var ref = $(this).find("[required]");
+
+	 $(ref).each(function(){
+	 if ( $(this).val() == '' )
+	 {
+	 alert("Required field should not be blank.");
+
+	 $(this).focus();
+
+	 e.preventDefault();
+	 return false;
+	 }
+	 });  return true;
+	 });
+	 }*/
 }
 function gallery() {
 	var $tour = $("#tour");
@@ -467,6 +449,24 @@ function mainNav() {
 
 	$link.on("click", function(e) {
 		e.preventDefault();
+	});
+}
+function hero() {
+	var $link = $(".hero__link");
+	var $btn = $(".hero__btn");
+
+	$link.on("click", function(e) {
+		e.preventDefault();
+		var id = $(this).attr("data-link");
+		var offset = $(id).offset().top;
+		$("html, body").animate({"scrollTop": offset}, 500);
+	});
+
+	$btn.on("click", function(e) {
+		e.preventDefault();
+		var id = $(this).attr("data-link");
+		var offset = $(id).offset().top;
+		$("html, body").animate({"scrollTop": offset}, 500);
 	});
 }
 function menuBtn() {
