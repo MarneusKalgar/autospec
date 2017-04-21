@@ -507,18 +507,15 @@ th {
           transform: scaleY(0);
 }
 .btn--bordered:hover,
-.btn--bordered:active,
 .btn--bordered:focus {
   color: #2e2e2e;
 }
 .btn--bordered:hover .btn__icon,
-.btn--bordered:active .btn__icon,
 .btn--bordered:focus .btn__icon {
   fill: #2e2e2e;
   stroke: #2e2e2e;
 }
 .btn--bordered:hover:before,
-.btn--bordered:active:before,
 .btn--bordered:focus:before {
   opacity: 1;
   -webkit-transform: scaleY(1);
@@ -559,7 +556,6 @@ th {
           transform: scaleY(1);
 }
 .btn--filled:hover:before,
-.btn--filled:active:before,
 .btn--filled:focus:before {
   -webkit-transform: scaleY(0);
       -ms-transform: scaleY(0);
@@ -575,13 +571,21 @@ th {
 }
 .btn--white {
   color: #2e2e2e;
-  border: 1px solid #fff;
+  border: 1px solid rgba(0,0,0,0);
 }
 .btn--white:before {
   background-color: #fff;
 }
-.btn--white:hover {
-  color: #fff;
+.btn--white:hover,
+.btn--white:focus {
+  color: #2e2e2e;
+}
+.btn--white:hover:before,
+.btn--white:focus:before {
+  background-color: #e6e6e6;
+  -webkit-transform: none;
+      -ms-transform: none;
+          transform: none;
 }
 .btn__icon {
   position: absolute;

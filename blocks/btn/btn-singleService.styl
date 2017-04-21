@@ -36,14 +36,12 @@
 			transform-origin top
 			transform scaleY(0)
 		&:hover
-		&:active
 		&:focus
 			color $base-text-color
 			.btn__icon
 				fill $base-text-color
 				stroke $base-text-color
 		&:hover:before
-		&:active:before
 		&:focus:before
 			opacity 1
 			transform scaleY(1)
@@ -75,7 +73,6 @@
 			transform-origin top
 			transform scaleY(1)
 		&:hover:before
-		&:active:before
 		&:focus:before
 			transform scaleY(0)
 
@@ -87,12 +84,15 @@
 
 	&--white
 		color $base-text-color
-		border 1px solid $base-text-color-light
+		border 1px solid rgba(0,0,0,0)
 		&:before
 			background-color $base-text-color-light
 		&:hover
-			color $base-text-color-light
-
+		&:focus
+			color $base-text-color
+			&:before
+				background-color darken($base-text-color-light, 10%)
+				transform: none
 
 	&__icon
 		position absolute

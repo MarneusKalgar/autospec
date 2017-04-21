@@ -602,47 +602,6 @@ function menuBtn() {
 	}
 
 }
-function orderForm() {
-	
-	var $form = $(".order-form");
-
-	$form.each(function () {
-		$(this).validate({
-
-			rules: {
-				username: {
-					required: true
-				},
-				usermail: {
-					required: true,
-					email: true
-				},
-				usertel: {
-					required: true
-				},
-				carbrand: "required",
-				carmodel: "required",
-				caryear: "required"
-			},
-
-			messages: {
-				username: {
-					required: "Пожалуйста, введите имя"
-				},
-				usermail: {
-					required: "Пожалуйста, введите адрес",
-					email: "Формат адреса example@email.com"
-				},
-				usertel: "Пожалуйста, введите номер телефона",
-				carbrand: "Пожалуйста, введите марку автомобиля",
-				carmodel: "Пожалуйста, введите модель автомобиля",
-				caryear: "Пожалуйста, введите год выпуска"
-			}
-
-		});
-	});
-	$(":input[type='tel']").mask("+999 (99) 999 - 99 - 99");
-}
 function page() {
 	var $logo = $(".logo");
 	var $sidebar = $(".sidebar");
@@ -764,6 +723,47 @@ function scrollToTop() {
 
 }
 	
+function orderForm() {
+	
+	var $form = $(".order-form");
+
+	$form.each(function () {
+		$(this).validate({
+
+			rules: {
+				username: {
+					required: true
+				},
+				usermail: {
+					required: true,
+					email: true
+				},
+				usertel: {
+					required: true
+				},
+				carbrand: "required",
+				carmodel: "required",
+				caryear: "required"
+			},
+
+			messages: {
+				username: {
+					required: "Пожалуйста, введите имя"
+				},
+				usermail: {
+					required: "Пожалуйста, введите адрес",
+					email: "Формат адреса example@email.com"
+				},
+				usertel: "Пожалуйста, введите номер телефона",
+				carbrand: "Пожалуйста, введите марку автомобиля",
+				carmodel: "Пожалуйста, введите модель автомобиля",
+				caryear: "Пожалуйста, введите год выпуска"
+			}
+
+		});
+	});
+	$(":input[type='tel']").mask("+999 (99) 999 - 99 - 99");
+}
 function sidebar() {
 	var $link = $(".sidebar__link");
 	var $wrapper = $(".page__frame-wrap");
@@ -953,6 +953,40 @@ function trust() {
 }
 
 
+function whySlider() {
+
+	var $slider = $(".why__slider");
+	var $wrapper = $(".why__slider-wrap");
+	var $list = $(".why__list")
+	var $next = $(".why__control--next");
+	var $prev = $(".why__control--prev");
+	var $slide = $(".why__slide");
+
+	var slideWidth;
+
+	if ($(window).width() >= 500) {
+		slideWidth = 22;
+	} else {
+		slideWidth = 18.5;
+	}
+
+	console.log(slideWidth);
+
+	$next.on("click", function() {
+		$slider.find($wrapper).animate({'left': '-' + slideWidth + 'em' }, 500, function() {
+			$slider.find($list).find(".why__slide").eq(0).clone().appendTo($slider.find($wrapper).find($list));
+			$slider.find($list).find(".why__slide").eq(0).remove();
+			$slider.find($wrapper).css({'left': 0});
+		});
+	});
+
+	$prev.on("click", function() {
+		$slider.find($list).find(".why__slide").eq(-1).clone().prependTo($slider.find($wrapper).find($list));
+		$slider.find($wrapper).css({'left': '-' + slideWidth + 'em' });
+		$slider.find($list).find(".why__slide").eq(-1).remove();
+		$slider.find($wrapper).animate({ 'left': 0 }, 500);
+	});
+}
 (function($) {
 
 	var methods = {
@@ -1002,37 +1036,3 @@ function trust() {
 
 	};
 })(jQuery);
-function whySlider() {
-
-	var $slider = $(".why__slider");
-	var $wrapper = $(".why__slider-wrap");
-	var $list = $(".why__list")
-	var $next = $(".why__control--next");
-	var $prev = $(".why__control--prev");
-	var $slide = $(".why__slide");
-
-	var slideWidth;
-
-	if ($(window).width() >= 500) {
-		slideWidth = 22;
-	} else {
-		slideWidth = 18.5;
-	}
-
-	console.log(slideWidth);
-
-	$next.on("click", function() {
-		$slider.find($wrapper).animate({'left': '-' + slideWidth + 'em' }, 500, function() {
-			$slider.find($list).find(".why__slide").eq(0).clone().appendTo($slider.find($wrapper).find($list));
-			$slider.find($list).find(".why__slide").eq(0).remove();
-			$slider.find($wrapper).css({'left': 0});
-		});
-	});
-
-	$prev.on("click", function() {
-		$slider.find($list).find(".why__slide").eq(-1).clone().prependTo($slider.find($wrapper).find($list));
-		$slider.find($wrapper).css({'left': '-' + slideWidth + 'em' });
-		$slider.find($list).find(".why__slide").eq(-1).remove();
-		$slider.find($wrapper).animate({ 'left': 0 }, 500);
-	});
-}
