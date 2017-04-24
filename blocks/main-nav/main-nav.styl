@@ -29,6 +29,7 @@
 
 	&__item:first-child
 		.main-nav__link
+			border-top $sidebar-elements-bd-width solid $sidebar-bd-color-dark
 			&:before
 				content ''
 				position absolute
@@ -36,6 +37,9 @@
 				left 0
 				width 100%
 				height $sidebar-elements-bd-width
+				background-color $sidebar-bd-color-light
+		.main-nav__link.main-nav__link--active
+			&:before
 				background-color $sidebar-bd-color-dark
 	&__item:last-child
 		.main-nav__link
@@ -47,6 +51,9 @@
 				width 100%
 				height $sidebar-elements-bd-width
 				background-color $sidebar-bd-color-light
+		.main-nav__link.main-nav__link--active
+			&:after
+				background none
 
 	&__item
 		@media screen and (max-height: 400px) and (orientation: landscape)
@@ -85,7 +92,7 @@
 		color $base-text-color-light
 		border-top $sidebar-elements-bd-width solid $sidebar-bd-color-light
 		border-bottom $sidebar-elements-bd-width solid $sidebar-bd-color-dark
-		transition all .5s ease
+		transition all .4s ease
 		outline none
 		&:hover
 		&:focus
@@ -107,4 +114,4 @@
 			cursor default
 			border-top $sidebar-elements-bd-width solid $sidebar-bd-color-dark
 			border-bottom $sidebar-elements-bd-width solid $sidebar-bd-color-light
-			transition all .5s ease
+			transition all .4s ease

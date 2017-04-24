@@ -37,7 +37,8 @@
 			transition transform .5s cubic-bezier(0.2, 1, 0.3, 1)
 		&:hover
 		&:focus
-			color #363636
+			//color #363636
+			color #fff
 		&:hover:before
 		&:focus:before
 			transform scaleY(1)
@@ -52,7 +53,7 @@
 		transition all .3s ease
 		&:hover
 		&:focus
-			color #363636
+			color $base-text-color-light
 			background $base-decor-color
 
 	&--callback
